@@ -270,7 +270,7 @@ unsigned int getUIntValueOfText(gchar* a, unsigned int l, int base)
 }
 
 
-void spl_chart_help(const gchar* programName) {
+void bot_chart_help(const gchar* programName) {
 	printf("Usage: %s -a <account> -d <id> -u <ddress:port> -l <lcuid> -b <begin time> -e <end time>\n", programName);
     printf("OPTION:\n");
     printf("\t -b, --begin_time  <time>\t: begin time in order to draw chart. Format of time is YYYY-mm-dd HH:MM:SS\n");

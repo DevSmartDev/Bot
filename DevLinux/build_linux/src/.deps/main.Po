@@ -1,18 +1,24 @@
-main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
- /usr/include/gtk-3.0/gtk/gtk.h /usr/include/gtk-3.0/gdk/gdk.h \
- /usr/include/gtk-3.0/gdk/gdkconfig.h /usr/include/glib-2.0/glib.h \
- /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
+main.o: ../../src/main.cpp /usr/include/stdc-predef.h \
+ /usr/include/getopt.h /usr/include/ctype.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h /usr/include/xlocale.h \
+ ../../src/main.h /usr/include/gtk-3.0/gtk/gtk.h \
+ /usr/include/gtk-3.0/gdk/gdk.h /usr/include/gtk-3.0/gdk/gdkconfig.h \
+ /usr/include/glib-2.0/glib.h /usr/include/glib-2.0/glib/galloca.h \
+ /usr/include/glib-2.0/glib/gtypes.h \
  /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h \
  /usr/include/glib-2.0/glib/gmacros.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed/syslimits.h \
- /usr/include/limits.h /usr/include/features.h \
- /usr/include/x86_64-linux-gnu/sys/cdefs.h \
- /usr/include/x86_64-linux-gnu/bits/wordsize.h \
- /usr/include/x86_64-linux-gnu/gnu/stubs.h \
- /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
@@ -21,9 +27,7 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include/float.h \
  /usr/include/glib-2.0/glib/gversionmacros.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h \
- /usr/include/x86_64-linux-gnu/bits/timex.h /usr/include/xlocale.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
  /usr/include/glib-2.0/glib/garray.h \
  /usr/include/glib-2.0/glib/gasyncqueue.h \
  /usr/include/glib-2.0/glib/gthread.h \
@@ -94,10 +98,7 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
  /usr/include/glib-2.0/glib/deprecated/gmain.h \
  /usr/include/glib-2.0/glib/deprecated/grel.h \
  /usr/include/glib-2.0/glib/deprecated/gthread.h \
- /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/pthread.h \
@@ -150,7 +151,7 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
  /usr/include/glib-2.0/gio/gcredentials.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/glib-2.0/gio/gdatainputstream.h \
  /usr/include/glib-2.0/gio/gdataoutputstream.h \
  /usr/include/glib-2.0/gio/gdbusaddress.h \
@@ -597,8 +598,8 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
- ../../src/smartstreetlight_gui.h ../../src/smartstreetlight_login.h \
- ../../src/smartstreetlight_utils.h ../../src/mapviewer.h \
+ ../../src/bot_gui.h ../../src/bot_login.h ../../src/bot_utils.h \
+ ../../src/mapviewer.h \
  ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map.h \
  ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map-osd.h \
  ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map-layer.h \
@@ -614,72 +615,12 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
  ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map-source.h \
  ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map-widget.h \
  ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map-compat.h \
- ../../src/smartstreetlight_callback.h ../../src/smartstreetlight_sql.h \
- ../../src/smartstreetlight_dcu.h ../../src/smartstreetlight_ui_method.h \
- ../../src/smartstreetlight_line.h ../../src/smartstreetlight_lcu.h \
- ../../src/smartstreetlight_database.h \
- ../../src/smartstreetlight_common.h ../../src/gsoap/soapH.h \
+ ../../src/bot_callback.h ../../src/bot_sql.h ../../src/bot_dcu.h \
+ ../../src/bot_ui_method.h ../../src/bot_line.h ../../src/bot_lcu.h \
+ ../../src/bot_database.h ../../src/bot_common.h ../../src/gsoap/soapH.h \
  ../../src/gsoap/soapStub.h ../../src/gsoap/stdsoap2.h ../config.h \
- /usr/include/ctype.h /usr/include/c++/4.9/string \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++config.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/os_defines.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/cpu_defines.h \
- /usr/include/c++/4.9/bits/stringfwd.h \
- /usr/include/c++/4.9/bits/memoryfwd.h \
- /usr/include/c++/4.9/bits/char_traits.h \
- /usr/include/c++/4.9/bits/stl_algobase.h \
- /usr/include/c++/4.9/bits/functexcept.h \
- /usr/include/c++/4.9/bits/exception_defines.h \
- /usr/include/c++/4.9/bits/cpp_type_traits.h \
- /usr/include/c++/4.9/ext/type_traits.h \
- /usr/include/c++/4.9/ext/numeric_traits.h \
- /usr/include/c++/4.9/bits/stl_pair.h /usr/include/c++/4.9/bits/move.h \
- /usr/include/c++/4.9/bits/concept_check.h \
- /usr/include/c++/4.9/bits/stl_iterator_base_types.h \
- /usr/include/c++/4.9/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/4.9/debug/debug.h \
- /usr/include/c++/4.9/bits/stl_iterator.h \
- /usr/include/c++/4.9/bits/ptr_traits.h \
- /usr/include/c++/4.9/bits/predefined_ops.h \
- /usr/include/c++/4.9/bits/postypes.h /usr/include/c++/4.9/cwchar \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/include/c++/4.9/bits/allocator.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++allocator.h \
- /usr/include/c++/4.9/ext/new_allocator.h /usr/include/c++/4.9/new \
- /usr/include/c++/4.9/exception \
- /usr/include/c++/4.9/bits/atomic_lockfree_defines.h \
- /usr/include/c++/4.9/bits/localefwd.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++locale.h \
- /usr/include/c++/4.9/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.9/iosfwd \
- /usr/include/c++/4.9/cctype /usr/include/c++/4.9/bits/ostream_insert.h \
- /usr/include/c++/4.9/bits/cxxabi_forced.h \
- /usr/include/c++/4.9/bits/stl_function.h \
- /usr/include/c++/4.9/backward/binders.h \
- /usr/include/c++/4.9/bits/range_access.h \
- /usr/include/c++/4.9/bits/basic_string.h \
- /usr/include/c++/4.9/ext/atomicity.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/gthr.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/gthr-default.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/atomic_word.h \
- /usr/include/c++/4.9/bits/basic_string.tcc /usr/include/c++/4.9/iostream \
- /usr/include/c++/4.9/ostream /usr/include/c++/4.9/ios \
- /usr/include/c++/4.9/bits/ios_base.h \
- /usr/include/c++/4.9/bits/locale_classes.h \
- /usr/include/c++/4.9/bits/locale_classes.tcc \
- /usr/include/c++/4.9/streambuf /usr/include/c++/4.9/bits/streambuf.tcc \
- /usr/include/c++/4.9/bits/basic_ios.h \
- /usr/include/c++/4.9/bits/locale_facets.h /usr/include/c++/4.9/cwctype \
- /usr/include/wctype.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_base.h \
- /usr/include/c++/4.9/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_inline.h \
- /usr/include/c++/4.9/bits/locale_facets.tcc \
- /usr/include/c++/4.9/bits/basic_ios.tcc \
- /usr/include/c++/4.9/bits/ostream.tcc /usr/include/c++/4.9/istream \
- /usr/include/c++/4.9/bits/istream.tcc /usr/include/errno.h \
- /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/sys/uio.h \
@@ -693,6 +634,7 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
  /usr/include/asm-generic/sockios.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/netinet/in.h \
  /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/netinet/tcp.h \
  /usr/include/arpa/inet.h /usr/include/netdb.h /usr/include/rpc/netdb.h \
  /usr/include/x86_64-linux-gnu/bits/netdb.h /usr/include/fcntl.h \
@@ -705,20 +647,70 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/mathinline.h \
- ../../src/smartstreetlight_schedule.h \
- ../../src/smartstreetlight_server.h ../../src/smartstreetlight_user.h \
- ../../src/smartstreetlight_admin_user.h \
- ../../src/smartstreetlight_admin_zone.h \
- ../../src/smartstreetlight_error.h ../../src/gsoap/soapStub.h \
- /usr/include/c++/4.9/map /usr/include/c++/4.9/bits/stl_tree.h \
+ /usr/include/x86_64-linux-gnu/bits/mathinline.h ../../src/bot_schedule.h \
+ ../../src/bot_server.h ../../src/bot_user.h ../../src/bot_admin_user.h \
+ ../../src/bot_admin_zone.h ../../src/bot_error.h \
+ ../../src/gsoap/soapStub.h /usr/include/c++/4.9/map \
+ /usr/include/c++/4.9/bits/stl_tree.h \
+ /usr/include/c++/4.9/bits/stl_algobase.h \
+ /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.9/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.9/bits/cpu_defines.h \
+ /usr/include/c++/4.9/bits/functexcept.h \
+ /usr/include/c++/4.9/bits/exception_defines.h \
+ /usr/include/c++/4.9/bits/cpp_type_traits.h \
+ /usr/include/c++/4.9/ext/type_traits.h \
+ /usr/include/c++/4.9/ext/numeric_traits.h \
+ /usr/include/c++/4.9/bits/stl_pair.h /usr/include/c++/4.9/bits/move.h \
+ /usr/include/c++/4.9/bits/concept_check.h \
+ /usr/include/c++/4.9/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.9/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.9/debug/debug.h \
+ /usr/include/c++/4.9/bits/stl_iterator.h \
+ /usr/include/c++/4.9/bits/ptr_traits.h \
+ /usr/include/c++/4.9/bits/predefined_ops.h \
+ /usr/include/c++/4.9/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++allocator.h \
+ /usr/include/c++/4.9/ext/new_allocator.h /usr/include/c++/4.9/new \
+ /usr/include/c++/4.9/exception \
+ /usr/include/c++/4.9/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/4.9/bits/memoryfwd.h \
+ /usr/include/c++/4.9/bits/stl_function.h \
+ /usr/include/c++/4.9/backward/binders.h \
  /usr/include/c++/4.9/ext/alloc_traits.h \
  /usr/include/c++/4.9/bits/stl_map.h \
  /usr/include/c++/4.9/bits/stl_multimap.h \
- ../../src/smartstreetlight_event_thread.h \
- ../../src/smartstreetlight_slope.h
+ /usr/include/c++/4.9/bits/range_access.h ../../src/bot_event_thread.h
 
 /usr/include/stdc-predef.h:
+
+/usr/include/getopt.h:
+
+/usr/include/ctype.h:
+
+/usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
+
+/usr/include/xlocale.h:
 
 ../../src/main.h:
 
@@ -746,16 +738,6 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 
 /usr/include/limits.h:
 
-/usr/include/features.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
@@ -776,13 +758,7 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
-
 /usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/xlocale.h:
 
 /usr/include/glib-2.0/glib/garray.h:
 
@@ -952,14 +928,6 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
-/usr/include/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
-
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
@@ -1075,8 +1043,6 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/getopt.h:
 
 /usr/include/glib-2.0/gio/gdatainputstream.h:
 
@@ -2022,11 +1988,11 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 
 /usr/include/string.h:
 
-../../src/smartstreetlight_gui.h:
+../../src/bot_gui.h:
 
-../../src/smartstreetlight_login.h:
+../../src/bot_login.h:
 
-../../src/smartstreetlight_utils.h:
+../../src/bot_utils.h:
 
 ../../src/mapviewer.h:
 
@@ -2060,21 +2026,21 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 
 ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map-compat.h:
 
-../../src/smartstreetlight_callback.h:
+../../src/bot_callback.h:
 
-../../src/smartstreetlight_sql.h:
+../../src/bot_sql.h:
 
-../../src/smartstreetlight_dcu.h:
+../../src/bot_dcu.h:
 
-../../src/smartstreetlight_ui_method.h:
+../../src/bot_ui_method.h:
 
-../../src/smartstreetlight_line.h:
+../../src/bot_line.h:
 
-../../src/smartstreetlight_lcu.h:
+../../src/bot_lcu.h:
 
-../../src/smartstreetlight_database.h:
+../../src/bot_database.h:
 
-../../src/smartstreetlight_common.h:
+../../src/bot_common.h:
 
 ../../src/gsoap/soapH.h:
 
@@ -2083,146 +2049,6 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 ../../src/gsoap/stdsoap2.h:
 
 ../config.h:
-
-/usr/include/ctype.h:
-
-/usr/include/c++/4.9/string:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/os_defines.h:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/cpu_defines.h:
-
-/usr/include/c++/4.9/bits/stringfwd.h:
-
-/usr/include/c++/4.9/bits/memoryfwd.h:
-
-/usr/include/c++/4.9/bits/char_traits.h:
-
-/usr/include/c++/4.9/bits/stl_algobase.h:
-
-/usr/include/c++/4.9/bits/functexcept.h:
-
-/usr/include/c++/4.9/bits/exception_defines.h:
-
-/usr/include/c++/4.9/bits/cpp_type_traits.h:
-
-/usr/include/c++/4.9/ext/type_traits.h:
-
-/usr/include/c++/4.9/ext/numeric_traits.h:
-
-/usr/include/c++/4.9/bits/stl_pair.h:
-
-/usr/include/c++/4.9/bits/move.h:
-
-/usr/include/c++/4.9/bits/concept_check.h:
-
-/usr/include/c++/4.9/bits/stl_iterator_base_types.h:
-
-/usr/include/c++/4.9/bits/stl_iterator_base_funcs.h:
-
-/usr/include/c++/4.9/debug/debug.h:
-
-/usr/include/c++/4.9/bits/stl_iterator.h:
-
-/usr/include/c++/4.9/bits/ptr_traits.h:
-
-/usr/include/c++/4.9/bits/predefined_ops.h:
-
-/usr/include/c++/4.9/bits/postypes.h:
-
-/usr/include/c++/4.9/cwchar:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/include/c++/4.9/bits/allocator.h:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/c++allocator.h:
-
-/usr/include/c++/4.9/ext/new_allocator.h:
-
-/usr/include/c++/4.9/new:
-
-/usr/include/c++/4.9/exception:
-
-/usr/include/c++/4.9/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/4.9/bits/localefwd.h:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/c++locale.h:
-
-/usr/include/c++/4.9/clocale:
-
-/usr/include/locale.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/c++/4.9/iosfwd:
-
-/usr/include/c++/4.9/cctype:
-
-/usr/include/c++/4.9/bits/ostream_insert.h:
-
-/usr/include/c++/4.9/bits/cxxabi_forced.h:
-
-/usr/include/c++/4.9/bits/stl_function.h:
-
-/usr/include/c++/4.9/backward/binders.h:
-
-/usr/include/c++/4.9/bits/range_access.h:
-
-/usr/include/c++/4.9/bits/basic_string.h:
-
-/usr/include/c++/4.9/ext/atomicity.h:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/gthr.h:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/gthr-default.h:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/atomic_word.h:
-
-/usr/include/c++/4.9/bits/basic_string.tcc:
-
-/usr/include/c++/4.9/iostream:
-
-/usr/include/c++/4.9/ostream:
-
-/usr/include/c++/4.9/ios:
-
-/usr/include/c++/4.9/bits/ios_base.h:
-
-/usr/include/c++/4.9/bits/locale_classes.h:
-
-/usr/include/c++/4.9/bits/locale_classes.tcc:
-
-/usr/include/c++/4.9/streambuf:
-
-/usr/include/c++/4.9/bits/streambuf.tcc:
-
-/usr/include/c++/4.9/bits/basic_ios.h:
-
-/usr/include/c++/4.9/bits/locale_facets.h:
-
-/usr/include/c++/4.9/cwctype:
-
-/usr/include/wctype.h:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_base.h:
-
-/usr/include/c++/4.9/bits/streambuf_iterator.h:
-
-/usr/include/x86_64-linux-gnu/c++/4.9/bits/ctype_inline.h:
-
-/usr/include/c++/4.9/bits/locale_facets.tcc:
-
-/usr/include/c++/4.9/bits/basic_ios.tcc:
-
-/usr/include/c++/4.9/bits/ostream.tcc:
-
-/usr/include/c++/4.9/istream:
-
-/usr/include/c++/4.9/bits/istream.tcc:
 
 /usr/include/errno.h:
 
@@ -2266,6 +2092,8 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 
 /usr/include/stdint.h:
 
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
 /usr/include/x86_64-linux-gnu/bits/in.h:
 
 /usr/include/netinet/tcp.h:
@@ -2302,17 +2130,17 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 
 /usr/include/x86_64-linux-gnu/bits/mathinline.h:
 
-../../src/smartstreetlight_schedule.h:
+../../src/bot_schedule.h:
 
-../../src/smartstreetlight_server.h:
+../../src/bot_server.h:
 
-../../src/smartstreetlight_user.h:
+../../src/bot_user.h:
 
-../../src/smartstreetlight_admin_user.h:
+../../src/bot_admin_user.h:
 
-../../src/smartstreetlight_admin_zone.h:
+../../src/bot_admin_zone.h:
 
-../../src/smartstreetlight_error.h:
+../../src/bot_error.h:
 
 ../../src/gsoap/soapStub.h:
 
@@ -2320,12 +2148,66 @@ main.o: ../../src/main.cpp /usr/include/stdc-predef.h ../../src/main.h \
 
 /usr/include/c++/4.9/bits/stl_tree.h:
 
+/usr/include/c++/4.9/bits/stl_algobase.h:
+
+/usr/include/x86_64-linux-gnu/c++/4.9/bits/c++config.h:
+
+/usr/include/x86_64-linux-gnu/c++/4.9/bits/os_defines.h:
+
+/usr/include/x86_64-linux-gnu/c++/4.9/bits/cpu_defines.h:
+
+/usr/include/c++/4.9/bits/functexcept.h:
+
+/usr/include/c++/4.9/bits/exception_defines.h:
+
+/usr/include/c++/4.9/bits/cpp_type_traits.h:
+
+/usr/include/c++/4.9/ext/type_traits.h:
+
+/usr/include/c++/4.9/ext/numeric_traits.h:
+
+/usr/include/c++/4.9/bits/stl_pair.h:
+
+/usr/include/c++/4.9/bits/move.h:
+
+/usr/include/c++/4.9/bits/concept_check.h:
+
+/usr/include/c++/4.9/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/4.9/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/4.9/debug/debug.h:
+
+/usr/include/c++/4.9/bits/stl_iterator.h:
+
+/usr/include/c++/4.9/bits/ptr_traits.h:
+
+/usr/include/c++/4.9/bits/predefined_ops.h:
+
+/usr/include/c++/4.9/bits/allocator.h:
+
+/usr/include/x86_64-linux-gnu/c++/4.9/bits/c++allocator.h:
+
+/usr/include/c++/4.9/ext/new_allocator.h:
+
+/usr/include/c++/4.9/new:
+
+/usr/include/c++/4.9/exception:
+
+/usr/include/c++/4.9/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/4.9/bits/memoryfwd.h:
+
+/usr/include/c++/4.9/bits/stl_function.h:
+
+/usr/include/c++/4.9/backward/binders.h:
+
 /usr/include/c++/4.9/ext/alloc_traits.h:
 
 /usr/include/c++/4.9/bits/stl_map.h:
 
 /usr/include/c++/4.9/bits/stl_multimap.h:
 
-../../src/smartstreetlight_event_thread.h:
+/usr/include/c++/4.9/bits/range_access.h:
 
-../../src/smartstreetlight_slope.h:
+../../src/bot_event_thread.h:

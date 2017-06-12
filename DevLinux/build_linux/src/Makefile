@@ -16,9 +16,6 @@
 
 # $Id: Makefile.am 5839 2011-06-13 18:41:15Z colombanw $
 
-#MYSQL_CFLAGS = -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing
-#MYSQL_LIBS = -L/usr/lib/i386-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -ldl
-
 
 VPATH = ../../src
 am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'
@@ -66,10 +63,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/smartpubliclight
-pkgincludedir = $(includedir)/smartpubliclight
-pkglibdir = $(libdir)/smartpubliclight
-pkglibexecdir = $(libexecdir)/smartpubliclight
+pkgdatadir = $(datadir)/bot
+pkgincludedir = $(includedir)/bot
+pkglibdir = $(libdir)/bot
+pkglibexecdir = $(libexecdir)/bot
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -84,11 +81,11 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
 host_triplet = x86_64-unknown-linux-gnu
-bin_PROGRAMS = SmartPublicLight$(EXEEXT)
+bin_PROGRAMS = bot$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/mkinstalldirs $(top_srcdir)/depcomp \
-	$(SmartPublicLight_include_HEADERS)
+	$(bot_include_HEADERS)
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/intltool.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -100,96 +97,56 @@ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__installdirs = "$(DESTDIR)$(bindir)" \
-	"$(DESTDIR)$(SmartPublicLight_includedir)"
+am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bot_includedir)"
 PROGRAMS = $(bin_PROGRAMS)
-am__SmartPublicLight_SOURCES_DIST = main.cpp main.h mapviewer.cpp \
-	mapviewer.h smartstreetlight_gui.h smartstreetlight_method.h \
-	smartstreetlight_ui_method.cpp smartstreetlight_ui_method.h \
-	smartstreetlight_login.cpp smartstreetlight_login.h \
-	smartstreetlight_utils.cpp smartstreetlight_utils.h \
-	smartstreetlight_sql.cpp smartstreetlight_sql.h \
-	smartstreetlight_dcu.cpp smartstreetlight_dcu.h \
-	smartstreetlight_lcu.cpp smartstreetlight_lcu.h \
-	smartstreetlight_callback.cpp smartstreetlight_callback.h \
-	smartstreetlight_database.h smartstreetlight_database.cpp \
-	smartstreetlight_schedule.h smartstreetlight_schedule.cpp \
-	smartstreetlight_line.h smartstreetlight_line.cpp \
-	smartstreetlight_server.h smartstreetlight_server.cpp \
-	smartstreetlight_user.h smartstreetlight_user.cpp \
-	smartstreetlight_zone.h smartstreetlight_zone.cpp \
-	smartstreetlight_log.h smartstreetlight_log.cpp \
-	smartstreetlight_dcu_program_process.h \
-	smartstreetlight_dcu_program_process.cpp \
-	smartstreetlight_admin_user.h smartstreetlight_admin_user.cpp \
-	smartstreetlight_admin_zone.h smartstreetlight_admin_zone.cpp \
-	smartstreetlight_error.h smartstreetlight_error.cpp \
-	smartstreetlight_event_thread.h \
-	smartstreetlight_event_thread.cpp smartstreetlight_common.h \
-	smartstreetlightService.nsmap smartstreetlight_soap_thread.h \
-	smartstreetlight_soap_thread.cpp smartstreetlight_soap.h \
-	smartstreetlight_soap.cpp smartstreetlight_slope.h \
-	smartstreetlight_slope.cpp gsoap/soapClient.cpp \
-	gsoap/soapC.cpp gsoap/soapH.h gsoap/soapStub.h \
-	gsoap/stdsoap2.cpp gsoap/stdsoap2.h slope/chart.cpp \
-	slope/chart.h slope/drawing.cpp slope/drawing.h \
-	slope/figure.cpp slope/figure.h slope/figure_p.h \
-	slope/item.cpp slope/item.h slope/item_p.h slope/sampler.cpp \
-	slope/sampler.h slope/scale.cpp slope/scale.h slope/scale_p.h \
-	slope/view.cpp slope/view.h slope/xyaxis.cpp slope/xyaxis.h \
-	slope/xyaxis-sampler.cpp slope/xyaxis-sampler.h \
-	slope/xyscale.cpp slope/xyscale.h slope/xyscale_p.h \
-	slope/xyseries.cpp slope/xyseries.h slope/slope.h \
-	slope/global.h
+am__bot_SOURCES_DIST = main.cpp main.h mapviewer.cpp mapviewer.h \
+	bot_gui.h bot_method.h bot_ui_method.cpp bot_ui_method.h \
+	bot_login.cpp bot_login.h bot_utils.cpp bot_utils.h \
+	bot_sql.cpp bot_sql.h bot_dcu.cpp bot_dcu.h bot_lcu.cpp \
+	bot_lcu.h bot_callback.cpp bot_callback.h bot_database.h \
+	bot_database.cpp bot_schedule.h bot_schedule.cpp bot_line.h \
+	bot_line.cpp bot_server.h bot_server.cpp bot_user.h \
+	bot_user.cpp bot_zone.h bot_zone.cpp bot_log.h bot_log.cpp \
+	bot_dcu_program_process.h bot_dcu_program_process.cpp \
+	bot_admin_user.h bot_admin_user.cpp bot_admin_zone.h \
+	bot_admin_zone.cpp bot_error.h bot_error.cpp \
+	bot_event_thread.h bot_event_thread.cpp bot_common.h \
+	botService.nsmap bot_soap_thread.h bot_soap_thread.cpp \
+	bot_soap.h bot_soap.cpp gsoap/soapClient.cpp gsoap/soapC.cpp \
+	gsoap/soapH.h gsoap/soapStub.h gsoap/stdsoap2.cpp \
+	gsoap/stdsoap2.h
 am__dirstamp = $(am__leading_dot)dirstamp
 am__objects_1 = main.$(OBJEXT) mapviewer.$(OBJEXT) \
-	smartstreetlight_ui_method.$(OBJEXT) \
-	smartstreetlight_login.$(OBJEXT) \
-	smartstreetlight_utils.$(OBJEXT) \
-	smartstreetlight_sql.$(OBJEXT) smartstreetlight_dcu.$(OBJEXT) \
-	smartstreetlight_lcu.$(OBJEXT) \
-	smartstreetlight_callback.$(OBJEXT) \
-	smartstreetlight_database.$(OBJEXT) \
-	smartstreetlight_schedule.$(OBJEXT) \
-	smartstreetlight_line.$(OBJEXT) \
-	smartstreetlight_server.$(OBJEXT) \
-	smartstreetlight_user.$(OBJEXT) \
-	smartstreetlight_zone.$(OBJEXT) smartstreetlight_log.$(OBJEXT) \
-	smartstreetlight_dcu_program_process.$(OBJEXT) \
-	smartstreetlight_admin_user.$(OBJEXT) \
-	smartstreetlight_admin_zone.$(OBJEXT) \
-	smartstreetlight_error.$(OBJEXT) \
-	smartstreetlight_event_thread.$(OBJEXT) \
-	smartstreetlight_soap_thread.$(OBJEXT) \
-	smartstreetlight_soap.$(OBJEXT) \
-	smartstreetlight_slope.$(OBJEXT) gsoap/soapClient.$(OBJEXT) \
-	gsoap/soapC.$(OBJEXT) gsoap/stdsoap2.$(OBJEXT) \
-	slope/chart.$(OBJEXT) slope/drawing.$(OBJEXT) \
-	slope/figure.$(OBJEXT) slope/item.$(OBJEXT) \
-	slope/sampler.$(OBJEXT) slope/scale.$(OBJEXT) \
-	slope/view.$(OBJEXT) slope/xyaxis.$(OBJEXT) \
-	slope/xyaxis-sampler.$(OBJEXT) slope/xyscale.$(OBJEXT) \
-	slope/xyseries.$(OBJEXT)
-am_SmartPublicLight_OBJECTS = $(am__objects_1)
-#am_SmartPublicLight_OBJECTS = $(am__objects_1)
-SmartPublicLight_OBJECTS = $(am_SmartPublicLight_OBJECTS)
+	bot_ui_method.$(OBJEXT) bot_login.$(OBJEXT) \
+	bot_utils.$(OBJEXT) bot_sql.$(OBJEXT) bot_dcu.$(OBJEXT) \
+	bot_lcu.$(OBJEXT) bot_callback.$(OBJEXT) \
+	bot_database.$(OBJEXT) bot_schedule.$(OBJEXT) \
+	bot_line.$(OBJEXT) bot_server.$(OBJEXT) bot_user.$(OBJEXT) \
+	bot_zone.$(OBJEXT) bot_log.$(OBJEXT) \
+	bot_dcu_program_process.$(OBJEXT) bot_admin_user.$(OBJEXT) \
+	bot_admin_zone.$(OBJEXT) bot_error.$(OBJEXT) \
+	bot_event_thread.$(OBJEXT) bot_soap_thread.$(OBJEXT) \
+	bot_soap.$(OBJEXT) gsoap/soapClient.$(OBJEXT) \
+	gsoap/soapC.$(OBJEXT) gsoap/stdsoap2.$(OBJEXT)
+am_bot_OBJECTS = $(am__objects_1)
+#am_bot_OBJECTS = $(am__objects_1)
+bot_OBJECTS = $(am_bot_OBJECTS)
 am__DEPENDENCIES_1 =
 am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-SmartPublicLight_DEPENDENCIES = $(srcdir)/../../lib/osm-gps-map/linux/lib/libosmgpsmap-1.0.a \
+bot_DEPENDENCIES = $(srcdir)/../../lib/osm-gps-map/linux/lib/libosmgpsmap-1.0.a \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_1)
-#SmartPublicLight_DEPENDENCIES = $(srcdir)/../../lib/osm-gps-map/win/lib/libosmgpsmap-1.0.a \
+#bot_DEPENDENCIES = $(srcdir)/../../lib/osm-gps-map/win/lib/libosmgpsmap-1.0.a \
 #	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
-#	$(am__DEPENDENCIES_1)
+#	$(am__DEPENDENCIES_1) bot_private.res
 AM_V_lt = $(am__v_lt_$(V))
 am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-SmartPublicLight_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
-	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
-	$(AM_CXXFLAGS) $(CXXFLAGS) $(SmartPublicLight_LDFLAGS) \
-	$(LDFLAGS) -o $@
+bot_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+	$(CXXFLAGS) $(bot_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -242,8 +199,8 @@ AM_V_CCLD = $(am__v_CCLD_$(V))
 am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(SmartPublicLight_SOURCES)
-DIST_SOURCES = $(am__SmartPublicLight_SOURCES_DIST)
+SOURCES = $(bot_SOURCES)
+DIST_SOURCES = $(am__bot_SOURCES_DIST)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -276,7 +233,7 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-HEADERS = $(SmartPublicLight_include_HEADERS)
+HEADERS = $(bot_include_HEADERS)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
@@ -332,10 +289,8 @@ ECHO_T =
 EGREP = /bin/grep -E
 EXEEXT = 
 FGREP = /bin/grep -F
-GDL3_CFLAGS = -I../../../lib/gdl/include/libgdl-3.0
-GDL3_LIBS = -L../../../lib/gdl/lib -lgdl-3
 GDL_OS = Debian_8.6_x64
-GETTEXT_PACKAGE = smartstreetlight
+GETTEXT_PACKAGE = bot
 GMODULE_CFLAGS = -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include 
 GMODULE_LIBS = -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0 
 GMOFILES = 
@@ -343,10 +298,12 @@ GMSGFMT = /usr/bin/msgfmt
 GREP = /bin/grep
 GTHREAD_CFLAGS = -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include 
 GTHREAD_LIBS = -lgthread-2.0 -pthread -lglib-2.0 
+GTK2_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/freetype2 
+GTK2_LIBS = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype 
 GTK3_CFLAGS = -DGTK_DISABLE_SINGLE_INCLUDES -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGSEAL_ENABLE -DGDK_PIXBUF_DISABLE_DEPRECATED -DG_DISABLE_DEPRECATED
 GTK_CFLAGS = -pthread -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include 
 GTK_LIBS = -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 
-IFAST_DATA_DIR = /opt/icdrec/spl/share/smartstreetlight
+IFAST_DATA_DIR = /opt/icdrec/bot/share/bot
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -383,11 +340,11 @@ OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
-PACKAGE = smartpubliclight
+PACKAGE = bot
 PACKAGE_BUGREPORT = 
-PACKAGE_NAME = SmartPublicLight
-PACKAGE_STRING = SmartPublicLight 2.0.1
-PACKAGE_TARNAME = smartpubliclight
+PACKAGE_NAME = bot
+PACKAGE_STRING = bot 2.0.1
+PACKAGE_TARNAME = bot
 PACKAGE_URL = 
 PACKAGE_VERSION = 2.0.1
 PATH_SEPARATOR = :
@@ -412,10 +369,10 @@ WEBSERVICE = http://aliendb1.cern.ch:6004/axis/services/MLWebService
 XGETTEXT = /usr/bin/xgettext
 XML2_CONFIG = /usr/bin/xml2-config
 XML2_LIBS =  -lxml2
-abs_builddir = /media/data/JOBS/spl/SmartStreetLight/build_linux/src
-abs_srcdir = /media/data/JOBS/spl/SmartStreetLight/build_linux/../src
-abs_top_builddir = /media/data/JOBS/spl/SmartStreetLight/build_linux
-abs_top_srcdir = /media/data/JOBS/spl/SmartStreetLight/build_linux/..
+abs_builddir = /media/data/JOBS/Bot/DevLinux/build_linux/src
+abs_srcdir = /media/data/JOBS/Bot/DevLinux/build_linux/../src
+abs_top_builddir = /media/data/JOBS/Bot/DevLinux/build_linux
+abs_top_srcdir = /media/data/JOBS/Bot/DevLinux/build_linux/..
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -445,7 +402,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /media/data/JOBS/spl/SmartStreetLight/install-sh
+install_sh = ${SHELL} /media/data/JOBS/Bot/DevLinux/install-sh
 intltool__v_merge_options_ = $(intltool__v_merge_options_$(AM_DEFAULT_VERBOSITY))
 intltool__v_merge_options_0 = -q
 libdir = ${exec_prefix}/lib
@@ -456,7 +413,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /opt/icdrec/spl
+prefix = /opt/icdrec/bot
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -467,6 +424,10 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ../..
+
+#MYSQL_CFLAGS = -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing
+#MYSQL_LIBS = -L/usr/lib/i386-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -ldl
+bot_CONFIG_DIR = .bot
 OSMGPSMAP_CFLAGS = \
     $(GLIB_CFLAGS)          \
     $(GTK_CFLAGS)           \
@@ -482,167 +443,116 @@ OSMGPSMAP_LIBS = \
 RESOURCE_DIR = $(srcdir)/../../resource
 SRCS = main.cpp main.h							\
 	mapviewer.cpp mapviewer.h						\
-	smartstreetlight_gui.h						\
-	smartstreetlight_method.h					\
-	smartstreetlight_ui_method.cpp smartstreetlight_ui_method.h	\
-	smartstreetlight_login.cpp smartstreetlight_login.h		\
-	smartstreetlight_utils.cpp smartstreetlight_utils.h		\
-	smartstreetlight_sql.cpp smartstreetlight_sql.h			\
-	smartstreetlight_dcu.cpp smartstreetlight_dcu.h			\
-	smartstreetlight_lcu.cpp smartstreetlight_lcu.h			\
-	smartstreetlight_callback.cpp smartstreetlight_callback.h	\
-	smartstreetlight_database.h smartstreetlight_database.cpp	\
-	smartstreetlight_schedule.h smartstreetlight_schedule.cpp	\
-	smartstreetlight_line.h smartstreetlight_line.cpp		\
-	smartstreetlight_server.h smartstreetlight_server.cpp		\
-	smartstreetlight_user.h smartstreetlight_user.cpp		\
-	smartstreetlight_zone.h smartstreetlight_zone.cpp		\
-	smartstreetlight_log.h smartstreetlight_log.cpp			\
-	smartstreetlight_dcu_program_process.h				\
-	smartstreetlight_dcu_program_process.cpp			\
-	smartstreetlight_admin_user.h smartstreetlight_admin_user.cpp	\
-	smartstreetlight_admin_zone.h smartstreetlight_admin_zone.cpp	\
-	smartstreetlight_error.h smartstreetlight_error.cpp		\
-	smartstreetlight_event_thread.h smartstreetlight_event_thread.cpp\
-	smartstreetlight_common.h					\
-	smartstreetlightService.nsmap                   		\
-	smartstreetlight_soap_thread.h smartstreetlight_soap_thread.cpp \
-	smartstreetlight_soap.h smartstreetlight_soap.cpp		\
-	smartstreetlight_slope.h smartstreetlight_slope.cpp 		\
+	bot_gui.h						\
+	bot_method.h					\
+	bot_ui_method.cpp bot_ui_method.h	\
+	bot_login.cpp bot_login.h		\
+	bot_utils.cpp bot_utils.h		\
+	bot_sql.cpp bot_sql.h			\
+	bot_dcu.cpp bot_dcu.h			\
+	bot_lcu.cpp bot_lcu.h			\
+	bot_callback.cpp bot_callback.h	\
+	bot_database.h bot_database.cpp	\
+	bot_schedule.h bot_schedule.cpp	\
+	bot_line.h bot_line.cpp		\
+	bot_server.h bot_server.cpp		\
+	bot_user.h bot_user.cpp		\
+	bot_zone.h bot_zone.cpp		\
+	bot_log.h bot_log.cpp			\
+	bot_dcu_program_process.h				\
+	bot_dcu_program_process.cpp			\
+	bot_admin_user.h bot_admin_user.cpp	\
+	bot_admin_zone.h bot_admin_zone.cpp	\
+	bot_error.h bot_error.cpp		\
+	bot_event_thread.h bot_event_thread.cpp\
+	bot_common.h					\
+	botService.nsmap                   		\
+	bot_soap_thread.h bot_soap_thread.cpp \
+	bot_soap.h bot_soap.cpp		\
 	gsoap/soapClient.cpp    					\
 	gsoap/soapC.cpp                                         	\
 	gsoap/soapH.h 							\
 	gsoap/soapStub.h      						\
 	gsoap/stdsoap2.cpp      					\
-	gsoap/stdsoap2.h						\
-	slope/chart.cpp slope/chart.h					\
-	slope/drawing.cpp slope/drawing.h					\
-	slope/figure.cpp slope/figure.h slope/figure_p.h			\
-	slope/item.cpp slope/item.h slope/item_p.h			\
-	slope/sampler.cpp slope/sampler.h					\
-	slope/scale.cpp slope/scale.h slope/scale_p.h			\
-	slope/view.cpp slope/view.h					\
-	slope/xyaxis.cpp slope/xyaxis.h					\
-	slope/xyaxis-sampler.cpp slope/xyaxis-sampler.h			\
-	slope/xyscale.cpp slope/xyscale.h slope/xyscale_p.h		\
-	slope/xyseries.cpp slope/xyseries.h				\
-	slope/slope.h							\
-	slope/global.h							
+	gsoap/stdsoap2.h						
 
-SmartPublicLight_includedir = $(includedir)/SmartPublicLight
+bot_includedir = $(includedir)/bot
 # only install headers that define types or macros, not just functions
-SmartPublicLight_include_HEADERS = main.h					\
-			smartstreetlight_gui.h			\
-			smartstreetlight_method.h		\
-			smartstreetlight_ui_method.h		\
-			smartstreetlight_login.h		\
-			smartstreetlight_utils.h		\
-			smartstreetlight_sql.h			\
-			smartstreetlight_dcu.h			\
-			smartstreetlight_lcu.h			\
-			smartstreetlight_callback.h		\
-			smartstreetlight_database.h		\
-			smartstreetlight_schedule.h		\
-			smartstreetlight_server.h		\
-			smartstreetlight_user.h			\
-			smartstreetlight_zone.h			\
-			smartstreetlight_dcu_program_process.h  \
-			smartstreetlight_admin_user.h		\
-			smartstreetlight_admin_zone.h		\
-			smartstreetlight_error.h		\
-			smartstreetlight_event_thread.h		\
-			smartstreetlight_common.h		\
-			smartstreetlight_soap_thread.cpp	\
-			smartstreetlight_soap.h			\
-			smartstreetlight_slope.h		\
-		        gsoap/soapH.h				\
-        		gsoap/stdsoap2.h			\
-			slope/chart.h slope/figure.h		\
-			slope/global.h slope/item_p.h		\
-			slope/scale.h slope/slope.h 		\
-			slope/xyaxis.h slope/xyscale.h		\
-			slope/xyseries.h slope/drawing.h	\
-			slope/figure_p.h slope/item.h		\
-			slope/sampler.h slope/scale_p.h		\
-			slope/view.h slope/xyaxis-sampler.h	\
-			slope/xyscale_p.h		
-
-AM_CPPFLAGS = -I$(top_srcdir)\
-		-I../../../lib/gdl/include/libgdl-3.0 \
+bot_include_HEADERS = bot_gui.h
+AM_CPPFLAGS = -D__clang__ -I$(top_srcdir)\
 	        -pthread -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  \
-		-I$(srcdir)/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0 \
-		-I$(top_srcdir)/slope
+		-I$(srcdir)/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0 
 
-#AM_CPPFLAGS = -I$(top_srcdir)\
-#		-I../../../lib/gdl/include/libgdl-3.0 \
+#AM_CPPFLAGS = -D__clang__ -I$(top_srcdir)\
 #	        -pthread -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  \
-#		-I$(srcdir)/../../lib/osm-gps-map/win/include/osmgpsmap-1.0 \
-#		-I$(top_srcdir)/slope
+#		-I$(srcdir)/../../lib/osm-gps-map/win/include/osmgpsmap-1.0 
 
-SmartPublicLight_SOURCES = $(SRCS)
-#SmartPublicLight_SOURCES = $(SRCS)
-SmartPublicLight_LDADD = $(srcdir)/../../lib/osm-gps-map/linux/lib/libosmgpsmap-1.0.a \
-  -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0  -lgthread-2.0 -pthread -lglib-2.0  -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0  $(INTLLIBS)  -lxml2 -L../../../lib/gdl/lib -lgdl-3 $(OSMGPSMAP_LIBS)       \
+bot_SOURCES = $(SRCS)
+#bot_SOURCES = $(SRCS)
+bot_LDADD = $(srcdir)/../../lib/osm-gps-map/linux/lib/libosmgpsmap-1.0.a \
+  -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0  -lgthread-2.0 -pthread -lglib-2.0  -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0  $(INTLLIBS)  -lxml2 $(OSMGPSMAP_LIBS)       \
     $(GTHREAD_LIBS)	
 
-#SmartPublicLight_LDADD = $(srcdir)/../../lib/osm-gps-map/win/lib/libosmgpsmap-1.0.a \
+#bot_LDADD = $(srcdir)/../../lib/osm-gps-map/win/lib/libosmgpsmap-1.0.a \
 #  -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0  -lgthread-2.0 -pthread -lglib-2.0  -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0  $(INTLLIBS)  -lxml2  $(OSMGPSMAP_LIBS)       \
-#    $(GTHREAD_LIBS)	
+#    $(GTHREAD_LIBS) bot_private.res	
 
 AM_CFLAGS = -Wl,--export-dynamic -g -ggdb -rdynamic -fpermissive\
-			-DSPL_DATADIR=\""$(datadir)"\" \
-			-DSPL_DOCDIR=\""$(docdir)"\" \
-			-DSPL_LIBDIR=\""$(libdir)"\" \
-			-DSPL_LOCALEDIR=\""$(localedir)"\" \
-			-DSPL_PREFIX=\""$(prefix)"\" \
-			-DSPL_PRIVATE \
+			-Dbot_DATADIR=\""$(datadir)"\" \
+			-Dbot_DOCDIR=\""$(docdir)"\" \
+			-Dbot_LIBDIR=\""$(libdir)"\" \
+			-Dbot_LOCALEDIR=\""$(localedir)"\" \
+			-Dbot_PREFIX=\""$(prefix)"\" \
+			-Dbot_PRIVATE \
 			-DGTK \
 			-DGNOME\
-			-DG_LOG_DOMAIN=\""SmartPublicLight"\" \
+			-DG_LOG_DOMAIN=\""bot"\" \
 			-Bstatic \
 			$(OSMGPSMAP_CFLAGS)
 
-#AM_CFLAGS = -g -ggdb  -fpermissive\
-#			-DSPL_DATADIR=\""$(datadir)"\" \
-#			-DSPL_DOCDIR=\""$(docdir)"\" \
-#			-DSPL_LIBDIR=\""$(libdir)"\" \
-#			-DSPL_LOCALEDIR=\""$(localedir)"\" \
-#			-DSPL_PREFIX=\""$(prefix)"\" \
-#			-DSPL_PRIVATE \
+#AM_CFLAGS = -g -ggdb  -fpermissive \
+#			-Dbot_DATADIR=\""$(datadir)"\" \
+#			-Dbot_DOCDIR=\""$(docdir)"\" \
+#			-Dbot_LIBDIR=\""$(libdir)"\" \
+#			-Dbot_LOCALEDIR=\""$(localedir)"\" \
+#			-Dbot_PREFIX=\""$(prefix)"\" \
+#			-Dbot_PRIVATE \
 #			-DGTK \
 #			-DGNOME\
-#			-DG_LOG_DOMAIN=\""SmartPublicLight"\" \
+#			-DG_LOG_DOMAIN=\""bot"\" \
 #			-Bstatic \
 #			$(OSMGPSMAP_CFLAGS)
 
 AM_CXXFLAGS = -Wl,--export-dynamic -g -ggdb -rdynamic -fpermissive\
-			-DSPL_DATADIR=\""$(datadir)"\" \
-			-DSPL_DOCDIR=\""$(docdir)"\" \
-			-DSPL_LIBDIR=\""$(libdir)"\" \
-			-DSPL_LOCALEDIR=\""$(localedir)"\" 	-DSPL_PREFIX=\""$(prefix)"\" \
-			-DSPL_PREFIX=\""$(prefix)"\" \
-			-DSPL_PRIVATE \
+			-Dbot_DATADIR=\""$(datadir)"\" \
+			-Dbot_DOCDIR=\""$(docdir)"\" \
+			-Dbot_LIBDIR=\""$(libdir)"\" \
+			-Dbot_LOCALEDIR=\""$(localedir)"\" 	-Dbot_PREFIX=\""$(prefix)"\" \
+			-Dbot_PREFIX=\""$(prefix)"\" \
+			-Dbot_PRIVATE \
 			-DGTK \
 			-DGNOME\
-			-DG_LOG_DOMAIN=\""SmartPublicLight"\" \
+			-DG_LOG_DOMAIN=\""bot"\" \
 			-Bstatic				
 
-#AM_CXXFLAGS = -g -ggdb -fpermissive\
-#			-DSPL_DATADIR=\""$(datadir)"\" \
-#			-DSPL_DOCDIR=\""$(docdir)"\" \
-#			-DSPL_LIBDIR=\""$(libdir)"\" \
-#			-DSPL_LOCALEDIR=\""$(localedir)"\" 	-DSPL_PREFIX=\""$(prefix)"\" \
-#			-DSPL_PREFIX=\""$(prefix)"\" \
-#			-DSPL_PRIVATE \
+#AM_CXXFLAGS = -g -ggdb -fpermissive \
+#			-Dbot_DATADIR=\""$(datadir)"\" \
+#			-Dbot_DOCDIR=\""$(docdir)"\" \
+#			-Dbot_LIBDIR=\""$(libdir)"\" \
+#			-Dbot_LOCALEDIR=\""$(localedir)"\" 	-Dbot_PREFIX=\""$(prefix)"\" \
+#			-Dbot_PREFIX=\""$(prefix)"\" \
+#			-Dbot_PRIVATE \
 #			-DGTK \
 #			-DGNOME\
-#			-DG_LOG_DOMAIN=\""SmartPublicLight"\" \
+#			-DG_LOG_DOMAIN=\""bot"\" \
 #			-Bstatic				
 
-SmartPublicLight_LDFLAGS = -lgmodule-2.0 -rdynamic -static
+bot_LDFLAGS = -lgmodule-2.0 -rdynamic -static
 
-#SmartPublicLight_LDFLAGS = -lgmodule-2.0  -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
-#SmartPublicLight_LDFLAGS = -lgmodule-2.0 -static -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+#bot_LDFLAGS = -lgmodule-2.0  -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+#bot_LDFLAGS = -mms-bitfields  -mwindows -ffast-math -lgmodule-2.0 -static -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+#WINDCPP = $(host_alias)-cpp
+#WINDRES = $(host_alias)-windres
 all: all-am
 
 .SUFFIXES:
@@ -738,85 +648,44 @@ gsoap/soapC.$(OBJEXT): gsoap/$(am__dirstamp) \
 	gsoap/$(DEPDIR)/$(am__dirstamp)
 gsoap/stdsoap2.$(OBJEXT): gsoap/$(am__dirstamp) \
 	gsoap/$(DEPDIR)/$(am__dirstamp)
-slope/$(am__dirstamp):
-	@$(MKDIR_P) slope
-	@: > slope/$(am__dirstamp)
-slope/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) slope/$(DEPDIR)
-	@: > slope/$(DEPDIR)/$(am__dirstamp)
-slope/chart.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/drawing.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/figure.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/item.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/sampler.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/scale.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/view.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/xyaxis.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/xyaxis-sampler.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/xyscale.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
-slope/xyseries.$(OBJEXT): slope/$(am__dirstamp) \
-	slope/$(DEPDIR)/$(am__dirstamp)
 
-SmartPublicLight$(EXEEXT): $(SmartPublicLight_OBJECTS) $(SmartPublicLight_DEPENDENCIES) $(EXTRA_SmartPublicLight_DEPENDENCIES) 
-	@rm -f SmartPublicLight$(EXEEXT)
-	$(AM_V_CXXLD)$(SmartPublicLight_LINK) $(SmartPublicLight_OBJECTS) $(SmartPublicLight_LDADD) $(LIBS)
+bot$(EXEEXT): $(bot_OBJECTS) $(bot_DEPENDENCIES) $(EXTRA_bot_DEPENDENCIES) 
+	@rm -f bot$(EXEEXT)
+	$(AM_V_CXXLD)$(bot_LINK) $(bot_OBJECTS) $(bot_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
 	-rm -f gsoap/*.$(OBJEXT)
-	-rm -f slope/*.$(OBJEXT)
 
 distclean-compile:
 	-rm -f *.tab.c
 
+include ./$(DEPDIR)/bot_admin_user.Po
+include ./$(DEPDIR)/bot_admin_zone.Po
+include ./$(DEPDIR)/bot_callback.Po
+include ./$(DEPDIR)/bot_database.Po
+include ./$(DEPDIR)/bot_dcu.Po
+include ./$(DEPDIR)/bot_dcu_program_process.Po
+include ./$(DEPDIR)/bot_error.Po
+include ./$(DEPDIR)/bot_event_thread.Po
+include ./$(DEPDIR)/bot_lcu.Po
+include ./$(DEPDIR)/bot_line.Po
+include ./$(DEPDIR)/bot_log.Po
+include ./$(DEPDIR)/bot_login.Po
+include ./$(DEPDIR)/bot_schedule.Po
+include ./$(DEPDIR)/bot_server.Po
+include ./$(DEPDIR)/bot_soap.Po
+include ./$(DEPDIR)/bot_soap_thread.Po
+include ./$(DEPDIR)/bot_sql.Po
+include ./$(DEPDIR)/bot_ui_method.Po
+include ./$(DEPDIR)/bot_user.Po
+include ./$(DEPDIR)/bot_utils.Po
+include ./$(DEPDIR)/bot_zone.Po
 include ./$(DEPDIR)/main.Po
 include ./$(DEPDIR)/mapviewer.Po
-include ./$(DEPDIR)/smartstreetlight_admin_user.Po
-include ./$(DEPDIR)/smartstreetlight_admin_zone.Po
-include ./$(DEPDIR)/smartstreetlight_callback.Po
-include ./$(DEPDIR)/smartstreetlight_database.Po
-include ./$(DEPDIR)/smartstreetlight_dcu.Po
-include ./$(DEPDIR)/smartstreetlight_dcu_program_process.Po
-include ./$(DEPDIR)/smartstreetlight_error.Po
-include ./$(DEPDIR)/smartstreetlight_event_thread.Po
-include ./$(DEPDIR)/smartstreetlight_lcu.Po
-include ./$(DEPDIR)/smartstreetlight_line.Po
-include ./$(DEPDIR)/smartstreetlight_log.Po
-include ./$(DEPDIR)/smartstreetlight_login.Po
-include ./$(DEPDIR)/smartstreetlight_schedule.Po
-include ./$(DEPDIR)/smartstreetlight_server.Po
-include ./$(DEPDIR)/smartstreetlight_slope.Po
-include ./$(DEPDIR)/smartstreetlight_soap.Po
-include ./$(DEPDIR)/smartstreetlight_soap_thread.Po
-include ./$(DEPDIR)/smartstreetlight_sql.Po
-include ./$(DEPDIR)/smartstreetlight_ui_method.Po
-include ./$(DEPDIR)/smartstreetlight_user.Po
-include ./$(DEPDIR)/smartstreetlight_utils.Po
-include ./$(DEPDIR)/smartstreetlight_zone.Po
 include gsoap/$(DEPDIR)/soapC.Po
 include gsoap/$(DEPDIR)/soapClient.Po
 include gsoap/$(DEPDIR)/stdsoap2.Po
-include slope/$(DEPDIR)/chart.Po
-include slope/$(DEPDIR)/drawing.Po
-include slope/$(DEPDIR)/figure.Po
-include slope/$(DEPDIR)/item.Po
-include slope/$(DEPDIR)/sampler.Po
-include slope/$(DEPDIR)/scale.Po
-include slope/$(DEPDIR)/view.Po
-include slope/$(DEPDIR)/xyaxis-sampler.Po
-include slope/$(DEPDIR)/xyaxis.Po
-include slope/$(DEPDIR)/xyscale.Po
-include slope/$(DEPDIR)/xyseries.Po
 
 .cpp.o:
 	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -847,27 +716,27 @@ mostlyclean-libtool:
 
 clean-libtool:
 	-rm -rf .libs _libs
-install-SmartPublicLight_includeHEADERS: $(SmartPublicLight_include_HEADERS)
+install-bot_includeHEADERS: $(bot_include_HEADERS)
 	@$(NORMAL_INSTALL)
-	@list='$(SmartPublicLight_include_HEADERS)'; test -n "$(SmartPublicLight_includedir)" || list=; \
+	@list='$(bot_include_HEADERS)'; test -n "$(bot_includedir)" || list=; \
 	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(SmartPublicLight_includedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(SmartPublicLight_includedir)" || exit 1; \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(bot_includedir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(bot_includedir)" || exit 1; \
 	fi; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(SmartPublicLight_includedir)'"; \
-	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(SmartPublicLight_includedir)" || exit $$?; \
+	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(bot_includedir)'"; \
+	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(bot_includedir)" || exit $$?; \
 	done
 
-uninstall-SmartPublicLight_includeHEADERS:
+uninstall-bot_includeHEADERS:
 	@$(NORMAL_UNINSTALL)
-	@list='$(SmartPublicLight_include_HEADERS)'; test -n "$(SmartPublicLight_includedir)" || list=; \
+	@list='$(bot_include_HEADERS)'; test -n "$(bot_includedir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(SmartPublicLight_includedir)'; $(am__uninstall_files_from_dir)
+	dir='$(DESTDIR)$(bot_includedir)'; $(am__uninstall_files_from_dir)
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
@@ -955,7 +824,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(PROGRAMS) $(HEADERS)
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(SmartPublicLight_includedir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bot_includedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -986,19 +855,18 @@ distclean-generic:
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
 	-rm -f gsoap/$(DEPDIR)/$(am__dirstamp)
 	-rm -f gsoap/$(am__dirstamp)
-	-rm -f slope/$(DEPDIR)/$(am__dirstamp)
-	-rm -f slope/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
+clean-local:
 clean: clean-am
 
 clean-am: clean-binPROGRAMS clean-generic clean-libtool clean-local \
 	mostlyclean-am
 
 distclean: distclean-am
-	-rm -rf ./$(DEPDIR) gsoap/$(DEPDIR) slope/$(DEPDIR)
+	-rm -rf ./$(DEPDIR) gsoap/$(DEPDIR)
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -1015,7 +883,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-SmartPublicLight_includeHEADERS
+install-data-am: install-bot_includeHEADERS
 
 install-dvi: install-dvi-am
 
@@ -1044,7 +912,7 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-	-rm -rf ./$(DEPDIR) gsoap/$(DEPDIR) slope/$(DEPDIR)
+	-rm -rf ./$(DEPDIR) gsoap/$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -1061,8 +929,7 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-SmartPublicLight_includeHEADERS \
-	uninstall-binPROGRAMS
+uninstall-am: uninstall-binPROGRAMS uninstall-bot_includeHEADERS
 
 .MAKE: install-am install-strip
 
@@ -1070,21 +937,26 @@ uninstall-am: uninstall-SmartPublicLight_includeHEADERS \
 	clean-binPROGRAMS clean-generic clean-libtool clean-local \
 	cscopelist-am ctags ctags-am distclean distclean-compile \
 	distclean-generic distclean-libtool distclean-tags distdir dvi \
-	dvi-am html html-am info info-am install \
-	install-SmartPublicLight_includeHEADERS install-am \
-	install-binPROGRAMS install-data install-data-am install-dvi \
-	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-info install-info-am install-man \
-	install-pdf install-pdf-am install-ps install-ps-am \
-	install-strip installcheck installcheck-am installdirs \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
-	pdf pdf-am ps ps-am tags tags-am uninstall \
-	uninstall-SmartPublicLight_includeHEADERS uninstall-am \
-	uninstall-binPROGRAMS
+	dvi-am html html-am info info-am install install-am \
+	install-binPROGRAMS install-bot_includeHEADERS install-data \
+	install-data-am install-dvi install-dvi-am install-exec \
+	install-exec-am install-html install-html-am install-info \
+	install-info-am install-man install-pdf install-pdf-am \
+	install-ps install-ps-am install-strip installcheck \
+	installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+	tags tags-am uninstall uninstall-am uninstall-binPROGRAMS \
+	uninstall-bot_includeHEADERS
 
-$(srcdir)/smartstreetlight_gui.h: $(srcdir)/SmartStreetLight.glade
-	$(srcdir)/gen_gui.sh  smartstreetlight_gui $(srcdir)/SmartStreetLight.glade $(srcdir)/smartstreetlight_gui.h
+
+#bot_private.res: $(srcdir)/../bot_private.rc
+#	$(WINDCPP) -Dbot_ICON="\"$(srcdir)/../icons/light.ico\""  $(srcdir)/../bot_private.rc | $(WINDRES) --input-format=rc -o bot_private.res -O coff;
+
+#clean-local:
+#	rm -f bot_private.res
+$(srcdir)/bot_gui.h: $(srcdir)/bot.glade
+	$(srcdir)/gen_gui.sh  bot_gui $(srcdir)/bot.glade $(srcdir)/bot_gui.h
 
 clean-local:
 

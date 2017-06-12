@@ -19,11 +19,11 @@
 
 /**
  * SECTION:gtkdatabox_markers
- * @short_description: A #GtkDataboxGraph used for displaying labeled markers for xy-values.
+ * @short_description: A #GtkDataboxGraph used for spling labeled markers for xy-values.
  * @include: gtkdatabox_markers.h
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines,  #GtkDataboxBars
  *
- * #GtkDataboxMarkers is a #GtkDataboxGraph class for displaying labeled markers (circles, triangles, lines) for xy-values.
+ * #GtkDataboxMarkers is a #GtkDataboxGraph class for spling labeled markers (circles, triangles, lines) for xy-values.
  *
  */
 
@@ -55,7 +55,7 @@ G_BEGIN_DECLS
  * GtkDataboxMarkers:
  * @parent: The parent object 
  * 
- * #GtkDataboxMarkers is a #GtkDataboxGraph class for displaying labeled markers (circles, triangles, lines) for xy-values.
+ * #GtkDataboxMarkers is a #GtkDataboxGraph class for spling labeled markers (circles, triangles, lines) for xy-values.
  *
  */
    typedef struct _GtkDataboxMarkers GtkDataboxMarkers;

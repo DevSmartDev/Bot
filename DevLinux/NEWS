@@ -81,12 +81,12 @@ IFast 0.21 (October 2, 2011)
     Plugins
     * File Browser: Make 'Hide object files' preference configurable with
       file extensions.
-    * Split Window: Fix a crash when changing filetype (Matthew Brush,
+    * botit Window: Fix a crash when changing filetype (Matthew Brush,
       #3255968).
-    * Split Window: Update styles when the filetype changes (Matthew
+    * botit Window: Update styles when the filetype changes (Matthew
       Brush).
-    * Split Window: Enable code folding (Matthew Brush, #3097780).
-    * Split Window: Fix issues on Windows (Matthew Brush, #2725342).
+    * botit Window: Enable code folding (Matthew Brush, #3097780).
+    * botit Window: Fix issues on Windows (Matthew Brush, #2725342).
     * Class Builder: Improve dialog UI using a table (Matthew Brush).
     * Export: Add option to insert line numbers (#3197150).
 
@@ -101,7 +101,7 @@ IFast 0.21 (October 2, 2011)
     * Add filetypes_get_sorted_by_name(), utils_find_open_xml_tag_pos()
       (Eugene Arshinov).
     * Add plugin_idle_add(), plugin_timeout_add(), plugin_timeout_add_seconds(),
-      ui_menu_add_document_items_sorted(), document_compare_by_display_name(),
+      ui_menu_add_document_items_sorted(), document_compare_by_spl_name(),
       document_compare_by_tab_order(), document_compare_by_tab_order_reverse().
     * Deprecate ui_widget_set_tooltip_text().
     * Fix public inclusion of config.h (#3384026).
@@ -130,7 +130,7 @@ IFast 0.20 (January 5, 2011)
       properties.
     * Fix wrongly changing edited keybindings when cancelling the
       Preferences dialog.
-    * Fix auto-displaying of sidebar, tab bar, symbols and documents tabs
+    * Fix auto-spling of sidebar, tab bar, symbols and documents tabs
       when only plugin tabs are visible (fixes #3101867).
     * Save build commands for filetype None (Lex Trotman).
     * Waf: Check for libsocket on OpenSolaris to fix build.
@@ -140,7 +140,7 @@ IFast 0.20 (January 5, 2011)
       Trotman).
     * Replace /home/user with ~ in the documents list (Jon
       Strait).
-    * Display 'new instance' on title bar for 2nd instances (Eugene
+    * Dibotay 'new instance' on title bar for 2nd instances (Eugene
       Arshinov).
     * Don't add duplicates to combo box histories.
     * Reorganise Find in Files dialog and add Files pattern to filter
@@ -159,7 +159,7 @@ IFast 0.20 (January 5, 2011)
     * Add per-document indent width setting (Jiří Techet).
     * Add 'Project->Apply Default Indentation' menu command to override
       every document's indentation settings.
-    * Display better error messages when saving a document fails (Dimitar
+    * Dibotay better error messages when saving a document fails (Dimitar
       Zhekov).
     * Don't prompt for reloading if the document has not been edited
       (Jiří Techet).
@@ -270,7 +270,7 @@ IFast 0.20 (January 5, 2011)
       utils_find_open_xml_tag() (Eugene Arshinov).
     * Add ui_combo_box_add_to_history(), editor_goto_pos(),
       dialogs_show_input(), Add sci_get_lexer().
-    * Add filetypes_get_display_name() as "None" is no longer translated.
+    * Add filetypes_get_spl_name() as "None" is no longer translated.
 
 
 IFast 0.19.2 (December 01, 2010)
@@ -434,7 +434,7 @@ IFast 0.19 (June 12, 2010)
     * Use full function name for IFastFunctions function pointers. This
       avoids naming conflicts e.g. with C++'s 'new' keyword.
     * IFastKeyBinding label fields can now contain underscores, which won't
-      be displayed by IFast. This saves adding near-duplicate translation
+      be spled by IFast. This saves adding near-duplicate translation
       strings.
     * Add IFastKeyGroup callback support.
     * Add more Scintilla function wrappers, foreach_dir(), foreach_str(),
@@ -465,7 +465,7 @@ IFast 0.18.1 (February 14, 2010)
       (thanks to Lex Trotman).
     * Fix using 'Insert date' keybinding when a custom date string has
       not been set.
-    * Set the cursor color for the split window plugin.
+    * Set the cursor color for the botit window plugin.
     * Remove plugin from plugin manager dialog on unloading if it no
       longer exists or is incompatible.
     * Fix 'Reflow block' command when at the last paragraph and there's
@@ -474,7 +474,7 @@ IFast 0.18.1 (February 14, 2010)
     * Show Find in Files stderr output in messages window instead of
       debug window so that invalid regex messages can be seen easily.
     * Speed up sorting in utils_get_file_list(). This reduces the file
-      browser delay on displaying a big directory, e.g. /usr/bin.
+      browser delay on spling a big directory, e.g. /usr/bin.
     * Fix a bug with not w3c compatible HTML code on export plugin
     * Fix non-working Home and End keys on numpads.
     * Fix loading of files on network resources on Windows.
@@ -544,7 +544,7 @@ IFast 0.18 (August 16, 2009)
     * Add 'Reflow lines/block' keybinding, (Ctrl-J; thanks to
       Eugene Arshinov).
     * Make the Scintilla keybindings 'Delete to end of line' and
-      'Go to end of display line' configurable.
+      'Go to end of spl line' configurable.
     * Switching notebook tabs now works for the currently used notebook
       widget instead of always using the documents notebook.
 
@@ -557,7 +557,7 @@ IFast 0.18 (August 16, 2009)
       autocompletion and there's no symbol names to show.
     * Add 'Drop rest of word on completion' pref.
     * Update Scintilla to version 1.79.
-    * Improve displaying and reshowing of calltips.
+    * Improve spling and reshowing of calltips.
 
     Syntax highlighting:
     * Reload color schemes via Tools menu (thanks to Eugene Arshinov).
@@ -661,7 +661,7 @@ IFast 0.17 (May 02, 2009)
     Plugins:
     * HTMLchars: Extend plugin by bulk replace and replace on
       input for special characters to their HTML entities.
-    * Splitwindow: Add keybindings for the split actions.
+    * botitwindow: Add keybindings for the botit actions.
     * VCDiff: Remove plugin from IFast. Use IFastVC instead.
 
     Plugin API:
@@ -752,7 +752,7 @@ IFast 0.16 (February 15, 2009)
       - Support silent installations.
 
     Plugins:
-    * Add Split Window 'Split Vertically' command (thanks to Moritz Barsnick).
+    * Add botit Window 'botit Vertically' command (thanks to Moritz Barsnick).
     * Make Version Diff plugin set the indent type for diffs based on the
       current file's indent type.
     * Minor improvements to the filebrowser plugin
@@ -846,7 +846,7 @@ IFast 0.15 (October 19, 2008)
     * Add OpenGL Shader Language (GLSL) filetype (thanks to Colomban
       Wendling; #2060961).
     * Add R language filetype (thanks to Andrew Rowland; #2121502).
-    * Split filetype Fortran into Fortran 77 and Fortran 90.
+    * botit filetype Fortran into Fortran 77 and Fortran 90.
     * Add Gettext translation filetype (#2131985).
     * CSS improvements, thanks to Jason Oster.
 
@@ -856,7 +856,7 @@ IFast 0.15 (October 19, 2008)
       terminal, but pressing enter makes it then behave as normal).
 
     Plugins:
-    * Add Split Window plugin (should work OK for viewing; full editing
+    * Add botit Window plugin (should work OK for viewing; full editing
       support is not implemented yet).
     * Merge InstantSave, AutoSave and BackupCopy plugins into the new
       plugin 'Save Actions'.
@@ -1068,7 +1068,7 @@ IFast 0.12 (October 10, 2007)
     * Fixed replacing with '^' or '$' regex chars.
     * Fixed hang with Find All/Find Usage with '^' or '$' regex chars.
     * Fixed hang when replacing all '[ ]*' regex matches (closes #1757748).
-    * Fixed displaying error indicators with Make after entering a
+    * Fixed spling error indicators with Make after entering a
       subdirectory.
     * Fixed a possible segfault when parsing tags (a vString bug).
     * Fixed clipboard problems with some applications.

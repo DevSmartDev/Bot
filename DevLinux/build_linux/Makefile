@@ -60,10 +60,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/smartpubliclight
-pkgincludedir = $(includedir)/smartpubliclight
-pkglibdir = $(libdir)/smartpubliclight
-pkglibexecdir = $(libexecdir)/smartpubliclight
+pkgdatadir = $(datadir)/bot
+pkgincludedir = $(includedir)/bot
+pkglibdir = $(libdir)/bot
+pkglibexecdir = $(libexecdir)/bot
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -82,10 +82,9 @@ subdir = .
 DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \
 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/configure $(am__configure_deps) \
-	$(srcdir)/config.h.in mkinstalldirs \
-	$(srcdir)/smartstreetlight.spec.in \
-	$(srcdir)/smartstreetlight.pc.in COPYING THANKS TODO compile \
-	config.guess config.sub depcomp install-sh missing ltmain.sh
+	$(srcdir)/config.h.in mkinstalldirs $(srcdir)/bot.spec.in \
+	$(srcdir)/bot.pc.in COPYING THANKS TODO compile config.guess \
+	config.sub depcomp install-sh missing ltmain.sh
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/intltool.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -97,7 +96,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = config.h
-CONFIG_CLEAN_FILES = smartstreetlight.spec smartstreetlight.pc
+CONFIG_CLEAN_FILES = bot.spec bot.pc
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
@@ -263,10 +262,8 @@ ECHO_T =
 EGREP = /bin/grep -E
 EXEEXT = 
 FGREP = /bin/grep -F
-GDL3_CFLAGS = -I../../../lib/gdl/include/libgdl-3.0
-GDL3_LIBS = -L../../../lib/gdl/lib -lgdl-3
 GDL_OS = Debian_8.6_x64
-GETTEXT_PACKAGE = smartstreetlight
+GETTEXT_PACKAGE = bot
 GMODULE_CFLAGS = -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include 
 GMODULE_LIBS = -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0 
 GMOFILES = 
@@ -274,10 +271,12 @@ GMSGFMT = /usr/bin/msgfmt
 GREP = /bin/grep
 GTHREAD_CFLAGS = -pthread -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include 
 GTHREAD_LIBS = -lgthread-2.0 -pthread -lglib-2.0 
+GTK2_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/freetype2 
+GTK2_LIBS = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype 
 GTK3_CFLAGS = -DGTK_DISABLE_SINGLE_INCLUDES -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGSEAL_ENABLE -DGDK_PIXBUF_DISABLE_DEPRECATED -DG_DISABLE_DEPRECATED
 GTK_CFLAGS = -pthread -I/usr/include/gtk-3.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng12 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include 
 GTK_LIBS = -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 
-IFAST_DATA_DIR = /opt/icdrec/spl/share/smartstreetlight
+IFAST_DATA_DIR = /opt/icdrec/bot/share/bot
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -314,11 +313,11 @@ OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
-PACKAGE = smartpubliclight
+PACKAGE = bot
 PACKAGE_BUGREPORT = 
-PACKAGE_NAME = SmartPublicLight
-PACKAGE_STRING = SmartPublicLight 2.0.1
-PACKAGE_TARNAME = smartpubliclight
+PACKAGE_NAME = bot
+PACKAGE_STRING = bot 2.0.1
+PACKAGE_TARNAME = bot
 PACKAGE_URL = 
 PACKAGE_VERSION = 2.0.1
 PATH_SEPARATOR = :
@@ -343,10 +342,10 @@ WEBSERVICE = http://aliendb1.cern.ch:6004/axis/services/MLWebService
 XGETTEXT = /usr/bin/xgettext
 XML2_CONFIG = /usr/bin/xml2-config
 XML2_LIBS =  -lxml2
-abs_builddir = /media/data/JOBS/spl/SmartStreetLight/build_linux
-abs_srcdir = /media/data/JOBS/spl/SmartStreetLight/build_linux/..
-abs_top_builddir = /media/data/JOBS/spl/SmartStreetLight/build_linux
-abs_top_srcdir = /media/data/JOBS/spl/SmartStreetLight/build_linux/..
+abs_builddir = /media/data/JOBS/Bot/DevLinux/build_linux
+abs_srcdir = /media/data/JOBS/Bot/DevLinux/build_linux/..
+abs_top_builddir = /media/data/JOBS/Bot/DevLinux/build_linux
+abs_top_srcdir = /media/data/JOBS/Bot/DevLinux/build_linux/..
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -376,7 +375,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /media/data/JOBS/spl/SmartStreetLight/install-sh
+install_sh = ${SHELL} /media/data/JOBS/Bot/DevLinux/install-sh
 intltool__v_merge_options_ = $(intltool__v_merge_options_$(AM_DEFAULT_VERBOSITY))
 intltool__v_merge_options_0 = -q
 libdir = ${exec_prefix}/lib
@@ -387,7 +386,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /opt/icdrec/spl
+prefix = /opt/icdrec/bot
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -398,18 +397,17 @@ target_alias =
 top_build_prefix = 
 top_builddir = .
 top_srcdir = ..
-SUBDIRS = src/gsoap src po icons
+SUBDIRS = src po icons
+#SUBDIRS = src/gsoap src po icons
 AUTOMAKE_OPTIONS = 1.7
 ACLOCAL_AMFLAGS = -I m4
 EXTRA_DIST = \
 	autogen.sh \
 	wscript \
 	waf \
-	ifast.desktop.in \
-	ifast.pc.in \
-	ifast.spec \
-	ifast.glade \
-	ifast.gladep \
+	bot.desktop.in \
+	bot.pc.in \
+	bot.spec \ \
 	ChangeLog.pre-0-17 \
 	HACKING \
 	README.I18N \
@@ -423,17 +421,17 @@ EXTRA_DIST = \
 	gnome-doc-utils.make
 
 DISTCLEANFILES = \
-	ifast.desktop \
+	bot.desktop \
 	intltool-extract \
 	intltool-merge \
 	intltool-update\
 	gnome-doc-utils.make
 
 BZIP2_ENV = --best
-pkgconfig_DATA = smartstreetlight.pc
+pkgconfig_DATA = bot.pc
 pkgconfigdir = $(libdir)/pkgconfig
 desktopdir = $(datadir)/applications
-desktop_in_files = smartstreetlight.desktop
+desktop_in_files = bot.desktop
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
@@ -488,9 +486,9 @@ $(srcdir)/config.h.in:  $(am__configure_deps)
 
 distclean-hdr:
 	-rm -f config.h stamp-h1
-smartstreetlight.spec: $(top_builddir)/config.status $(srcdir)/smartstreetlight.spec.in
+bot.spec: $(top_builddir)/config.status $(srcdir)/bot.spec.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-smartstreetlight.pc: $(top_builddir)/config.status $(srcdir)/smartstreetlight.pc.in
+bot.pc: $(top_builddir)/config.status $(srcdir)/bot.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 mostlyclean-libtool:
@@ -977,6 +975,7 @@ install-data-only:
 	@$(NORMAL_INSTALL)
 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir); \
 	$(INSTALL_DATA) $(srcdir)/COPYING $(DESTDIR)$(pkgdatadir)/GPL-2; \
+	$(INSTALL_DATA) $(srcdir)/src/botStyle.css $(DESTDIR)$(pkgdatadir)/; \
 	for file in $(srcdir)/data/*; do \
 	  if test -f $$file; then \
 	    $(INSTALL_DATA) $$file $(DESTDIR)$(pkgdatadir)/; \

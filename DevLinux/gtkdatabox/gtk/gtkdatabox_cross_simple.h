@@ -19,11 +19,11 @@
 
 /**
  * SECTION:gtkdatabox_cross_simple
- * @short_description: A #GtkDataboxGraph used for displaying a simple coordinate cross.
+ * @short_description: A #GtkDataboxGraph used for spling a simple coordinate cross.
  * @include: gtkdatabox_cross_simple.h
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines,  #GtkDataboxBars, #GtkDataboxMarkers
  *
- * #GtkDataboxCrossSimple is a #GtkDataboxGraph class for displaying a simple coordinate cross (a vertical line 
+ * #GtkDataboxCrossSimple is a #GtkDataboxGraph class for spling a simple coordinate cross (a vertical line 
  * at x=0 and a horizontal line at y=0). 
  *
  * A more sophisticated coordinate cross would be welcome :-)
@@ -55,7 +55,7 @@ G_BEGIN_DECLS
  * GtkDataboxCrossSimple:
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines,  #GtkDataboxBars, #GtkDataboxMarkers
  *
- * #GtkDataboxCrossSimple is a #GtkDataboxGraph class for displaying a simple coordinate cross (a vertical line 
+ * #GtkDataboxCrossSimple is a #GtkDataboxGraph class for spling a simple coordinate cross (a vertical line 
  * at x=0 and a horizontal line at y=0). 
  *
  * A more sophisticated coordinate cross would be welcome :-)

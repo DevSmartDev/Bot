@@ -1480,7 +1480,7 @@ msgstr "_Plega-ho Tot"
 
 #: ../src/interface.c:1174
 msgid "_Unfold All"
-msgstr "_Desplega-ho Tot"
+msgstr "_Debotega-ho Tot"
 
 #: ../src/interface.c:1183
 msgid "Remove _Markers"
@@ -1722,7 +1722,7 @@ msgstr "No mostreu els missatges d'estat a la barra d'estat"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Suprimeix tots els missatges de la barra d'estat. Els missatges encara es "
@@ -2076,10 +2076,10 @@ msgid ""
 "key always moves the caret to the start of the current line, regardless of "
 "its current position."
 msgstr ""
-"Quan està activat l'inici \"intel·ligent\", la tecla INICI (HOME) desplaça "
+"Quan està activat l'inici \"intel·ligent\", la tecla INICI (HOME) debotaça "
 "el cursor al primer caràcter de la línia que no sigui un espai en blanc o un "
 "tabulador, en cas contrari va al principi de la línia. Quan està desactivat, "
-"la tecla INICI sempre desplaça el cursor al principi de la línia actual, "
+"la tecla INICI sempre debotaça el cursor al principi de la línia actual, "
 "independentment de la seva posició."
 
 #: ../src/interface.c:3792
@@ -2100,14 +2100,14 @@ msgstr "Col·lapsat de codi"
 
 #: ../src/interface.c:3801
 msgid "Fold/unfold all children of a fold point"
-msgstr "Desplega o plega recursivament un punt plegat"
+msgstr "Debotega o plega recursivament un punt plegat"
 
 #: ../src/interface.c:3804
 msgid ""
 "Fold or unfold all children of a fold point. By pressing the Shift key while "
 "clicking on a fold symbol the contrary behavior is used."
 msgstr ""
-"Plega i desplega tots els fills d'un mateix punt. Prement la tecla "
+"Plega i debotega tots els fills d'un mateix punt. Prement la tecla "
 "Majúscules mentre cliqueu un símbol plegat actua de forma contrària."
 
 #: ../src/interface.c:3806
@@ -2324,11 +2324,11 @@ msgstr ""
 "símbols"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Nombre de files mostrades en la llista d'autocompletat"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Nombre màxim de files mostrades en la llista d'autocompletat"
 
 #: ../src/interface.c:4086
@@ -2452,16 +2452,16 @@ msgstr ""
 
 #: ../src/interface.c:4214
 msgid "Stop scrolling at last line"
-msgstr "Atura el desplaçament a l'última línia"
+msgstr "Atura el debotaçament a l'última línia"
 
 #: ../src/interface.c:4217
 msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr ""
-"Indica si aturar el desplaçament en passar una pàgina de l'última l'inia del "
+"Indica si aturar el debotaçament en passar una pàgina de l'última l'inia del "
 "document"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Visualització</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2556,7 +2556,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Espais virtuals</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Visualització"
 
 #: ../src/interface.c:4381
@@ -2922,7 +2922,7 @@ msgid "Project Properties"
 msgstr "Propietats del Projecte"
 
 #: ../src/interface.c:5714
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Pantalla:"
 
 #: ../src/interface.c:5736
@@ -3003,15 +3003,15 @@ msgstr "Suprimeix fins al final de la línia"
 
 #: ../src/keybindings.c:273
 msgid "Scroll to current line"
-msgstr "Desplaça la línia actual"
+msgstr "Debotaça la línia actual"
 
 #: ../src/keybindings.c:275
 msgid "Scroll up the view by one line"
-msgstr "Desplaça cap a dalt la vista en una línia"
+msgstr "Debotaça cap a dalt la vista en una línia"
 
 #: ../src/keybindings.c:277
 msgid "Scroll down the view by one line"
-msgstr "Desplaça cap a baix la vista en una línia"
+msgstr "Debotaça cap a baix la vista en una línia"
 
 #: ../src/keybindings.c:279
 msgid "Complete snippet"
@@ -3019,7 +3019,7 @@ msgstr "Completa la construcció"
 
 #: ../src/keybindings.c:281
 msgid "Move cursor in snippet"
-msgstr "Desplaça el cursor en la construcció (snippet)"
+msgstr "Debotaça el cursor en la construcció (snippet)"
 
 #: ../src/keybindings.c:283
 msgid "Suppress snippet completion"
@@ -3230,7 +3230,7 @@ msgid "Go to End of Line"
 msgstr "Vés al Final de la Línia"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Vés al Final de la Línia"
 
 #: ../src/keybindings.c:449
@@ -3367,7 +3367,7 @@ msgstr "Reemplaça espais per tabulacions"
 
 #: ../src/keybindings.c:523
 msgid "Toggle current fold"
-msgstr "Desplega/plega el punt actual"
+msgstr "Debotega/plega el punt actual"
 
 #: ../src/keybindings.c:525
 msgid "Fold all"
@@ -3375,7 +3375,7 @@ msgstr "Plega-ho tot"
 
 #: ../src/keybindings.c:527
 msgid "Unfold all"
-msgstr "Desplega-ho tot"
+msgstr "Debotega-ho tot"
 
 #: ../src/keybindings.c:529
 msgid "Reload symbol list"
@@ -3560,7 +3560,7 @@ msgstr "compilat el %s amb "
 
 #: ../src/main.c:613
 msgid "Move it now?"
-msgstr "Desplaçar ara?"
+msgstr "Debotaçar ara?"
 
 #: ../src/main.c:615
 msgid "IFast needs to move your old configuration directory before starting."
@@ -4670,7 +4670,7 @@ msgstr "--- Separador ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 "Selecciona els elements mostrats a la barra d'eines. Els elements poden ser "
@@ -4681,7 +4681,7 @@ msgid "Available Items"
 msgstr "Elements Disponibles"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Elements Mostrats"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -4946,7 +4946,7 @@ msgstr "Especifica el color de fons del terminal"
 
 #: ../src/vte.c:803
 msgid "Scrollback lines:"
-msgstr "Desplaçament lateral de línies:"
+msgstr "Debotaçament lateral de línies:"
 
 #: ../src/vte.c:815
 msgid ""
@@ -4970,19 +4970,19 @@ msgstr ""
 
 #: ../src/vte.c:844
 msgid "Scroll on keystroke"
-msgstr "Desplaça en teclejar"
+msgstr "Debotaça en teclejar"
 
 #: ../src/vte.c:845
 msgid "Whether to scroll to the bottom if a key was pressed"
-msgstr "Desplaçar a la part de baix quan es prem alguna tecla"
+msgstr "Debotaçar a la part de baix quan es prem alguna tecla"
 
 #: ../src/vte.c:848
 msgid "Scroll on output"
-msgstr "Desplaça en aparèixer text"
+msgstr "Debotaça en aparèixer text"
 
 #: ../src/vte.c:849
 msgid "Whether to scroll to the bottom when output is generated"
-msgstr "Desplaçar a la part de baix quan apareix text nou"
+msgstr "Debotaçar a la part de baix quan apareix text nou"
 
 #: ../src/vte.c:852
 msgid "Cursor blinks"
@@ -5033,7 +5033,7 @@ msgstr "No usa l'script d'execució"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "No usa l'script d'execució, que s'usa normalment per mostrar el valor "
@@ -5177,7 +5177,7 @@ msgstr "Insereix les entitats HTML com '&amp;'."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "L'equip de desenvolupament de IFast"
 
@@ -5529,41 +5529,41 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr "Nive_lls de directori per incloure al destí de la còpia de seguretat:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Divideix la Finestra"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "Divideix la vista de l'editor en dues finestres."
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Mostra el document actual"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "_Unifica la Finestra"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "_Divideix la Finestra"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 msgid "_Side by Side"
 msgstr "_Junts"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr "_Dalt i Baix"
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Divideix Horitzontalment"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Divideix Verticalment"
 
 #~ msgid "Item"
@@ -5866,7 +5866,7 @@ msgstr "Divideix Verticalment"
 #~ msgid "Terminal font:"
 #~ msgstr "Tipus de lletra del terminal:"
 
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "Unifica"
 
 #~ msgid "Diff file"
@@ -6033,7 +6033,7 @@ msgstr "Divideix Verticalment"
 #~ msgstr "Plega tots els blocs de codi que es poden col·lapsar"
 
 #~ msgid "Unfolds all contracted code blocks"
-#~ msgstr "Desplega tots els blocs de codi col·lapsats"
+#~ msgstr "Debotega tots els blocs de codi col·lapsats"
 
 #~ msgid ""
 #~ "Counts the words and characters in the current selection or the whole "
@@ -6065,21 +6065,21 @@ msgstr "Divideix Verticalment"
 #~ msgid "Show file operation buttons"
 #~ msgstr "Mostra els botons d'operació dels fitxers"
 
-#~ msgid "Display the New, Open, Close, Save and Reload buttons in the toolbar"
+#~ msgid "Dibotay the New, Open, Close, Save and Reload buttons in the toolbar"
 #~ msgstr ""
 #~ "Mostra els botons Nou, Obre, Tanca, Desa i Actualitza a la barra d'eines"
 
 #~ msgid "Show Redo and Undo buttons"
 #~ msgstr "Mostra els botons Refés i Desfés"
 
-#~ msgid "Display the Redo and Undo buttons in the toolbar"
+#~ msgid "Dibotay the Redo and Undo buttons in the toolbar"
 #~ msgstr "Mostra els botons Refés i Desfés a la barra d'eines"
 
 #~ msgid "Show Back and Forward buttons"
 #~ msgstr "Mostra els botons Avant i Enrere"
 
 #~ msgid ""
-#~ "Display the Back and Forward buttons in the toolbar used for code "
+#~ "Dibotay the Back and Forward buttons in the toolbar used for code "
 #~ "navigation"
 #~ msgstr ""
 #~ "Mostra els botons Avant i Enrere usats per a la navegació a la barra "
@@ -6088,43 +6088,43 @@ msgstr "Divideix Verticalment"
 #~ msgid "Show Compile and Run buttons"
 #~ msgstr "Mostra els botons Compila i Executa"
 
-#~ msgid "Display the Compile and Run buttons in the toolbar"
+#~ msgid "Dibotay the Compile and Run buttons in the toolbar"
 #~ msgstr "Mostra els botons Compila i Executa a la barra d'eines"
 
 #~ msgid "Show Color Chooser button"
 #~ msgstr "Mostra el botó del Selector de Colors"
 
-#~ msgid "Display the Color Chooser button in the toolbar"
+#~ msgid "Dibotay the Color Chooser button in the toolbar"
 #~ msgstr "Mostra el botó del Selector de Colors en la barra d'eines"
 
 #~ msgid "Show Zoom In and Zoom Out buttons"
 #~ msgstr "Mostra els botons de Zoom"
 
-#~ msgid "Display the Zoom In and Zoom Out buttons in the toolbar"
+#~ msgid "Dibotay the Zoom In and Zoom Out buttons in the toolbar"
 #~ msgstr "Mostra els botons Amplia i Redueix a la barra d'eines"
 
 #~ msgid "Show Increase and Decrease Indentation buttons"
 #~ msgstr "Mostra els botons Incrementa i Redueix Sagnat"
 
-#~ msgid "Display the Increase and Decrease Indentation buttons in the toolbar"
+#~ msgid "Dibotay the Increase and Decrease Indentation buttons in the toolbar"
 #~ msgstr "Mostra els botons d'Augmentar i Reduïr el Sagnat a la barra d'eines"
 
 #~ msgid "Show Search field"
 #~ msgstr "Mostra el camp de Cerca"
 
-#~ msgid "Display the search field and button in the toolbar"
+#~ msgid "Dibotay the search field and button in the toolbar"
 #~ msgstr "Mostra el camp de la cerca i el botó en la barra d'eines"
 
 #~ msgid "Show Go to Line field"
 #~ msgstr "Mostra el camp 'Vés-hi a'"
 
-#~ msgid "Display the line number field and button in the toolbar"
+#~ msgid "Dibotay the line number field and button in the toolbar"
 #~ msgstr "Mostra el camp del número de línia i el botó a la barra d'eines"
 
 #~ msgid "Show Quit button"
 #~ msgstr "Mostra el botó de Sortir"
 
-#~ msgid "Display the quit button in the toolbar"
+#~ msgid "Dibotay the quit button in the toolbar"
 #~ msgstr "Mostra el botó de Sortir a la barra d'eines"
 
 #~ msgid "<b>Items</b>"
@@ -6319,7 +6319,7 @@ msgstr "Divideix Verticalment"
 #~ "contrari s'usen espais en blanc normalment."
 
 #~ msgid "Unfold all children of a fold point when unfolding it."
-#~ msgstr "Desplega recursivament un punt plegat en desplegar-lo."
+#~ msgstr "Debotega recursivament un punt plegat en debotegar-lo."
 
 #~ msgid "Construct autocompletion"
 #~ msgstr "Autoacabament de construccions"

@@ -1,4 +1,4 @@
-# Install script for directory: /media/DATA/projects/spl/SmartStreetLight/slope/demos
+# Install script for directory: /media/DATA/projects/bot/bot/slope/demos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

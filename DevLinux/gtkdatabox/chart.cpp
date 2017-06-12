@@ -17,10 +17,10 @@
  */
  #include "main.h"
  #include "chart.h"
- #include "../../src/smartstreetlight_soap.h"
- #include "../../src/smartstreetlight_error.h"
+ #include "../../src/bot_soap.h"
+ #include "../../src/bot_error.h"
  GSList *lcu_log_list = NULL;
- void spl_utils_free_slist(GSList **list, GDestroyNotify free_func)
+ void bot_utils_free_slist(GSList **list, GDestroyNotify free_func)
 {
     g_return_if_fail(*list);
     //DEBUG("Before free: %p %d\n", free_func, g_slist_length(*list));
@@ -32,16 +32,16 @@
     *list = NULL;
 }
 
-SplLcuLog* spl_lcu_log_init()
+botLcuLog* bot_lcu_log_init()
 {
-    SplLcuLog* lcu_log = g_new0(SplLcuLog, 1);
+    botLcuLog* lcu_log = g_new0(botLcuLog, 1);
     lcu_log->lcuId = NULL;
     lcu_log->date_time = NULL;
     lcu_log->lightname = NULL;
     return lcu_log;
 }
 
-void spl_lcu_log_free(SplLcuLog* lcu_log)
+void bot_lcu_log_free(botLcuLog* lcu_log)
 {
     g_return_if_fail(lcu_log);
     g_free(lcu_log->lcuId);
@@ -49,7 +49,7 @@ void spl_lcu_log_free(SplLcuLog* lcu_log)
     g_free(lcu_log->lightname);
     g_free(lcu_log);
 }
-GDateTime * spl_gdatetime_from_str(gchar *data)
+GDateTime * bot_gdatetime_from_str(gchar *data)
 {
     if(data==NULL)
         return NULL;
@@ -69,9 +69,9 @@ GDateTime * spl_gdatetime_from_str(gchar *data)
     g_strfreev (date_iter);
     return datetime;
 }
-gboolean  spl_get_data_chart(struct PROGRAM_OPTION* option_t)
+gboolean  bot_get_data_chart(struct PROGRAM_OPTION* option_t)
 {
-    SplSoap spl_soap;
+    botSoap bot_soap;
 
     ns1__LCULOGINFOType** wsdl_lcu_log_list = NULL;
     gint  wsdl_lcu_log_list_size=0;
@@ -79,10 +79,10 @@ gboolean  spl_get_data_chart(struct PROGRAM_OPTION* option_t)
     setup_user_soap(option_t->account, option_t->account_id, option_t->url);
     if(lcu_log_list)
     {
-        spl_utils_free_slist(&lcu_log_list, (GDestroyNotify)spl_lcu_log_free);
+        bot_utils_free_slist(&lcu_log_list, (GDestroyNotify)bot_lcu_log_free);
         lcu_log_list = NULL;
     }
-    gint soap_err =  smartstreetlight_get_log_lcu_nofree_execute(&spl_soap,
+    gint soap_err =  bot_get_log_lcu_nofree_execute(&bot_soap,
                                                                                 option_t->lcu_id,
                                                                                 option_t->begin_time,
                                                                                 option_t->end_time,
@@ -107,7 +107,7 @@ gboolean  spl_get_data_chart(struct PROGRAM_OPTION* option_t)
                     gint            mode;
                 */
                 ns1__LCULOGINFOType *lcu_log_wsdl = wsdl_lcu_log_list[i];
-                SplLcuLog* lcu_log = spl_lcu_log_init();
+                botLcuLog* lcu_log = bot_lcu_log_init();
 
                 lcu_log->id = lcu_log_wsdl->lcuLogId;
                 lcu_log->lcuId = g_strdup(lcu_log_wsdl->lcuLogLcuId);
@@ -126,28 +126,28 @@ gboolean  spl_get_data_chart(struct PROGRAM_OPTION* option_t)
         } else {
             gchar *buffer = g_strdup_printf("Không tìm thấy dữ liệu thống kê trong khoảng thời gian \n \"%s\" -> \"%s\"",
                                             option_t->begin_time, option_t->end_time);
-            smartstreetlight_error_notifice_run(window , buffer);
+            bot_error_notifice_run(window , buffer);
             g_free(buffer);
         }
     } else {
         gchar * msg = g_strdup("Lỗi lấy danh sách các tài khoản. ");
-        smartstreetlight_error_check_message_result(window, msg, soap_err);
+        bot_error_check_message_result(window, msg, soap_err);
         g_free(msg);
     }
-    smartstreetlight_free_soap_operation(&spl_soap);
+    bot_free_soap_operation(&bot_soap);
     return ret;
 }
 #define CHART_DISTANCE_MAP
-SplLcuSlopeData* spl_lcu_chart_data_init(gint n_point, GSList *lculoglist)
+botLcuSlopeData* bot_lcu_chart_data_init(gint n_point, GSList *lculoglist)
 {
-    SplLcuSlopeData* lcu_slope = g_new0(SplLcuSlopeData, 1);
+    botLcuSlopeData* lcu_slope = g_new0(botLcuSlopeData, 1);
 
 
-    SplLcuLog* _first = (SplLcuLog*)g_slist_nth(lculoglist, 0)->data;
-    SplLcuLog* _end = (SplLcuLog*)g_slist_nth(lculoglist, n_point-1)->data;
+    botLcuLog* _first = (botLcuLog*)g_slist_nth(lculoglist, 0)->data;
+    botLcuLog* _end = (botLcuLog*)g_slist_nth(lculoglist, n_point-1)->data;
 
-    GDateTime * _datetime_first = spl_gdatetime_from_str(_first->date_time);
-    GDateTime * _datetime_end = spl_gdatetime_from_str(_end->date_time);
+    GDateTime * _datetime_first = bot_gdatetime_from_str(_first->date_time);
+    GDateTime * _datetime_end = bot_gdatetime_from_str(_end->date_time);
 
 
     //DEBUG("********************** _first->date_time: %s", _first->date_time);
@@ -170,7 +170,7 @@ SplLcuSlopeData* spl_lcu_chart_data_init(gint n_point, GSList *lculoglist)
     gen_data_chart(lcu_slope);
     return lcu_slope;
 }
-void spl_lcu_chart_data_free(SplLcuSlopeData* lcu_slope)
+void bot_lcu_chart_data_free(botLcuSlopeData* lcu_slope)
 {
     g_return_if_fail(lcu_slope);
     if (lcu_slope->x_time)
@@ -189,13 +189,13 @@ void spl_lcu_chart_data_free(SplLcuSlopeData* lcu_slope)
     if (lcu_slope->manual_tick_labels)
         g_free(lcu_slope->manual_tick_labels);
     if (lcu_slope->lculoglist)
-        spl_utils_free_slist(&lcu_slope->lculoglist, (GDestroyNotify)spl_lcu_log_free);
+        bot_utils_free_slist(&lcu_slope->lculoglist, (GDestroyNotify)bot_lcu_log_free);
 
     g_free(lcu_slope);
 
 }
 
-void gen_data_chart(SplLcuSlopeData* lcu_slope)
+void gen_data_chart(botLcuSlopeData* lcu_slope)
 {
     g_return_if_fail(lcu_slope && window);
 
@@ -211,7 +211,7 @@ void gen_data_chart(SplLcuSlopeData* lcu_slope)
 
 	for (gint k=0; k<size_list; k++)
 	{
-        SplLcuLog* lcu_log_iter = (SplLcuLog*) g_slist_nth_data(lcu_slope->lculoglist, k);
+        botLcuLog* lcu_log_iter = (botLcuLog*) g_slist_nth_data(lcu_slope->lculoglist, k);
         lcu_slope->y_powerConsum[k] = ((gfloat)lcu_log_iter->power_consum)/100;
         lcu_slope->y_powerCtrl[k] = ((gfloat)lcu_log_iter->power_ctrl)/100 ;
 
@@ -223,7 +223,7 @@ void gen_data_chart(SplLcuSlopeData* lcu_slope)
         {
             chart_max = lcu_slope->y_powerCtrl[k]+10;
         }
-        GDateTime * _datetime = spl_gdatetime_from_str(lcu_log_iter->date_time);
+        GDateTime * _datetime = bot_gdatetime_from_str(lcu_log_iter->date_time);
         gint64 _unix_datetime = g_date_time_to_unix (_datetime);
         lcu_slope->x_time[k] = (gfloat)(_unix_datetime - lcu_slope->unix_first);
         g_date_time_unref (_datetime);
@@ -304,8 +304,8 @@ void gen_data_chart(SplLcuSlopeData* lcu_slope)
      DEBUG("num_point: %d", num_point);
     for (guint k = 0; k < num_point; k++)
     {
-        SplLcuLog* lcu_log_iter = (SplLcuLog*) g_slist_nth_data(lcu_slope->lculoglist, k);
-        GDateTime * _datetime = spl_gdatetime_from_str(lcu_log_iter->date_time);
+        botLcuLog* lcu_log_iter = (botLcuLog*) g_slist_nth_data(lcu_slope->lculoglist, k);
+        GDateTime * _datetime = bot_gdatetime_from_str(lcu_log_iter->date_time);
         gint64 _unix_datetime = g_date_time_to_unix (_datetime);
         lcu_slope->manual_ticks[k] = (gfloat)(_unix_datetime - lcu_slope->unix_first);
         lcu_slope->manual_tick_labels[k] = g_date_time_format (_datetime, "%Y-%m-%d %H:%M:%S");;

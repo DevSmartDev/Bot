@@ -11,7 +11,7 @@
 #define ENABLE_NLS 1
 
 /* Gettext package. */
-#define GETTEXT_PACKAGE "smartstreetlight"
+#define GETTEXT_PACKAGE "bot"
 
 /* Define to 1 if you have the `bind_textdomain_codeset' function. */
 #define HAVE_BIND_TEXTDOMAIN_CODESET 1
@@ -105,19 +105,19 @@
 #define LT_OBJDIR ".libs/"
 
 /* Name of package */
-#define PACKAGE "smartpubliclight"
+#define PACKAGE "bot"
 
 /* Define to the address where bug reports for this package should be sent. */
 #define PACKAGE_BUGREPORT ""
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "SmartPublicLight"
+#define PACKAGE_NAME "bot"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "SmartPublicLight 2.0.1"
+#define PACKAGE_STRING "bot 2.0.1"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "smartpubliclight"
+#define PACKAGE_TARNAME "bot"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""
@@ -126,7 +126,7 @@
 #define PACKAGE_VERSION "2.0.1"
 
 /* subversion revision number */
-#define REVISION "-1"
+#define REVISION "r0"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1

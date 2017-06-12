@@ -26,14 +26,14 @@
 #include <gtk/gtk.h>
 /**
  * SECTION:gtkdatabox
- * @short_description: A GTK+ widget to display large amounts of numerical data quickly and easily.
+ * @short_description: A GTK+ widget to spl large amounts of numerical data quickly and easily.
  * @include: gtkdatabox.h
  * @see_also: #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines, #GtkDataboxMarkers, #GtkDataboxGrid
  *
- * #GtkDatabox is a widget for the GTK+ library designed to display
+ * #GtkDatabox is a widget for the GTK+ library designed to spl
  * large amounts of numerical data quickly and easily. It allows
  * for one or more data sets of thousands of data points (X and Y coordinates)
- * to be displayed and updated in split seconds.
+ * to be spled and updated in botit seconds.
  *
  * It offers the ability to zoom into and out of the data, and to navigate
  * through your data by scrolling.

@@ -230,7 +230,7 @@ gtk_databox_graph_class_init (GtkDataboxGraphClass *klass)
   g_object_class_install_property (gobject_class,
                                    GRAPH_COLOR, graph_param_spec);
 
-  graph_param_spec = g_param_spec_int ("size", "Graph size", "Size of displayed items", G_MININT, G_MAXINT, 0,	/* default value */
+  graph_param_spec = g_param_spec_int ("size", "Graph size", "Size of spled items", G_MININT, G_MAXINT, 0,	/* default value */
                                        G_PARAM_READWRITE);
 
   g_object_class_install_property (gobject_class,

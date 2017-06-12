@@ -81,11 +81,11 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-bin_PROGRAMS = SmartPublicLight$(EXEEXT)
+bin_PROGRAMS = bot$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/mkinstalldirs $(top_srcdir)/depcomp \
-	$(SmartPublicLight_include_HEADERS)
+	$(bot_include_HEADERS)
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/intltool.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -97,79 +97,56 @@ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am__installdirs = "$(DESTDIR)$(bindir)" \
-	"$(DESTDIR)$(SmartPublicLight_includedir)"
+am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bot_includedir)"
 PROGRAMS = $(bin_PROGRAMS)
-am__SmartPublicLight_SOURCES_DIST = main.cpp main.h mapviewer.cpp \
-	mapviewer.h smartstreetlight_gui.h smartstreetlight_method.h \
-	smartstreetlight_ui_method.cpp smartstreetlight_ui_method.h \
-	smartstreetlight_login.cpp smartstreetlight_login.h \
-	smartstreetlight_utils.cpp smartstreetlight_utils.h \
-	smartstreetlight_sql.cpp smartstreetlight_sql.h \
-	smartstreetlight_dcu.cpp smartstreetlight_dcu.h \
-	smartstreetlight_lcu.cpp smartstreetlight_lcu.h \
-	smartstreetlight_callback.cpp smartstreetlight_callback.h \
-	smartstreetlight_database.h smartstreetlight_database.cpp \
-	smartstreetlight_schedule.h smartstreetlight_schedule.cpp \
-	smartstreetlight_line.h smartstreetlight_line.cpp \
-	smartstreetlight_server.h smartstreetlight_server.cpp \
-	smartstreetlight_user.h smartstreetlight_user.cpp \
-	smartstreetlight_zone.h smartstreetlight_zone.cpp \
-	smartstreetlight_log.h smartstreetlight_log.cpp \
-	smartstreetlight_dcu_program_process.h \
-	smartstreetlight_dcu_program_process.cpp \
-	smartstreetlight_admin_user.h smartstreetlight_admin_user.cpp \
-	smartstreetlight_admin_zone.h smartstreetlight_admin_zone.cpp \
-	smartstreetlight_error.h smartstreetlight_error.cpp \
-	smartstreetlight_event_thread.h \
-	smartstreetlight_event_thread.cpp smartstreetlight_common.h \
-	smartstreetlightService.nsmap smartstreetlight_soap_thread.h \
-	smartstreetlight_soap_thread.cpp smartstreetlight_soap.h \
-	smartstreetlight_soap.cpp gsoap/soapClient.cpp gsoap/soapC.cpp \
+am__bot_SOURCES_DIST = main.cpp main.h mapviewer.cpp mapviewer.h \
+	bot_gui.h bot_method.h bot_ui_method.cpp bot_ui_method.h \
+	bot_login.cpp bot_login.h bot_utils.cpp bot_utils.h \
+	bot_sql.cpp bot_sql.h bot_dcu.cpp bot_dcu.h bot_lcu.cpp \
+	bot_lcu.h bot_callback.cpp bot_callback.h bot_database.h \
+	bot_database.cpp bot_schedule.h bot_schedule.cpp bot_line.h \
+	bot_line.cpp bot_server.h bot_server.cpp bot_user.h \
+	bot_user.cpp bot_zone.h bot_zone.cpp bot_log.h bot_log.cpp \
+	bot_dcu_program_process.h bot_dcu_program_process.cpp \
+	bot_admin_user.h bot_admin_user.cpp bot_admin_zone.h \
+	bot_admin_zone.cpp bot_error.h bot_error.cpp \
+	bot_event_thread.h bot_event_thread.cpp bot_common.h \
+	botService.nsmap bot_soap_thread.h bot_soap_thread.cpp \
+	bot_soap.h bot_soap.cpp gsoap/soapClient.cpp gsoap/soapC.cpp \
 	gsoap/soapH.h gsoap/soapStub.h gsoap/stdsoap2.cpp \
 	gsoap/stdsoap2.h
 am__dirstamp = $(am__leading_dot)dirstamp
 am__objects_1 = main.$(OBJEXT) mapviewer.$(OBJEXT) \
-	smartstreetlight_ui_method.$(OBJEXT) \
-	smartstreetlight_login.$(OBJEXT) \
-	smartstreetlight_utils.$(OBJEXT) \
-	smartstreetlight_sql.$(OBJEXT) smartstreetlight_dcu.$(OBJEXT) \
-	smartstreetlight_lcu.$(OBJEXT) \
-	smartstreetlight_callback.$(OBJEXT) \
-	smartstreetlight_database.$(OBJEXT) \
-	smartstreetlight_schedule.$(OBJEXT) \
-	smartstreetlight_line.$(OBJEXT) \
-	smartstreetlight_server.$(OBJEXT) \
-	smartstreetlight_user.$(OBJEXT) \
-	smartstreetlight_zone.$(OBJEXT) smartstreetlight_log.$(OBJEXT) \
-	smartstreetlight_dcu_program_process.$(OBJEXT) \
-	smartstreetlight_admin_user.$(OBJEXT) \
-	smartstreetlight_admin_zone.$(OBJEXT) \
-	smartstreetlight_error.$(OBJEXT) \
-	smartstreetlight_event_thread.$(OBJEXT) \
-	smartstreetlight_soap_thread.$(OBJEXT) \
-	smartstreetlight_soap.$(OBJEXT) gsoap/soapClient.$(OBJEXT) \
+	bot_ui_method.$(OBJEXT) bot_login.$(OBJEXT) \
+	bot_utils.$(OBJEXT) bot_sql.$(OBJEXT) bot_dcu.$(OBJEXT) \
+	bot_lcu.$(OBJEXT) bot_callback.$(OBJEXT) \
+	bot_database.$(OBJEXT) bot_schedule.$(OBJEXT) \
+	bot_line.$(OBJEXT) bot_server.$(OBJEXT) bot_user.$(OBJEXT) \
+	bot_zone.$(OBJEXT) bot_log.$(OBJEXT) \
+	bot_dcu_program_process.$(OBJEXT) bot_admin_user.$(OBJEXT) \
+	bot_admin_zone.$(OBJEXT) bot_error.$(OBJEXT) \
+	bot_event_thread.$(OBJEXT) bot_soap_thread.$(OBJEXT) \
+	bot_soap.$(OBJEXT) gsoap/soapClient.$(OBJEXT) \
 	gsoap/soapC.$(OBJEXT) gsoap/stdsoap2.$(OBJEXT)
-@MINGW_FALSE@am_SmartPublicLight_OBJECTS = $(am__objects_1)
-@MINGW_TRUE@am_SmartPublicLight_OBJECTS = $(am__objects_1)
-SmartPublicLight_OBJECTS = $(am_SmartPublicLight_OBJECTS)
+@MINGW_FALSE@am_bot_OBJECTS = $(am__objects_1)
+@MINGW_TRUE@am_bot_OBJECTS = $(am__objects_1)
+bot_OBJECTS = $(am_bot_OBJECTS)
 am__DEPENDENCIES_1 =
 am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-@MINGW_FALSE@SmartPublicLight_DEPENDENCIES = $(srcdir)/../../lib/osm-gps-map/linux/lib/libosmgpsmap-1.0.a \
+@MINGW_FALSE@bot_DEPENDENCIES = $(srcdir)/../../lib/osm-gps-map/linux/lib/libosmgpsmap-1.0.a \
 @MINGW_FALSE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
 @MINGW_FALSE@	$(am__DEPENDENCIES_1)
-@MINGW_TRUE@SmartPublicLight_DEPENDENCIES = $(srcdir)/../../lib/osm-gps-map/win/lib/libosmgpsmap-1.0.a \
+@MINGW_TRUE@bot_DEPENDENCIES = $(srcdir)/../../lib/osm-gps-map/win/lib/libosmgpsmap-1.0.a \
 @MINGW_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
-@MINGW_TRUE@	$(am__DEPENDENCIES_1) spl_private.res
+@MINGW_TRUE@	$(am__DEPENDENCIES_1) bot_private.res
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-SmartPublicLight_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
-	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
-	$(AM_CXXFLAGS) $(CXXFLAGS) $(SmartPublicLight_LDFLAGS) \
-	$(LDFLAGS) -o $@
+bot_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+	$(CXXFLAGS) $(bot_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -222,8 +199,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(SmartPublicLight_SOURCES)
-DIST_SOURCES = $(am__SmartPublicLight_SOURCES_DIST)
+SOURCES = $(bot_SOURCES)
+DIST_SOURCES = $(am__bot_SOURCES_DIST)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -256,7 +233,7 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-HEADERS = $(SmartPublicLight_include_HEADERS)
+HEADERS = $(bot_include_HEADERS)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
@@ -450,7 +427,7 @@ top_srcdir = @top_srcdir@
 
 #MYSQL_CFLAGS = -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing
 #MYSQL_LIBS = -L/usr/lib/i386-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -ldl
-SPL_CONFIG_DIR = .smartstreetlight
+bot_CONFIG_DIR = .bot
 OSMGPSMAP_CFLAGS = \
     $(GLIB_CFLAGS)          \
     $(GTK_CFLAGS)           \
@@ -466,32 +443,32 @@ OSMGPSMAP_LIBS = \
 RESOURCE_DIR = $(srcdir)/../../resource
 SRCS = main.cpp main.h							\
 	mapviewer.cpp mapviewer.h						\
-	smartstreetlight_gui.h						\
-	smartstreetlight_method.h					\
-	smartstreetlight_ui_method.cpp smartstreetlight_ui_method.h	\
-	smartstreetlight_login.cpp smartstreetlight_login.h		\
-	smartstreetlight_utils.cpp smartstreetlight_utils.h		\
-	smartstreetlight_sql.cpp smartstreetlight_sql.h			\
-	smartstreetlight_dcu.cpp smartstreetlight_dcu.h			\
-	smartstreetlight_lcu.cpp smartstreetlight_lcu.h			\
-	smartstreetlight_callback.cpp smartstreetlight_callback.h	\
-	smartstreetlight_database.h smartstreetlight_database.cpp	\
-	smartstreetlight_schedule.h smartstreetlight_schedule.cpp	\
-	smartstreetlight_line.h smartstreetlight_line.cpp		\
-	smartstreetlight_server.h smartstreetlight_server.cpp		\
-	smartstreetlight_user.h smartstreetlight_user.cpp		\
-	smartstreetlight_zone.h smartstreetlight_zone.cpp		\
-	smartstreetlight_log.h smartstreetlight_log.cpp			\
-	smartstreetlight_dcu_program_process.h				\
-	smartstreetlight_dcu_program_process.cpp			\
-	smartstreetlight_admin_user.h smartstreetlight_admin_user.cpp	\
-	smartstreetlight_admin_zone.h smartstreetlight_admin_zone.cpp	\
-	smartstreetlight_error.h smartstreetlight_error.cpp		\
-	smartstreetlight_event_thread.h smartstreetlight_event_thread.cpp\
-	smartstreetlight_common.h					\
-	smartstreetlightService.nsmap                   		\
-	smartstreetlight_soap_thread.h smartstreetlight_soap_thread.cpp \
-	smartstreetlight_soap.h smartstreetlight_soap.cpp		\
+	bot_gui.h						\
+	bot_method.h					\
+	bot_ui_method.cpp bot_ui_method.h	\
+	bot_login.cpp bot_login.h		\
+	bot_utils.cpp bot_utils.h		\
+	bot_sql.cpp bot_sql.h			\
+	bot_dcu.cpp bot_dcu.h			\
+	bot_lcu.cpp bot_lcu.h			\
+	bot_callback.cpp bot_callback.h	\
+	bot_database.h bot_database.cpp	\
+	bot_schedule.h bot_schedule.cpp	\
+	bot_line.h bot_line.cpp		\
+	bot_server.h bot_server.cpp		\
+	bot_user.h bot_user.cpp		\
+	bot_zone.h bot_zone.cpp		\
+	bot_log.h bot_log.cpp			\
+	bot_dcu_program_process.h				\
+	bot_dcu_program_process.cpp			\
+	bot_admin_user.h bot_admin_user.cpp	\
+	bot_admin_zone.h bot_admin_zone.cpp	\
+	bot_error.h bot_error.cpp		\
+	bot_event_thread.h bot_event_thread.cpp\
+	bot_common.h					\
+	botService.nsmap                   		\
+	bot_soap_thread.h bot_soap_thread.cpp \
+	bot_soap.h bot_soap.cpp		\
 	gsoap/soapClient.cpp    					\
 	gsoap/soapC.cpp                                         	\
 	gsoap/soapH.h 							\
@@ -499,9 +476,9 @@ SRCS = main.cpp main.h							\
 	gsoap/stdsoap2.cpp      					\
 	gsoap/stdsoap2.h						
 
-SmartPublicLight_includedir = $(includedir)/SmartPublicLight
+bot_includedir = $(includedir)/bot
 # only install headers that define types or macros, not just functions
-SmartPublicLight_include_HEADERS = smartstreetlight_gui.h
+bot_include_HEADERS = bot_gui.h
 @MINGW_FALSE@AM_CPPFLAGS = -D__clang__ -I$(top_srcdir)\
 @MINGW_FALSE@	        @GTK_CFLAGS@ @GTHREAD_CFLAGS@ @GMODULE_CFLAGS@ \
 @MINGW_FALSE@		-I$(srcdir)/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0 
@@ -510,70 +487,70 @@ SmartPublicLight_include_HEADERS = smartstreetlight_gui.h
 @MINGW_TRUE@	        @GTK_CFLAGS@ @GTHREAD_CFLAGS@ @GMODULE_CFLAGS@ \
 @MINGW_TRUE@		-I$(srcdir)/../../lib/osm-gps-map/win/include/osmgpsmap-1.0 
 
-@MINGW_FALSE@SmartPublicLight_SOURCES = $(SRCS)
-@MINGW_TRUE@SmartPublicLight_SOURCES = $(SRCS)
-@MINGW_FALSE@SmartPublicLight_LDADD = $(srcdir)/../../lib/osm-gps-map/linux/lib/libosmgpsmap-1.0.a \
+@MINGW_FALSE@bot_SOURCES = $(SRCS)
+@MINGW_TRUE@bot_SOURCES = $(SRCS)
+@MINGW_FALSE@bot_LDADD = $(srcdir)/../../lib/osm-gps-map/linux/lib/libosmgpsmap-1.0.a \
 @MINGW_FALSE@  @GTK_LIBS@ @GTHREAD_LIBS@ @GMODULE_LIBS@ $(INTLLIBS) @XML2_LIBS@ $(OSMGPSMAP_LIBS)       \
 @MINGW_FALSE@    $(GTHREAD_LIBS)	
 
-@MINGW_TRUE@SmartPublicLight_LDADD = $(srcdir)/../../lib/osm-gps-map/win/lib/libosmgpsmap-1.0.a \
+@MINGW_TRUE@bot_LDADD = $(srcdir)/../../lib/osm-gps-map/win/lib/libosmgpsmap-1.0.a \
 @MINGW_TRUE@  @GTK_LIBS@ @GTHREAD_LIBS@ @GMODULE_LIBS@ $(INTLLIBS) @XML2_LIBS@  $(OSMGPSMAP_LIBS)       \
-@MINGW_TRUE@    $(GTHREAD_LIBS) spl_private.res	
+@MINGW_TRUE@    $(GTHREAD_LIBS) bot_private.res	
 
 @MINGW_FALSE@AM_CFLAGS = -Wl,--export-dynamic -g -ggdb -rdynamic -fpermissive\
-@MINGW_FALSE@			-DSPL_DATADIR=\""$(datadir)"\" \
-@MINGW_FALSE@			-DSPL_DOCDIR=\""$(docdir)"\" \
-@MINGW_FALSE@			-DSPL_LIBDIR=\""$(libdir)"\" \
-@MINGW_FALSE@			-DSPL_LOCALEDIR=\""$(localedir)"\" \
-@MINGW_FALSE@			-DSPL_PREFIX=\""$(prefix)"\" \
-@MINGW_FALSE@			-DSPL_PRIVATE \
+@MINGW_FALSE@			-Dbot_DATADIR=\""$(datadir)"\" \
+@MINGW_FALSE@			-Dbot_DOCDIR=\""$(docdir)"\" \
+@MINGW_FALSE@			-Dbot_LIBDIR=\""$(libdir)"\" \
+@MINGW_FALSE@			-Dbot_LOCALEDIR=\""$(localedir)"\" \
+@MINGW_FALSE@			-Dbot_PREFIX=\""$(prefix)"\" \
+@MINGW_FALSE@			-Dbot_PRIVATE \
 @MINGW_FALSE@			-DGTK \
 @MINGW_FALSE@			-DGNOME\
-@MINGW_FALSE@			-DG_LOG_DOMAIN=\""SmartPublicLight"\" \
+@MINGW_FALSE@			-DG_LOG_DOMAIN=\""bot"\" \
 @MINGW_FALSE@			-Bstatic \
 @MINGW_FALSE@			$(OSMGPSMAP_CFLAGS)
 
 @MINGW_TRUE@AM_CFLAGS = -g -ggdb  -fpermissive \
-@MINGW_TRUE@			-DSPL_DATADIR=\""$(datadir)"\" \
-@MINGW_TRUE@			-DSPL_DOCDIR=\""$(docdir)"\" \
-@MINGW_TRUE@			-DSPL_LIBDIR=\""$(libdir)"\" \
-@MINGW_TRUE@			-DSPL_LOCALEDIR=\""$(localedir)"\" \
-@MINGW_TRUE@			-DSPL_PREFIX=\""$(prefix)"\" \
-@MINGW_TRUE@			-DSPL_PRIVATE \
+@MINGW_TRUE@			-Dbot_DATADIR=\""$(datadir)"\" \
+@MINGW_TRUE@			-Dbot_DOCDIR=\""$(docdir)"\" \
+@MINGW_TRUE@			-Dbot_LIBDIR=\""$(libdir)"\" \
+@MINGW_TRUE@			-Dbot_LOCALEDIR=\""$(localedir)"\" \
+@MINGW_TRUE@			-Dbot_PREFIX=\""$(prefix)"\" \
+@MINGW_TRUE@			-Dbot_PRIVATE \
 @MINGW_TRUE@			-DGTK \
 @MINGW_TRUE@			-DGNOME\
-@MINGW_TRUE@			-DG_LOG_DOMAIN=\""SmartPublicLight"\" \
+@MINGW_TRUE@			-DG_LOG_DOMAIN=\""bot"\" \
 @MINGW_TRUE@			-Bstatic \
 @MINGW_TRUE@			$(OSMGPSMAP_CFLAGS)
 
 @MINGW_FALSE@AM_CXXFLAGS = -Wl,--export-dynamic -g -ggdb -rdynamic -fpermissive\
-@MINGW_FALSE@			-DSPL_DATADIR=\""$(datadir)"\" \
-@MINGW_FALSE@			-DSPL_DOCDIR=\""$(docdir)"\" \
-@MINGW_FALSE@			-DSPL_LIBDIR=\""$(libdir)"\" \
-@MINGW_FALSE@			-DSPL_LOCALEDIR=\""$(localedir)"\" 	-DSPL_PREFIX=\""$(prefix)"\" \
-@MINGW_FALSE@			-DSPL_PREFIX=\""$(prefix)"\" \
-@MINGW_FALSE@			-DSPL_PRIVATE \
+@MINGW_FALSE@			-Dbot_DATADIR=\""$(datadir)"\" \
+@MINGW_FALSE@			-Dbot_DOCDIR=\""$(docdir)"\" \
+@MINGW_FALSE@			-Dbot_LIBDIR=\""$(libdir)"\" \
+@MINGW_FALSE@			-Dbot_LOCALEDIR=\""$(localedir)"\" 	-Dbot_PREFIX=\""$(prefix)"\" \
+@MINGW_FALSE@			-Dbot_PREFIX=\""$(prefix)"\" \
+@MINGW_FALSE@			-Dbot_PRIVATE \
 @MINGW_FALSE@			-DGTK \
 @MINGW_FALSE@			-DGNOME\
-@MINGW_FALSE@			-DG_LOG_DOMAIN=\""SmartPublicLight"\" \
+@MINGW_FALSE@			-DG_LOG_DOMAIN=\""bot"\" \
 @MINGW_FALSE@			-Bstatic				
 
 @MINGW_TRUE@AM_CXXFLAGS = -g -ggdb -fpermissive \
-@MINGW_TRUE@			-DSPL_DATADIR=\""$(datadir)"\" \
-@MINGW_TRUE@			-DSPL_DOCDIR=\""$(docdir)"\" \
-@MINGW_TRUE@			-DSPL_LIBDIR=\""$(libdir)"\" \
-@MINGW_TRUE@			-DSPL_LOCALEDIR=\""$(localedir)"\" 	-DSPL_PREFIX=\""$(prefix)"\" \
-@MINGW_TRUE@			-DSPL_PREFIX=\""$(prefix)"\" \
-@MINGW_TRUE@			-DSPL_PRIVATE \
+@MINGW_TRUE@			-Dbot_DATADIR=\""$(datadir)"\" \
+@MINGW_TRUE@			-Dbot_DOCDIR=\""$(docdir)"\" \
+@MINGW_TRUE@			-Dbot_LIBDIR=\""$(libdir)"\" \
+@MINGW_TRUE@			-Dbot_LOCALEDIR=\""$(localedir)"\" 	-Dbot_PREFIX=\""$(prefix)"\" \
+@MINGW_TRUE@			-Dbot_PREFIX=\""$(prefix)"\" \
+@MINGW_TRUE@			-Dbot_PRIVATE \
 @MINGW_TRUE@			-DGTK \
 @MINGW_TRUE@			-DGNOME\
-@MINGW_TRUE@			-DG_LOG_DOMAIN=\""SmartPublicLight"\" \
+@MINGW_TRUE@			-DG_LOG_DOMAIN=\""bot"\" \
 @MINGW_TRUE@			-Bstatic				
 
-@MINGW_FALSE@SmartPublicLight_LDFLAGS = -lgmodule-2.0 -rdynamic -static
+@MINGW_FALSE@bot_LDFLAGS = -lgmodule-2.0 -rdynamic -static
 
-#SmartPublicLight_LDFLAGS = -lgmodule-2.0  -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
-@MINGW_TRUE@SmartPublicLight_LDFLAGS = -mms-bitfields  -mwindows -ffast-math -lgmodule-2.0 -static -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+#bot_LDFLAGS = -lgmodule-2.0  -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+@MINGW_TRUE@bot_LDFLAGS = -mms-bitfields  -mwindows -ffast-math -lgmodule-2.0 -static -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
 @MINGW_TRUE@WINDCPP = $(host_alias)-cpp
 @MINGW_TRUE@WINDRES = $(host_alias)-windres
 all: all-am
@@ -672,9 +649,9 @@ gsoap/soapC.$(OBJEXT): gsoap/$(am__dirstamp) \
 gsoap/stdsoap2.$(OBJEXT): gsoap/$(am__dirstamp) \
 	gsoap/$(DEPDIR)/$(am__dirstamp)
 
-SmartPublicLight$(EXEEXT): $(SmartPublicLight_OBJECTS) $(SmartPublicLight_DEPENDENCIES) $(EXTRA_SmartPublicLight_DEPENDENCIES) 
-	@rm -f SmartPublicLight$(EXEEXT)
-	$(AM_V_CXXLD)$(SmartPublicLight_LINK) $(SmartPublicLight_OBJECTS) $(SmartPublicLight_LDADD) $(LIBS)
+bot$(EXEEXT): $(bot_OBJECTS) $(bot_DEPENDENCIES) $(EXTRA_bot_DEPENDENCIES) 
+	@rm -f bot$(EXEEXT)
+	$(AM_V_CXXLD)$(bot_LINK) $(bot_OBJECTS) $(bot_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -683,29 +660,29 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_admin_user.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_admin_zone.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_callback.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_database.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_dcu.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_dcu_program_process.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_error.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_event_thread.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_lcu.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_line.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_log.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_login.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_schedule.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_server.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_soap.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_soap_thread.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_sql.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_ui_method.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_user.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_utils.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bot_zone.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mapviewer.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_admin_user.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_admin_zone.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_callback.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_database.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_dcu.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_dcu_program_process.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_error.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_event_thread.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_lcu.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_line.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_log.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_login.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_schedule.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_server.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_soap.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_soap_thread.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_sql.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_ui_method.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_user.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_utils.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smartstreetlight_zone.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@gsoap/$(DEPDIR)/soapC.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@gsoap/$(DEPDIR)/soapClient.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@gsoap/$(DEPDIR)/stdsoap2.Po@am__quote@
@@ -739,27 +716,27 @@ mostlyclean-libtool:
 
 clean-libtool:
 	-rm -rf .libs _libs
-install-SmartPublicLight_includeHEADERS: $(SmartPublicLight_include_HEADERS)
+install-bot_includeHEADERS: $(bot_include_HEADERS)
 	@$(NORMAL_INSTALL)
-	@list='$(SmartPublicLight_include_HEADERS)'; test -n "$(SmartPublicLight_includedir)" || list=; \
+	@list='$(bot_include_HEADERS)'; test -n "$(bot_includedir)" || list=; \
 	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(SmartPublicLight_includedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(SmartPublicLight_includedir)" || exit 1; \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(bot_includedir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(bot_includedir)" || exit 1; \
 	fi; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(SmartPublicLight_includedir)'"; \
-	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(SmartPublicLight_includedir)" || exit $$?; \
+	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(bot_includedir)'"; \
+	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(bot_includedir)" || exit $$?; \
 	done
 
-uninstall-SmartPublicLight_includeHEADERS:
+uninstall-bot_includeHEADERS:
 	@$(NORMAL_UNINSTALL)
-	@list='$(SmartPublicLight_include_HEADERS)'; test -n "$(SmartPublicLight_includedir)" || list=; \
+	@list='$(bot_include_HEADERS)'; test -n "$(bot_includedir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(SmartPublicLight_includedir)'; $(am__uninstall_files_from_dir)
+	dir='$(DESTDIR)$(bot_includedir)'; $(am__uninstall_files_from_dir)
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
@@ -847,7 +824,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(PROGRAMS) $(HEADERS)
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(SmartPublicLight_includedir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bot_includedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -906,7 +883,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-SmartPublicLight_includeHEADERS
+install-data-am: install-bot_includeHEADERS
 
 install-dvi: install-dvi-am
 
@@ -952,8 +929,7 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-SmartPublicLight_includeHEADERS \
-	uninstall-binPROGRAMS
+uninstall-am: uninstall-binPROGRAMS uninstall-bot_includeHEADERS
 
 .MAKE: install-am install-strip
 
@@ -961,27 +937,26 @@ uninstall-am: uninstall-SmartPublicLight_includeHEADERS \
 	clean-binPROGRAMS clean-generic clean-libtool clean-local \
 	cscopelist-am ctags ctags-am distclean distclean-compile \
 	distclean-generic distclean-libtool distclean-tags distdir dvi \
-	dvi-am html html-am info info-am install \
-	install-SmartPublicLight_includeHEADERS install-am \
-	install-binPROGRAMS install-data install-data-am install-dvi \
-	install-dvi-am install-exec install-exec-am install-html \
-	install-html-am install-info install-info-am install-man \
-	install-pdf install-pdf-am install-ps install-ps-am \
-	install-strip installcheck installcheck-am installdirs \
-	maintainer-clean maintainer-clean-generic mostlyclean \
-	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
-	pdf pdf-am ps ps-am tags tags-am uninstall \
-	uninstall-SmartPublicLight_includeHEADERS uninstall-am \
-	uninstall-binPROGRAMS
+	dvi-am html html-am info info-am install install-am \
+	install-binPROGRAMS install-bot_includeHEADERS install-data \
+	install-data-am install-dvi install-dvi-am install-exec \
+	install-exec-am install-html install-html-am install-info \
+	install-info-am install-man install-pdf install-pdf-am \
+	install-ps install-ps-am install-strip installcheck \
+	installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+	tags tags-am uninstall uninstall-am uninstall-binPROGRAMS \
+	uninstall-bot_includeHEADERS
 
 
-@MINGW_TRUE@spl_private.res: $(srcdir)/../smartstreetlight_private.rc
-@MINGW_TRUE@	$(WINDCPP) -DSPL_ICON="\"$(srcdir)/../icons/light.ico\""  $(srcdir)/../smartstreetlight_private.rc | $(WINDRES) --input-format=rc -o spl_private.res -O coff;
+@MINGW_TRUE@bot_private.res: $(srcdir)/../bot_private.rc
+@MINGW_TRUE@	$(WINDCPP) -Dbot_ICON="\"$(srcdir)/../icons/light.ico\""  $(srcdir)/../bot_private.rc | $(WINDRES) --input-format=rc -o bot_private.res -O coff;
 
 @MINGW_TRUE@clean-local:
-@MINGW_TRUE@	rm -f spl_private.res
-$(srcdir)/smartstreetlight_gui.h: $(srcdir)/SmartStreetLight.glade
-	$(srcdir)/gen_gui.sh  smartstreetlight_gui $(srcdir)/SmartStreetLight.glade $(srcdir)/smartstreetlight_gui.h
+@MINGW_TRUE@	rm -f bot_private.res
+$(srcdir)/bot_gui.h: $(srcdir)/bot.glade
+	$(srcdir)/gen_gui.sh  bot_gui $(srcdir)/bot.glade $(srcdir)/bot_gui.h
 
 clean-local:
 

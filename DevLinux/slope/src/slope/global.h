@@ -21,7 +21,7 @@
 #ifndef SLOPE_GLOBAL_H
 #define SLOPE_GLOBAL_H
 
-#ifdef __cplusplus
+#ifdef __cplubotus
 # define SLOPE_BEGIN_DECLS extern "C" {
 # define SLOPE_END_DECLS } /* extern "C" */
 #else

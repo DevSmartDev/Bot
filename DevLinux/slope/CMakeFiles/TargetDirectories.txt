@@ -1,4 +1,4 @@
-/media/DATA/projects/spl/SmartStreetLight/slope/demos/CMakeFiles/plot_stack.dir
-/media/DATA/projects/spl/SmartStreetLight/slope/demos/CMakeFiles/simple.dir
-/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir
-/media/DATA/projects/spl/SmartStreetLight/slope/demos/CMakeFiles/test.dir
+/media/DATA/projects/bot/bot/slope/demos/CMakeFiles/plot_stack.dir
+/media/DATA/projects/bot/bot/slope/demos/CMakeFiles/simple.dir
+/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir
+/media/DATA/projects/bot/bot/slope/demos/CMakeFiles/test.dir

@@ -1692,7 +1692,7 @@ msgstr "抑制狀態列中的狀態訊息"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr "從狀態列移除全部訊息。訊息仍然顯示於狀態訊息視窗之中。"
 
@@ -2256,11 +2256,11 @@ msgid ""
 msgstr "顯示符號自動補完清單所必需的字元數量"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "自動補完清單的顯示高度列數"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "在自動補完清單中顯示項目的最大數量"
 
 #: ../src/interface.c:4086
@@ -2387,7 +2387,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr "越過文件最後一列時，是否要停止捲動一頁"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>顯示</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2478,7 +2478,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>虛擬空格</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "顯示"
 
 #: ../src/interface.c:4381
@@ -2832,7 +2832,7 @@ msgid "Project Properties"
 msgstr "專案屬性"
 
 #: ../src/interface.c:5714
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "顯示："
 
 #: ../src/interface.c:5736
@@ -3140,7 +3140,7 @@ msgid "Go to End of Line"
 msgstr "前往列尾"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "前往顯示列的尾端"
 
 #: ../src/keybindings.c:449
@@ -4546,7 +4546,7 @@ msgstr "--- 分隔符號 ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr "選取要顯示在工具列上的項目。項目可以經由拖放而重新排序。"
 
@@ -4555,7 +4555,7 @@ msgid "Available Items"
 msgstr "可用項目"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "顯示項目"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -4896,7 +4896,7 @@ msgstr "不使用運行命令稿"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr "不使用簡單的運行命令稿，通常它用來顯示執行程式的離開狀態"
 
@@ -5038,7 +5038,7 @@ msgstr "插入 HTML 字元實體諸如 '&amp;'。"
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "IFast 開發人員團隊"
 
@@ -5378,39 +5378,39 @@ msgstr "用於備份檔案的日期/時間格式(\"man strftime\" 以瞭解細�
 msgid "Directory _levels to include in the backup destination:"
 msgstr "要包含在備份目的地中的目錄層級(_L)："
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "分割視窗"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "分割編輯器檢視為雙視窗。"
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "顯示目前的文件"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "取消分割(_U)"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "分割視窗(_S)"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 msgid "_Side by Side"
 msgstr "並排(_S)"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr "頂端和底部(_T)"
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "水平分割"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "垂直分割"

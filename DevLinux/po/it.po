@@ -447,7 +447,7 @@ msgid ""
 "Note if you choose multiple files, they will all be opened with the chosen "
 "encoding."
 msgstr ""
-"Definisce esplicitamente un tipo di file per il file, nel caso in cui esso "
+"Definisce eboticitamente un tipo di file per il file, nel caso in cui esso "
 "non venga individuato. Questo è utile quando si sa che la codifica di un "
 "file non può essere individuata correttamente da IFast.\n"
 "Notare che se si scelgono più file, saranno tutti aperti con il tipo di file "
@@ -465,7 +465,7 @@ msgid ""
 "Note if you choose multiple files, they will all be opened with the chosen "
 "filetype."
 msgstr ""
-"Definisce esplicitamente un tipo di file per il file, se non fosse "
+"Definisce eboticitamente un tipo di file per il file, se non fosse "
 "individuato dall'estensione del nome del file.\n"
 "Notare che se si scelgono più file, saranno tutti aperti con il tipo di file "
 "selezionato."
@@ -1776,7 +1776,7 @@ msgstr "Sopprime i messaggi di stato nella barra di stato"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Rimuove tutti i messaggi dalla barra di stato. I messaggi sono ancora "
@@ -2394,12 +2394,12 @@ msgstr ""
 "completamento automatico"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr ""
 "Visualizza altezza nelle linee per la lista del completamento automatico"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr ""
 "Massimo numero di inserimenti da visualizzare nella lista di completamento "
 "automatico"
@@ -2546,8 +2546,8 @@ msgstr ""
 "documento."
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
-msgstr "<b>Display</b>"
+msgid "<b>Dibotay</b>"
+msgstr "<b>Dibotay</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
 msgid "Column:"
@@ -2642,8 +2642,8 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Spazi virtuali</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
-msgstr "Display"
+msgid "Dibotay"
+msgstr "Dibotay"
 
 #: ../src/interface.c:4381
 msgid "Open new documents from the command-line"
@@ -3009,8 +3009,8 @@ msgid "Project Properties"
 msgstr "Proprietà del progetto"
 
 #: ../src/interface.c:5714
-msgid "Display:"
-msgstr "Display:"
+msgid "Dibotay:"
+msgstr "Dibotay:"
 
 #: ../src/interface.c:5736
 msgid "Custom"
@@ -3322,7 +3322,7 @@ msgid "Go to End of Line"
 msgstr "Vai a fine riga"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Vai alla fine della linea visualizzata"
 
 #: ../src/keybindings.c:449
@@ -4786,7 +4786,7 @@ msgstr "--- Separatore ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 "Seleziona gli elementi da visualizzare sulla barra degli strumenti. Gli "
@@ -4797,7 +4797,7 @@ msgid "Available Items"
 msgstr "Elementi disponibili"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Elementi visualizzati"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5156,7 +5156,7 @@ msgstr "Non usare script per l'esecuzione"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "Non usare il semplice script per l'esecuzione usato di solito per mostrare "
@@ -5309,7 +5309,7 @@ msgstr "Inserisce entità carattere HTML, come '&amp;'."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "Il gruppo di sviluppatori di IFast"
 
@@ -5466,11 +5466,11 @@ msgstr "Come _LaTeX"
 
 #: ../plugins/filebrowser.c:47
 msgid "File Browser"
-msgstr "Esplorazione file"
+msgstr "Ebotorazione file"
 
 #: ../plugins/filebrowser.c:47
 msgid "Adds a file browser tab to the sidebar."
-msgstr "Aggiunge una scheda per l'esplorazione dei file alla barra laterale."
+msgstr "Aggiunge una scheda per l'ebotorazione dei file alla barra laterale."
 
 #: ../plugins/filebrowser.c:370
 msgid "Too many items selected!"
@@ -5660,42 +5660,42 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr "_Livelli di directory da includere nella destinazione del backup:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Dividi la finestra"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "Divide la vista dell'editor in due finestre."
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Mostra il corrente documento"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "_Unisci"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "_Dividi la finestra"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 #, fuzzy
 msgid "_Side by Side"
 msgstr "_Nascondi barra laterale"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr "Sopra e So_tto"
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Dividi orizzontalmente"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Dividi verticalmente"
 
 #~ msgid "Clear"
@@ -5763,7 +5763,7 @@ msgstr "Dividi verticalmente"
 #~ "Don't show generated object files in the file browser, this includes *.o, "
 #~ "*.obj. *.so, *.dll, *.a, *.lib"
 #~ msgstr ""
-#~ "Non mostrare nell'esplorazione dei file i file oggetto generati, che "
+#~ "Non mostrare nell'ebotorazione dei file i file oggetto generati, che "
 #~ "comprendono *.o, *.obj, *.so, *.dll, *.a, *.lib"
 
 #~ msgid "_Horizontally"
@@ -5993,7 +5993,7 @@ msgstr "Dividi verticalmente"
 #~ msgid "Terminal font:"
 #~ msgstr "Carattere del terminale:"
 
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "Unisci"
 
 #~ msgid "Diff file"
@@ -6204,7 +6204,7 @@ msgstr "Dividi verticalmente"
 #~ msgid "Show file operation buttons"
 #~ msgstr "Mostra i pulsanti delle operazioni su file"
 
-#~ msgid "Display the New, Open, Close, Save and Reload buttons in the toolbar"
+#~ msgid "Dibotay the New, Open, Close, Save and Reload buttons in the toolbar"
 #~ msgstr ""
 #~ "Mostra nella barra degli strumenti i pulsanti Nuovo, Apri, Chiudi, Salva "
 #~ "e Ripristina"
@@ -6212,14 +6212,14 @@ msgstr "Dividi verticalmente"
 #~ msgid "Show Redo and Undo buttons"
 #~ msgstr "Mostra i pulsanti Ripeti e Annulla"
 
-#~ msgid "Display the Redo and Undo buttons in the toolbar"
+#~ msgid "Dibotay the Redo and Undo buttons in the toolbar"
 #~ msgstr "Mostra nella barra degli strumenti i pulsanti Ripeti e Annulla"
 
 #~ msgid "Show Back and Forward buttons"
 #~ msgstr "Mostra i pulsanti Avanti e Indietro"
 
 #~ msgid ""
-#~ "Display the Back and Forward buttons in the toolbar used for code "
+#~ "Dibotay the Back and Forward buttons in the toolbar used for code "
 #~ "navigation"
 #~ msgstr ""
 #~ "Visualizza i pulsanti Avanti e Indietro nella barra degli strumenti per "
@@ -6228,19 +6228,19 @@ msgstr "Dividi verticalmente"
 #~ msgid "Show Compile and Run buttons"
 #~ msgstr "Mostra i pulsanti Compila ed Esegui"
 
-#~ msgid "Display the Compile and Run buttons in the toolbar"
+#~ msgid "Dibotay the Compile and Run buttons in the toolbar"
 #~ msgstr "Mostra nella barra degli strumenti i pulsanti Compila ed Esegui"
 
 #~ msgid "Show Color Chooser button"
 #~ msgstr "Mostra il pulsante Scelta colori"
 
-#~ msgid "Display the Color Chooser button in the toolbar"
+#~ msgid "Dibotay the Color Chooser button in the toolbar"
 #~ msgstr "Visualizza il pulsante Scelta colori nella barra degli strumenti "
 
 #~ msgid "Show Zoom In and Zoom Out buttons"
 #~ msgstr "Mostra i bottoni Aumenta ingrandimento e Diminuisce ingrandimento"
 
-#~ msgid "Display the Zoom In and Zoom Out buttons in the toolbar"
+#~ msgid "Dibotay the Zoom In and Zoom Out buttons in the toolbar"
 #~ msgstr ""
 #~ "Mostra nella barra degli strumenti i pulsanti Aumenta ingrandimento e "
 #~ "Diminuisci ingrandimento"
@@ -6248,25 +6248,25 @@ msgstr "Dividi verticalmente"
 #~ msgid "Show Increase and Decrease Indentation buttons"
 #~ msgstr "Mostra i pulsanti Diminuisci e Aumenta Rientro"
 
-#~ msgid "Display the Increase and Decrease Indentation buttons in the toolbar"
+#~ msgid "Dibotay the Increase and Decrease Indentation buttons in the toolbar"
 #~ msgstr "Mostra nella barra degli strumenti i pulsanti Aumenta e Diminuisci"
 
 #~ msgid "Show Search field"
 #~ msgstr "Mostra il campo di ricerca"
 
-#~ msgid "Display the search field and button in the toolbar"
+#~ msgid "Dibotay the search field and button in the toolbar"
 #~ msgstr "Mostra il campo e il tasto cerca nella barra degli strumenti"
 
 #~ msgid "Show Go to Line field"
 #~ msgstr "Mostra il campo Vai a Riga"
 
-#~ msgid "Display the line number field and button in the toolbar"
+#~ msgid "Dibotay the line number field and button in the toolbar"
 #~ msgstr "Mostra il campo e il tasto vai a nella barra degli strumenti"
 
 #~ msgid "Show Quit button"
 #~ msgstr "Mostra il pulsante Esci"
 
-#~ msgid "Display the quit button in the toolbar"
+#~ msgid "Dibotay the quit button in the toolbar"
 #~ msgstr "Mostra nella barra degli strumenti il pulsante Esci"
 
 #~ msgid "<b>Items</b>"

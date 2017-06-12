@@ -448,7 +448,7 @@ msgid ""
 "Note if you choose multiple files, they will all be opened with the chosen "
 "encoding."
 msgstr ""
-"Define esplicitamente una codificación pal ficheru, non usaráse la deteición "
+"Define eboticitamente una codificación pal ficheru, non usaráse la deteición "
 "automática. Esto ye útil cuando se sabe que la codificación d'un ficheru nun "
 "puede ser deteutada correutamente por IFast.\n"
 "Ten en cuenta que si se seleicionen multiples ficheros toos serán abiertos "
@@ -466,7 +466,7 @@ msgid ""
 "Note if you choose multiple files, they will all be opened with the chosen "
 "filetype."
 msgstr ""
-"Define esplicitamente la triba de ficheru, non se usará la deteición por "
+"Define eboticitamente la triba de ficheru, non se usará la deteición por "
 "estensión.\n"
 "Ten en cuenta que si se seleicionen multiples ficheros toos serán abiertos "
 "como la triba seleicionada"
@@ -1745,7 +1745,7 @@ msgstr "Desaniciar mensaxes de estáu na barra d'estáu"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Desaniciar tolos mensaxes de la barra d'estáu. Los mensaxes son amosaos de "
@@ -2141,14 +2141,14 @@ msgstr "Activar plegáu"
 
 #: ../src/interface.c:3801
 msgid "Fold/unfold all children of a fold point"
-msgstr "Replegar/Desplegar tolos fíos d'un puntu de plegáu"
+msgstr "Replegar/Debotegar tolos fíos d'un puntu de plegáu"
 
 #: ../src/interface.c:3804
 msgid ""
 "Fold or unfold all children of a fold point. By pressing the Shift key while "
 "clicking on a fold symbol the contrary behavior is used."
 msgstr ""
-"Plegar o desplegar tolos fíos d'un puntu de pliegu. N'apertando la tecla "
+"Plegar o debotegar tolos fíos d'un puntu de pliegu. N'apertando la tecla "
 "Mayúscules demientres se calca nun símbolu de pliegu, algamaráse'l "
 "comportamientu contrariu."
 
@@ -2371,11 +2371,11 @@ msgstr ""
 "completar automáticamente"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Altor, en files, del visor pa la llista de completáu automáticu"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Númberu máximu d'entraes p'amosar na llista de completáu automáticu"
 
 #: ../src/interface.c:4086
@@ -2498,16 +2498,16 @@ msgstr ""
 
 #: ../src/interface.c:4214
 msgid "Stop scrolling at last line"
-msgstr "Parar desplazamientu na cabera llínia"
+msgstr "Parar debotazamientu na cabera llínia"
 
 #: ../src/interface.c:4217
 msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr ""
-"Cuando detener el desplazamiento d'una páxina pasada de la cabera llínia "
+"Cuando detener el debotazamiento d'una páxina pasada de la cabera llínia "
 "d'un documentu"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Amosar</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2605,7 +2605,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Caminos a les ferramientes</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Amosar"
 
 #: ../src/interface.c:4381
@@ -2976,7 +2976,7 @@ msgstr "Propiedaes del Proyeutu"
 
 #: ../src/interface.c:5714
 #, fuzzy
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Amosar"
 
 #: ../src/interface.c:5736
@@ -3058,15 +3058,15 @@ msgstr "Esborrar fasta la fin de llinia"
 
 #: ../src/keybindings.c:273
 msgid "Scroll to current line"
-msgstr "Desplazar a la llínia actual"
+msgstr "Debotazar a la llínia actual"
 
 #: ../src/keybindings.c:275
 msgid "Scroll up the view by one line"
-msgstr "Desplazar la vista p'arriba una llínia"
+msgstr "Debotazar la vista p'arriba una llínia"
 
 #: ../src/keybindings.c:277
 msgid "Scroll down the view by one line"
-msgstr "Desplazar la vista p'abaxo una llínia"
+msgstr "Debotazar la vista p'abaxo una llínia"
 
 #: ../src/keybindings.c:279
 msgid "Complete snippet"
@@ -3074,7 +3074,7 @@ msgstr "Completar construcción"
 
 #: ../src/keybindings.c:281
 msgid "Move cursor in snippet"
-msgstr "Desplazar el cursor na contrucción"
+msgstr "Debotazar el cursor na contrucción"
 
 #: ../src/keybindings.c:283
 msgid "Suppress snippet completion"
@@ -3285,7 +3285,7 @@ msgid "Go to End of Line"
 msgstr "Dir a lo cabero de llínia"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Dir a la Fin de la Llinia Amosada"
 
 #: ../src/keybindings.c:449
@@ -3599,7 +3599,7 @@ msgstr "Nome de ficheru de libvte.so"
 
 #: ../src/main.c:150
 msgid "Be verbose"
-msgstr "Más esplicativu"
+msgstr "Más eboticativu"
 
 #: ../src/main.c:151
 msgid "Show version and exit"
@@ -4732,7 +4732,7 @@ msgstr "--- Separador ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 "Esbillar elementos p'amosalos na barra de ferramientes. Los elementos pueden "
@@ -4743,7 +4743,7 @@ msgid "Available Items"
 msgstr "Elementos Disponibles"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Elementos Amosaos"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5035,7 +5035,7 @@ msgstr "Descender al calcar una tecla"
 
 #: ../src/vte.c:845
 msgid "Whether to scroll to the bottom if a key was pressed"
-msgstr "Cuando desplazar a la parte d'embaxo si una tecla ye calcada"
+msgstr "Cuando debotazar a la parte d'embaxo si una tecla ye calcada"
 
 #: ../src/vte.c:848
 msgid "Scroll on output"
@@ -5043,7 +5043,7 @@ msgstr "Descender cuando heba salida"
 
 #: ../src/vte.c:849
 msgid "Whether to scroll to the bottom when output is generated"
-msgstr "Desplazar a la parte d'embaxu cuando la salida seya xenerada"
+msgstr "Debotazar a la parte d'embaxu cuando la salida seya xenerada"
 
 #: ../src/vte.c:852
 msgid "Cursor blinks"
@@ -5093,7 +5093,7 @@ msgstr "Non usar script d'execución"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "Non usar el script d'execución, que s'usa normalmente p'amosar el valor "
@@ -5245,7 +5245,7 @@ msgstr "Inxertar entidaes HTML pa caráuteres como '&amp;'."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "L'equipu de desarrollu de IFast"
 
@@ -5600,42 +5600,42 @@ msgid "Directory _levels to include in the backup destination:"
 msgstr ""
 "Nive_les de direutoriu que incluiránse nel destín de la copia de seguridá:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Dixebrar Ventana"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "Dixebra la vista del editor en dos ventanes."
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Amosar el documentu actual"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "N_un cortar"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "_Dixebrar la ventana"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 #, fuzzy
 msgid "_Side by Side"
 msgstr "_Anubrir barra llateral"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr ""
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Xebrar Horizontalmente"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Xebrar Verticalmente"
 
 #~ msgid "Item"
@@ -5938,5 +5938,5 @@ msgstr "Xebrar Verticalmente"
 #~ "Estes opciones pa la emulación de terminal virtual (VTE) sólo apliquen si "
 #~ "la biblioteca de VTE pudo ser cargada."
 
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "Arrexuntar"

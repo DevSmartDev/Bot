@@ -664,8 +664,8 @@ mapviewer.o: ../../src/mapviewer.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/4.9/bits/stl_tree.h \
  /usr/include/c++/4.9/ext/alloc_traits.h \
  /usr/include/c++/4.9/bits/stl_map.h \
- /usr/include/c++/4.9/bits/stl_multimap.h \
- ../../src/smartstreetlight_utils.h ../../src/mapviewer.h \
+ /usr/include/c++/4.9/bits/stl_multimap.h ../../src/bot_utils.h \
+ ../../src/mapviewer.h \
  ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map.h \
  ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map-osd.h \
  ../../src/../../lib/osm-gps-map/linux/include/osmgpsmap-1.0/osm-gps-map-layer.h \
@@ -685,14 +685,10 @@ mapviewer.o: ../../src/mapviewer.cpp /usr/include/stdc-predef.h \
  /usr/include/glib-2.0/glib/gprintf.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h /usr/include/string.h \
- ../../src/smartstreetlight_lcu.h ../../src/smartstreetlight_dcu.h \
- ../../src/smartstreetlight_callback.h \
- ../../src/smartstreetlight_ui_method.h \
- ../../src/smartstreetlight_database.h \
- ../../src/smartstreetlight_common.h ../../src/gsoap/soapH.h \
- ../../src/gsoap/soapStub.h ../../src/gsoap/stdsoap2.h ../config.h \
- /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ ../../src/bot_error.h ../../src/gsoap/soapStub.h \
+ ../../src/gsoap/stdsoap2.h ../config.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/sys/uio.h \
@@ -710,7 +706,10 @@ mapviewer.o: ../../src/mapviewer.cpp /usr/include/stdc-predef.h \
  /usr/include/arpa/inet.h /usr/include/netdb.h /usr/include/rpc/netdb.h \
  /usr/include/x86_64-linux-gnu/bits/netdb.h /usr/include/fcntl.h \
  /usr/include/x86_64-linux-gnu/bits/fcntl.h \
- /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h ../../src/bot_lcu.h \
+ ../../src/bot_dcu.h ../../src/bot_callback.h ../../src/bot_ui_method.h \
+ ../../src/bot_database.h ../../src/bot_common.h ../../src/gsoap/soapH.h \
+ ../../src/gsoap/soapStub.h
 
 /usr/include/stdc-predef.h:
 
@@ -2172,7 +2171,7 @@ mapviewer.o: ../../src/mapviewer.cpp /usr/include/stdc-predef.h \
 
 /usr/include/c++/4.9/bits/stl_multimap.h:
 
-../../src/smartstreetlight_utils.h:
+../../src/bot_utils.h:
 
 ../../src/mapviewer.h:
 
@@ -2218,19 +2217,7 @@ mapviewer.o: ../../src/mapviewer.cpp /usr/include/stdc-predef.h \
 
 /usr/include/string.h:
 
-../../src/smartstreetlight_lcu.h:
-
-../../src/smartstreetlight_dcu.h:
-
-../../src/smartstreetlight_callback.h:
-
-../../src/smartstreetlight_ui_method.h:
-
-../../src/smartstreetlight_database.h:
-
-../../src/smartstreetlight_common.h:
-
-../../src/gsoap/soapH.h:
+../../src/bot_error.h:
 
 ../../src/gsoap/soapStub.h:
 
@@ -2297,3 +2284,19 @@ mapviewer.o: ../../src/mapviewer.cpp /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
 /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
+
+../../src/bot_lcu.h:
+
+../../src/bot_dcu.h:
+
+../../src/bot_callback.h:
+
+../../src/bot_ui_method.h:
+
+../../src/bot_database.h:
+
+../../src/bot_common.h:
+
+../../src/gsoap/soapH.h:
+
+../../src/gsoap/soapStub.h:

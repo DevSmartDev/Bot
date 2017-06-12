@@ -19,11 +19,11 @@
 
 /**
  * SECTION:gtkdatabox_points
- * @short_description: A #GtkDataboxGraph used for displaying xy-values as dots.
+ * @short_description: A #GtkDataboxGraph used for spling xy-values as dots.
  * @include: gtkdatabox_points.h
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxLines, #GtkDataboxBars, #GtkDataboxMarkers
  *
- * #GtkDataboxPoints is a #GtkDataboxGraph class for displaying xy-values as dots.
+ * #GtkDataboxPoints is a #GtkDataboxGraph class for spling xy-values as dots.
  *
  */
 
@@ -54,7 +54,7 @@ G_BEGIN_DECLS
  * GtkDataboxPoints:
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxLines, #GtkDataboxBars, #GtkDataboxMarkers
  *
- * #GtkDataboxPoints is a #GtkDataboxGraph class for displaying xy-values as dots.
+ * #GtkDataboxPoints is a #GtkDataboxGraph class for spling xy-values as dots.
  *
  */
 

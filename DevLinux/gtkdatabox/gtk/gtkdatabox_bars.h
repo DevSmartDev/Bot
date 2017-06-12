@@ -19,11 +19,11 @@
 
 /**
  * SECTION:gtkdatabox_bars
- * @short_description: A #GtkDataboxGraph used for displaying xy-values as vertical bars.
+ * @short_description: A #GtkDataboxGraph used for spling xy-values as vertical bars.
  * @include: gtkdatabox_bars.h
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines, #GtkDataboxMarkers
  *
- * #GtkDataboxBars is a #GtkDataboxGraph class for displaying xy-values as vertical bars which rise/drop from y=0.
+ * #GtkDataboxBars is a #GtkDataboxGraph class for spling xy-values as vertical bars which rise/drop from y=0.
  *
  */
 
@@ -54,7 +54,7 @@ G_BEGIN_DECLS
  * GtkDataboxBars:
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines, #GtkDataboxMarkers
  *
- * #GtkDataboxBars is a #GtkDataboxGraph class for displaying xy-values as vertical bars which rise/drop from y=0.
+ * #GtkDataboxBars is a #GtkDataboxGraph class for spling xy-values as vertical bars which rise/drop from y=0.
  *
  */
    typedef struct _GtkDataboxBars GtkDataboxBars;

@@ -75,7 +75,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 # endif
 #endif
 
-#ifdef __cplusplus
+#ifdef __cplubotus
 SOAP_SOURCE_STAMP("@(#) stdsoap2.cpp ver 2.8.7 2012-02-07 00:00:00 GMT")
 extern "C" {
 #else
@@ -534,7 +534,7 @@ extern int h_errno;
 static int
 fsend(struct soap *soap, const char *s, size_t n)
 { register int nwritten, err;
-#if defined(__cplusplus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
+#if defined(__cplubotus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
   if (soap->os)
   { soap->os->write(s, (std::streamsize)n);
     if (soap->os->good())
@@ -867,7 +867,7 @@ frecv(struct soap *soap, char *s, size_t n)
 { register int r;
   register int retries = 100; /* max 100 retries with non-blocking sockets */
   soap->errnum = 0;
-#if defined(__cplusplus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
+#if defined(__cplubotus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
   if (soap->is)
   { if (soap->is->good())
       return soap->is->read(s, (std::streamsize)n).gcount();
@@ -936,7 +936,7 @@ frecv(struct soap *soap, char *s, size_t n)
 #endif
           r = recv(soap->socket, s, (int)n, soap->socket_flags);
 #ifdef PALM
-        /* CycleSyncDisplay(curStatusMsg); */
+        /* CycleSyncDibotay(curStatusMsg); */
 #endif
         if (r >= 0)
           return (size_t)r;
@@ -8327,7 +8327,7 @@ soap_copy_context(struct soap *copy, const struct soap *soap)
   if (copy)
   { register struct soap_plugin *p = NULL;
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Copying context\n"));
-#ifdef __cplusplus
+#ifdef __cplubotus
     *copy = *soap;
 #else
     memcpy(copy, soap, sizeof(struct soap));
@@ -8437,7 +8437,7 @@ soap_copy_stream(struct soap *copy, struct soap *soap)
   copy->socket = soap->socket;
   copy->recv_timeout = soap->recv_timeout;
   copy->send_timeout = soap->send_timeout;
-#if defined(__cplusplus) && !defined(WITH_LEAN)
+#if defined(__cplubotus) && !defined(WITH_LEAN)
   copy->os = soap->os;
   copy->is = soap->is;
 #endif
@@ -16072,7 +16072,7 @@ soap_print_fault(struct soap *soap, FILE *fd)
 #endif
 
 /******************************************************************************/
-#ifdef __cplusplus
+#ifdef __cplubotus
 #ifndef WITH_LEAN
 #ifndef WITH_NOSTDLIB
 #ifndef WITH_COMPAT
@@ -16229,7 +16229,7 @@ soap_lookup_plugin(struct soap *soap, const char *id)
 #endif
 
 /******************************************************************************/
-#ifdef __cplusplus
+#ifdef __cplubotus
 }
 #endif
 
@@ -16239,35 +16239,35 @@ soap_lookup_plugin(struct soap *soap, const char *id)
  *
 \******************************************************************************/
 
-#ifdef __cplusplus
+#ifdef __cplubotus
 soap::soap()
 { soap_init(this);
 }
 #endif
 
 /******************************************************************************/
-#ifdef __cplusplus
+#ifdef __cplubotus
 soap::soap(soap_mode m)
 { soap_init1(this, m);
 }
 #endif
 
 /******************************************************************************/
-#ifdef __cplusplus
+#ifdef __cplubotus
 soap::soap(soap_mode im, soap_mode om)
 { soap_init2(this, im, om);
 }
 #endif
 
 /******************************************************************************/
-#ifdef __cplusplus
+#ifdef __cplubotus
 soap::soap(const struct soap& soap)
 { soap_copy_context(this, &soap);
 }
 #endif
 
 /******************************************************************************/
-#ifdef __cplusplus
+#ifdef __cplubotus
 soap::~soap()
 { soap_destroy(this);
   soap_end(this);

@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/media/DATA/projects/spl/SmartStreetLight/slope/demos/test.c" "/media/DATA/projects/spl/SmartStreetLight/slope/demos/CMakeFiles/test.dir/test.c.o"
+  "/media/DATA/projects/bot/bot/slope/demos/test.c" "/media/DATA/projects/bot/bot/slope/demos/CMakeFiles/test.dir/test.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/DependInfo.cmake"
+  "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

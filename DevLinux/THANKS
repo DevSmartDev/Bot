@@ -54,7 +54,7 @@ Bronisław Białek <after89(at)gmail(dot)com> - CSS parser update
 Roland Baudin <roland(dot)baudin(at)thalesaleniaspace(dot)com> - Matlab filetype patch
 Conrad Steenberg <gnocci-man(at)users(dot)sourceforge(dot)net> - symbol tree patch
 Herbert Voss <voss(at)perce(dot)de> - LaTeX file template
-Moritz Barsnick <barsnick(at)users(dot)sourceforge(dot)net> - Split Vertically command
+Moritz Barsnick <barsnick(at)users(dot)sourceforge(dot)net> - botit Vertically command
 Tyler D'Agosta - Add missing HTML entities
 Walery Studennikov <despairr(at)gmail(dot)com> - YAML filetype patch
 Guillaume de Rorthais <ioguix(at)free(dot)fr> - Auto-close brackets/braces/quotes patch
@@ -66,7 +66,7 @@ Chris Macksey <cmacksey(at)users(dot)sourceforge(dot)net> - ActionScript filetyp
 Simon Treny <simon(dot)treny(at)free(dot)fr> - Documents sidebar stock icons patch
 Elias Pschernig <elias(at)users(dot)sourceforge(dot)net> - Recent Projects menu patch
 Jesse Mayes <plasmasheep(at)gmail(dot)com> - Tango'ish Save All icon
-Eugene Arshinov <earshinov(at)gmail(dot)com> - Reload color schemes, split lines KB patches, and more
+Eugene Arshinov <earshinov(at)gmail(dot)com> - Reload color schemes, botit lines KB patches, and more
 Jon Strait <jstrait(at)moonloop(dot)net> - Markdown filetype patch
 Forgeot Eric <eforgeot(at)yahoo(dot)fr> - Txt2Tags filetype patch
 Lex Trotman <elextr<at>gmail<dot>com> - Build commands configuration improvements, and more

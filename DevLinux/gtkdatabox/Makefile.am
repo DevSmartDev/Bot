@@ -1,12 +1,12 @@
 # $Id: Makefile.am 4 2008-06-22 09:19:11Z rbock $
 
-bin_PROGRAMS = splchart
+bin_PROGRAMS = botchart
 
-splchart_SOURCES     = main.cpp option.cpp main.h chart.cpp chart.h\
-			../src/smartstreetlight_soap.cpp	\
-			../src/smartstreetlight_error.cpp	\
-			../src/smartstreetlight_error.h	\
-			../src/smartstreetlight_soap.h	\
+botchart_SOURCES     = main.cpp option.cpp main.h chart.cpp chart.h\
+			../src/bot_soap.cpp	\
+			../src/bot_error.cpp	\
+			../src/bot_error.h	\
+			../src/bot_soap.h	\
 			../src/gsoap/soapClient.cpp		\
 			../src/gsoap/soapC.cpp              	\
 			../src/gsoap/soapH.h 		\
@@ -46,9 +46,9 @@ splchart_SOURCES     = main.cpp option.cpp main.h chart.cpp chart.h\
 			gtk/gtkdatabox_ruler.h			
 
 
-splchart_CPPFLAGS		= -I$(top_srcdir)/gtkdatabox/gtk -D__SPL_CHART__ -D__clang__
+botchart_CPPFLAGS		= -I$(top_srcdir)/gtkdatabox/gtk -D__bot_CHART__ -D__clang__
 
-splchart_CFLAGS			=\
+botchart_CFLAGS			=\
 			-g -ggdb -O2 \
 			-DG_DISABLE_DEPRECATED\
 			-DGDK_DISABLE_DEPRECATED\
@@ -57,7 +57,7 @@ splchart_CFLAGS			=\
 			-DGSEAL_ENABLED\
 			-DGTK_DISABLE_SINGLE_INCLUDES\
 		 	@GTK2_CFLAGS@ 
-splchart_CXXFLAGS			=\
+botchart_CXXFLAGS			=\
 			-g -ggdb -O2 -fpermissive\
 			-DG_DISABLE_DEPRECATED\
 			-DGDK_DISABLE_DEPRECATED\
@@ -73,8 +73,8 @@ LDADD 			= @GTK2_LIBS@ \
 
 
 if MINGW
-splchart_LDFLAGS = -mms-bitfields  -mwindows -ffast-math -static $(LDADD) -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+botchart_LDFLAGS = -mms-bitfields  -mwindows -ffast-math -static $(LDADD) -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
 else
-splchart_LDFLAGS = -static $(LDADD)
+botchart_LDFLAGS = -static $(LDADD)
 endif
 clean-local:

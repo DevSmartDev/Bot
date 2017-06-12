@@ -1738,7 +1738,7 @@ msgstr "Supprimer les messages de statut de la barre de statut"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Supprime tous les messages de la barre de statut. Les messages sont toujours "
@@ -2359,11 +2359,11 @@ msgstr ""
 "automatique des symboles"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Nombre de lignes à afficher dans la liste de complétion automatique"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr ""
 "Nombre maximum d'entrées à afficher dans la liste de complétion automatique"
 
@@ -2509,7 +2509,7 @@ msgstr ""
 "Permet d'arrêter le défilement une page après la dernière ligne d'un document"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Affichage</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2607,7 +2607,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Espaces virtuels</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Affichage"
 
 #: ../src/interface.c:4381
@@ -2983,7 +2983,7 @@ msgid "Project Properties"
 msgstr "Propriétés du projet"
 
 #: ../src/interface.c:5714
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Affichage :"
 
 #: ../src/interface.c:5736
@@ -3292,7 +3292,7 @@ msgstr "Aller à la fin de la ligne"
 
 # fin de la ligne virtuelle si word wrapping
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Aller à la fin de la ligne affichée"
 
 #: ../src/keybindings.c:449
@@ -4764,7 +4764,7 @@ msgstr "--- Séparateur ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 "Sélectionnez les éléments à afficher sur la barre d'outils. Les éléments "
@@ -4775,7 +4775,7 @@ msgid "Available Items"
 msgstr "Outils disponibles"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Outils affichés"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5132,7 +5132,7 @@ msgstr "Ne pas utiliser le script de lancement"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "Ne pas utiliser le script de lancement utilisé habituellement pour afficher "
@@ -5277,7 +5277,7 @@ msgstr "Insérer des entités HTML telles que '&amp;'."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "L'équipe de développement de IFast"
 
@@ -5637,41 +5637,41 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr "_Niveaux de dossiers à inclure dans la sauvegarde :"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Diviser la fenêtre"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "Diviser  en deux la fenêtre d'édition"
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Afficher le document courant"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "_Annuler la division"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "_Diviser la fenêtre"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 msgid "_Side by Side"
 msgstr "_Côte à côte"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr "En _haut et en bas"
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Diviser horizontalement"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Diviser verticalement"
 
 #~ msgid ""
@@ -5975,7 +5975,7 @@ msgstr "Diviser verticalement"
 #~ msgid "Terminal font:"
 #~ msgstr "Police du terminal :"
 
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "Annuler la division"
 
 #~ msgid "Diff file"
@@ -6190,7 +6190,7 @@ msgstr "Diviser verticalement"
 #~ msgid "Show File Operation buttons"
 #~ msgstr "Afficher les boutons d'opération sur les fichiers"
 
-#~ msgid "Display the New, Open, Close, Save and Reload buttons in the toolbar"
+#~ msgid "Dibotay the New, Open, Close, Save and Reload buttons in the toolbar"
 #~ msgstr ""
 #~ "Afficher les boutons Nouveau, Ouvrir, Fermer, Enregistrer et Recharger "
 #~ "dans la barre d'outils"
@@ -6200,7 +6200,7 @@ msgstr "Diviser verticalement"
 #~ msgstr "Afficher les boutons Compiler et Lancer"
 
 #, fuzzy
-#~ msgid "Display the Cut and Delete buttons in the toolbar"
+#~ msgid "Dibotay the Cut and Delete buttons in the toolbar"
 #~ msgstr ""
 #~ "Afficher les boutons Compiler et Lancer un programme dans la barre "
 #~ "d'outils"
@@ -6210,7 +6210,7 @@ msgstr "Diviser verticalement"
 #~ msgstr "Afficher les boutons Compiler et Lancer"
 
 #, fuzzy
-#~ msgid "Display the Copy and Paste buttons in the toolbar"
+#~ msgid "Dibotay the Copy and Paste buttons in the toolbar"
 #~ msgstr ""
 #~ "Afficher les boutons Compiler et Lancer un programme dans la barre "
 #~ "d'outils"
@@ -6218,7 +6218,7 @@ msgstr "Diviser verticalement"
 #~ msgid "Show Redo and Undo buttons"
 #~ msgstr "Afficher les boutons d'annulation et de répétition"
 
-#~ msgid "Display the Redo and Undo buttons in the toolbar"
+#~ msgid "Dibotay the Redo and Undo buttons in the toolbar"
 #~ msgstr ""
 #~ "Afficher les boutons d'annulation et de répétition dans la barre d'outils"
 
@@ -6226,7 +6226,7 @@ msgstr "Diviser verticalement"
 #~ msgstr "Afficher les boutons suivant et précédent"
 
 #~ msgid ""
-#~ "Display the Back and Forward buttons in the toolbar used for code "
+#~ "Dibotay the Back and Forward buttons in the toolbar used for code "
 #~ "navigation"
 #~ msgstr ""
 #~ "Afficher les boutons suivant et précédent utilisés pour la navigation "
@@ -6235,7 +6235,7 @@ msgstr "Diviser verticalement"
 #~ msgid "Show Compile and Run buttons"
 #~ msgstr "Afficher les boutons Compiler et Lancer"
 
-#~ msgid "Display the Compile and Run buttons in the toolbar"
+#~ msgid "Dibotay the Compile and Run buttons in the toolbar"
 #~ msgstr ""
 #~ "Afficher les boutons Compiler et Lancer un programme dans la barre "
 #~ "d'outils"
@@ -6243,20 +6243,20 @@ msgstr "Diviser verticalement"
 #~ msgid "Show Color Chooser button"
 #~ msgstr "Afficher le bouton du sélecteur de couleurs"
 
-#~ msgid "Display the Color Chooser button in the toolbar"
+#~ msgid "Dibotay the Color Chooser button in the toolbar"
 #~ msgstr "Affiche le bouton du sélecteur de couleur dans la barre d'outils"
 
 #~ msgid "Show Zoom In and Zoom Out buttons"
 #~ msgstr "Afficher les boutons de zoom avant et arrière"
 
-#~ msgid "Display the Zoom In and Zoom Out buttons in the toolbar"
+#~ msgid "Dibotay the Zoom In and Zoom Out buttons in the toolbar"
 #~ msgstr ""
 #~ "Afficher les boutons de zoom avant et arrière dans la barre d'outils"
 
 #~ msgid "Show Increase and Decrease Indentation buttons"
 #~ msgstr "Afficher les boutons d'indentation"
 
-#~ msgid "Display the Increase and Decrease Indentation buttons in the toolbar"
+#~ msgid "Dibotay the Increase and Decrease Indentation buttons in the toolbar"
 #~ msgstr ""
 #~ "Afficher les boutons d'augmentation et de diminution d'indentation dans "
 #~ "la barre d'outils"
@@ -6264,21 +6264,21 @@ msgstr "Diviser verticalement"
 #~ msgid "Show Search field"
 #~ msgstr "Afficher le champ de recherche"
 
-#~ msgid "Display the search field and button in the toolbar"
+#~ msgid "Dibotay the search field and button in the toolbar"
 #~ msgstr ""
 #~ "Afficher le champ de recherche et le bouton associé dans la barre d'outils"
 
 #~ msgid "Show Go to Line field"
 #~ msgstr "Afficher le champ Aller à la ligne"
 
-#~ msgid "Display the line number field and button in the toolbar"
+#~ msgid "Dibotay the line number field and button in the toolbar"
 #~ msgstr ""
 #~ "Afficher le champ de numéro de ligne et son bouton dans la barre d'outils"
 
 #~ msgid "Show Quit button"
 #~ msgstr "Afficher le bouton Quitter"
 
-#~ msgid "Display the quit button in the toolbar"
+#~ msgid "Dibotay the quit button in the toolbar"
 #~ msgstr "Afficher le bouton Quitter dans la barre d'outils"
 
 #~ msgid "<b>Items</b>"

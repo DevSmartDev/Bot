@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 dnl $Id: configure.ac 5861 2011-06-20 16:11:46Z colombanw $
 
-AC_INIT([SmartPublicLight], [2.0.1])
+AC_INIT([bot], [2.0.1])
 AC_CONFIG_SRCDIR([configure.ac])
 #AM_INIT_AUTOMAKE([-Wno-portability])
 AM_INIT_AUTOMAKE([subdir-objects])
@@ -379,7 +379,7 @@ else
 fi
 
 # i18n
-GETTEXT_PACKAGE=smartstreetlight
+GETTEXT_PACKAGE=bot
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
 
@@ -413,7 +413,7 @@ if test -z "${docdir}"; then
 	AC_SUBST(docdir)
 fi
 
-IFAST_DATA_DIR=`eval echo ${datarootdir}/smartstreetlight`
+IFAST_DATA_DIR=`eval echo ${datarootdir}/bot`
 AC_SUBST(IFAST_DATA_DIR)
 
 # intltool hack to define install_sh on Debian/Ubuntu systems
@@ -431,8 +431,8 @@ gtkdatabox/Makefile
 src/Makefile
 src/gsoap/Makefile
 po/Makefile.in
-smartstreetlight.spec
-smartstreetlight.pc
+bot.spec
+bot.pc
 icons/Makefile
 icons/32x32/Makefile
 icons/16x16/Makefile

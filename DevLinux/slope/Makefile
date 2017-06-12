@@ -20,7 +20,7 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Suppress display of executed commands.
+# Suppress spl of executed commands.
 $(VERBOSE).SILENT:
 
 # A target that is always out of date.
@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_SOURCE_DIR = /media/DATA/projects/bot/bot/slope
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_BINARY_DIR = /media/DATA/projects/bot/bot/slope
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -104,9 +104,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles /media/DATA/projects/bot/bot/slope/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -43,4 +43,4 @@
 	../../plugins/export.c \
 	../../plugins/filebrowser.c \
 	../../plugins/saveactions.c \
-	../../plugins/splitwindow.c
+	../../plugins/botitwindow.c

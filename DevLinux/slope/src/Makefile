@@ -20,7 +20,7 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Suppress display of executed commands.
+# Suppress spl of executed commands.
 $(VERBOSE).SILENT:
 
 # A target that is always out of date.
@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_SOURCE_DIR = /media/DATA/projects/bot/bot/slope
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_BINARY_DIR = /media/DATA/projects/bot/bot/slope
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -104,14 +104,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles /media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/progress.marks
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 0
+	cd /media/DATA/projects/bot/bot/slope && $(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles /media/DATA/projects/bot/bot/slope/src/CMakeFiles/progress.marks
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -120,22 +120,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /media/DATA/projects/bot/bot/slope && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/slope.dir/rule:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slope.dir/rule
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slope.dir/rule
 .PHONY : src/CMakeFiles/slope.dir/rule
 
 # Convenience name for target.
@@ -144,7 +144,7 @@ slope: src/CMakeFiles/slope.dir/rule
 
 # fast build rule for target.
 slope/fast:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/build
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/build
 .PHONY : slope/fast
 
 slope/chart.o: slope/chart.c.o
@@ -152,7 +152,7 @@ slope/chart.o: slope/chart.c.o
 
 # target to build an object file
 slope/chart.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/chart.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/chart.c.o
 .PHONY : slope/chart.c.o
 
 slope/chart.i: slope/chart.c.i
@@ -160,7 +160,7 @@ slope/chart.i: slope/chart.c.i
 
 # target to preprocess a source file
 slope/chart.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/chart.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/chart.c.i
 .PHONY : slope/chart.c.i
 
 slope/chart.s: slope/chart.c.s
@@ -168,7 +168,7 @@ slope/chart.s: slope/chart.c.s
 
 # target to generate assembly for a file
 slope/chart.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/chart.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/chart.c.s
 .PHONY : slope/chart.c.s
 
 slope/drawing.o: slope/drawing.c.o
@@ -176,7 +176,7 @@ slope/drawing.o: slope/drawing.c.o
 
 # target to build an object file
 slope/drawing.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/drawing.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/drawing.c.o
 .PHONY : slope/drawing.c.o
 
 slope/drawing.i: slope/drawing.c.i
@@ -184,7 +184,7 @@ slope/drawing.i: slope/drawing.c.i
 
 # target to preprocess a source file
 slope/drawing.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/drawing.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/drawing.c.i
 .PHONY : slope/drawing.c.i
 
 slope/drawing.s: slope/drawing.c.s
@@ -192,7 +192,7 @@ slope/drawing.s: slope/drawing.c.s
 
 # target to generate assembly for a file
 slope/drawing.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/drawing.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/drawing.c.s
 .PHONY : slope/drawing.c.s
 
 slope/figure.o: slope/figure.c.o
@@ -200,7 +200,7 @@ slope/figure.o: slope/figure.c.o
 
 # target to build an object file
 slope/figure.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/figure.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/figure.c.o
 .PHONY : slope/figure.c.o
 
 slope/figure.i: slope/figure.c.i
@@ -208,7 +208,7 @@ slope/figure.i: slope/figure.c.i
 
 # target to preprocess a source file
 slope/figure.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/figure.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/figure.c.i
 .PHONY : slope/figure.c.i
 
 slope/figure.s: slope/figure.c.s
@@ -216,7 +216,7 @@ slope/figure.s: slope/figure.c.s
 
 # target to generate assembly for a file
 slope/figure.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/figure.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/figure.c.s
 .PHONY : slope/figure.c.s
 
 slope/item.o: slope/item.c.o
@@ -224,7 +224,7 @@ slope/item.o: slope/item.c.o
 
 # target to build an object file
 slope/item.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/item.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/item.c.o
 .PHONY : slope/item.c.o
 
 slope/item.i: slope/item.c.i
@@ -232,7 +232,7 @@ slope/item.i: slope/item.c.i
 
 # target to preprocess a source file
 slope/item.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/item.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/item.c.i
 .PHONY : slope/item.c.i
 
 slope/item.s: slope/item.c.s
@@ -240,7 +240,7 @@ slope/item.s: slope/item.c.s
 
 # target to generate assembly for a file
 slope/item.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/item.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/item.c.s
 .PHONY : slope/item.c.s
 
 slope/sampler.o: slope/sampler.c.o
@@ -248,7 +248,7 @@ slope/sampler.o: slope/sampler.c.o
 
 # target to build an object file
 slope/sampler.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/sampler.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/sampler.c.o
 .PHONY : slope/sampler.c.o
 
 slope/sampler.i: slope/sampler.c.i
@@ -256,7 +256,7 @@ slope/sampler.i: slope/sampler.c.i
 
 # target to preprocess a source file
 slope/sampler.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/sampler.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/sampler.c.i
 .PHONY : slope/sampler.c.i
 
 slope/sampler.s: slope/sampler.c.s
@@ -264,7 +264,7 @@ slope/sampler.s: slope/sampler.c.s
 
 # target to generate assembly for a file
 slope/sampler.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/sampler.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/sampler.c.s
 .PHONY : slope/sampler.c.s
 
 slope/scale.o: slope/scale.c.o
@@ -272,7 +272,7 @@ slope/scale.o: slope/scale.c.o
 
 # target to build an object file
 slope/scale.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/scale.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/scale.c.o
 .PHONY : slope/scale.c.o
 
 slope/scale.i: slope/scale.c.i
@@ -280,7 +280,7 @@ slope/scale.i: slope/scale.c.i
 
 # target to preprocess a source file
 slope/scale.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/scale.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/scale.c.i
 .PHONY : slope/scale.c.i
 
 slope/scale.s: slope/scale.c.s
@@ -288,7 +288,7 @@ slope/scale.s: slope/scale.c.s
 
 # target to generate assembly for a file
 slope/scale.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/scale.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/scale.c.s
 .PHONY : slope/scale.c.s
 
 slope/view.o: slope/view.c.o
@@ -296,7 +296,7 @@ slope/view.o: slope/view.c.o
 
 # target to build an object file
 slope/view.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/view.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/view.c.o
 .PHONY : slope/view.c.o
 
 slope/view.i: slope/view.c.i
@@ -304,7 +304,7 @@ slope/view.i: slope/view.c.i
 
 # target to preprocess a source file
 slope/view.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/view.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/view.c.i
 .PHONY : slope/view.c.i
 
 slope/view.s: slope/view.c.s
@@ -312,7 +312,7 @@ slope/view.s: slope/view.c.s
 
 # target to generate assembly for a file
 slope/view.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/view.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/view.c.s
 .PHONY : slope/view.c.s
 
 slope/xyaxis-sampler.o: slope/xyaxis-sampler.c.o
@@ -320,7 +320,7 @@ slope/xyaxis-sampler.o: slope/xyaxis-sampler.c.o
 
 # target to build an object file
 slope/xyaxis-sampler.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o
 .PHONY : slope/xyaxis-sampler.c.o
 
 slope/xyaxis-sampler.i: slope/xyaxis-sampler.c.i
@@ -328,7 +328,7 @@ slope/xyaxis-sampler.i: slope/xyaxis-sampler.c.i
 
 # target to preprocess a source file
 slope/xyaxis-sampler.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.i
 .PHONY : slope/xyaxis-sampler.c.i
 
 slope/xyaxis-sampler.s: slope/xyaxis-sampler.c.s
@@ -336,7 +336,7 @@ slope/xyaxis-sampler.s: slope/xyaxis-sampler.c.s
 
 # target to generate assembly for a file
 slope/xyaxis-sampler.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.s
 .PHONY : slope/xyaxis-sampler.c.s
 
 slope/xyaxis.o: slope/xyaxis.c.o
@@ -344,7 +344,7 @@ slope/xyaxis.o: slope/xyaxis.c.o
 
 # target to build an object file
 slope/xyaxis.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis.c.o
 .PHONY : slope/xyaxis.c.o
 
 slope/xyaxis.i: slope/xyaxis.c.i
@@ -352,7 +352,7 @@ slope/xyaxis.i: slope/xyaxis.c.i
 
 # target to preprocess a source file
 slope/xyaxis.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis.c.i
 .PHONY : slope/xyaxis.c.i
 
 slope/xyaxis.s: slope/xyaxis.c.s
@@ -360,7 +360,7 @@ slope/xyaxis.s: slope/xyaxis.c.s
 
 # target to generate assembly for a file
 slope/xyaxis.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyaxis.c.s
 .PHONY : slope/xyaxis.c.s
 
 slope/xyscale.o: slope/xyscale.c.o
@@ -368,7 +368,7 @@ slope/xyscale.o: slope/xyscale.c.o
 
 # target to build an object file
 slope/xyscale.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyscale.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyscale.c.o
 .PHONY : slope/xyscale.c.o
 
 slope/xyscale.i: slope/xyscale.c.i
@@ -376,7 +376,7 @@ slope/xyscale.i: slope/xyscale.c.i
 
 # target to preprocess a source file
 slope/xyscale.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyscale.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyscale.c.i
 .PHONY : slope/xyscale.c.i
 
 slope/xyscale.s: slope/xyscale.c.s
@@ -384,7 +384,7 @@ slope/xyscale.s: slope/xyscale.c.s
 
 # target to generate assembly for a file
 slope/xyscale.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyscale.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyscale.c.s
 .PHONY : slope/xyscale.c.s
 
 slope/xyseries.o: slope/xyseries.c.o
@@ -392,7 +392,7 @@ slope/xyseries.o: slope/xyseries.c.o
 
 # target to build an object file
 slope/xyseries.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyseries.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyseries.c.o
 .PHONY : slope/xyseries.c.o
 
 slope/xyseries.i: slope/xyseries.c.i
@@ -400,7 +400,7 @@ slope/xyseries.i: slope/xyseries.c.i
 
 # target to preprocess a source file
 slope/xyseries.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyseries.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyseries.c.i
 .PHONY : slope/xyseries.c.i
 
 slope/xyseries.s: slope/xyseries.c.s
@@ -408,7 +408,7 @@ slope/xyseries.s: slope/xyseries.c.s
 
 # target to generate assembly for a file
 slope/xyseries.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyseries.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/slope/xyseries.c.s
 .PHONY : slope/xyseries.c.s
 
 # Help Target
@@ -467,6 +467,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /media/DATA/projects/bot/bot/slope && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

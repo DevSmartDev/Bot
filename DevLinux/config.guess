@@ -436,7 +436,7 @@ case "${UNAME_MACHINE}:${UNAME_SYSTEM}:${UNAME_RELEASE}:${UNAME_VERSION}" in
     mips:*:*:UMIPS | mips:*:*:RISCos)
 	eval $set_cc_for_build
 	sed 's/^	//' << EOF >$dummy.c
-#ifdef __cplusplus
+#ifdef __cplubotus
 #include <stdio.h>  /* for printf() prototype */
 	int main (int argc, char *argv[]) {
 #else

@@ -103,7 +103,7 @@ msgid ""
 "License text could not be found, please visit http://www.gnu.org/licenses/"
 "gpl-2.0.txt to view it online."
 msgstr ""
-"Besedilo licence ni najdeno, za ogled obiščite spletno mesto: http://www.gnu."
+"Besedilo licence ni najdeno, za ogled obiščite botetno mesto: http://www.gnu."
 "org/licenses/gpl-2.0.txt "
 
 # fall back to %d
@@ -935,7 +935,7 @@ msgstr "Romunsko"
 msgid "Arabic"
 msgstr "Arabsko"
 
-# sploh ni na voljo, ? (je samo, potrebuješ nameščeno potrebno kodno stran)
+# botoh ni na voljo, ? (je samo, potrebuješ nameščeno potrebno kodno stran)
 #. not available at all, ?
 #: ../src/encodings.c:104 ../src/encodings.c:106 ../src/encodings.c:107
 msgid "Hebrew"
@@ -1587,7 +1587,7 @@ msgstr "_Pomoč"
 
 #: ../src/interface.c:1308
 msgid "_Website"
-msgstr "_Splet"
+msgstr "_botet"
 
 #: ../src/interface.c:1312
 msgid "_Keyboard Shortcuts"
@@ -1721,7 +1721,7 @@ msgid ""
 "for plugins. Leave blank to disable."
 msgstr ""
 "Tu navedena pot bo dodatno preiskana za vstavke. IFast sicer najprej preveri "
-"splošno namestitveno pot in nastavitveno mapo. Pustite prazno, da "
+"botošno namestitveno pot in nastavitveno mapo. Pustite prazno, da "
 "onemogočite."
 
 #: ../src/interface.c:3126
@@ -1761,7 +1761,7 @@ msgstr "Zatri sporočila stanja v vrstici stanja"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Odstrani vsa sporočila iz vrstice stanja. Sporočila se še dalje prikazujejo "
@@ -1875,7 +1875,7 @@ msgstr "Razno"
 #. * tab label object.
 #: ../src/interface.c:3250 ../src/prefs.c:1565
 msgid "General"
-msgstr "Splošno"
+msgstr "botošno"
 
 #: ../src/interface.c:3291
 msgid "Show symbol list"
@@ -2330,7 +2330,7 @@ msgid ""
 "Automatic completion of known symbols in open files (function names, global "
 "variables, ...)"
 msgstr ""
-"Samodokončanje znanih simbolov v odprtih datotekah (imena funkcij, splošne "
+"Samodokončanje znanih simbolov v odprtih datotekah (imena funkcij, botošne "
 "spremenljivke, ...)"
 
 #: ../src/interface.c:4024
@@ -2361,11 +2361,11 @@ msgstr ""
 "Količina potrebnih znakov, ki je potrebna za prikaz seznama samodopolnjevanja"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Višina prikaza v vrsticah za seznam samodopolnjevanja"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Največje število prikazanih vnosov v seznamu samodopolnjevanja"
 
 #: ../src/interface.c:4086
@@ -2497,7 +2497,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr "Ali naj se ustavi pomikanje za zadnjo vrstico dokumenta"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Prikaz</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2594,7 +2594,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Navidezni presledki</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Prikaz"
 
 # "Open"!="Create"; "Ustvari"=="Create"; "Start"=="Začni"; "Začni"==nonsense_translation;
@@ -2960,7 +2960,7 @@ msgid "Project Properties"
 msgstr "Lastnosti projekta"
 
 #: ../src/interface.c:5714
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Prikaži:"
 
 #: ../src/interface.c:5736
@@ -2969,7 +2969,7 @@ msgstr "Po meri"
 
 #: ../src/interface.c:5744
 msgid "Use global settings"
-msgstr "Uporabi splošne nastavitve"
+msgstr "Uporabi botošne nastavitve"
 
 #: ../src/keybindings.c:220 ../src/plugins.c:1248 ../src/symbols.c:709
 msgid "File"
@@ -3268,7 +3268,7 @@ msgid "Go to End of Line"
 msgstr "Pojdi na konec vrstice"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Pojdi na konec prikazne vrstice"
 
 #: ../src/keybindings.c:449
@@ -3522,7 +3522,7 @@ msgstr "Natisni notranja imena tipov datotek"
 
 #: ../src/main.c:131
 msgid "Generate global tags file (see documentation)"
-msgstr "Ustvari splošno datoteko (glej dokumentacijo)"
+msgstr "Ustvari botošno datoteko (glej dokumentacijo)"
 
 #: ../src/main.c:132
 msgid "Don't preprocess C/C++ files when generating tags"
@@ -4736,7 +4736,7 @@ msgstr "--- Ločilo ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 "Izberite izbire, ki naj bodo prikazane na orodni vrstici. S potegom in "
@@ -4747,7 +4747,7 @@ msgid "Available Items"
 msgstr "Dostopne izbire"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Prikazane izbire"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5099,7 +5099,7 @@ msgstr "Ne uporabi zagonske skripte"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "Ne uporabi preproste zagonske skripte katera je običajno uporabljena za "
@@ -5183,7 +5183,7 @@ msgstr "Osnovno zaglavje:"
 
 #: ../plugins/classbuilder.c:519
 msgid "Global"
-msgstr "Splošno"
+msgstr "botošno"
 
 #: ../plugins/classbuilder.c:538
 msgid "Base GType:"
@@ -5244,7 +5244,7 @@ msgstr "Vstavi HTML znakovne entitete kot '&amp;'."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "IFast razvojna ekipa"
 
@@ -5601,41 +5601,41 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr "Koliko nivojev kopije želite vk_ljučiti v cilj varnostne kopije:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Razdeli okno"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "Razdeli pogled urejevalnika v dve ločeni okni"
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Pokaži trenutni dokument"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "_Združi"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "_Razdeli okno"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 msgid "_Side by Side"
 msgstr "_Drug ob drugem"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr "_Počez"
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Razdeli vodoravno"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Razdeli navpično"
 
 # stran Tiskanje

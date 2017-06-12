@@ -110,8 +110,8 @@ In the 2nd and 3rd, copy all SRCFILES to DIRECTORY.
 In the 4th, create DIRECTORIES.
 
 Options:
-     --help     display this help and exit.
-     --version  display version info and exit.
+     --help     spl this help and exit.
+     --version  spl version info and exit.
 
   -c            (ignored)
   -C            install only if different (preserve the last data modification time)

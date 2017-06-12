@@ -1723,10 +1723,10 @@ msgstr "Suppress status messages in the status bar"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 
 #: ../src/interface.c:3169
@@ -2322,12 +2322,12 @@ msgstr ""
 "autocompletion list"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
-msgstr "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
+msgstr "Dibotay height in rows for the autocompletion list"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
-msgstr "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
+msgstr "Maximum number of entries to spl in the autocompletion list"
 
 #: ../src/interface.c:4086
 msgid "Symbol list update frequency:"
@@ -2456,8 +2456,8 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr "Whether to stop scrolling one page past the last line of a document"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
-msgstr "<b>Display</b>"
+msgid "<b>Dibotay</b>"
+msgstr "<b>Dibotay</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
 msgid "Column:"
@@ -2553,8 +2553,8 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Virtual spaces</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
-msgstr "Display"
+msgid "Dibotay"
+msgstr "Dibotay"
 
 #: ../src/interface.c:4381
 msgid "Open new documents from the command-line"
@@ -2913,8 +2913,8 @@ msgid "Project Properties"
 msgstr "Project Properties"
 
 #: ../src/interface.c:5714
-msgid "Display:"
-msgstr "Display:"
+msgid "Dibotay:"
+msgstr "Dibotay:"
 
 #: ../src/interface.c:5736
 msgid "Custom"
@@ -3221,8 +3221,8 @@ msgid "Go to End of Line"
 msgstr "Go to End of Line"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
-msgstr "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
+msgstr "Go to End of Dibotay Line"
 
 #: ../src/keybindings.c:449
 msgid "Go to Previous Word Part"
@@ -4650,10 +4650,10 @@ msgstr "--- Separator ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 
 #: ../src/toolbar.c:968
@@ -4661,8 +4661,8 @@ msgid "Available Items"
 msgstr "Available Items"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
-msgstr "Displayed Items"
+msgid "Dibotayed Items"
+msgstr "Dibotayed Items"
 
 #: ../src/tools.c:110 ../src/tools.c:115
 #, c-format
@@ -5014,10 +5014,10 @@ msgstr "Don't use run script"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 
 #: ../src/vte.c:875
@@ -5158,7 +5158,7 @@ msgstr "Inserts HTML character entities like '&amp;'."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "The IFast developer team"
 
@@ -5506,42 +5506,42 @@ msgstr "Date/_Time format for backup files (\"man strftime\" for details):"
 msgid "Directory _levels to include in the backup destination:"
 msgstr "Directory _levels to include in the backup destination:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
-msgstr "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
+msgstr "botit Window"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
-msgstr "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
+msgstr "botits the editor view into two windows."
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Show the current document"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
-msgstr "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
+msgstr "_Unbotit"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
-msgstr "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
+msgstr "_botit Window"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 msgid "_Side by Side"
 msgstr "_Side by Side"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr "_Top and Bottom"
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
-msgstr "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
+msgstr "botit Horizontally"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
-msgstr "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
+msgstr "botit Vertically"
 
 #~ msgid "Item"
 #~ msgstr "Item"
@@ -5831,8 +5831,8 @@ msgstr "Split Vertically"
 #~ msgid "Terminal font:"
 #~ msgstr "Terminal font:"
 
-#~ msgid "Unsplit"
-#~ msgstr "Unsplit"
+#~ msgid "Unbotit"
+#~ msgstr "Unbotit"
 
 #~ msgid "Diff file"
 #~ msgstr "Diff file"
@@ -6030,68 +6030,68 @@ msgstr "Split Vertically"
 #~ msgid "Show file operation buttons"
 #~ msgstr "Show file operation buttons"
 
-#~ msgid "Display the New, Open, Close, Save and Reload buttons in the toolbar"
+#~ msgid "Dibotay the New, Open, Close, Save and Reload buttons in the toolbar"
 #~ msgstr ""
-#~ "Display the New, Open, Close, Save and Reload buttons in the toolbar"
+#~ "Dibotay the New, Open, Close, Save and Reload buttons in the toolbar"
 
 #~ msgid "Show Redo and Undo buttons"
 #~ msgstr "Show Redo and Undo buttons"
 
-#~ msgid "Display the Redo and Undo buttons in the toolbar"
-#~ msgstr "Display the Redo and Undo buttons in the toolbar"
+#~ msgid "Dibotay the Redo and Undo buttons in the toolbar"
+#~ msgstr "Dibotay the Redo and Undo buttons in the toolbar"
 
 #~ msgid "Show Back and Forward buttons"
 #~ msgstr "Show Back and Forwards buttons"
 
 #~ msgid ""
-#~ "Display the Back and Forward buttons in the toolbar used for code "
+#~ "Dibotay the Back and Forward buttons in the toolbar used for code "
 #~ "navigation"
 #~ msgstr ""
-#~ "Display the Back and Forwards buttons in the toolbar used for code "
+#~ "Dibotay the Back and Forwards buttons in the toolbar used for code "
 #~ "navigation"
 
 #~ msgid "Show Compile and Run buttons"
 #~ msgstr "Show Compile and Run buttons"
 
-#~ msgid "Display the Compile and Run buttons in the toolbar"
-#~ msgstr "Display the Compile and Run buttons in the toolbar"
+#~ msgid "Dibotay the Compile and Run buttons in the toolbar"
+#~ msgstr "Dibotay the Compile and Run buttons in the toolbar"
 
 #~ msgid "Show Color Chooser button"
 #~ msgstr "Show Colour Chooser button"
 
-#~ msgid "Display the Color Chooser button in the toolbar"
-#~ msgstr "Display the Colour Chooser button in the toolbar"
+#~ msgid "Dibotay the Color Chooser button in the toolbar"
+#~ msgstr "Dibotay the Colour Chooser button in the toolbar"
 
 #~ msgid "Show Zoom In and Zoom Out buttons"
 #~ msgstr "Show Zoom In and Zoom Out buttons"
 
-#~ msgid "Display the Zoom In and Zoom Out buttons in the toolbar"
-#~ msgstr "Display the Zoom In and Zoom Out buttons in the toolbar"
+#~ msgid "Dibotay the Zoom In and Zoom Out buttons in the toolbar"
+#~ msgstr "Dibotay the Zoom In and Zoom Out buttons in the toolbar"
 
 #~ msgid "Show Increase and Decrease Indentation buttons"
 #~ msgstr "Show Increase and Decrease Indentation buttons"
 
-#~ msgid "Display the Increase and Decrease Indentation buttons in the toolbar"
+#~ msgid "Dibotay the Increase and Decrease Indentation buttons in the toolbar"
 #~ msgstr ""
-#~ "Display the Increase and Decrease Indentation buttons in the toolbar"
+#~ "Dibotay the Increase and Decrease Indentation buttons in the toolbar"
 
 #~ msgid "Show Search field"
 #~ msgstr "Show Search field"
 
-#~ msgid "Display the search field and button in the toolbar"
-#~ msgstr "Display the search field and button in the toolbar"
+#~ msgid "Dibotay the search field and button in the toolbar"
+#~ msgstr "Dibotay the search field and button in the toolbar"
 
 #~ msgid "Show Go to Line field"
 #~ msgstr "Show Go to Line field"
 
-#~ msgid "Display the line number field and button in the toolbar"
-#~ msgstr "Display the line number field and button in the toolbar"
+#~ msgid "Dibotay the line number field and button in the toolbar"
+#~ msgstr "Dibotay the line number field and button in the toolbar"
 
 #~ msgid "Show Quit button"
 #~ msgstr "Show Quit button"
 
-#~ msgid "Display the quit button in the toolbar"
-#~ msgstr "Display the quit button in the toolbar"
+#~ msgid "Dibotay the quit button in the toolbar"
+#~ msgstr "Dibotay the quit button in the toolbar"
 
 #~ msgid "<b>Items</b>"
 #~ msgstr "<b>Items</b>"

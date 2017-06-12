@@ -95,7 +95,7 @@ autoheader
 automake --add-missing --copy --gnu
 autoconf
 
-cd src &&  ./gen_gui.sh  smartstreetlight_gui SmartStreetLight.glade smartstreetlight_gui.h && cd ..
+cd src &&  ./gen_gui.sh  bot_gui bot.glade bot_gui.h && cd ..
 
 #cd $SOAP_RESOURCE && ./autogen.sh clean && ./autogen.sh && cd -
 

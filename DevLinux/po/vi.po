@@ -1759,7 +1759,7 @@ msgstr "Đừng hiển thị thông điệp trạng thái trên thanh trạng th
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Gỡ bỏ mọi thông điệp khỏi thanh trạng thái. Các thông điệp này vẫn còn được "
@@ -2373,11 +2373,11 @@ msgid ""
 msgstr "Số các ký tự cần thiết để hiển thị danh sách tự động điền nốt ký hiệu"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Chiều cao hiển thị theo hàng cho danh sách tự động điền nốt"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Số tối đa các mục nhập cần hiển thị trong danh sách tự động điền nốt"
 
 #: ../src/interface.c:4086
@@ -2503,7 +2503,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr "Có nên dừng cuộn lại một trang đằng sau dòng cuối cùng của tài liệu"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Hiển thị</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2601,7 +2601,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Đường dẫn công cụ</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Hiển thị"
 
 #: ../src/interface.c:4381
@@ -2968,7 +2968,7 @@ msgstr "Thuộc tính dự án"
 
 #: ../src/interface.c:5714
 #, fuzzy
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Hiển thị"
 
 #: ../src/interface.c:5736
@@ -3282,7 +3282,7 @@ msgid "Go to End of Line"
 msgstr "Tới cuối dòng"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Tới cuối dòng hiển thị"
 
 #: ../src/keybindings.c:449
@@ -4727,7 +4727,7 @@ msgstr "--- Phân cách ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 "Hãy chọn những mục cần hiển thị trên thanh công cụ. Các mục cũng có thể được "
@@ -4738,7 +4738,7 @@ msgid "Available Items"
 msgstr "Mục sẵn sàng"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Mục hiển thị"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5095,7 +5095,7 @@ msgstr "Đừng dùng văn lệnh chạy"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "Đừng dùng văn lệnh chạy đơn giản thường dùng để hiển thị trạng thái thoát "
@@ -5247,7 +5247,7 @@ msgstr "Chèn thực thể ký tự HTML như « &amp; »."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "Nhóm nhà phát triển IFast"
 
@@ -5598,42 +5598,42 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr "_Các cấp thư mục cần bao gồm trong đích đến sao lưu :"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Tách cửa sổ"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "Tạch khung xem soạn thảo ra hai cửa sổ."
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Hiển thị tài liệu hiện thời"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "_Bỏ tách"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "Tách cửa _sổ"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 #, fuzzy
 msgid "_Side by Side"
 msgstr "Ẩ_n khung lề"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr ""
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Tách ra ngang"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Tách ra dọc"
 
 #, fuzzy
@@ -5919,5 +5919,5 @@ msgstr "Tách ra dọc"
 #~ msgid "Terminal font:"
 #~ msgstr "Phông dòng lệnh:"
 
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "Bỏ tách"

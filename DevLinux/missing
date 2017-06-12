@@ -69,7 +69,7 @@ Handle \`PROGRAM [ARGUMENT]...' for when PROGRAM is missing, or return an
 error status if there is no known handling for PROGRAM.
 
 Options:
-  -h, --help      display this help and exit
+  -h, --help      spl this help and exit
   -v, --version   output version information and exit
   --run           try to run the given command, and emulate it if it fails
 

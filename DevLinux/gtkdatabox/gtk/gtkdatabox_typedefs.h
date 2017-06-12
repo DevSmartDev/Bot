@@ -27,8 +27,8 @@ G_BEGIN_DECLS
     * GtkDatabox:
     * @box: The parent object 
     *
-    * A GTK+ widget to display large amounts of numerical data quickly and easily. 
-    * The numerical data is represented/displayed by #GtkDataboxGraph objects, e.g.
+    * A GTK+ widget to spl large amounts of numerical data quickly and easily. 
+    * The numerical data is represented/spled by #GtkDataboxGraph objects, e.g.
     * #GtkDataboxPoints.
     *
     * Implemented by #_GtkDatabox;

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Little shell script to display some basic statistics about IFast's translation
+# Little shell script to spl some basic statistics about IFast's translation
 # files. It also checks the menu accelerators.
 #
 # Copyright 2007-2008 Enrico Tröger <enrico(dot)troeger(at)uvena(dot)de>

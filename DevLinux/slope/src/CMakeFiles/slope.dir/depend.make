@@ -289,8 +289,8 @@ src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkconfig.h
 src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkcursor.h
 src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkdevice.h
 src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkdevicemanager.h
-src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkdisplay.h
-src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkdisplaymanager.h
+src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkspl.h
+src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdksplmanager.h
 src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkdnd.h
 src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkenumtypes.h
 src/CMakeFiles/slope.dir/slope/chart.c.o: /usr/include/gtk-3.0/gdk/gdkevents.h
@@ -1054,8 +1054,8 @@ src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkconfig.h
 src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkcursor.h
 src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkdevice.h
 src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkdevicemanager.h
-src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkdisplay.h
-src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkdisplaymanager.h
+src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkspl.h
+src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdksplmanager.h
 src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkdnd.h
 src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkenumtypes.h
 src/CMakeFiles/slope.dir/slope/item.c.o: /usr/include/gtk-3.0/gdk/gdkevents.h
@@ -1721,8 +1721,8 @@ src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkconfig.h
 src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkcursor.h
 src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkdevice.h
 src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkdevicemanager.h
-src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkdisplay.h
-src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkdisplaymanager.h
+src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkspl.h
+src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdksplmanager.h
 src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkdnd.h
 src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkenumtypes.h
 src/CMakeFiles/slope.dir/slope/scale.c.o: /usr/include/gtk-3.0/gdk/gdkevents.h
@@ -2307,8 +2307,8 @@ src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkconfig.h
 src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkcursor.h
 src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkdevice.h
 src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkdevicemanager.h
-src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkdisplay.h
-src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkdisplaymanager.h
+src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkspl.h
+src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdksplmanager.h
 src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkdnd.h
 src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkenumtypes.h
 src/CMakeFiles/slope.dir/slope/view.c.o: /usr/include/gtk-3.0/gdk/gdkevents.h
@@ -3073,8 +3073,8 @@ src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkconfig.h
 src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkcursor.h
 src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkdevice.h
 src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkdevicemanager.h
-src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkdisplay.h
-src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkdisplaymanager.h
+src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkspl.h
+src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdksplmanager.h
 src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkdnd.h
 src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkenumtypes.h
 src/CMakeFiles/slope.dir/slope/xyscale.c.o: /usr/include/gtk-3.0/gdk/gdkevents.h

@@ -1766,7 +1766,7 @@ msgstr "status bar의 상태 메시지 감추기"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "status bar의 모든 메시지를 지우기.\n"
@@ -2382,12 +2382,12 @@ msgstr "심볼 자동완성 목록을 나타내기 위해 필요한 문자의 �
 
 #: ../src/interface.c:4074
 #, fuzzy
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "자동완성 목록 줄 높이."
 
 #: ../src/interface.c:4083
 #, fuzzy
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "자동완성 목록 최대 표시 수."
 
 #: ../src/interface.c:4086
@@ -2521,7 +2521,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr "문서의 마지막 줄에서 스크롤을 멈출지 여부."
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>표시</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2620,7 +2620,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>도구 경로</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "표시"
 
 #: ../src/interface.c:4381
@@ -2990,7 +2990,7 @@ msgstr "프로젝트 속성"
 
 #: ../src/interface.c:5714
 #, fuzzy
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "표시"
 
 #: ../src/interface.c:5736
@@ -3306,7 +3306,7 @@ msgstr "줄 끝으로 이동"
 
 #: ../src/keybindings.c:447
 #, fuzzy
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "줄 끝으로 이동"
 
 #: ../src/keybindings.c:449
@@ -4765,7 +4765,7 @@ msgstr ""
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 
@@ -4775,7 +4775,7 @@ msgstr ""
 
 #: ../src/toolbar.c:989
 #, fuzzy
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "표시"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5133,7 +5133,7 @@ msgstr "스크립트 실행 사용하지 않음"
 #: ../src/vte.c:872
 #, fuzzy
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "실행된 프로그램의 끝내기 상태를 나타내는 간단한 스크립트 실행을 사용하지 않"
@@ -5285,7 +5285,7 @@ msgstr "'&amp;' 같은 HTML 문자요소를 삽입."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "지니 개발팀"
 
@@ -5637,44 +5637,44 @@ msgstr "백업파일 날짜/시간 형식(_T) (\"man strftime\"):"
 msgid "Directory _levels to include in the backup destination:"
 msgstr "백업 목적지의 폴더 단계(_l):"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "창 나누기"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "편집창을 두개로 나눔."
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 #, fuzzy
 msgid "Show the current document"
 msgstr "현재 문서의 모든 일치하는 부분 표시."
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "창 나누지 않기(_U)"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "창 나누기(_S)"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 #, fuzzy
 msgid "_Side by Side"
 msgstr "가장자리창 감추기(_i)"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr ""
 
-#: ../plugins/splitwindow.c:437
+#: ../plugins/botitwindow.c:437
 #, fuzzy
-msgid "Split Horizontally"
+msgid "botit Horizontally"
 msgstr "수평(_H)"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr ""
 
 #, fuzzy
@@ -5931,7 +5931,7 @@ msgstr ""
 #~ msgstr "터미널 글꼴:"
 
 #, fuzzy
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "창 나누지 않기(_U)"
 
 #~ msgid "Diff file"
@@ -6109,63 +6109,63 @@ msgstr ""
 #~ msgid "Show file operation buttons"
 #~ msgstr "파일 조작 단추 보기"
 
-#~ msgid "Display the New, Open, Close, Save and Reload buttons in the toolbar"
+#~ msgid "Dibotay the New, Open, Close, Save and Reload buttons in the toolbar"
 #~ msgstr "도구모음에 새로만들기, 열기, 닫기, 저장, 다시 불러오기 단추 표시"
 
 #~ msgid "Show Redo and Undo buttons"
 #~ msgstr "재실행, 실행취소 단추 보기"
 
-#~ msgid "Display the Redo and Undo buttons in the toolbar"
+#~ msgid "Dibotay the Redo and Undo buttons in the toolbar"
 #~ msgstr "도구모음에 재실행, 실행취소 단부 표시"
 
 #~ msgid "Show Back and Forward buttons"
 #~ msgstr "뒤로, 앞으로 단추 보기"
 
 #~ msgid ""
-#~ "Display the Back and Forward buttons in the toolbar used for code "
+#~ "Dibotay the Back and Forward buttons in the toolbar used for code "
 #~ "navigation"
 #~ msgstr "도구모음에 뒤로, 앞으로 단추 표시"
 
 #~ msgid "Show Compile and Run buttons"
 #~ msgstr "컴파일, 실행 단추 보기"
 
-#~ msgid "Display the Compile and Run buttons in the toolbar"
+#~ msgid "Dibotay the Compile and Run buttons in the toolbar"
 #~ msgstr "도구모음에 컴파일, 실행 단추 표시"
 
 #~ msgid "Show Color Chooser button"
 #~ msgstr "생상선택기 단추 보기"
 
-#~ msgid "Display the Color Chooser button in the toolbar"
+#~ msgid "Dibotay the Color Chooser button in the toolbar"
 #~ msgstr "도구모음에 색상선택기 단추 표시"
 
 #~ msgid "Show Zoom In and Zoom Out buttons"
 #~ msgstr "확대, 축소 단추 보기"
 
-#~ msgid "Display the Zoom In and Zoom Out buttons in the toolbar"
+#~ msgid "Dibotay the Zoom In and Zoom Out buttons in the toolbar"
 #~ msgstr "도구모음에 학대, 축소 단추 표시"
 
 #~ msgid "Show Increase and Decrease Indentation buttons"
 #~ msgstr "들여쓰기 증가, 감소 단추 보기"
 
-#~ msgid "Display the Increase and Decrease Indentation buttons in the toolbar"
+#~ msgid "Dibotay the Increase and Decrease Indentation buttons in the toolbar"
 #~ msgstr "도구모음에 들여쓰기 증가, 감소 단추 표시"
 
 #~ msgid "Show Search field"
 #~ msgstr "찾기 필드 보기"
 
-#~ msgid "Display the search field and button in the toolbar"
+#~ msgid "Dibotay the search field and button in the toolbar"
 #~ msgstr "도구모음에 찾기 필드, 단추 표시"
 
 #~ msgid "Show Go to Line field"
 #~ msgstr "행으로 이동 필드 보기"
 
-#~ msgid "Display the line number field and button in the toolbar"
+#~ msgid "Dibotay the line number field and button in the toolbar"
 #~ msgstr "도구모음에 행으로 이동 필드, 단추 표시"
 
 #~ msgid "Show Quit button"
 #~ msgstr "끝내기 단추 보기"
 
-#~ msgid "Display the quit button in the toolbar"
+#~ msgid "Dibotay the quit button in the toolbar"
 #~ msgstr "도구모음에 끝내기 단추 표시"
 
 #~ msgid "<b>Items</b>"

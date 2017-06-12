@@ -19,11 +19,11 @@
 
 /**
  * SECTION:gtkdatabox_lines
- * @short_description: A #GtkDataboxGraph used for displaying xy-values series of connected lines.
+ * @short_description: A #GtkDataboxGraph used for spling xy-values series of connected lines.
  * @include: gtkdatabox_lines.h
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxBars, #GtkDataboxMarkers
  *
- * #GtkDataboxLines is a #GtkDataboxGraph class for displaying xy-values as series of connected lines.
+ * #GtkDataboxLines is a #GtkDataboxGraph class for spling xy-values as series of connected lines.
  *
  */
 
@@ -53,7 +53,7 @@ G_BEGIN_DECLS
 /**
  * GtkDataboxLines
  *
- * #GtkDataboxLines is a #GtkDataboxGraph class for displaying xy-values as series of connected lines.
+ * #GtkDataboxLines is a #GtkDataboxGraph class for spling xy-values as series of connected lines.
  *
  */
    typedef struct _GtkDataboxLines GtkDataboxLines;

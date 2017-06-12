@@ -154,7 +154,7 @@ void slope_xyaxis_sampler_auto_sample_decimal (SlopeXyAxisSampler *self,
         static const char *const format[] = { "%2.1f", "%2.1e" };
         int format_idx = 0;
 
-        /* sometimes 0.0 is displayed -0.0, or even something different
+        /* sometimes 0.0 is spled -0.0, or even something different
            than zerothats weird */
         if (coord == -0.0) coord = 0.0;
         if ((fabs(coord) / v_diff) < 1e-4) coord = 0.0;

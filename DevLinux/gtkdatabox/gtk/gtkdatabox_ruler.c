@@ -1332,7 +1332,7 @@ gtk_databox_ruler_draw_ticks (GtkDataboxRuler * ruler) {
 
     /* determine the scale, i.e. the distance between the most significant ticks
      *
-     * the ticks have to be farther apart than the length of the displayed numbers
+     * the ticks have to be farther apart than the length of the spled numbers
      */
     if (ruler->priv->scale_type == GTK_DATABOX_SCALE_LINEAR) {
         text_width = (ruler->priv->max_length) * digit_width + 1;
@@ -1399,7 +1399,7 @@ gtk_databox_ruler_draw_ticks (GtkDataboxRuler * ruler) {
 
 
         /* draw label */
-        /* if manual tick labels are present, display them instead of calculated labels */
+        /* if manual tick labels are present, spl them instead of calculated labels */
         if ((ruler->priv->manual_ticks!=NULL) && (ruler->priv->manual_tick_cnt!=0) && (ruler->priv->manual_tick_labels!=NULL))
             pango_layout_set_text (layout, ruler->priv->manual_tick_labels[(int)cur], -1);
         else {

@@ -19,11 +19,11 @@
 
 /**
  * SECTION:gtkdatabox_offset_bars
- * @short_description: A #GtkDataboxGraph used for displaying xyy-values (x, y1 and y2 values) as vertical bars from y1 to y2.
+ * @short_description: A #GtkDataboxGraph used for spling xyy-values (x, y1 and y2 values) as vertical bars from y1 to y2.
  * @include: gtkdatabox_offset_bars.h
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines, #GtkDataboxMarkers, #GtkDataboxOffsetBars
  *
- * #GtkDataboxOffsetBars is a #GtkDataboxGraph class for displaying xy-values as vertical bars which rise/drop from y1 to y2.
+ * #GtkDataboxOffsetBars is a #GtkDataboxGraph class for spling xy-values as vertical bars which rise/drop from y1 to y2.
  *
  */
 
@@ -54,7 +54,7 @@ G_BEGIN_DECLS
  * GtkDataboxOffsetBars:
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines, #GtkDataboxMarkers, #GtkDataboxBars
  *
- * #GtkDataboxOffsetBars is a #GtkDataboxGraph class for displaying xyy-values as vertical bars which rise/drop from y1.
+ * #GtkDataboxOffsetBars is a #GtkDataboxGraph class for spling xyy-values as vertical bars which rise/drop from y1.
  *
  */
    typedef struct _GtkDataboxOffsetBars GtkDataboxOffsetBars;

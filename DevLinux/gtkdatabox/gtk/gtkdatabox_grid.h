@@ -19,11 +19,11 @@
 
 /**
  * SECTION:gtkdatabox_grid
- * @short_description: A #GtkDataboxGraph used for displaying a grid (like in an oscilloscope).
+ * @short_description: A #GtkDataboxGraph used for spling a grid (like in an oscilloscope).
  * @include: gtkdatabox_grid.h
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines,  #GtkDataboxBars, #GtkDataboxMarkers
  *
- * #GtkDataboxGrid is a #GtkDataboxGraph class for displaying a grid (like in an oscilloscope). You can determine
+ * #GtkDataboxGrid is a #GtkDataboxGraph class for spling a grid (like in an oscilloscope). You can determine
  * the number of horizontal and vertical lines. When you zoom in, the grid is also zoomed along with the data.
  *
  */
@@ -55,7 +55,7 @@ G_BEGIN_DECLS
 /**
  * GtkDataboxGrid
  *
- * #GtkDataboxGrid is a #GtkDataboxGraph class for displaying a grid (like in an oscilloscope). You can determine
+ * #GtkDataboxGrid is a #GtkDataboxGraph class for spling a grid (like in an oscilloscope). You can determine
  * the number of horizontal and vertical lines. When you zoom in, the grid is also zoomed along with the data.
  *
  */

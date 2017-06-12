@@ -289,8 +289,8 @@ demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkconf
 demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkcursor.h
 demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkdevice.h
 demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkdevicemanager.h
-demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkdisplay.h
-demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkdisplaymanager.h
+demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkspl.h
+demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdksplmanager.h
 demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkdnd.h
 demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkenumtypes.h
 demos/CMakeFiles/plot_stack.dir/plot_stack.c.o: /usr/include/gtk-3.0/gdk/gdkevents.h

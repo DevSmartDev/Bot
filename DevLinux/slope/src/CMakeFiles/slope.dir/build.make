@@ -12,7 +12,7 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Suppress display of executed commands.
+# Suppress spl of executed commands.
 $(VERBOSE).SILENT:
 
 # A target that is always out of date.
@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_SOURCE_DIR = /media/DATA/projects/bot/bot/slope
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_BINARY_DIR = /media/DATA/projects/bot/bot/slope
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/slope.dir/depend.make
@@ -51,17 +51,17 @@ include src/CMakeFiles/slope.dir/flags.make
 
 src/CMakeFiles/slope.dir/slope/drawing.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/drawing.c.o: src/slope/drawing.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/drawing.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/drawing.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/drawing.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/drawing.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/drawing.c
 
 src/CMakeFiles/slope.dir/slope/drawing.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/drawing.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/drawing.c > CMakeFiles/slope.dir/slope/drawing.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/drawing.c > CMakeFiles/slope.dir/slope/drawing.c.i
 
 src/CMakeFiles/slope.dir/slope/drawing.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/drawing.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/drawing.c -o CMakeFiles/slope.dir/slope/drawing.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/drawing.c -o CMakeFiles/slope.dir/slope/drawing.c.s
 
 src/CMakeFiles/slope.dir/slope/drawing.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/drawing.c.o.requires
@@ -74,17 +74,17 @@ src/CMakeFiles/slope.dir/slope/drawing.c.o.provides.build: src/CMakeFiles/slope.
 
 src/CMakeFiles/slope.dir/slope/figure.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/figure.c.o: src/slope/figure.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/figure.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/figure.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/figure.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/figure.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/figure.c
 
 src/CMakeFiles/slope.dir/slope/figure.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/figure.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/figure.c > CMakeFiles/slope.dir/slope/figure.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/figure.c > CMakeFiles/slope.dir/slope/figure.c.i
 
 src/CMakeFiles/slope.dir/slope/figure.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/figure.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/figure.c -o CMakeFiles/slope.dir/slope/figure.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/figure.c -o CMakeFiles/slope.dir/slope/figure.c.s
 
 src/CMakeFiles/slope.dir/slope/figure.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/figure.c.o.requires
@@ -97,17 +97,17 @@ src/CMakeFiles/slope.dir/slope/figure.c.o.provides.build: src/CMakeFiles/slope.d
 
 src/CMakeFiles/slope.dir/slope/item.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/item.c.o: src/slope/item.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/item.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/item.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/item.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/item.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/item.c
 
 src/CMakeFiles/slope.dir/slope/item.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/item.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/item.c > CMakeFiles/slope.dir/slope/item.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/item.c > CMakeFiles/slope.dir/slope/item.c.i
 
 src/CMakeFiles/slope.dir/slope/item.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/item.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/item.c -o CMakeFiles/slope.dir/slope/item.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/item.c -o CMakeFiles/slope.dir/slope/item.c.s
 
 src/CMakeFiles/slope.dir/slope/item.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/item.c.o.requires
@@ -120,17 +120,17 @@ src/CMakeFiles/slope.dir/slope/item.c.o.provides.build: src/CMakeFiles/slope.dir
 
 src/CMakeFiles/slope.dir/slope/scale.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/scale.c.o: src/slope/scale.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/scale.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/scale.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/scale.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/scale.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/scale.c
 
 src/CMakeFiles/slope.dir/slope/scale.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/scale.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/scale.c > CMakeFiles/slope.dir/slope/scale.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/scale.c > CMakeFiles/slope.dir/slope/scale.c.i
 
 src/CMakeFiles/slope.dir/slope/scale.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/scale.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/scale.c -o CMakeFiles/slope.dir/slope/scale.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/scale.c -o CMakeFiles/slope.dir/slope/scale.c.s
 
 src/CMakeFiles/slope.dir/slope/scale.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/scale.c.o.requires
@@ -143,17 +143,17 @@ src/CMakeFiles/slope.dir/slope/scale.c.o.provides.build: src/CMakeFiles/slope.di
 
 src/CMakeFiles/slope.dir/slope/xyscale.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/xyscale.c.o: src/slope/xyscale.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/xyscale.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/xyscale.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyscale.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/xyscale.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/xyscale.c
 
 src/CMakeFiles/slope.dir/slope/xyscale.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/xyscale.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyscale.c > CMakeFiles/slope.dir/slope/xyscale.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/xyscale.c > CMakeFiles/slope.dir/slope/xyscale.c.i
 
 src/CMakeFiles/slope.dir/slope/xyscale.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/xyscale.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyscale.c -o CMakeFiles/slope.dir/slope/xyscale.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/xyscale.c -o CMakeFiles/slope.dir/slope/xyscale.c.s
 
 src/CMakeFiles/slope.dir/slope/xyscale.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/xyscale.c.o.requires
@@ -166,17 +166,17 @@ src/CMakeFiles/slope.dir/slope/xyscale.c.o.provides.build: src/CMakeFiles/slope.
 
 src/CMakeFiles/slope.dir/slope/xyseries.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/xyseries.c.o: src/slope/xyseries.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/xyseries.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/xyseries.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyseries.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/xyseries.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/xyseries.c
 
 src/CMakeFiles/slope.dir/slope/xyseries.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/xyseries.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyseries.c > CMakeFiles/slope.dir/slope/xyseries.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/xyseries.c > CMakeFiles/slope.dir/slope/xyseries.c.i
 
 src/CMakeFiles/slope.dir/slope/xyseries.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/xyseries.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyseries.c -o CMakeFiles/slope.dir/slope/xyseries.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/xyseries.c -o CMakeFiles/slope.dir/slope/xyseries.c.s
 
 src/CMakeFiles/slope.dir/slope/xyseries.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/xyseries.c.o.requires
@@ -189,17 +189,17 @@ src/CMakeFiles/slope.dir/slope/xyseries.c.o.provides.build: src/CMakeFiles/slope
 
 src/CMakeFiles/slope.dir/slope/xyaxis.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/xyaxis.c.o: src/slope/xyaxis.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/xyaxis.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/xyaxis.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/xyaxis.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/xyaxis.c
 
 src/CMakeFiles/slope.dir/slope/xyaxis.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/xyaxis.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis.c > CMakeFiles/slope.dir/slope/xyaxis.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/xyaxis.c > CMakeFiles/slope.dir/slope/xyaxis.c.i
 
 src/CMakeFiles/slope.dir/slope/xyaxis.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/xyaxis.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis.c -o CMakeFiles/slope.dir/slope/xyaxis.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/xyaxis.c -o CMakeFiles/slope.dir/slope/xyaxis.c.s
 
 src/CMakeFiles/slope.dir/slope/xyaxis.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/xyaxis.c.o.requires
@@ -212,17 +212,17 @@ src/CMakeFiles/slope.dir/slope/xyaxis.c.o.provides.build: src/CMakeFiles/slope.d
 
 src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o: src/slope/xyaxis-sampler.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis-sampler.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/xyaxis-sampler.c
 
 src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/xyaxis-sampler.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis-sampler.c > CMakeFiles/slope.dir/slope/xyaxis-sampler.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/xyaxis-sampler.c > CMakeFiles/slope.dir/slope/xyaxis-sampler.c.i
 
 src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/xyaxis-sampler.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis-sampler.c -o CMakeFiles/slope.dir/slope/xyaxis-sampler.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/xyaxis-sampler.c -o CMakeFiles/slope.dir/slope/xyaxis-sampler.c.s
 
 src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o.requires
@@ -235,17 +235,17 @@ src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o.provides.build: src/CMakeFiles
 
 src/CMakeFiles/slope.dir/slope/sampler.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/sampler.c.o: src/slope/sampler.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/sampler.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/sampler.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/sampler.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/sampler.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/sampler.c
 
 src/CMakeFiles/slope.dir/slope/sampler.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/sampler.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/sampler.c > CMakeFiles/slope.dir/slope/sampler.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/sampler.c > CMakeFiles/slope.dir/slope/sampler.c.i
 
 src/CMakeFiles/slope.dir/slope/sampler.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/sampler.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/sampler.c -o CMakeFiles/slope.dir/slope/sampler.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/sampler.c -o CMakeFiles/slope.dir/slope/sampler.c.s
 
 src/CMakeFiles/slope.dir/slope/sampler.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/sampler.c.o.requires
@@ -258,17 +258,17 @@ src/CMakeFiles/slope.dir/slope/sampler.c.o.provides.build: src/CMakeFiles/slope.
 
 src/CMakeFiles/slope.dir/slope/view.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/view.c.o: src/slope/view.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/view.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/view.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/view.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/view.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/view.c
 
 src/CMakeFiles/slope.dir/slope/view.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/view.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/view.c > CMakeFiles/slope.dir/slope/view.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/view.c > CMakeFiles/slope.dir/slope/view.c.i
 
 src/CMakeFiles/slope.dir/slope/view.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/view.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/view.c -o CMakeFiles/slope.dir/slope/view.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/view.c -o CMakeFiles/slope.dir/slope/view.c.s
 
 src/CMakeFiles/slope.dir/slope/view.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/view.c.o.requires
@@ -281,17 +281,17 @@ src/CMakeFiles/slope.dir/slope/view.c.o.provides.build: src/CMakeFiles/slope.dir
 
 src/CMakeFiles/slope.dir/slope/chart.c.o: src/CMakeFiles/slope.dir/flags.make
 src/CMakeFiles/slope.dir/slope/chart.c.o: src/slope/chart.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/slope.dir/slope/chart.c.o"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/chart.c.o   -c /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/chart.c
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/slope.dir/slope/chart.c.o   -c /media/DATA/projects/bot/bot/slope/src/slope/chart.c
 
 src/CMakeFiles/slope.dir/slope/chart.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/slope.dir/slope/chart.c.i"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/chart.c > CMakeFiles/slope.dir/slope/chart.c.i
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /media/DATA/projects/bot/bot/slope/src/slope/chart.c > CMakeFiles/slope.dir/slope/chart.c.i
 
 src/CMakeFiles/slope.dir/slope/chart.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/slope.dir/slope/chart.c.s"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/spl/SmartStreetLight/slope/src/slope/chart.c -o CMakeFiles/slope.dir/slope/chart.c.s
+	cd /media/DATA/projects/bot/bot/slope/src && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /media/DATA/projects/bot/bot/slope/src/slope/chart.c -o CMakeFiles/slope.dir/slope/chart.c.s
 
 src/CMakeFiles/slope.dir/slope/chart.c.o.requires:
 .PHONY : src/CMakeFiles/slope.dir/slope/chart.c.o.requires
@@ -333,7 +333,7 @@ src/libslope.so: src/CMakeFiles/slope.dir/slope/chart.c.o
 src/libslope.so: src/CMakeFiles/slope.dir/build.make
 src/libslope.so: src/CMakeFiles/slope.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C shared library libslope.so"
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/slope.dir/link.txt --verbose=$(VERBOSE)
+	cd /media/DATA/projects/bot/bot/slope/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/slope.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/slope.dir/build: src/libslope.so
@@ -353,10 +353,10 @@ src/CMakeFiles/slope.dir/requires: src/CMakeFiles/slope.dir/slope/chart.c.o.requ
 .PHONY : src/CMakeFiles/slope.dir/requires
 
 src/CMakeFiles/slope.dir/clean:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope/src && $(CMAKE_COMMAND) -P CMakeFiles/slope.dir/cmake_clean.cmake
+	cd /media/DATA/projects/bot/bot/slope/src && $(CMAKE_COMMAND) -P CMakeFiles/slope.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/slope.dir/clean
 
 src/CMakeFiles/slope.dir/depend:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/DATA/projects/spl/SmartStreetLight/slope /media/DATA/projects/spl/SmartStreetLight/slope/src /media/DATA/projects/spl/SmartStreetLight/slope /media/DATA/projects/spl/SmartStreetLight/slope/src /media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/DependInfo.cmake --color=$(COLOR)
+	cd /media/DATA/projects/bot/bot/slope && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /media/DATA/projects/bot/bot/slope /media/DATA/projects/bot/bot/slope/src /media/DATA/projects/bot/bot/slope /media/DATA/projects/bot/bot/slope/src /media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/slope.dir/depend
 

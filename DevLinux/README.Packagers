@@ -48,7 +48,7 @@ There are a few things to take care of when you create a package:
   the local installed HTML documentation in your browser (if it opens
   the manual on the website you didn't install the HTML manual correctly
   and IFast falls back to the online manual).
-- Check the About dialog (Help->About) whether it displays the full
+- Check the About dialog (Help->About) whether it spls the full
   GPLv2 license text on the last tab("License").
 
 

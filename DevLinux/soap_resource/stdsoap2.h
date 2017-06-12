@@ -620,7 +620,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 # include <poll.h>
 #endif
 
-#if defined(__cplusplus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
+#if defined(__cplubotus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
 # include <string>
 # include <iostream>
 #endif
@@ -801,7 +801,7 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 
 /* #define DEBUG */ /* Uncomment to debug sending (in file SENT.log) receiving (in file RECV.log) and messages (in file TEST.log) */
 
-#ifdef __cplusplus
+#ifdef __cplubotus
 extern "C" {
 #endif
 
@@ -1066,7 +1066,7 @@ extern "C" {
 #endif
 
 #ifdef __APPLE__
-# ifdef __cplusplus
+# ifdef __cplubotus
 #  ifndef isnan
 extern "C" int isnan(double);
 extern "C" int isinf(double);
@@ -1566,7 +1566,7 @@ struct soap_cookie
 
 SOAP_FMAC1 struct soap_multipart* SOAP_FMAC2 soap_next_multipart(struct soap_multipart*);
 
-#ifdef __cplusplus
+#ifdef __cplubotus
 
 class soap_multipart_iterator
 { public:
@@ -1599,7 +1599,7 @@ struct soap_dime
   const char *options;
   struct soap_multipart *list;		/* list of DIME attachments received */
   struct soap_multipart *first, *last;	/* temporary in/out queue */
-#ifdef __cplusplus
+#ifdef __cplubotus
   soap_multipart_iterator begin()
     { soap_multipart_iterator iter(list); return iter; };
   soap_multipart_iterator end()
@@ -1614,7 +1614,7 @@ struct soap_mime
   const char *start;			/* MIME start ID */
   struct soap_multipart *list;		/* list of MIME attachments received */
   struct soap_multipart *first, *last;	/* temporary in/out queue */
-#ifdef __cplusplus
+#ifdef __cplubotus
   soap_multipart_iterator begin()
     { soap_multipart_iterator iter(list); return iter; };
   soap_multipart_iterator end()
@@ -1649,7 +1649,7 @@ struct soap_multipart
   enum soap_mime_encoding encoding;	/* MIME Content-Transfer-Encoding */
   const char *location;			/* MIME Content-Location (optional) */
   const char *description;		/* MIME Content-Description (optional) */
-#ifdef __cplusplus
+#ifdef __cplubotus
   typedef soap_multipart_iterator iterator;
 #endif
 };
@@ -1670,7 +1670,7 @@ struct soap_xlist
 /******************************************************************************/
 
 #ifndef WITH_LEANER
-#ifdef __cplusplus
+#ifdef __cplubotus
 class soap_dom_attribute_iterator
 { public:
   struct soap_dom_attribute *att;
@@ -1695,7 +1695,7 @@ struct soap_dom_attribute
   char *data;
   wchar_t *wide;
   struct soap *soap;
-#ifdef __cplusplus
+#ifdef __cplubotus
   typedef soap_dom_attribute_iterator iterator;
   struct soap_dom_attribute &set(const char *nstr, const char *name);	/* set namespace and name */
   struct soap_dom_attribute &set(const char *data);		/* set data */
@@ -1712,7 +1712,7 @@ struct soap_dom_attribute
 #endif
 
 #ifndef WITH_LEANER
-#ifdef __cplusplus
+#ifdef __cplubotus
 class soap_dom_element_iterator
 { public:
   struct soap_dom_element *elt;
@@ -1745,7 +1745,7 @@ struct soap_dom_element
   char *head;				/* leading content before start tag */
   char *tail;				/* leading content before end tag */
   struct soap *soap;			/* soap context that manages this node */
-#ifdef __cplusplus
+#ifdef __cplubotus
   typedef soap_dom_element_iterator iterator;
   struct soap_dom_element &set(const char *nstr, const char *name);
   struct soap_dom_element &set(const char *data);
@@ -1771,7 +1771,7 @@ SOAP_FMAC1 struct soap_dom_element * SOAP_FMAC2 soap_dom_next_element(struct soa
 SOAP_FMAC1 struct soap_dom_attribute * SOAP_FMAC2 soap_dom_next_attribute(struct soap_dom_attribute *att);
 #endif
 
-#if defined(__cplusplus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
+#if defined(__cplubotus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
 }
 extern std::ostream &operator<<(std::ostream&, const struct soap_dom_element&);
 extern std::istream &operator>>(std::istream&, struct soap_dom_element&);
@@ -1894,7 +1894,7 @@ struct SOAP_STD_API soap
 #endif
   SOAP_SOCKET master;
   SOAP_SOCKET socket;
-#if defined(__cplusplus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
+#if defined(__cplubotus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
   std::ostream *os;
   std::istream *is;
 #else
@@ -2063,7 +2063,7 @@ struct SOAP_STD_API soap
 #ifdef WMW_RPM_IO		/* VxWorks */
   void *rpmreqid;
 #endif
-#ifdef __cplusplus
+#ifdef __cplubotus
   soap();
   soap(soap_mode);
   soap(soap_mode, soap_mode);
@@ -2444,7 +2444,7 @@ SOAP_FMAC1 void SOAP_FMAC2 soap_print_fault(struct soap*, FILE*);
 SOAP_FMAC1 void SOAP_FMAC2 soap_print_fault_location(struct soap*, FILE*);
 # ifndef WITH_LEAN
 #  ifndef WITH_COMPAT
-#   ifdef __cplusplus
+#   ifdef __cplubotus
 SOAP_FMAC1 void SOAP_FMAC2 soap_stream_fault(struct soap*, std::ostream&);
 #   endif
 #  endif
@@ -2596,7 +2596,7 @@ SOAP_FMAC1 int SOAP_FMAC2 soap_putsetcookies(struct soap *soap);
 SOAP_FMAC1 int SOAP_FMAC2 soap_putcookies(struct soap *soap, const char *domain, const char *path, int secure);
 #endif
 
-#ifdef __cplusplus
+#ifdef __cplubotus
 } /* extern "C" */
 #endif
 

@@ -1801,7 +1801,7 @@ msgid "Suppress status messages in the status bar"
 msgstr "Meldungen in der Statuszeile unterdrücken"
 
 #: ../src/interface.c:3167
-msgid "Removes all messages from the status bar. The messages are still displayed in the status messages window."
+msgid "Removes all messages from the status bar. The messages are still spled in the status messages window."
 msgstr "Entfernt alle Nachrichten aus der Statuszeile. Die Nachrichten sind weiterhin über den »Status«-Reiter im Infobereich abrufbar."
 
 #: ../src/interface.c:3169
@@ -2332,11 +2332,11 @@ msgid "The amount of characters which are necessary to show the symbol autocompl
 msgstr "Die Anzahl der Zeichen, die nötig sind um die Vorschläge anzuzeigen"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Höhe der Liste in Zeilen"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Anzahl der Elemente, die maximal angezeigt werden sollen, wenn die Liste angezeigt wird"
 
 #: ../src/interface.c:4086
@@ -2456,7 +2456,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr "Legt fest, ob am Ende des Dokuments noch eine Seite weiter nach unten gerollt werden kann oder nicht"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Anzeige</b>"
 
 #: ../src/interface.c:4240
@@ -2539,7 +2539,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Virtuelle Leerzeichen</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Ansicht"
 
 #: ../src/interface.c:4381
@@ -2868,7 +2868,7 @@ msgid "Project Properties"
 msgstr "Projekteigenschaften"
 
 #: ../src/interface.c:5714
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Anzeige:"
 
 #: ../src/interface.c:5736
@@ -3186,7 +3186,7 @@ msgid "Go to End of Line"
 msgstr "Gehe zum Zeilenende"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Gehe zum Zeilenende"
 
 #: ../src/keybindings.c:449
@@ -4667,7 +4667,7 @@ msgid "--- Separator ---"
 msgstr "---- Trenner ----"
 
 #: ../src/toolbar.c:952
-msgid "Select items to be displayed on the toolbar. Items can be reordered by drag and drop."
+msgid "Select items to be spled on the toolbar. Items can be reordered by drag and drop."
 msgstr "Wählt die Symbole, die in der Werkzeugliste angezeigt werden. Die Symbole können per Maus in die richtige Position verschoben werden."
 
 #: ../src/toolbar.c:968
@@ -4675,7 +4675,7 @@ msgid "Available Items"
 msgstr "Vorhandene Einträge"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Angezeigte Einträge"
 
 #: ../src/tools.c:110
@@ -4998,7 +4998,7 @@ msgid "Don't use run script"
 msgstr "Das Run-Skript nicht benutzen"
 
 #: ../src/vte.c:872
-msgid "Don't use the simple run script which is usually used to display the exit status of the executed program"
+msgid "Don't use the simple run script which is usually used to spl the exit status of the executed program"
 msgstr "Das Run-Skript, welches gewöhnlich zur Ausgabe des Rückgabe-Wertes eines ausgeführten Programms genutzt wird, nicht benutzen"
 
 #: ../src/vte.c:875
@@ -5138,7 +5138,7 @@ msgstr "Fügt HTML-Sonderzeichen wie »&amp;« ein."
 #: ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48
 #: ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "Das IFast-Entwicklerteam"
 
@@ -5472,42 +5472,42 @@ msgstr "_Datums- und Zeitformat für Sicherungsdateien:"
 msgid "Directory _levels to include in the backup destination:"
 msgstr "Verzeichnis_ebenen die im Zielpfad übernommen werden sollen:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Fenster teilen"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "Teilt das Editorfenster in zwei Teilfenster."
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Zeige das aktuelle Dokument"
 
-#: ../plugins/splitwindow.c:292
-#: ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292
+#: ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "Teilung _aufheben"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "Fenster _teilen"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 msgid "_Side by Side"
 msgstr "Seite an Seite"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr "_Oben und Unten"
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Horizontal teilen"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Vertikal teilen"
 
 #~ msgid "SQL Dump file"
@@ -5705,7 +5705,7 @@ msgstr "Vertikal teilen"
 #~ "Die Einstellungen für das integrierte Terminal werden nur wirksam, wenn "
 #~ "die VTE-Bibliothek erfolgreich geladen werden konnte."
 
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "Teilung aufheben"
 
 #~ msgid "_Set Includes and Arguments"

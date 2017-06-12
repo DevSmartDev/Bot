@@ -1731,7 +1731,7 @@ msgstr "Onderdruk status mededelingen in de statusregel"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Verwijder alle mededelingen van de statusregel. De medelingen blijven "
@@ -2336,11 +2336,11 @@ msgid ""
 msgstr "Het aantal karakters dat nodig is om de autovoltooiingslijst te tonen"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Weergavehoogte in regels van de autovoltooiingslijst"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Maximum aantal items weer te geven in de autovoltooiingslijst"
 
 #: ../src/interface.c:4086
@@ -2477,7 +2477,7 @@ msgstr ""
 "worden"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Weergave</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2575,7 +2575,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Lege spaties</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Weergave"
 
 #: ../src/interface.c:4381
@@ -2947,7 +2947,7 @@ msgid "Project Properties"
 msgstr "Eigenschappen"
 
 #: ../src/interface.c:5714
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Weergave:"
 
 #: ../src/interface.c:5736
@@ -3255,7 +3255,7 @@ msgid "Go to End of Line"
 msgstr "Ga naar eind van de regel"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Ga naar eind van zichtbare regel"
 
 #: ../src/keybindings.c:449
@@ -4704,7 +4704,7 @@ msgstr "--- Scheidingsteken ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 "Selecteer items die in de werkbalk moeten komen. U kunt ze verplaatsen door "
@@ -4715,7 +4715,7 @@ msgid "Available Items"
 msgstr "Beschikbare Items"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Getoonde items"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5071,7 +5071,7 @@ msgstr "Gebruik geen runscript"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "Gebruik niet het simpele runscript dat meestal wordt gebruikt om de exit "
@@ -5216,7 +5216,7 @@ msgstr "Voeg HTML karakters toe zoals '&amp;'."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "Het IFast ontwikkelingsteam"
 
@@ -5566,42 +5566,42 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr "Aanta_l directory niveau's dat bij een backup wordt meegenomen:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
-msgstr "Splits Venster"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
+msgstr "botits Venster"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
-msgstr "Splitst de editor in twee delen."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
+msgstr "botitst de editor in twee delen."
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Toon huidige document."
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
-msgstr "_Maak splitsing ongedaan"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
+msgstr "_Maak botitsing ongedaan"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
-msgstr "_Splits Venster"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
+msgstr "_botits Venster"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 msgid "_Side by Side"
 msgstr "Zij aan zij"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr "_Boven en Onder"
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
-msgstr "Splits Horizontaal"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
+msgstr "botits Horizontaal"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
-msgstr "Splits Verticaal"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
+msgstr "botits Verticaal"
 
 #~ msgid ""
 #~ "<i>Notice: Native GTK printing is only available if IFast was built "

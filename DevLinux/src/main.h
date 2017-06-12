@@ -30,54 +30,54 @@ typedef enum CSSTYPE
 }CSSTYPE;
 
 
-enum SPL_NOTEBOOK_PAGE_Enum
+enum bot_NOTEBOOK_PAGE_Enum
 {
-    SPL_NOTEBOOK_DCU_PAGE           = 0,
-    SPL_NOTEBOOK_PROGRAM_PAGE       = 1,
-    SPL_NOTEBOOK_USER_LOG_PAGE      = 2,
-    SPL_NOTEBOOK_SERVER_LOG_PAGE    = 3,
-    SPL_NOTEBOOK_USER_MANAGE_PAGE   = 4,
-    SPL_NOTEBOOK_ZONE_MANAGE_PAGE   = 5,
-    SPL_NOTEBOOK_PAGE_NUMBER
+    bot_NOTEBOOK_DCU_PAGE           = 0,
+    bot_NOTEBOOK_PROGRAM_PAGE       = 1,
+    bot_NOTEBOOK_USER_LOG_PAGE      = 2,
+    bot_NOTEBOOK_SERVER_LOG_PAGE    = 3,
+    bot_NOTEBOOK_USER_MANAGE_PAGE   = 4,
+    bot_NOTEBOOK_ZONE_MANAGE_PAGE   = 5,
+    bot_NOTEBOOK_PAGE_NUMBER
 };
 
-enum SPL_DCU_NOTEBOOK_PAGE_Enum
+enum bot_DCU_NOTEBOOK_PAGE_Enum
 {
-    SPL_DCU_NOTEBOOK_DCU_PAGE           = 0,
-    SPL_DCU_NOTEBOOK_LCU_PAGE           = 1,
-    SPL_DCU_NOTEBOOK_PAGE_NUMBER
+    bot_DCU_NOTEBOOK_DCU_PAGE           = 0,
+    bot_DCU_NOTEBOOK_LCU_PAGE           = 1,
+    bot_DCU_NOTEBOOK_PAGE_NUMBER
 };
 
-extern char * smartstreetlight_server_url;
+extern char * bot_server_url;
 
 extern GtkTextBuffer *notification_text_buffer;
 extern gboolean show_debug;
 
-#define SPL_MENU_CSS(widget)         smartstreetlight_set_private_css_provide(CSS_MENU, widget)
+#define bot_MENU_CSS(widget)         bot_set_private_css_provide(CSS_MENU, widget)
 
-#define SPL_OBJECT(name_widget)      gtk_builder_get_object (smartstreetlight_builder, name_widget)
+#define bot_OBJECT(name_widget)      gtk_builder_get_object (bot_builder, name_widget)
 
 
-#define SPL_DCU_UNKNOWN_MODE    "<none>"
-#define SPL_DCU_WIRELESS_MODE   "Wireless Mode"
-#define SPL_DCU_LINE_MODE       "Line Mode"
+#define bot_DCU_UNKNOWN_MODE    "<none>"
+#define bot_DCU_WIRELESS_MODE   "Wireless Mode"
+#define bot_DCU_LINE_MODE       "Line Mode"
 
-#define SPL_LCU_UNKNOWN_MODE    "<none>"
-#define SPL_LCU_SCHEDULE_MODE   "Schedule Mode"
-#define SPL_LCU_MANUAL_MODE     "Manual Mode"
+#define bot_LCU_UNKNOWN_MODE    "<none>"
+#define bot_LCU_SCHEDULE_MODE   "Schedule Mode"
+#define bot_LCU_MANUAL_MODE     "Manual Mode"
 
-#define SPL_STATUS_ACTIVE       "Active"
-#define SPL_STATUS_INACTIVE     "Inactive"
+#define bot_STATUS_ACTIVE       "Active"
+#define bot_STATUS_INACTIVE     "Inactive"
 
 #if 1
-    #define SPL_SERVER_URL_DEFAULT "http://14.161.7.19"
-    #define SPL_SERVER_PORT_DEFAULT "8447"
+    #define bot_SERVER_URL_DEFAULT "http://14.161.7.19"
+    #define bot_SERVER_PORT_DEFAULT "8447"
 #else
-    #define SPL_SERVER_URL_DEFAULT "http://localhost"
-    #define SPL_SERVER_PORT_DEFAULT "8447"
+    #define bot_SERVER_URL_DEFAULT "http://localhost"
+    #define bot_SERVER_PORT_DEFAULT "8447"
 #endif // 0
 
-#define SPL_SERVER_SIDE_DEFAULT "axis2/services/smartstreetlightService"
+#define bot_SERVER_SIDE_DEFAULT "axis2/services/botService"
 
 /**
 Common define
@@ -121,12 +121,12 @@ enum
 extern const gchar* icon_name[ICON_DEF_ICON_NAME_COUNT];
 extern gchar* INSTALL_PATH;
 
-void smartstreetlight_main_server_info_update(const gchar *server_url, const gchar *server_port);
+void bot_main_server_info_update(const gchar *server_url, const gchar *server_port);
 
-gboolean smartstreetlight_application_init(void);
+gboolean bot_application_init(void);
 
-void smartstreetlight_application_run(void);
+void bot_application_run(void);
 
-void smartstreetlight_finalize (GtkWidget *object, gpointer user_data);
+void bot_finalize (GtkWidget *object, gpointer user_data);
 #endif // MAIN_H_INCLUDED
 

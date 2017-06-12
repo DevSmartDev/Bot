@@ -1691,7 +1691,7 @@ msgstr "禁止在状态栏中显示信息"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr "清空状态栏信息。保留状态信息窗口中的信息。"
 
@@ -2250,11 +2250,11 @@ msgid ""
 msgstr "在键入多少字符时显示符号列表"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "自动完成列表显示的行数"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "自动完成列表显示的最大条目数"
 
 #: ../src/interface.c:4086
@@ -2381,7 +2381,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr "当移动到文档的最后一行时停止滚动"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>显示</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2470,7 +2470,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>虚拟空格</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "显示"
 
 #: ../src/interface.c:4381
@@ -2814,7 +2814,7 @@ msgid "Project Properties"
 msgstr "项目属性"
 
 #: ../src/interface.c:5714
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "显示："
 
 #: ../src/interface.c:5736
@@ -3122,7 +3122,7 @@ msgid "Go to End of Line"
 msgstr "跳转到行尾"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "跳转到显示的行尾"
 
 #: ../src/keybindings.c:449
@@ -4526,7 +4526,7 @@ msgstr "--- 分隔线 ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr "选择在工具栏上显示的项，可以拖拽项进行排列。"
 
@@ -4535,7 +4535,7 @@ msgid "Available Items"
 msgstr "可用的项"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "显示的项"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -4874,7 +4874,7 @@ msgstr "不要使用运行脚本"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr "不使用用于显示程序的退出状态的简单运行脚本。"
 
@@ -5014,7 +5014,7 @@ msgstr "插入 HTML 实体字符如“&amp;”。"
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "IFast 开发团队"
 
@@ -5355,41 +5355,41 @@ msgstr "备份文件的日期时间格式 (详见“man strftime”) (_T)："
 msgid "Directory _levels to include in the backup destination:"
 msgstr "备份目录的目录层次(_L)："
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "分割窗口"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "把编辑视图分割为两个窗口。"
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "显示当前文件"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "合并(_U)"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "分割窗口(_S)"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 msgid "_Side by Side"
 msgstr "左右(_S)"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr "上下(_T)"
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "水平分割"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "垂直分割"
 
 #~ msgid "Item"
@@ -5570,5 +5570,5 @@ msgstr "垂直分割"
 #~ msgid "Terminal font:"
 #~ msgstr "终端字体："
 
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "合并"

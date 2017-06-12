@@ -1804,8 +1804,8 @@ gtk_databox_get_page_size_y (GtkDatabox* box) {
  * @bottom: Bottom total limit
  *
  * This function is used to set the limits of the total
- * display area of @box.
- * This function can be used to invert the orientation of the displayed graphs,
+ * spl area of @box.
+ * This function can be used to invert the orientation of the spled graphs,
  * e.g. @top=-1000 and  @bottom=0.
  *
  * Side effect: The @box also internally calls gtk_databox_set_visible_limits() with the same values.
@@ -1837,7 +1837,7 @@ gtk_databox_set_total_limits (GtkDatabox * box,
  * @bottom: Bottom visible limit
  *
  * This function is used to set the limits of the visible
- * display area of @box. The visible display area can be section of the total
+ * spl area of @box. The visible spl area can be section of the total
  * area, i.e. the @box zooms in, showing only a part of the complete picture.
  *
  * The orientation of the values have to be the same as in gtk_databox_set_total_limits() and
@@ -2016,7 +2016,7 @@ gtk_databox_get_visible_limits (GtkDatabox * box,
  *
  * Adds the @graph to the @box. The next time the @box is re-drawn, the graph will be shown.
  *
- * It might be becessary to modify the total_limits in order for the graph to be displayed properly (see gtk_databox_set_total_limits()).
+ * It might be becessary to modify the total_limits in order for the graph to be spled properly (see gtk_databox_set_total_limits()).
  *
  * Return value: 0 on success, -1 otherwise
  */
@@ -2038,7 +2038,7 @@ gtk_databox_graph_add (GtkDatabox * box, GtkDataboxGraph * graph) {
  *
  * Adds the @graph to the @box and will be plotted on top. The next time the @box is re-drawn, the graph will be shown.
  *
- * It might be becessary to modify the total_limits in order for the graph to be displayed properly (see gtk_databox_set_total_limits()).
+ * It might be becessary to modify the total_limits in order for the graph to be spled properly (see gtk_databox_set_total_limits()).
  *
  * Return value: 0 on success, -1 otherwise
  */

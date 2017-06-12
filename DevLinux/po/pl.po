@@ -1819,7 +1819,7 @@ msgstr "Ukryj informacje statusu na pasku statusu"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Usuwa wszystkie informacje na pasku statusu. Informacje są jednak nadal "
@@ -2443,12 +2443,12 @@ msgstr ""
 
 #: ../src/interface.c:4074
 #, fuzzy
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Liczba wierszy wyświetlanych przez listę autouzupełniania"
 
 #: ../src/interface.c:4083
 #, fuzzy
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Liczba wierszy wyświetlanych przez listę autouzupełniania"
 
 #: ../src/interface.c:4086
@@ -2588,7 +2588,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr ""
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Wyświetlanie</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2688,7 +2688,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Ścieżki do narzędzi</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Wyświetlanie"
 
 #: ../src/interface.c:4381
@@ -3072,7 +3072,7 @@ msgstr "Właściwości projektu"
 
 #: ../src/interface.c:5714
 #, fuzzy
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Wyświetlanie"
 
 #: ../src/interface.c:5736
@@ -3402,7 +3402,7 @@ msgstr "Przejdź do wiersza"
 
 #: ../src/keybindings.c:447
 #, fuzzy
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Przejdź do wiersza"
 
 #: ../src/keybindings.c:449
@@ -4911,7 +4911,7 @@ msgstr ""
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 
@@ -4921,7 +4921,7 @@ msgstr ""
 
 #: ../src/toolbar.c:989
 #, fuzzy
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Wyświetlanie"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5296,7 +5296,7 @@ msgstr ""
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 
@@ -5450,7 +5450,7 @@ msgstr "Wstawia znaki HTML."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 #, fuzzy
 msgid "The IFast developer team"
 msgstr "Nazwisko programisty"
@@ -5820,45 +5820,45 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr ""
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr ""
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr ""
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 #, fuzzy
 msgid "Show the current document"
 msgstr ""
 "Ustawia znaczniki we wszystkich liniach danego dokumentu w których występuje "
 "szukany ciąg"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr ""
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr ""
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 #, fuzzy
 msgid "_Side by Side"
 msgstr "Ukryj panel boczny"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr ""
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr ""
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr ""
 
 #, fuzzy
@@ -6249,7 +6249,7 @@ msgstr ""
 #~ msgid "Show file operation buttons"
 #~ msgstr "Przyciski operacji na plikach"
 
-#~ msgid "Display the New, Open, Close, Save and Reload buttons in the toolbar"
+#~ msgid "Dibotay the New, Open, Close, Save and Reload buttons in the toolbar"
 #~ msgstr ""
 #~ "Wyświetla przyciski |Nowy|, |Otwórz|, |Zamknij|, |Zapisz| i |Wczytaj "
 #~ "ponownie| na pasku narzędzi."
@@ -6257,33 +6257,33 @@ msgstr ""
 #~ msgid "Show Redo and Undo buttons"
 #~ msgstr "|Cofnij|  i  |Ponów|"
 
-#~ msgid "Display the Redo and Undo buttons in the toolbar"
+#~ msgid "Dibotay the Redo and Undo buttons in the toolbar"
 #~ msgstr "Wyświetla przycisk |Cofnij| i |Ponów| na pasku narzędzi"
 
 #~ msgid "Show Back and Forward buttons"
 #~ msgstr "|Wstecz|  i  |Naprzód|"
 
 #~ msgid ""
-#~ "Display the Back and Forward buttons in the toolbar used for code "
+#~ "Dibotay the Back and Forward buttons in the toolbar used for code "
 #~ "navigation"
 #~ msgstr "Wyświetla przycisk |Wstecz| i |Naprzód| na pasku narzędzi"
 
 #~ msgid "Show Compile and Run buttons"
 #~ msgstr "|Kompiluj|  i  |Uruchom|"
 
-#~ msgid "Display the Compile and Run buttons in the toolbar"
+#~ msgid "Dibotay the Compile and Run buttons in the toolbar"
 #~ msgstr "Wyświetla przyciski |Kompiluj| i |Uruchom| na pasku narzędzi"
 
 #~ msgid "Show Color Chooser button"
 #~ msgstr "Przycisk wyboru koloru"
 
-#~ msgid "Display the Color Chooser button in the toolbar"
+#~ msgid "Dibotay the Color Chooser button in the toolbar"
 #~ msgstr "Wyświetla przycisk wyboru koloru na pasku narzędzi"
 
 #~ msgid "Show Zoom In and Zoom Out buttons"
 #~ msgstr "|Powiększ|  i  |Pomniejsz|"
 
-#~ msgid "Display the Zoom In and Zoom Out buttons in the toolbar"
+#~ msgid "Dibotay the Zoom In and Zoom Out buttons in the toolbar"
 #~ msgstr "Wyświetla przyciski |Powiększ| i |Pomniejsz| na pasku narzędzi"
 
 #, fuzzy
@@ -6291,25 +6291,25 @@ msgstr ""
 #~ msgstr "|Cofnij|  i  |Ponów|"
 
 #, fuzzy
-#~ msgid "Display the Increase and Decrease Indentation buttons in the toolbar"
+#~ msgid "Dibotay the Increase and Decrease Indentation buttons in the toolbar"
 #~ msgstr "Wyświetla przycisk |Cofnij| i |Ponów| na pasku narzędzi"
 
 #~ msgid "Show Search field"
 #~ msgstr "Pola wyszukiwania"
 
-#~ msgid "Display the search field and button in the toolbar"
+#~ msgid "Dibotay the search field and button in the toolbar"
 #~ msgstr "Wyświetla pole wyszukiwania na pasku narzędzi"
 
 #~ msgid "Show Go to Line field"
 #~ msgstr "Pole skoku do wiersza"
 
-#~ msgid "Display the line number field and button in the toolbar"
+#~ msgid "Dibotay the line number field and button in the toolbar"
 #~ msgstr "Wyświetla pole linii wiersza i przycisk na pasku narzędzi"
 
 #~ msgid "Show Quit button"
 #~ msgstr "|Zakończ|"
 
-#~ msgid "Display the quit button in the toolbar"
+#~ msgid "Dibotay the quit button in the toolbar"
 #~ msgstr "Wyświetla przycisk |Zakończ| na pasku narzędzi"
 
 #~ msgid "<b>Items</b>"

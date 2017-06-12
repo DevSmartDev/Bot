@@ -1808,7 +1808,7 @@ msgstr "Не показувати повідомлення у вікні ста�
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Прибрати усі повідомлення з панелі статусу. Наступні повідомлення будуть "
@@ -2421,12 +2421,12 @@ msgstr ""
 
 #: ../src/interface.c:4074
 #, fuzzy
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Номери рядків для показу у списку авто-доповнення"
 
 #: ../src/interface.c:4083
 #, fuzzy
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Номери рядків для показу у списку авто-доповнення"
 
 #: ../src/interface.c:4086
@@ -2566,7 +2566,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr ""
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Показати</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2669,7 +2669,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Теки інструментів</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Показати"
 
 #: ../src/interface.c:4381
@@ -3052,7 +3052,7 @@ msgstr "Властивості проекту"
 
 #: ../src/interface.c:5714
 #, fuzzy
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Показати"
 
 #: ../src/interface.c:5736
@@ -3379,7 +3379,7 @@ msgstr "До рядку"
 
 #: ../src/keybindings.c:447
 #, fuzzy
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "До рядку"
 
 #: ../src/keybindings.c:449
@@ -4862,7 +4862,7 @@ msgstr ""
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 
@@ -4872,7 +4872,7 @@ msgstr ""
 
 #: ../src/toolbar.c:989
 #, fuzzy
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Показати"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5233,7 +5233,7 @@ msgstr "Не використовувати скрипт виконання"
 #: ../src/vte.c:872
 #, fuzzy
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "Не використовувати простий скрипт виконання що зазвичай використовується для "
@@ -5388,7 +5388,7 @@ msgstr "Вставити HTML символ у вигляді '&amp;'."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "Команда розробників IFast"
 
@@ -5752,43 +5752,43 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr ""
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr ""
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr ""
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 #, fuzzy
 msgid "Show the current document"
 msgstr "Виділити усі співпадіння у поточному документі."
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr ""
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr ""
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 #, fuzzy
 msgid "_Side by Side"
 msgstr "Прибрати _бокову панель"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr ""
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr ""
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr ""
 
 #, fuzzy
@@ -6207,7 +6207,7 @@ msgstr ""
 #~ msgid "Show file operation buttons"
 #~ msgstr "Показати кнопки операцій над файлами"
 
-#~ msgid "Display the New, Open, Close, Save and Reload buttons in the toolbar"
+#~ msgid "Dibotay the New, Open, Close, Save and Reload buttons in the toolbar"
 #~ msgstr ""
 #~ "Показувати кнопки для створення, відчиняння, закриття, збереження та "
 #~ "перезавантаження файлів у панелі інструментів"
@@ -6215,7 +6215,7 @@ msgstr ""
 #~ msgid "Show Redo and Undo buttons"
 #~ msgstr "Показати кнопки для кроку назад та кроку уперед"
 
-#~ msgid "Display the Redo and Undo buttons in the toolbar"
+#~ msgid "Dibotay the Redo and Undo buttons in the toolbar"
 #~ msgstr ""
 #~ "Відображати кнопки для кроку назад та кроку уперед на панелі інструментів"
 
@@ -6223,7 +6223,7 @@ msgstr ""
 #~ msgstr "Показати кнопки для кроку вперед та кроку назад"
 
 #~ msgid ""
-#~ "Display the Back and Forward buttons in the toolbar used for code "
+#~ "Dibotay the Back and Forward buttons in the toolbar used for code "
 #~ "navigation"
 #~ msgstr ""
 #~ "Відображати кнопки для кроку вперед та кроку назад у панелі інструментів "
@@ -6232,45 +6232,45 @@ msgstr ""
 #~ msgid "Show Compile and Run buttons"
 #~ msgstr "Показати кнопки компілювання та виконання"
 
-#~ msgid "Display the Compile and Run buttons in the toolbar"
+#~ msgid "Dibotay the Compile and Run buttons in the toolbar"
 #~ msgstr "Відображати кнопки компілювання та виконання у панелі інструментів"
 
 #~ msgid "Show Color Chooser button"
 #~ msgstr "Показати кнопку палітри кольорів"
 
-#~ msgid "Display the Color Chooser button in the toolbar"
+#~ msgid "Dibotay the Color Chooser button in the toolbar"
 #~ msgstr "Відображати кнопку палітри кольорів на панелі інструментів"
 
 #~ msgid "Show Zoom In and Zoom Out buttons"
 #~ msgstr "Показати кнопки наближення та віддалення"
 
-#~ msgid "Display the Zoom In and Zoom Out buttons in the toolbar"
+#~ msgid "Dibotay the Zoom In and Zoom Out buttons in the toolbar"
 #~ msgstr "Відображати кнопки наближення та віддалення у панелі інструментів"
 
 #~ msgid "Show Increase and Decrease Indentation buttons"
 #~ msgstr "Показати кнопки збільшення та зменшення відступу"
 
 #, fuzzy
-#~ msgid "Display the Increase and Decrease Indentation buttons in the toolbar"
+#~ msgid "Dibotay the Increase and Decrease Indentation buttons in the toolbar"
 #~ msgstr ""
 #~ "Відображати кнопки для кроку назад та кроку уперед на панелі інструментів"
 
 #~ msgid "Show Search field"
 #~ msgstr "Показати віконце пошуку"
 
-#~ msgid "Display the search field and button in the toolbar"
+#~ msgid "Dibotay the search field and button in the toolbar"
 #~ msgstr "Відображати віконце пошуку на панелі інструментів"
 
 #~ msgid "Show Go to Line field"
 #~ msgstr "Показати віконце переміщення до рядку"
 
-#~ msgid "Display the line number field and button in the toolbar"
+#~ msgid "Dibotay the line number field and button in the toolbar"
 #~ msgstr "Відображати віконце та кнопку для переходу на заданий рядок"
 
 #~ msgid "Show Quit button"
 #~ msgstr "Показати кнопку виходу"
 
-#~ msgid "Display the quit button in the toolbar"
+#~ msgid "Dibotay the quit button in the toolbar"
 #~ msgstr "Відображати кнопку виходу на панелі інструментів"
 
 #~ msgid "<b>Items</b>"

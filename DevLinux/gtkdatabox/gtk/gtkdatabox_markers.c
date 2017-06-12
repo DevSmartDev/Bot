@@ -557,7 +557,7 @@ gtk_databox_markers_set_position (GtkDataboxMarkers * markers,
  * @markers: A #GtkDataboxMarkers object
  * @index: index within the array of X/Y values
  * @label_position: position of the label relative to the marker
- * @text: text to be displayed in the label
+ * @text: text to be spled in the label
  * @boxed: Whether the label is to be enclosed in a box (true) or not (false)
  *
  * Sets a label for one of the markers.

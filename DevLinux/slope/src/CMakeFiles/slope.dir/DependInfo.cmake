@@ -4,17 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/chart.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/chart.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/drawing.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/drawing.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/figure.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/figure.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/item.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/item.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/sampler.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/sampler.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/scale.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/scale.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/view.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/view.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis-sampler.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/xyaxis.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyscale.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/xyscale.c.o"
-  "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyseries.c" "/media/DATA/projects/spl/SmartStreetLight/slope/src/CMakeFiles/slope.dir/slope/xyseries.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/chart.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/chart.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/drawing.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/drawing.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/figure.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/figure.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/item.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/item.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/sampler.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/sampler.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/scale.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/scale.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/view.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/view.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/xyaxis-sampler.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/xyaxis-sampler.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/xyaxis.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/xyaxis.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/xyscale.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/xyscale.c.o"
+  "/media/DATA/projects/bot/bot/slope/src/slope/xyseries.c" "/media/DATA/projects/bot/bot/slope/src/CMakeFiles/slope.dir/slope/xyseries.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -18,7 +18,7 @@
 
 #ifndef CHART_H_INCLUDED
 #define CHART_H_INCLUDED
-typedef struct SPL_LCU_SLOPE_DATA
+typedef struct bot_LCU_SLOPE_DATA
 {
     gfloat *x_time;
     gfloat *y_powerCtrl;
@@ -32,8 +32,8 @@ typedef struct SPL_LCU_SLOPE_DATA
     gfloat  *manual_ticks;
     gchar    **manual_tick_labels;
 
-} SplLcuSlopeData;
-typedef struct _SplLcuLog
+} botLcuSlopeData;
+typedef struct _botLcuLog
 {
     /** Private elements*/
     gint            id;
@@ -47,14 +47,14 @@ typedef struct _SplLcuLog
     gint            status;
     gint            mode;
 
-}SplLcuLog;
+}botLcuLog;
 extern GSList *lcu_log_list;
-SplLcuSlopeData *spl_lcu_chart_data_init(gint n_point, GSList *lculoglist);
+botLcuSlopeData *bot_lcu_chart_data_init(gint n_point, GSList *lculoglist);
 
 
 void lcu_log_finalize (GtkWidget *object,
                          gpointer   user_data);
-gboolean  spl_get_data_chart(struct PROGRAM_OPTION* option_t);
-void gen_data_chart(SplLcuSlopeData* lcu_slope);
-void spl_lcu_chart_data_free(SplLcuSlopeData* lcu_slope);
+gboolean  bot_get_data_chart(struct PROGRAM_OPTION* option_t);
+void gen_data_chart(botLcuSlopeData* lcu_slope);
+void bot_lcu_chart_data_free(botLcuSlopeData* lcu_slope);
 #endif

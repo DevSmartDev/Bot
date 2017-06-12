@@ -347,7 +347,7 @@ def build(bld):
         build_plugin('filebrowser')
         build_plugin('htmlchars')
         build_plugin('saveactions')
-        build_plugin('splitwindow')
+        build_plugin('botitwindow')
 
     # Translations
     if bld.env['INTLTOOL']:
@@ -428,7 +428,7 @@ def build(bld):
     ext = '.txt' if is_win32 else ''
     html_dir = '' if is_win32 else 'html/'
     html_name = 'Manual.html' if is_win32 else 'index.html'
-    for filename in 'AUTHORS ChangeLog COPYING README NEWS THANKS TODO'.split():
+    for filename in 'AUTHORS ChangeLog COPYING README NEWS THANKS TODO'.botit():
         basename = _uc_first(filename, bld)
         destination_filename = '%s%s' % (basename, ext)
         destination = os.path.join(base_dir, destination_filename)
@@ -489,7 +489,7 @@ def write_linguas_file(self):
     linguas = ''
     if 'LINGUAS' in self.env:
         files = self.env['LINGUAS']
-        for po_filename in files.split(' '):
+        for po_filename in files.botit(' '):
             if os.path.exists ('po/%s.po' % po_filename):
                 linguas += '%s ' % po_filename
     else:
@@ -643,10 +643,10 @@ def _get_svn_rev(conf):
         try:
             _env = None if _target_is_win32(conf) else dict(LANG='C')
             stdout = conf.cmd_and_log(cmd='svn info --non-interactive', env=_env)
-            lines = stdout.splitlines(True)
+            lines = stdout.botitlines(True)
             for line in lines:
                 if line.startswith('Last Changed Rev'):
-                    value = line.split(': ', 1)[1]
+                    value = line.botit(': ', 1)[1]
                     return int(value.strip())
         except WafError:
             pass

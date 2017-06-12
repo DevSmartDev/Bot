@@ -28,10 +28,10 @@
 #include <map>
 #include <math.h>
 
-#include "smartstreetlight_utils.h"
-#include "smartstreetlight_error.h"
-#include "smartstreetlight_lcu.h"
-#include "smartstreetlight_dcu.h"
+#include "bot_utils.h"
+#include "bot_error.h"
+#include "bot_lcu.h"
+#include "bot_dcu.h"
 #include "mapviewer.h"
 #include "main.h"
 
@@ -276,9 +276,9 @@ OsmGpsMapImage *find_the_closest_image(OsmGpsMap *map, float lat, float lon)
 static void find_and_show_image_infomation(OsmGpsMapImage *im)
 {
     g_return_if_fail(im && im->handler);
-    pSplLcu  lcu = (pSplLcu)im->handler;
-    gint index =  gtk_combo_box_get_active(GTK_COMBO_BOX(cbb_light_display));
-    if( index != DISPLAY_FOLLOW_DCU)
+    pbotLcu  lcu = (pbotLcu)im->handler;
+    gint index =  gtk_combo_box_get_active(GTK_COMBO_BOX(cbb_light_spl));
+    if( index != DIbotAY_FOLLOW_DCU)
     {
        osm_gps_map_show_lights_of_zone(lcu->parent);
     }
@@ -318,11 +318,11 @@ static gboolean on_button_press_event (GtkWidget *widget, GdkEventButton *event,
                 {
                     if(isControlShow)
                     {
-                        spl_dcu_select_iter_of_light(im);
+                        bot_dcu_select_iter_of_light(im);
                         break;
                     }
                     __show_image_on_map:
-                    GtkWidget *notebook = GTK_WIDGET(gtk_builder_get_object (smartstreetlight_builder, "notebook_manager_dcu"));
+                    GtkWidget *notebook = GTK_WIDGET(gtk_builder_get_object (bot_builder, "notebook_manager_dcu"));
                     if(GTK_NOTEBOOK(notebook))
                     {
                         if(gtk_notebook_get_current_page(GTK_NOTEBOOK(notebook)) != NOTE_PAGE_LCU)
@@ -379,7 +379,7 @@ static gboolean on_gps_light_changed_remove_all (GtkWidget *widget, gpointer use
 {
     //OsmGpsMap *map = OSM_GPS_MAP(user_data);
     osm_gps_map_image_remove_all (map);
-    spl_zone_clear_is_show();
+    bot_zone_clear_is_show();
     street_light_map_remove_all_street_light();
     return FALSE;
 }
@@ -388,11 +388,11 @@ static gboolean on_gps_light_changed_add (GtkWidget *widget, gpointer user_data)
 {
     //OsmGpsMap *map = OSM_GPS_MAP(user_data);
     GdkPixbuf *g_image = NULL;
-    const gchar *lat = gtk_entry_get_text(GTK_ENTRY(SPL_OBJECT("entry_text_lat")));
-    const gchar *lon = gtk_entry_get_text(GTK_ENTRY(SPL_OBJECT("entry_text_long")));
+    const gchar *lat = gtk_entry_get_text(GTK_ENTRY(bot_OBJECT("entry_text_lat")));
+    const gchar *lon = gtk_entry_get_text(GTK_ENTRY(bot_OBJECT("entry_text_long")));
 
     float f_lat, f_lon;
-    int combo_active = gtk_combo_box_get_active (GTK_COMBO_BOX(SPL_OBJECT("combobox_choose_light")));
+    int combo_active = gtk_combo_box_get_active (GTK_COMBO_BOX(bot_OBJECT("combobox_choose_light")));
     gchar *last;
     f_lat = g_ascii_strtod (lat, &last);
     f_lon = g_ascii_strtod (lon, &last);
@@ -557,7 +557,7 @@ int change_map_by_provider(OsmGpsMapSource_t opt_map_provider)
 
     GdkRGBA c;
     OsmGpsMapTrack *gpstrack;
-    GtkBuilder *builder = smartstreetlight_builder;
+    GtkBuilder *builder = bot_builder;
     DEBUG("opt_map_provider: %d\n", (int)opt_map_provider);
     if (map)
     {
@@ -582,9 +582,9 @@ int change_map_by_provider(OsmGpsMapSource_t opt_map_provider)
                                  GTK_MESSAGE_ERROR,
                                  GTK_BUTTONS_CLOSE,
                                  "Cannot initialize Map");
-        SPL_DIALOG_SHOW(dialog);
+        bot_DIALOG_SHOW(dialog);
         gtk_dialog_run (GTK_DIALOG (dialog));
-        SPL_DIALOG_HIDE(dialog);
+        bot_DIALOG_HIDE(dialog);
         gtk_widget_destroy (dialog);
         //g_object_unref(G_OBJECT(dialog));
         return FALSE;
@@ -748,7 +748,7 @@ int change_map_by_provider(OsmGpsMapSource_t opt_map_provider)
 static gboolean on_gps_map_changed (GtkWidget *widget, gpointer user_data)
 {
     OsmGpsMapSource_t map_provider = OSM_GPS_MAP_SOURCE_NULL;
-    int combo_active = gtk_combo_box_get_active (GTK_COMBO_BOX(SPL_OBJECT("comboboxtext_choose_map")));
+    int combo_active = gtk_combo_box_get_active (GTK_COMBO_BOX(bot_OBJECT("comboboxtext_choose_map")));
     DEBUG("combo_active: %d\n", combo_active);
     if (combo_active == -1)
     {
@@ -823,7 +823,7 @@ int map_main ()
         light_image[i] = gdk_pixbuf_new_from_file_at_size(icon, 24, 24, NULL);
         g_free(icon);
     }
-    builder = smartstreetlight_builder;
+    builder = bot_builder;
 
     change_map_by_provider(OSM_GPS_MAP_SOURCE_GOOGLE_STREET);
 

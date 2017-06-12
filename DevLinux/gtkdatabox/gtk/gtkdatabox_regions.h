@@ -19,11 +19,11 @@
 
 /**
  * SECTION:gtkdatabox_regions
- * @short_description: A #GtkDataboxGraph used for displaying xxyy-values (x1, x2, y1 and y2 values) as oblongs from x1 to y1, x2 to y2.
+ * @short_description: A #GtkDataboxGraph used for spling xxyy-values (x1, x2, y1 and y2 values) as oblongs from x1 to y1, x2 to y2.
  * @include: gtkdatabox_regions.h
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines, #GtkDataboxMarkers, #GtkDataboxRegions
  *
- * #GtkDataboxRegions is a #GtkDataboxGraph class for displaying xxyy-values as oblongs.
+ * #GtkDataboxRegions is a #GtkDataboxGraph class for spling xxyy-values as oblongs.
  *
  */
 
@@ -55,7 +55,7 @@ G_BEGIN_DECLS
  * GtkDataboxRegions:
  * @see_also: #GtkDatabox, #GtkDataboxGraph, #GtkDataboxPoints, #GtkDataboxLines, #GtkDataboxMarkers, #GtkDataboxBars, #GtkDataboxOffsetBars
  *
- * #GtkDataboxRegions is a #GtkDataboxGraph class for displaying xxyy-values as oblongs.
+ * #GtkDataboxRegions is a #GtkDataboxGraph class for spling xxyy-values as oblongs.
  *
  */
    typedef struct _GtkDataboxRegions GtkDataboxRegions;

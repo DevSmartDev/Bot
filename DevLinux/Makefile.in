@@ -82,10 +82,9 @@ subdir = .
 DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \
 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/configure $(am__configure_deps) \
-	$(srcdir)/config.h.in mkinstalldirs \
-	$(srcdir)/smartstreetlight.spec.in \
-	$(srcdir)/smartstreetlight.pc.in COPYING THANKS TODO compile \
-	config.guess config.sub depcomp install-sh missing ltmain.sh
+	$(srcdir)/config.h.in mkinstalldirs $(srcdir)/bot.spec.in \
+	$(srcdir)/bot.pc.in COPYING THANKS TODO compile config.guess \
+	config.sub depcomp install-sh missing ltmain.sh
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/intltool.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -97,7 +96,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = config.h
-CONFIG_CLEAN_FILES = smartstreetlight.spec smartstreetlight.pc
+CONFIG_CLEAN_FILES = bot.spec bot.pc
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -398,7 +397,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = src/gsoap gtkdatabox/ src po icons
+SUBDIRS = src po icons
 #SUBDIRS = src/gsoap src po icons
 AUTOMAKE_OPTIONS = 1.7
 ACLOCAL_AMFLAGS = -I m4
@@ -406,9 +405,9 @@ EXTRA_DIST = \
 	autogen.sh \
 	wscript \
 	waf \
-	smartstreetlight.desktop.in \
-	smartstreetlight.pc.in \
-	smartstreetlight.spec \ \
+	bot.desktop.in \
+	bot.pc.in \
+	bot.spec \ \
 	ChangeLog.pre-0-17 \
 	HACKING \
 	README.I18N \
@@ -422,17 +421,17 @@ EXTRA_DIST = \
 	gnome-doc-utils.make
 
 DISTCLEANFILES = \
-	smartstreetlight.desktop \
+	bot.desktop \
 	intltool-extract \
 	intltool-merge \
 	intltool-update\
 	gnome-doc-utils.make
 
 BZIP2_ENV = --best
-pkgconfig_DATA = smartstreetlight.pc
+pkgconfig_DATA = bot.pc
 pkgconfigdir = $(libdir)/pkgconfig
 desktopdir = $(datadir)/applications
-desktop_in_files = smartstreetlight.desktop
+desktop_in_files = bot.desktop
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
@@ -487,9 +486,9 @@ $(srcdir)/config.h.in:  $(am__configure_deps)
 
 distclean-hdr:
 	-rm -f config.h stamp-h1
-smartstreetlight.spec: $(top_builddir)/config.status $(srcdir)/smartstreetlight.spec.in
+bot.spec: $(top_builddir)/config.status $(srcdir)/bot.spec.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-smartstreetlight.pc: $(top_builddir)/config.status $(srcdir)/smartstreetlight.pc.in
+bot.pc: $(top_builddir)/config.status $(srcdir)/bot.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 mostlyclean-libtool:
@@ -976,7 +975,7 @@ install-data-only:
 	@$(NORMAL_INSTALL)
 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir); \
 	$(INSTALL_DATA) $(srcdir)/COPYING $(DESTDIR)$(pkgdatadir)/GPL-2; \
-	$(INSTALL_DATA) $(srcdir)/src/splStyle.css $(DESTDIR)$(pkgdatadir)/; \
+	$(INSTALL_DATA) $(srcdir)/src/botStyle.css $(DESTDIR)$(pkgdatadir)/; \
 	for file in $(srcdir)/data/*; do \
 	  if test -f $$file; then \
 	    $(INSTALL_DATA) $$file $(DESTDIR)$(pkgdatadir)/; \

@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = src/gsoap gtkdatabox/ src po icons
+SUBDIRS =src po icons
 #SUBDIRS = src/gsoap src po icons
 
 AUTOMAKE_OPTIONS =	1.7
@@ -11,9 +11,9 @@ EXTRA_DIST = \
 	autogen.sh \
 	wscript \
 	waf \
-	smartstreetlight.desktop.in \
-	smartstreetlight.pc.in \
-	smartstreetlight.spec \ \
+	bot.desktop.in \
+	bot.pc.in \
+	bot.spec \ \
 	ChangeLog.pre-0-17 \
 	HACKING \
 	README.I18N \
@@ -27,7 +27,7 @@ EXTRA_DIST = \
 	gnome-doc-utils.make
 
 DISTCLEANFILES = \
-	smartstreetlight.desktop \
+	bot.desktop \
 	intltool-extract \
 	intltool-merge \
 	intltool-update\
@@ -43,7 +43,7 @@ install-data-only:
 	@$(NORMAL_INSTALL)
 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir); \
 	$(INSTALL_DATA) $(srcdir)/COPYING $(DESTDIR)$(pkgdatadir)/GPL-2; \
-	$(INSTALL_DATA) $(srcdir)/src/splStyle.css $(DESTDIR)$(pkgdatadir)/; \
+	$(INSTALL_DATA) $(srcdir)/src/botStyle.css $(DESTDIR)$(pkgdatadir)/; \
 	for file in $(srcdir)/data/*; do \
 	  if test -f $$file; then \
 	    $(INSTALL_DATA) $$file $(DESTDIR)$(pkgdatadir)/; \
@@ -88,10 +88,10 @@ rpm: dist
 	rpmbuild -ta $(distdir).tar.gz
 
 
-pkgconfig_DATA = smartstreetlight.pc
+pkgconfig_DATA = bot.pc
 pkgconfigdir = $(libdir)/pkgconfig
 
 desktopdir = $(datadir)/applications
-desktop_in_files = smartstreetlight.desktop
+desktop_in_files = bot.desktop
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@

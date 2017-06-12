@@ -1,4 +1,4 @@
-# Install script for directory: /media/DATA/projects/spl/SmartStreetLight/slope
+# Install script for directory: /media/DATA/projects/bot/bot/slope
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/media/DATA/projects/spl/SmartStreetLight/slope/src/cmake_install.cmake")
-  include("/media/DATA/projects/spl/SmartStreetLight/slope/demos/cmake_install.cmake")
+  include("/media/DATA/projects/bot/bot/slope/src/cmake_install.cmake")
+  include("/media/DATA/projects/bot/bot/slope/demos/cmake_install.cmake")
 
 endif()
 
@@ -45,7 +45,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/media/DATA/projects/spl/SmartStreetLight/slope/${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "/media/DATA/projects/bot/bot/slope/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/media/DATA/projects/spl/SmartStreetLight/slope/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "/media/DATA/projects/bot/bot/slope/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()

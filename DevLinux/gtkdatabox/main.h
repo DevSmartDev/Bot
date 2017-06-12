@@ -26,6 +26,6 @@ struct PROGRAM_OPTION{
 };
 extern GtkWidget *window ;
 gboolean getOptCommandLine(int argc, char **argv, struct PROGRAM_OPTION* option_t);
-void spl_chart_help(const gchar* programName);
-gint spl_utils_message_box(GtkWindow *parent, GtkMessageType type, GtkButtonsType btn, const gchar* msg);
+void bot_chart_help(const gchar* programName);
+gint bot_utils_message_box(GtkWindow *parent, GtkMessageType type, GtkButtonsType btn, const gchar* msg);
 #endif

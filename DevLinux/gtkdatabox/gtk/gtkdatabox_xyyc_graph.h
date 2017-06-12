@@ -19,12 +19,12 @@
 
 /**
  * SECTION:gtkdatabox_xyyc_graph
- * @short_description: An abstract anchestor for all graphs which display xyy-values (x, y1 and y2 values) in one color.
+ * @short_description: An abstract anchestor for all graphs which spl xyy-values (x, y1 and y2 values) in one color.
  * @include: gtkdatabox_xyyc_graph.h
  * @see_also: #GtkDatabox, #GtkDataboxOffsetBars
  *
- * GtkDataboxXYYCGraphs are an abstract class for displaying XYY-data (x, y1 and y2 values) in one color. The values for the data are represented
- * as an array of X values, an array of Y1 values and an array of Y2 values. In order to actually display data, you should
+ * GtkDataboxXYYCGraphs are an abstract class for spling XYY-data (x, y1 and y2 values) in one color. The values for the data are represented
+ * as an array of X values, an array of Y1 values and an array of Y2 values. In order to actually spl data, you should
  * use one of the derived classes.
  *
  */
@@ -55,8 +55,8 @@ G_BEGIN_DECLS
 /**
  * GtkDataboxXYYCGraph:
  *
- * GtkDataboxXYYCGraphs are an abstract class for displaying XY-data in one color. The values for the data are represented
- * as an array of X values and a second array of Y values. In order to actually display data, you should
+ * GtkDataboxXYYCGraphs are an abstract class for spling XY-data in one color. The values for the data are represented
+ * as an array of X values and a second array of Y values. In order to actually spl data, you should
  * use one of the derived classes.
  *
  */

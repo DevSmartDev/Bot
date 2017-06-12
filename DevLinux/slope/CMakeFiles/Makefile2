@@ -24,7 +24,7 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Suppress display of executed commands.
+# Suppress spl of executed commands.
 $(VERBOSE).SILENT:
 
 # A target that is always out of date.
@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_SOURCE_DIR = /media/DATA/projects/bot/bot/slope
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_BINARY_DIR = /media/DATA/projects/bot/bot/slope
 
 #=============================================================================
 # Directory level rules for directory src
@@ -74,7 +74,7 @@ src/preinstall:
 src/CMakeFiles/slope.dir/all:
 	$(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/depend
 	$(MAKE) -f src/CMakeFiles/slope.dir/build.make src/CMakeFiles/slope.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles  3 4 5 6 7 8 9 10 11 12 13
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles  3 4 5 6 7 8 9 10 11 12 13
 	@echo "Built target slope"
 .PHONY : src/CMakeFiles/slope.dir/all
 
@@ -84,9 +84,9 @@ all: src/CMakeFiles/slope.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/slope.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/slope.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 0
 .PHONY : src/CMakeFiles/slope.dir/rule
 
 # Convenience name for target.
@@ -128,7 +128,7 @@ demos/preinstall:
 demos/CMakeFiles/plot_stack.dir/all: src/CMakeFiles/slope.dir/all
 	$(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/depend
 	$(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles  1
 	@echo "Built target plot_stack"
 .PHONY : demos/CMakeFiles/plot_stack.dir/all
 
@@ -138,9 +138,9 @@ all: demos/CMakeFiles/plot_stack.dir/all
 
 # Build rule for subdir invocation for target.
 demos/CMakeFiles/plot_stack.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 demos/CMakeFiles/plot_stack.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 0
 .PHONY : demos/CMakeFiles/plot_stack.dir/rule
 
 # Convenience name for target.
@@ -163,7 +163,7 @@ clean: demos/CMakeFiles/plot_stack.dir/clean
 demos/CMakeFiles/simple.dir/all: src/CMakeFiles/slope.dir/all
 	$(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/depend
 	$(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles  2
 	@echo "Built target simple"
 .PHONY : demos/CMakeFiles/simple.dir/all
 
@@ -173,9 +173,9 @@ all: demos/CMakeFiles/simple.dir/all
 
 # Build rule for subdir invocation for target.
 demos/CMakeFiles/simple.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 demos/CMakeFiles/simple.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 0
 .PHONY : demos/CMakeFiles/simple.dir/rule
 
 # Convenience name for target.
@@ -198,7 +198,7 @@ clean: demos/CMakeFiles/simple.dir/clean
 demos/CMakeFiles/test.dir/all: src/CMakeFiles/slope.dir/all
 	$(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/depend
 	$(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles  14
+	$(CMAKE_COMMAND) -E cmake_progress_report /media/DATA/projects/bot/bot/slope/CMakeFiles  14
 	@echo "Built target test"
 .PHONY : demos/CMakeFiles/test.dir/all
 
@@ -208,9 +208,9 @@ all: demos/CMakeFiles/test.dir/all
 
 # Build rule for subdir invocation for target.
 demos/CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 demos/CMakeFiles/test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 0
 .PHONY : demos/CMakeFiles/test.dir/rule
 
 # Convenience name for target.

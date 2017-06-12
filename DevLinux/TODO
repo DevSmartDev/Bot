@@ -28,7 +28,7 @@ Note: features included in brackets have lower priority.
 
 
 	1.0:
-	o stable plugin ABI for the 1.0 series? (Split up ifast_data, prefs,
+	o stable plugin ABI for the 1.0 series? (botit up ifast_data, prefs,
 	  IFastKeyCommand enum into groups)
 	o review documentation
 

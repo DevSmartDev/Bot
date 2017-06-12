@@ -20,7 +20,7 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Suppress display of executed commands.
+# Suppress spl of executed commands.
 $(VERBOSE).SILENT:
 
 # A target that is always out of date.
@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_SOURCE_DIR = /media/DATA/projects/bot/bot/slope
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/DATA/projects/spl/SmartStreetLight/slope
+CMAKE_BINARY_DIR = /media/DATA/projects/bot/bot/slope
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -104,14 +104,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles /media/DATA/projects/spl/SmartStreetLight/slope/demos/CMakeFiles/progress.marks
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/spl/SmartStreetLight/slope/CMakeFiles 0
+	cd /media/DATA/projects/bot/bot/slope && $(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles /media/DATA/projects/bot/bot/slope/demos/CMakeFiles/progress.marks
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/DATA/projects/bot/bot/slope/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/clean
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/clean
 .PHONY : clean
 
 # The main clean target
@@ -120,22 +120,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/preinstall
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/preinstall
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /media/DATA/projects/bot/bot/slope && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 demos/CMakeFiles/plot_stack.dir/rule:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/CMakeFiles/plot_stack.dir/rule
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/CMakeFiles/plot_stack.dir/rule
 .PHONY : demos/CMakeFiles/plot_stack.dir/rule
 
 # Convenience name for target.
@@ -144,12 +144,12 @@ plot_stack: demos/CMakeFiles/plot_stack.dir/rule
 
 # fast build rule for target.
 plot_stack/fast:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/build
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/build
 .PHONY : plot_stack/fast
 
 # Convenience name for target.
 demos/CMakeFiles/simple.dir/rule:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/CMakeFiles/simple.dir/rule
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/CMakeFiles/simple.dir/rule
 .PHONY : demos/CMakeFiles/simple.dir/rule
 
 # Convenience name for target.
@@ -158,12 +158,12 @@ simple: demos/CMakeFiles/simple.dir/rule
 
 # fast build rule for target.
 simple/fast:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/build
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/build
 .PHONY : simple/fast
 
 # Convenience name for target.
 demos/CMakeFiles/test.dir/rule:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/CMakeFiles/test.dir/rule
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f CMakeFiles/Makefile2 demos/CMakeFiles/test.dir/rule
 .PHONY : demos/CMakeFiles/test.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ test: demos/CMakeFiles/test.dir/rule
 
 # fast build rule for target.
 test/fast:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/build
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
 plot_stack.o: plot_stack.c.o
@@ -180,7 +180,7 @@ plot_stack.o: plot_stack.c.o
 
 # target to build an object file
 plot_stack.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/plot_stack.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/plot_stack.c.o
 .PHONY : plot_stack.c.o
 
 plot_stack.i: plot_stack.c.i
@@ -188,7 +188,7 @@ plot_stack.i: plot_stack.c.i
 
 # target to preprocess a source file
 plot_stack.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/plot_stack.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/plot_stack.c.i
 .PHONY : plot_stack.c.i
 
 plot_stack.s: plot_stack.c.s
@@ -196,7 +196,7 @@ plot_stack.s: plot_stack.c.s
 
 # target to generate assembly for a file
 plot_stack.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/plot_stack.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/plot_stack.dir/build.make demos/CMakeFiles/plot_stack.dir/plot_stack.c.s
 .PHONY : plot_stack.c.s
 
 simple.o: simple.c.o
@@ -204,7 +204,7 @@ simple.o: simple.c.o
 
 # target to build an object file
 simple.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/simple.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/simple.c.o
 .PHONY : simple.c.o
 
 simple.i: simple.c.i
@@ -212,7 +212,7 @@ simple.i: simple.c.i
 
 # target to preprocess a source file
 simple.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/simple.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/simple.c.i
 .PHONY : simple.c.i
 
 simple.s: simple.c.s
@@ -220,7 +220,7 @@ simple.s: simple.c.s
 
 # target to generate assembly for a file
 simple.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/simple.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/simple.dir/build.make demos/CMakeFiles/simple.dir/simple.c.s
 .PHONY : simple.c.s
 
 test.o: test.c.o
@@ -228,7 +228,7 @@ test.o: test.c.o
 
 # target to build an object file
 test.c.o:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/test.c.o
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/test.c.o
 .PHONY : test.c.o
 
 test.i: test.c.i
@@ -236,7 +236,7 @@ test.i: test.c.i
 
 # target to preprocess a source file
 test.c.i:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/test.c.i
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/test.c.i
 .PHONY : test.c.i
 
 test.s: test.c.s
@@ -244,7 +244,7 @@ test.s: test.c.s
 
 # target to generate assembly for a file
 test.c.s:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/test.c.s
+	cd /media/DATA/projects/bot/bot/slope && $(MAKE) -f demos/CMakeFiles/test.dir/build.make demos/CMakeFiles/test.dir/test.c.s
 .PHONY : test.c.s
 
 # Help Target
@@ -281,6 +281,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /media/DATA/projects/spl/SmartStreetLight/slope && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /media/DATA/projects/bot/bot/slope && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

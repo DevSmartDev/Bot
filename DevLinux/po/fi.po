@@ -1812,7 +1812,7 @@ msgid "Suppress status messages in the status bar"
 msgstr "Älä näytä tilaviestejä tilapalkissa"
 
 #: ../src/interface.c:3167
-msgid "Removes all messages from the status bar. The messages are still displayed in the status messages window."
+msgid "Removes all messages from the status bar. The messages are still spled in the status messages window."
 msgstr "Piilottaa kaikki viestit tilapalkista. Viestit näytetään kuitenkin tilaviestiruudussa."
 
 #: ../src/interface.c:3169
@@ -2348,11 +2348,11 @@ msgid "The amount of characters which are necessary to show the symbol autocompl
 msgstr "Täydennysehdotuksia ei näytetä tätä lyhyemmille merkkijonoille"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Täydennysehdotusluettelon korkeus riveinä"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Täydennysehdotusluettelossa näytettävien kohteiden enimmäismäärä"
 
 #: ../src/interface.c:4086
@@ -2473,7 +2473,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr "Määrittää, lopetetaanko vieritys yhden sivun verran asiakirjan viimeisen rivin jälkeen"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Näyttö</b>"
 
 #: ../src/interface.c:4240
@@ -2556,7 +2556,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Virtuaaliset välilyönnit</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Näyttö"
 
 #: ../src/interface.c:4381
@@ -2886,7 +2886,7 @@ msgid "Project Properties"
 msgstr "Projektin ominaisuudet"
 
 #: ../src/interface.c:5714
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Näyttö:"
 
 #: ../src/interface.c:5736
@@ -3208,7 +3208,7 @@ msgid "Go to End of Line"
 msgstr "Rivin loppuun"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Näytöllä rivin loppuun"
 
 #: ../src/keybindings.c:449
@@ -4683,7 +4683,7 @@ msgid "--- Separator ---"
 msgstr "--- Erotin ---"
 
 #: ../src/toolbar.c:952
-msgid "Select items to be displayed on the toolbar. Items can be reordered by drag and drop."
+msgid "Select items to be spled on the toolbar. Items can be reordered by drag and drop."
 msgstr "Valitse työkalupalkissa näytettävät kohteet. Niitä voi järjestellä raahaamalla ja pudottamalla."
 
 #: ../src/toolbar.c:968
@@ -4691,7 +4691,7 @@ msgid "Available Items"
 msgstr "Saatavilla olevat kohteet"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Näytetyt kohteet"
 
 #: ../src/tools.c:110
@@ -5016,7 +5016,7 @@ msgid "Don't use run script"
 msgstr "Ohita suorituskomentosarja"
 
 #: ../src/vte.c:872
-msgid "Don't use the simple run script which is usually used to display the exit status of the executed program"
+msgid "Don't use the simple run script which is usually used to spl the exit status of the executed program"
 msgstr "Ohita suorituskomentosarja, jota käytetään tavallisesti suoritetun ohjelman paluuarvon näyttämiseen"
 
 #: ../src/vte.c:875
@@ -5158,7 +5158,7 @@ msgstr "Lisää HTML-erityismerkkejä kuten \"&amp;\"."
 #: ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48
 #: ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "IFastn kehittäjät"
 
@@ -5496,43 +5496,43 @@ msgstr "Varmuuskopion _aikaleiman muoto (strftime-funktion ymmärtämässä muod
 msgid "Directory _levels to include in the backup destination:"
 msgstr "Ka_nsiotasojen määrä varmistuskohteessa:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Jaettu näkymä"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "Jakaa editorin kahteen näkymään"
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Näytä nykyinen asiakirja"
 
-#: ../plugins/splitwindow.c:292
-#: ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292
+#: ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "_Yhdistä"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "_Jaa"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 #, fuzzy
 msgid "_Side by Side"
 msgstr "_Piilota sivupalkki"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr ""
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Jaa vaakasuunnassa"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Jaa pystysuunnassa"
 
 #, fuzzy
@@ -5819,7 +5819,7 @@ msgstr "Jaa pystysuunnassa"
 #~ msgid "Terminal font:"
 #~ msgstr "Päätteen kirjasin:"
 
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "Yhdistä"
 
 #~ msgid "Diff file"

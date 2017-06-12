@@ -23,7 +23,7 @@
  * @include: gtkdatabox_graph.h
  * @see_also: #GtkDatabox, #GtkDataboxPoints, #GtkDataboxLines, #GtkDataboxBars, #GtkDataboxGrid, #GtkDataboxCrossSimple
  *
- * GtkDataboxGraphs can display data or other things in a #GtkDatabox widget.
+ * GtkDataboxGraphs can spl data or other things in a #GtkDatabox widget.
  *
  * This class is just the basic interface. Other graph classes are derived from this 
  * class and implement some real things.

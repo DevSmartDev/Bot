@@ -1,4 +1,4 @@
-# Install script for directory: /media/DATA/projects/spl/SmartStreetLight/slope/src
+# Install script for directory: /media/DATA/projects/bot/bot/slope/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -41,7 +41,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/lib" TYPE SHARED_LIBRARY FILES "/media/DATA/projects/spl/SmartStreetLight/slope/src/libslope.so")
+file(INSTALL DESTINATION "/usr/lib" TYPE SHARED_LIBRARY FILES "/media/DATA/projects/bot/bot/slope/src/libslope.so")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -54,20 +54,20 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "/usr/include/slope" TYPE FILE FILES
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/drawing.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/figure.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/global.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/item.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/scale.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/slope.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/view.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyscale.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyseries.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/xyaxis-sampler.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/sampler.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/view.h"
-    "/media/DATA/projects/spl/SmartStreetLight/slope/src/slope/chart.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/drawing.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/figure.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/global.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/item.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/scale.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/slope.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/view.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/xyscale.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/xyseries.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/xyaxis.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/xyaxis-sampler.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/sampler.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/view.h"
+    "/media/DATA/projects/bot/bot/slope/src/slope/chart.h"
     )
 endif()
 
@@ -80,6 +80,6 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/include/slope" TYPE FILE FILES "/media/DATA/projects/spl/SmartStreetLight/slope/config.h")
+file(INSTALL DESTINATION "/usr/include/slope" TYPE FILE FILES "/media/DATA/projects/bot/bot/slope/config.h")
 endif()
 

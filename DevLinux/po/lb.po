@@ -1770,7 +1770,7 @@ msgstr "Keng Statusmeldungen an der Statuszeil uweisen"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Läscht all d'Meldungen an der Statuszeil. D'Meldungen ginn nach ëmmer an der "
@@ -2399,12 +2399,12 @@ msgstr ""
 
 #: ../src/interface.c:4074
 #, fuzzy
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Héicht vun der Vervollstännegungslescht"
 
 #: ../src/interface.c:4083
 #, fuzzy
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr ""
 "Maximal Unzuel un Virschléi déi an der Vervollstännegungslescht ugewisen "
 "sollen ginn"
@@ -2534,7 +2534,7 @@ msgid "Whether to stop scrolling one page past the last line of a document"
 msgstr "Ob um Enn vum Dokument nach eng Säit laang weidergescrollt kann ginn"
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Uweisen</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2634,7 +2634,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Pad bei d'Geschir</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Uweisen"
 
 #: ../src/interface.c:4381
@@ -3012,7 +3012,7 @@ msgstr "Eegenschaften vum Projet"
 
 #: ../src/interface.c:5714
 #, fuzzy
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Uweisen"
 
 #: ../src/interface.c:5736
@@ -3328,7 +3328,7 @@ msgstr "Un den Enn vun der Zeil goen"
 
 #: ../src/keybindings.c:447
 #, fuzzy
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Un den Enn vun der Zeil goen"
 
 #: ../src/keybindings.c:449
@@ -4789,7 +4789,7 @@ msgstr ""
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 
@@ -4799,7 +4799,7 @@ msgstr ""
 
 #: ../src/toolbar.c:989
 #, fuzzy
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Uweisen"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5154,7 +5154,7 @@ msgstr "Run-Skript net benotzen"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "Den Run-Skript, den normalerweis benotzt gëtt fir den Status vun "
@@ -5307,7 +5307,7 @@ msgstr "HTML Zeechen wei '&amp;' afügen"
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "IFast Entwéckler Equipe"
 
@@ -5666,43 +5666,43 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr "Dossiersniveauen déi an der Sécherheetskopie sollen iwwerholl ginn:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Fënster opdeelen"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
-msgstr "Spléckt d'Editorsfënster an zwou Fënsteren op."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
+msgstr "botéckt d'Editorsfënster an zwou Fënsteren op."
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 #, fuzzy
 msgid "Show the current document"
 msgstr "All d'Iwwerteneestëmmungen am aktuellen Dokument markéieren"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
-msgstr "Opspléck_ung réckgängeg maachen"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
+msgstr "Opbotéck_ung réckgängeg maachen"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "Fën_ster opdeelen"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 #, fuzzy
 msgid "_Side by Side"
 msgstr "Sa_itenleescht verstoppen"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr ""
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Horizontal opdeelen"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Vertikal opdeelen"
 
 #, fuzzy
@@ -5998,8 +5998,8 @@ msgstr "Vertikal opdeelen"
 #~ msgid "Terminal font:"
 #~ msgstr "Schrëft fir den Terminal:"
 
-#~ msgid "Unsplit"
-#~ msgstr "Opspléckung réckgängeg maachen"
+#~ msgid "Unbotit"
+#~ msgstr "Opbotéckung réckgängeg maachen"
 
 #~ msgid "Diff file"
 #~ msgstr "Diff Fichier"

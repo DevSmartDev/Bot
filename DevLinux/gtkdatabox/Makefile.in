@@ -80,7 +80,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-bin_PROGRAMS = splchart$(EXEEXT)
+bin_PROGRAMS = botchart$(EXEEXT)
 subdir = gtkdatabox
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/mkinstalldirs $(top_srcdir)/depcomp
@@ -98,38 +98,38 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
-am_splchart_OBJECTS = splchart-main.$(OBJEXT) \
-	splchart-option.$(OBJEXT) splchart-chart.$(OBJEXT) \
-	../src/splchart-smartstreetlight_soap.$(OBJEXT) \
-	../src/splchart-smartstreetlight_error.$(OBJEXT) \
-	../src/gsoap/splchart-soapClient.$(OBJEXT) \
-	../src/gsoap/splchart-soapC.$(OBJEXT) \
-	../src/gsoap/splchart-stdsoap2.$(OBJEXT) \
-	gtk/splchart-gtkdatabox.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_marshal.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_scale.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_graph.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_xyc_graph.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_xyyc_graph.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_points.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_lines.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_bars.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_offset_bars.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_regions.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_markers.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_cross_simple.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_grid.$(OBJEXT) \
-	gtk/splchart-gtkdatabox_ruler.$(OBJEXT)
-splchart_OBJECTS = $(am_splchart_OBJECTS)
-splchart_LDADD = $(LDADD)
-splchart_DEPENDENCIES =
+am_botchart_OBJECTS = botchart-main.$(OBJEXT) \
+	botchart-option.$(OBJEXT) botchart-chart.$(OBJEXT) \
+	../src/botchart-bot_soap.$(OBJEXT) \
+	../src/botchart-bot_error.$(OBJEXT) \
+	../src/gsoap/botchart-soapClient.$(OBJEXT) \
+	../src/gsoap/botchart-soapC.$(OBJEXT) \
+	../src/gsoap/botchart-stdsoap2.$(OBJEXT) \
+	gtk/botchart-gtkdatabox.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_marshal.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_scale.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_graph.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_xyc_graph.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_xyyc_graph.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_points.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_lines.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_bars.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_offset_bars.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_regions.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_markers.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_cross_simple.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_grid.$(OBJEXT) \
+	gtk/botchart-gtkdatabox_ruler.$(OBJEXT)
+botchart_OBJECTS = $(am_botchart_OBJECTS)
+botchart_LDADD = $(LDADD)
+botchart_DEPENDENCIES =
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-splchart_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(splchart_CXXFLAGS) \
-	$(CXXFLAGS) $(splchart_LDFLAGS) $(LDFLAGS) -o $@
+botchart_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(botchart_CXXFLAGS) \
+	$(CXXFLAGS) $(botchart_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -182,8 +182,8 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(splchart_SOURCES)
-DIST_SOURCES = $(splchart_SOURCES)
+SOURCES = $(botchart_SOURCES)
+DIST_SOURCES = $(botchart_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -379,11 +379,11 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-splchart_SOURCES = main.cpp option.cpp main.h chart.cpp chart.h\
-			../src/smartstreetlight_soap.cpp	\
-			../src/smartstreetlight_error.cpp	\
-			../src/smartstreetlight_error.h	\
-			../src/smartstreetlight_soap.h	\
+botchart_SOURCES = main.cpp option.cpp main.h chart.cpp chart.h\
+			../src/bot_soap.cpp	\
+			../src/bot_error.cpp	\
+			../src/bot_error.h	\
+			../src/bot_soap.h	\
 			../src/gsoap/soapClient.cpp		\
 			../src/gsoap/soapC.cpp              	\
 			../src/gsoap/soapH.h 		\
@@ -406,8 +406,8 @@ splchart_SOURCES = main.cpp option.cpp main.h chart.cpp chart.h\
             		gtk/gtkdatabox_grid.c\
 			gtk/gtkdatabox_ruler.c
 
-splchart_CPPFLAGS = -I$(top_srcdir)/gtkdatabox/gtk -D__SPL_CHART__ -D__clang__
-splchart_CFLAGS = \
+botchart_CPPFLAGS = -I$(top_srcdir)/gtkdatabox/gtk -D__bot_CHART__ -D__clang__
+botchart_CFLAGS = \
 			-g -ggdb -O2 \
 			-DG_DISABLE_DEPRECATED\
 			-DGDK_DISABLE_DEPRECATED\
@@ -417,7 +417,7 @@ splchart_CFLAGS = \
 			-DGTK_DISABLE_SINGLE_INCLUDES\
 		 	@GTK2_CFLAGS@ 
 
-splchart_CXXFLAGS = \
+botchart_CXXFLAGS = \
 			-g -ggdb -O2 -fpermissive\
 			-DG_DISABLE_DEPRECATED\
 			-DGDK_DISABLE_DEPRECATED\
@@ -430,8 +430,8 @@ splchart_CXXFLAGS = \
 LDADD = @GTK2_LIBS@ \
 			-lm
 
-@MINGW_FALSE@splchart_LDFLAGS = -static $(LDADD)
-@MINGW_TRUE@splchart_LDFLAGS = -mms-bitfields  -mwindows -ffast-math -static $(LDADD) -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
+@MINGW_FALSE@botchart_LDFLAGS = -static $(LDADD)
+@MINGW_TRUE@botchart_LDFLAGS = -mms-bitfields  -mwindows -ffast-math -static $(LDADD) -lws2_32 -lstdc++ -lpthread  -static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic
 all: all-am
 
 .SUFFIXES:
@@ -521,22 +521,22 @@ clean-binPROGRAMS:
 ../src/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) ../src/$(DEPDIR)
 	@: > ../src/$(DEPDIR)/$(am__dirstamp)
-../src/splchart-smartstreetlight_soap.$(OBJEXT):  \
-	../src/$(am__dirstamp) ../src/$(DEPDIR)/$(am__dirstamp)
-../src/splchart-smartstreetlight_error.$(OBJEXT):  \
-	../src/$(am__dirstamp) ../src/$(DEPDIR)/$(am__dirstamp)
+../src/botchart-bot_soap.$(OBJEXT): ../src/$(am__dirstamp) \
+	../src/$(DEPDIR)/$(am__dirstamp)
+../src/botchart-bot_error.$(OBJEXT): ../src/$(am__dirstamp) \
+	../src/$(DEPDIR)/$(am__dirstamp)
 ../src/gsoap/$(am__dirstamp):
 	@$(MKDIR_P) ../src/gsoap
 	@: > ../src/gsoap/$(am__dirstamp)
 ../src/gsoap/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) ../src/gsoap/$(DEPDIR)
 	@: > ../src/gsoap/$(DEPDIR)/$(am__dirstamp)
-../src/gsoap/splchart-soapClient.$(OBJEXT):  \
+../src/gsoap/botchart-soapClient.$(OBJEXT):  \
 	../src/gsoap/$(am__dirstamp) \
 	../src/gsoap/$(DEPDIR)/$(am__dirstamp)
-../src/gsoap/splchart-soapC.$(OBJEXT): ../src/gsoap/$(am__dirstamp) \
+../src/gsoap/botchart-soapC.$(OBJEXT): ../src/gsoap/$(am__dirstamp) \
 	../src/gsoap/$(DEPDIR)/$(am__dirstamp)
-../src/gsoap/splchart-stdsoap2.$(OBJEXT):  \
+../src/gsoap/botchart-stdsoap2.$(OBJEXT):  \
 	../src/gsoap/$(am__dirstamp) \
 	../src/gsoap/$(DEPDIR)/$(am__dirstamp)
 gtk/$(am__dirstamp):
@@ -545,40 +545,40 @@ gtk/$(am__dirstamp):
 gtk/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) gtk/$(DEPDIR)
 	@: > gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_marshal.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_marshal.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_scale.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_scale.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_graph.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_graph.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_xyc_graph.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_xyc_graph.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_xyyc_graph.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_xyyc_graph.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_points.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_points.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_lines.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_lines.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_bars.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_bars.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_offset_bars.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_offset_bars.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_regions.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_regions.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_markers.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_markers.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_cross_simple.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_cross_simple.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_grid.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_grid.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
-gtk/splchart-gtkdatabox_ruler.$(OBJEXT): gtk/$(am__dirstamp) \
+gtk/botchart-gtkdatabox_ruler.$(OBJEXT): gtk/$(am__dirstamp) \
 	gtk/$(DEPDIR)/$(am__dirstamp)
 
-splchart$(EXEEXT): $(splchart_OBJECTS) $(splchart_DEPENDENCIES) $(EXTRA_splchart_DEPENDENCIES) 
-	@rm -f splchart$(EXEEXT)
-	$(AM_V_CXXLD)$(splchart_LINK) $(splchart_OBJECTS) $(splchart_LDADD) $(LIBS)
+botchart$(EXEEXT): $(botchart_OBJECTS) $(botchart_DEPENDENCIES) $(EXTRA_botchart_DEPENDENCIES) 
+	@rm -f botchart$(EXEEXT)
+	$(AM_V_CXXLD)$(botchart_LINK) $(botchart_OBJECTS) $(botchart_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -589,29 +589,29 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@../src/$(DEPDIR)/splchart-smartstreetlight_error.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@../src/$(DEPDIR)/splchart-smartstreetlight_soap.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@../src/gsoap/$(DEPDIR)/splchart-soapC.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@../src/gsoap/$(DEPDIR)/splchart-soapClient.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@../src/gsoap/$(DEPDIR)/splchart-stdsoap2.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/splchart-chart.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/splchart-main.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/splchart-option.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_bars.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_cross_simple.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_graph.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_grid.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_lines.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_markers.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_marshal.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_offset_bars.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_points.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_regions.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_ruler.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_scale.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_xyc_graph.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/splchart-gtkdatabox_xyyc_graph.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@../src/$(DEPDIR)/botchart-bot_error.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@../src/$(DEPDIR)/botchart-bot_soap.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@../src/gsoap/$(DEPDIR)/botchart-soapC.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@../src/gsoap/$(DEPDIR)/botchart-soapClient.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@../src/gsoap/$(DEPDIR)/botchart-stdsoap2.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/botchart-chart.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/botchart-main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/botchart-option.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_bars.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_cross_simple.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_graph.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_grid.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_lines.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_markers.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_marshal.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_offset_bars.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_points.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_regions.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_ruler.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_scale.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_xyc_graph.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@gtk/$(DEPDIR)/botchart-gtkdatabox_xyyc_graph.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -637,215 +637,215 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
-gtk/splchart-gtkdatabox.o: gtk/gtkdatabox.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox.Tpo -c -o gtk/splchart-gtkdatabox.o `test -f 'gtk/gtkdatabox.c' || echo '$(srcdir)/'`gtk/gtkdatabox.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox.c' object='gtk/splchart-gtkdatabox.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox.o: gtk/gtkdatabox.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox.Tpo -c -o gtk/botchart-gtkdatabox.o `test -f 'gtk/gtkdatabox.c' || echo '$(srcdir)/'`gtk/gtkdatabox.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox.c' object='gtk/botchart-gtkdatabox.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox.o `test -f 'gtk/gtkdatabox.c' || echo '$(srcdir)/'`gtk/gtkdatabox.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox.o `test -f 'gtk/gtkdatabox.c' || echo '$(srcdir)/'`gtk/gtkdatabox.c
 
-gtk/splchart-gtkdatabox.obj: gtk/gtkdatabox.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox.Tpo -c -o gtk/splchart-gtkdatabox.obj `if test -f 'gtk/gtkdatabox.c'; then $(CYGPATH_W) 'gtk/gtkdatabox.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox.c' object='gtk/splchart-gtkdatabox.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox.obj: gtk/gtkdatabox.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox.Tpo -c -o gtk/botchart-gtkdatabox.obj `if test -f 'gtk/gtkdatabox.c'; then $(CYGPATH_W) 'gtk/gtkdatabox.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox.c' object='gtk/botchart-gtkdatabox.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox.obj `if test -f 'gtk/gtkdatabox.c'; then $(CYGPATH_W) 'gtk/gtkdatabox.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox.obj `if test -f 'gtk/gtkdatabox.c'; then $(CYGPATH_W) 'gtk/gtkdatabox.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox.c'; fi`
 
-gtk/splchart-gtkdatabox_marshal.o: gtk/gtkdatabox_marshal.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_marshal.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_marshal.Tpo -c -o gtk/splchart-gtkdatabox_marshal.o `test -f 'gtk/gtkdatabox_marshal.c' || echo '$(srcdir)/'`gtk/gtkdatabox_marshal.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_marshal.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_marshal.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_marshal.c' object='gtk/splchart-gtkdatabox_marshal.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_marshal.o: gtk/gtkdatabox_marshal.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_marshal.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_marshal.Tpo -c -o gtk/botchart-gtkdatabox_marshal.o `test -f 'gtk/gtkdatabox_marshal.c' || echo '$(srcdir)/'`gtk/gtkdatabox_marshal.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_marshal.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_marshal.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_marshal.c' object='gtk/botchart-gtkdatabox_marshal.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_marshal.o `test -f 'gtk/gtkdatabox_marshal.c' || echo '$(srcdir)/'`gtk/gtkdatabox_marshal.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_marshal.o `test -f 'gtk/gtkdatabox_marshal.c' || echo '$(srcdir)/'`gtk/gtkdatabox_marshal.c
 
-gtk/splchart-gtkdatabox_marshal.obj: gtk/gtkdatabox_marshal.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_marshal.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_marshal.Tpo -c -o gtk/splchart-gtkdatabox_marshal.obj `if test -f 'gtk/gtkdatabox_marshal.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_marshal.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_marshal.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_marshal.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_marshal.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_marshal.c' object='gtk/splchart-gtkdatabox_marshal.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_marshal.obj: gtk/gtkdatabox_marshal.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_marshal.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_marshal.Tpo -c -o gtk/botchart-gtkdatabox_marshal.obj `if test -f 'gtk/gtkdatabox_marshal.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_marshal.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_marshal.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_marshal.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_marshal.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_marshal.c' object='gtk/botchart-gtkdatabox_marshal.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_marshal.obj `if test -f 'gtk/gtkdatabox_marshal.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_marshal.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_marshal.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_marshal.obj `if test -f 'gtk/gtkdatabox_marshal.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_marshal.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_marshal.c'; fi`
 
-gtk/splchart-gtkdatabox_scale.o: gtk/gtkdatabox_scale.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_scale.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_scale.Tpo -c -o gtk/splchart-gtkdatabox_scale.o `test -f 'gtk/gtkdatabox_scale.c' || echo '$(srcdir)/'`gtk/gtkdatabox_scale.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_scale.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_scale.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_scale.c' object='gtk/splchart-gtkdatabox_scale.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_scale.o: gtk/gtkdatabox_scale.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_scale.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_scale.Tpo -c -o gtk/botchart-gtkdatabox_scale.o `test -f 'gtk/gtkdatabox_scale.c' || echo '$(srcdir)/'`gtk/gtkdatabox_scale.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_scale.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_scale.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_scale.c' object='gtk/botchart-gtkdatabox_scale.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_scale.o `test -f 'gtk/gtkdatabox_scale.c' || echo '$(srcdir)/'`gtk/gtkdatabox_scale.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_scale.o `test -f 'gtk/gtkdatabox_scale.c' || echo '$(srcdir)/'`gtk/gtkdatabox_scale.c
 
-gtk/splchart-gtkdatabox_scale.obj: gtk/gtkdatabox_scale.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_scale.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_scale.Tpo -c -o gtk/splchart-gtkdatabox_scale.obj `if test -f 'gtk/gtkdatabox_scale.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_scale.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_scale.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_scale.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_scale.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_scale.c' object='gtk/splchart-gtkdatabox_scale.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_scale.obj: gtk/gtkdatabox_scale.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_scale.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_scale.Tpo -c -o gtk/botchart-gtkdatabox_scale.obj `if test -f 'gtk/gtkdatabox_scale.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_scale.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_scale.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_scale.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_scale.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_scale.c' object='gtk/botchart-gtkdatabox_scale.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_scale.obj `if test -f 'gtk/gtkdatabox_scale.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_scale.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_scale.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_scale.obj `if test -f 'gtk/gtkdatabox_scale.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_scale.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_scale.c'; fi`
 
-gtk/splchart-gtkdatabox_graph.o: gtk/gtkdatabox_graph.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_graph.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_graph.Tpo -c -o gtk/splchart-gtkdatabox_graph.o `test -f 'gtk/gtkdatabox_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_graph.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_graph.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_graph.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_graph.c' object='gtk/splchart-gtkdatabox_graph.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_graph.o: gtk/gtkdatabox_graph.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_graph.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_graph.Tpo -c -o gtk/botchart-gtkdatabox_graph.o `test -f 'gtk/gtkdatabox_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_graph.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_graph.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_graph.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_graph.c' object='gtk/botchart-gtkdatabox_graph.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_graph.o `test -f 'gtk/gtkdatabox_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_graph.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_graph.o `test -f 'gtk/gtkdatabox_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_graph.c
 
-gtk/splchart-gtkdatabox_graph.obj: gtk/gtkdatabox_graph.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_graph.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_graph.Tpo -c -o gtk/splchart-gtkdatabox_graph.obj `if test -f 'gtk/gtkdatabox_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_graph.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_graph.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_graph.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_graph.c' object='gtk/splchart-gtkdatabox_graph.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_graph.obj: gtk/gtkdatabox_graph.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_graph.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_graph.Tpo -c -o gtk/botchart-gtkdatabox_graph.obj `if test -f 'gtk/gtkdatabox_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_graph.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_graph.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_graph.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_graph.c' object='gtk/botchart-gtkdatabox_graph.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_graph.obj `if test -f 'gtk/gtkdatabox_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_graph.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_graph.obj `if test -f 'gtk/gtkdatabox_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_graph.c'; fi`
 
-gtk/splchart-gtkdatabox_xyc_graph.o: gtk/gtkdatabox_xyc_graph.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_xyc_graph.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_xyc_graph.Tpo -c -o gtk/splchart-gtkdatabox_xyc_graph.o `test -f 'gtk/gtkdatabox_xyc_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_xyc_graph.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_xyc_graph.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_xyc_graph.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_xyc_graph.c' object='gtk/splchart-gtkdatabox_xyc_graph.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_xyc_graph.o: gtk/gtkdatabox_xyc_graph.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_xyc_graph.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_xyc_graph.Tpo -c -o gtk/botchart-gtkdatabox_xyc_graph.o `test -f 'gtk/gtkdatabox_xyc_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_xyc_graph.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_xyc_graph.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_xyc_graph.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_xyc_graph.c' object='gtk/botchart-gtkdatabox_xyc_graph.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_xyc_graph.o `test -f 'gtk/gtkdatabox_xyc_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_xyc_graph.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_xyc_graph.o `test -f 'gtk/gtkdatabox_xyc_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_xyc_graph.c
 
-gtk/splchart-gtkdatabox_xyc_graph.obj: gtk/gtkdatabox_xyc_graph.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_xyc_graph.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_xyc_graph.Tpo -c -o gtk/splchart-gtkdatabox_xyc_graph.obj `if test -f 'gtk/gtkdatabox_xyc_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_xyc_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_xyc_graph.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_xyc_graph.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_xyc_graph.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_xyc_graph.c' object='gtk/splchart-gtkdatabox_xyc_graph.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_xyc_graph.obj: gtk/gtkdatabox_xyc_graph.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_xyc_graph.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_xyc_graph.Tpo -c -o gtk/botchart-gtkdatabox_xyc_graph.obj `if test -f 'gtk/gtkdatabox_xyc_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_xyc_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_xyc_graph.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_xyc_graph.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_xyc_graph.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_xyc_graph.c' object='gtk/botchart-gtkdatabox_xyc_graph.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_xyc_graph.obj `if test -f 'gtk/gtkdatabox_xyc_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_xyc_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_xyc_graph.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_xyc_graph.obj `if test -f 'gtk/gtkdatabox_xyc_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_xyc_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_xyc_graph.c'; fi`
 
-gtk/splchart-gtkdatabox_xyyc_graph.o: gtk/gtkdatabox_xyyc_graph.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_xyyc_graph.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_xyyc_graph.Tpo -c -o gtk/splchart-gtkdatabox_xyyc_graph.o `test -f 'gtk/gtkdatabox_xyyc_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_xyyc_graph.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_xyyc_graph.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_xyyc_graph.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_xyyc_graph.c' object='gtk/splchart-gtkdatabox_xyyc_graph.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_xyyc_graph.o: gtk/gtkdatabox_xyyc_graph.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_xyyc_graph.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_xyyc_graph.Tpo -c -o gtk/botchart-gtkdatabox_xyyc_graph.o `test -f 'gtk/gtkdatabox_xyyc_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_xyyc_graph.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_xyyc_graph.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_xyyc_graph.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_xyyc_graph.c' object='gtk/botchart-gtkdatabox_xyyc_graph.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_xyyc_graph.o `test -f 'gtk/gtkdatabox_xyyc_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_xyyc_graph.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_xyyc_graph.o `test -f 'gtk/gtkdatabox_xyyc_graph.c' || echo '$(srcdir)/'`gtk/gtkdatabox_xyyc_graph.c
 
-gtk/splchart-gtkdatabox_xyyc_graph.obj: gtk/gtkdatabox_xyyc_graph.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_xyyc_graph.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_xyyc_graph.Tpo -c -o gtk/splchart-gtkdatabox_xyyc_graph.obj `if test -f 'gtk/gtkdatabox_xyyc_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_xyyc_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_xyyc_graph.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_xyyc_graph.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_xyyc_graph.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_xyyc_graph.c' object='gtk/splchart-gtkdatabox_xyyc_graph.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_xyyc_graph.obj: gtk/gtkdatabox_xyyc_graph.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_xyyc_graph.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_xyyc_graph.Tpo -c -o gtk/botchart-gtkdatabox_xyyc_graph.obj `if test -f 'gtk/gtkdatabox_xyyc_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_xyyc_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_xyyc_graph.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_xyyc_graph.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_xyyc_graph.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_xyyc_graph.c' object='gtk/botchart-gtkdatabox_xyyc_graph.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_xyyc_graph.obj `if test -f 'gtk/gtkdatabox_xyyc_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_xyyc_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_xyyc_graph.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_xyyc_graph.obj `if test -f 'gtk/gtkdatabox_xyyc_graph.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_xyyc_graph.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_xyyc_graph.c'; fi`
 
-gtk/splchart-gtkdatabox_points.o: gtk/gtkdatabox_points.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_points.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_points.Tpo -c -o gtk/splchart-gtkdatabox_points.o `test -f 'gtk/gtkdatabox_points.c' || echo '$(srcdir)/'`gtk/gtkdatabox_points.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_points.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_points.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_points.c' object='gtk/splchart-gtkdatabox_points.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_points.o: gtk/gtkdatabox_points.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_points.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_points.Tpo -c -o gtk/botchart-gtkdatabox_points.o `test -f 'gtk/gtkdatabox_points.c' || echo '$(srcdir)/'`gtk/gtkdatabox_points.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_points.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_points.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_points.c' object='gtk/botchart-gtkdatabox_points.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_points.o `test -f 'gtk/gtkdatabox_points.c' || echo '$(srcdir)/'`gtk/gtkdatabox_points.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_points.o `test -f 'gtk/gtkdatabox_points.c' || echo '$(srcdir)/'`gtk/gtkdatabox_points.c
 
-gtk/splchart-gtkdatabox_points.obj: gtk/gtkdatabox_points.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_points.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_points.Tpo -c -o gtk/splchart-gtkdatabox_points.obj `if test -f 'gtk/gtkdatabox_points.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_points.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_points.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_points.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_points.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_points.c' object='gtk/splchart-gtkdatabox_points.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_points.obj: gtk/gtkdatabox_points.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_points.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_points.Tpo -c -o gtk/botchart-gtkdatabox_points.obj `if test -f 'gtk/gtkdatabox_points.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_points.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_points.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_points.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_points.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_points.c' object='gtk/botchart-gtkdatabox_points.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_points.obj `if test -f 'gtk/gtkdatabox_points.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_points.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_points.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_points.obj `if test -f 'gtk/gtkdatabox_points.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_points.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_points.c'; fi`
 
-gtk/splchart-gtkdatabox_lines.o: gtk/gtkdatabox_lines.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_lines.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_lines.Tpo -c -o gtk/splchart-gtkdatabox_lines.o `test -f 'gtk/gtkdatabox_lines.c' || echo '$(srcdir)/'`gtk/gtkdatabox_lines.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_lines.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_lines.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_lines.c' object='gtk/splchart-gtkdatabox_lines.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_lines.o: gtk/gtkdatabox_lines.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_lines.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_lines.Tpo -c -o gtk/botchart-gtkdatabox_lines.o `test -f 'gtk/gtkdatabox_lines.c' || echo '$(srcdir)/'`gtk/gtkdatabox_lines.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_lines.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_lines.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_lines.c' object='gtk/botchart-gtkdatabox_lines.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_lines.o `test -f 'gtk/gtkdatabox_lines.c' || echo '$(srcdir)/'`gtk/gtkdatabox_lines.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_lines.o `test -f 'gtk/gtkdatabox_lines.c' || echo '$(srcdir)/'`gtk/gtkdatabox_lines.c
 
-gtk/splchart-gtkdatabox_lines.obj: gtk/gtkdatabox_lines.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_lines.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_lines.Tpo -c -o gtk/splchart-gtkdatabox_lines.obj `if test -f 'gtk/gtkdatabox_lines.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_lines.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_lines.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_lines.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_lines.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_lines.c' object='gtk/splchart-gtkdatabox_lines.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_lines.obj: gtk/gtkdatabox_lines.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_lines.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_lines.Tpo -c -o gtk/botchart-gtkdatabox_lines.obj `if test -f 'gtk/gtkdatabox_lines.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_lines.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_lines.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_lines.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_lines.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_lines.c' object='gtk/botchart-gtkdatabox_lines.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_lines.obj `if test -f 'gtk/gtkdatabox_lines.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_lines.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_lines.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_lines.obj `if test -f 'gtk/gtkdatabox_lines.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_lines.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_lines.c'; fi`
 
-gtk/splchart-gtkdatabox_bars.o: gtk/gtkdatabox_bars.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_bars.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_bars.Tpo -c -o gtk/splchart-gtkdatabox_bars.o `test -f 'gtk/gtkdatabox_bars.c' || echo '$(srcdir)/'`gtk/gtkdatabox_bars.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_bars.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_bars.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_bars.c' object='gtk/splchart-gtkdatabox_bars.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_bars.o: gtk/gtkdatabox_bars.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_bars.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_bars.Tpo -c -o gtk/botchart-gtkdatabox_bars.o `test -f 'gtk/gtkdatabox_bars.c' || echo '$(srcdir)/'`gtk/gtkdatabox_bars.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_bars.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_bars.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_bars.c' object='gtk/botchart-gtkdatabox_bars.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_bars.o `test -f 'gtk/gtkdatabox_bars.c' || echo '$(srcdir)/'`gtk/gtkdatabox_bars.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_bars.o `test -f 'gtk/gtkdatabox_bars.c' || echo '$(srcdir)/'`gtk/gtkdatabox_bars.c
 
-gtk/splchart-gtkdatabox_bars.obj: gtk/gtkdatabox_bars.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_bars.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_bars.Tpo -c -o gtk/splchart-gtkdatabox_bars.obj `if test -f 'gtk/gtkdatabox_bars.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_bars.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_bars.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_bars.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_bars.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_bars.c' object='gtk/splchart-gtkdatabox_bars.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_bars.obj: gtk/gtkdatabox_bars.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_bars.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_bars.Tpo -c -o gtk/botchart-gtkdatabox_bars.obj `if test -f 'gtk/gtkdatabox_bars.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_bars.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_bars.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_bars.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_bars.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_bars.c' object='gtk/botchart-gtkdatabox_bars.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_bars.obj `if test -f 'gtk/gtkdatabox_bars.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_bars.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_bars.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_bars.obj `if test -f 'gtk/gtkdatabox_bars.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_bars.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_bars.c'; fi`
 
-gtk/splchart-gtkdatabox_offset_bars.o: gtk/gtkdatabox_offset_bars.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_offset_bars.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_offset_bars.Tpo -c -o gtk/splchart-gtkdatabox_offset_bars.o `test -f 'gtk/gtkdatabox_offset_bars.c' || echo '$(srcdir)/'`gtk/gtkdatabox_offset_bars.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_offset_bars.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_offset_bars.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_offset_bars.c' object='gtk/splchart-gtkdatabox_offset_bars.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_offset_bars.o: gtk/gtkdatabox_offset_bars.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_offset_bars.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_offset_bars.Tpo -c -o gtk/botchart-gtkdatabox_offset_bars.o `test -f 'gtk/gtkdatabox_offset_bars.c' || echo '$(srcdir)/'`gtk/gtkdatabox_offset_bars.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_offset_bars.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_offset_bars.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_offset_bars.c' object='gtk/botchart-gtkdatabox_offset_bars.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_offset_bars.o `test -f 'gtk/gtkdatabox_offset_bars.c' || echo '$(srcdir)/'`gtk/gtkdatabox_offset_bars.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_offset_bars.o `test -f 'gtk/gtkdatabox_offset_bars.c' || echo '$(srcdir)/'`gtk/gtkdatabox_offset_bars.c
 
-gtk/splchart-gtkdatabox_offset_bars.obj: gtk/gtkdatabox_offset_bars.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_offset_bars.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_offset_bars.Tpo -c -o gtk/splchart-gtkdatabox_offset_bars.obj `if test -f 'gtk/gtkdatabox_offset_bars.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_offset_bars.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_offset_bars.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_offset_bars.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_offset_bars.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_offset_bars.c' object='gtk/splchart-gtkdatabox_offset_bars.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_offset_bars.obj: gtk/gtkdatabox_offset_bars.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_offset_bars.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_offset_bars.Tpo -c -o gtk/botchart-gtkdatabox_offset_bars.obj `if test -f 'gtk/gtkdatabox_offset_bars.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_offset_bars.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_offset_bars.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_offset_bars.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_offset_bars.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_offset_bars.c' object='gtk/botchart-gtkdatabox_offset_bars.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_offset_bars.obj `if test -f 'gtk/gtkdatabox_offset_bars.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_offset_bars.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_offset_bars.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_offset_bars.obj `if test -f 'gtk/gtkdatabox_offset_bars.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_offset_bars.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_offset_bars.c'; fi`
 
-gtk/splchart-gtkdatabox_regions.o: gtk/gtkdatabox_regions.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_regions.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_regions.Tpo -c -o gtk/splchart-gtkdatabox_regions.o `test -f 'gtk/gtkdatabox_regions.c' || echo '$(srcdir)/'`gtk/gtkdatabox_regions.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_regions.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_regions.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_regions.c' object='gtk/splchart-gtkdatabox_regions.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_regions.o: gtk/gtkdatabox_regions.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_regions.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_regions.Tpo -c -o gtk/botchart-gtkdatabox_regions.o `test -f 'gtk/gtkdatabox_regions.c' || echo '$(srcdir)/'`gtk/gtkdatabox_regions.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_regions.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_regions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_regions.c' object='gtk/botchart-gtkdatabox_regions.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_regions.o `test -f 'gtk/gtkdatabox_regions.c' || echo '$(srcdir)/'`gtk/gtkdatabox_regions.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_regions.o `test -f 'gtk/gtkdatabox_regions.c' || echo '$(srcdir)/'`gtk/gtkdatabox_regions.c
 
-gtk/splchart-gtkdatabox_regions.obj: gtk/gtkdatabox_regions.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_regions.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_regions.Tpo -c -o gtk/splchart-gtkdatabox_regions.obj `if test -f 'gtk/gtkdatabox_regions.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_regions.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_regions.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_regions.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_regions.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_regions.c' object='gtk/splchart-gtkdatabox_regions.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_regions.obj: gtk/gtkdatabox_regions.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_regions.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_regions.Tpo -c -o gtk/botchart-gtkdatabox_regions.obj `if test -f 'gtk/gtkdatabox_regions.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_regions.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_regions.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_regions.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_regions.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_regions.c' object='gtk/botchart-gtkdatabox_regions.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_regions.obj `if test -f 'gtk/gtkdatabox_regions.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_regions.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_regions.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_regions.obj `if test -f 'gtk/gtkdatabox_regions.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_regions.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_regions.c'; fi`
 
-gtk/splchart-gtkdatabox_markers.o: gtk/gtkdatabox_markers.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_markers.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_markers.Tpo -c -o gtk/splchart-gtkdatabox_markers.o `test -f 'gtk/gtkdatabox_markers.c' || echo '$(srcdir)/'`gtk/gtkdatabox_markers.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_markers.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_markers.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_markers.c' object='gtk/splchart-gtkdatabox_markers.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_markers.o: gtk/gtkdatabox_markers.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_markers.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_markers.Tpo -c -o gtk/botchart-gtkdatabox_markers.o `test -f 'gtk/gtkdatabox_markers.c' || echo '$(srcdir)/'`gtk/gtkdatabox_markers.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_markers.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_markers.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_markers.c' object='gtk/botchart-gtkdatabox_markers.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_markers.o `test -f 'gtk/gtkdatabox_markers.c' || echo '$(srcdir)/'`gtk/gtkdatabox_markers.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_markers.o `test -f 'gtk/gtkdatabox_markers.c' || echo '$(srcdir)/'`gtk/gtkdatabox_markers.c
 
-gtk/splchart-gtkdatabox_markers.obj: gtk/gtkdatabox_markers.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_markers.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_markers.Tpo -c -o gtk/splchart-gtkdatabox_markers.obj `if test -f 'gtk/gtkdatabox_markers.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_markers.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_markers.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_markers.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_markers.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_markers.c' object='gtk/splchart-gtkdatabox_markers.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_markers.obj: gtk/gtkdatabox_markers.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_markers.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_markers.Tpo -c -o gtk/botchart-gtkdatabox_markers.obj `if test -f 'gtk/gtkdatabox_markers.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_markers.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_markers.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_markers.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_markers.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_markers.c' object='gtk/botchart-gtkdatabox_markers.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_markers.obj `if test -f 'gtk/gtkdatabox_markers.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_markers.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_markers.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_markers.obj `if test -f 'gtk/gtkdatabox_markers.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_markers.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_markers.c'; fi`
 
-gtk/splchart-gtkdatabox_cross_simple.o: gtk/gtkdatabox_cross_simple.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_cross_simple.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_cross_simple.Tpo -c -o gtk/splchart-gtkdatabox_cross_simple.o `test -f 'gtk/gtkdatabox_cross_simple.c' || echo '$(srcdir)/'`gtk/gtkdatabox_cross_simple.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_cross_simple.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_cross_simple.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_cross_simple.c' object='gtk/splchart-gtkdatabox_cross_simple.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_cross_simple.o: gtk/gtkdatabox_cross_simple.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_cross_simple.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_cross_simple.Tpo -c -o gtk/botchart-gtkdatabox_cross_simple.o `test -f 'gtk/gtkdatabox_cross_simple.c' || echo '$(srcdir)/'`gtk/gtkdatabox_cross_simple.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_cross_simple.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_cross_simple.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_cross_simple.c' object='gtk/botchart-gtkdatabox_cross_simple.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_cross_simple.o `test -f 'gtk/gtkdatabox_cross_simple.c' || echo '$(srcdir)/'`gtk/gtkdatabox_cross_simple.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_cross_simple.o `test -f 'gtk/gtkdatabox_cross_simple.c' || echo '$(srcdir)/'`gtk/gtkdatabox_cross_simple.c
 
-gtk/splchart-gtkdatabox_cross_simple.obj: gtk/gtkdatabox_cross_simple.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_cross_simple.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_cross_simple.Tpo -c -o gtk/splchart-gtkdatabox_cross_simple.obj `if test -f 'gtk/gtkdatabox_cross_simple.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_cross_simple.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_cross_simple.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_cross_simple.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_cross_simple.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_cross_simple.c' object='gtk/splchart-gtkdatabox_cross_simple.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_cross_simple.obj: gtk/gtkdatabox_cross_simple.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_cross_simple.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_cross_simple.Tpo -c -o gtk/botchart-gtkdatabox_cross_simple.obj `if test -f 'gtk/gtkdatabox_cross_simple.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_cross_simple.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_cross_simple.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_cross_simple.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_cross_simple.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_cross_simple.c' object='gtk/botchart-gtkdatabox_cross_simple.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_cross_simple.obj `if test -f 'gtk/gtkdatabox_cross_simple.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_cross_simple.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_cross_simple.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_cross_simple.obj `if test -f 'gtk/gtkdatabox_cross_simple.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_cross_simple.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_cross_simple.c'; fi`
 
-gtk/splchart-gtkdatabox_grid.o: gtk/gtkdatabox_grid.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_grid.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_grid.Tpo -c -o gtk/splchart-gtkdatabox_grid.o `test -f 'gtk/gtkdatabox_grid.c' || echo '$(srcdir)/'`gtk/gtkdatabox_grid.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_grid.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_grid.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_grid.c' object='gtk/splchart-gtkdatabox_grid.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_grid.o: gtk/gtkdatabox_grid.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_grid.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_grid.Tpo -c -o gtk/botchart-gtkdatabox_grid.o `test -f 'gtk/gtkdatabox_grid.c' || echo '$(srcdir)/'`gtk/gtkdatabox_grid.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_grid.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_grid.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_grid.c' object='gtk/botchart-gtkdatabox_grid.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_grid.o `test -f 'gtk/gtkdatabox_grid.c' || echo '$(srcdir)/'`gtk/gtkdatabox_grid.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_grid.o `test -f 'gtk/gtkdatabox_grid.c' || echo '$(srcdir)/'`gtk/gtkdatabox_grid.c
 
-gtk/splchart-gtkdatabox_grid.obj: gtk/gtkdatabox_grid.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_grid.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_grid.Tpo -c -o gtk/splchart-gtkdatabox_grid.obj `if test -f 'gtk/gtkdatabox_grid.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_grid.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_grid.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_grid.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_grid.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_grid.c' object='gtk/splchart-gtkdatabox_grid.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_grid.obj: gtk/gtkdatabox_grid.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_grid.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_grid.Tpo -c -o gtk/botchart-gtkdatabox_grid.obj `if test -f 'gtk/gtkdatabox_grid.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_grid.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_grid.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_grid.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_grid.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_grid.c' object='gtk/botchart-gtkdatabox_grid.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_grid.obj `if test -f 'gtk/gtkdatabox_grid.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_grid.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_grid.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_grid.obj `if test -f 'gtk/gtkdatabox_grid.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_grid.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_grid.c'; fi`
 
-gtk/splchart-gtkdatabox_ruler.o: gtk/gtkdatabox_ruler.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_ruler.o -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_ruler.Tpo -c -o gtk/splchart-gtkdatabox_ruler.o `test -f 'gtk/gtkdatabox_ruler.c' || echo '$(srcdir)/'`gtk/gtkdatabox_ruler.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_ruler.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_ruler.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_ruler.c' object='gtk/splchart-gtkdatabox_ruler.o' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_ruler.o: gtk/gtkdatabox_ruler.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_ruler.o -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_ruler.Tpo -c -o gtk/botchart-gtkdatabox_ruler.o `test -f 'gtk/gtkdatabox_ruler.c' || echo '$(srcdir)/'`gtk/gtkdatabox_ruler.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_ruler.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_ruler.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_ruler.c' object='gtk/botchart-gtkdatabox_ruler.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_ruler.o `test -f 'gtk/gtkdatabox_ruler.c' || echo '$(srcdir)/'`gtk/gtkdatabox_ruler.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_ruler.o `test -f 'gtk/gtkdatabox_ruler.c' || echo '$(srcdir)/'`gtk/gtkdatabox_ruler.c
 
-gtk/splchart-gtkdatabox_ruler.obj: gtk/gtkdatabox_ruler.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -MT gtk/splchart-gtkdatabox_ruler.obj -MD -MP -MF gtk/$(DEPDIR)/splchart-gtkdatabox_ruler.Tpo -c -o gtk/splchart-gtkdatabox_ruler.obj `if test -f 'gtk/gtkdatabox_ruler.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_ruler.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_ruler.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/splchart-gtkdatabox_ruler.Tpo gtk/$(DEPDIR)/splchart-gtkdatabox_ruler.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_ruler.c' object='gtk/splchart-gtkdatabox_ruler.obj' libtool=no @AMDEPBACKSLASH@
+gtk/botchart-gtkdatabox_ruler.obj: gtk/gtkdatabox_ruler.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -MT gtk/botchart-gtkdatabox_ruler.obj -MD -MP -MF gtk/$(DEPDIR)/botchart-gtkdatabox_ruler.Tpo -c -o gtk/botchart-gtkdatabox_ruler.obj `if test -f 'gtk/gtkdatabox_ruler.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_ruler.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_ruler.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) gtk/$(DEPDIR)/botchart-gtkdatabox_ruler.Tpo gtk/$(DEPDIR)/botchart-gtkdatabox_ruler.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='gtk/gtkdatabox_ruler.c' object='gtk/botchart-gtkdatabox_ruler.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CFLAGS) $(CFLAGS) -c -o gtk/splchart-gtkdatabox_ruler.obj `if test -f 'gtk/gtkdatabox_ruler.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_ruler.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_ruler.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CFLAGS) $(CFLAGS) -c -o gtk/botchart-gtkdatabox_ruler.obj `if test -f 'gtk/gtkdatabox_ruler.c'; then $(CYGPATH_W) 'gtk/gtkdatabox_ruler.c'; else $(CYGPATH_W) '$(srcdir)/gtk/gtkdatabox_ruler.c'; fi`
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -871,117 +871,117 @@ gtk/splchart-gtkdatabox_ruler.obj: gtk/gtkdatabox_ruler.c
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LTCXXCOMPILE) -c -o $@ $<
 
-splchart-main.o: main.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT splchart-main.o -MD -MP -MF $(DEPDIR)/splchart-main.Tpo -c -o splchart-main.o `test -f 'main.cpp' || echo '$(srcdir)/'`main.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/splchart-main.Tpo $(DEPDIR)/splchart-main.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='main.cpp' object='splchart-main.o' libtool=no @AMDEPBACKSLASH@
+botchart-main.o: main.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT botchart-main.o -MD -MP -MF $(DEPDIR)/botchart-main.Tpo -c -o botchart-main.o `test -f 'main.cpp' || echo '$(srcdir)/'`main.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/botchart-main.Tpo $(DEPDIR)/botchart-main.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='main.cpp' object='botchart-main.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o splchart-main.o `test -f 'main.cpp' || echo '$(srcdir)/'`main.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o botchart-main.o `test -f 'main.cpp' || echo '$(srcdir)/'`main.cpp
 
-splchart-main.obj: main.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT splchart-main.obj -MD -MP -MF $(DEPDIR)/splchart-main.Tpo -c -o splchart-main.obj `if test -f 'main.cpp'; then $(CYGPATH_W) 'main.cpp'; else $(CYGPATH_W) '$(srcdir)/main.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/splchart-main.Tpo $(DEPDIR)/splchart-main.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='main.cpp' object='splchart-main.obj' libtool=no @AMDEPBACKSLASH@
+botchart-main.obj: main.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT botchart-main.obj -MD -MP -MF $(DEPDIR)/botchart-main.Tpo -c -o botchart-main.obj `if test -f 'main.cpp'; then $(CYGPATH_W) 'main.cpp'; else $(CYGPATH_W) '$(srcdir)/main.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/botchart-main.Tpo $(DEPDIR)/botchart-main.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='main.cpp' object='botchart-main.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o splchart-main.obj `if test -f 'main.cpp'; then $(CYGPATH_W) 'main.cpp'; else $(CYGPATH_W) '$(srcdir)/main.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o botchart-main.obj `if test -f 'main.cpp'; then $(CYGPATH_W) 'main.cpp'; else $(CYGPATH_W) '$(srcdir)/main.cpp'; fi`
 
-splchart-option.o: option.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT splchart-option.o -MD -MP -MF $(DEPDIR)/splchart-option.Tpo -c -o splchart-option.o `test -f 'option.cpp' || echo '$(srcdir)/'`option.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/splchart-option.Tpo $(DEPDIR)/splchart-option.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='option.cpp' object='splchart-option.o' libtool=no @AMDEPBACKSLASH@
+botchart-option.o: option.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT botchart-option.o -MD -MP -MF $(DEPDIR)/botchart-option.Tpo -c -o botchart-option.o `test -f 'option.cpp' || echo '$(srcdir)/'`option.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/botchart-option.Tpo $(DEPDIR)/botchart-option.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='option.cpp' object='botchart-option.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o splchart-option.o `test -f 'option.cpp' || echo '$(srcdir)/'`option.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o botchart-option.o `test -f 'option.cpp' || echo '$(srcdir)/'`option.cpp
 
-splchart-option.obj: option.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT splchart-option.obj -MD -MP -MF $(DEPDIR)/splchart-option.Tpo -c -o splchart-option.obj `if test -f 'option.cpp'; then $(CYGPATH_W) 'option.cpp'; else $(CYGPATH_W) '$(srcdir)/option.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/splchart-option.Tpo $(DEPDIR)/splchart-option.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='option.cpp' object='splchart-option.obj' libtool=no @AMDEPBACKSLASH@
+botchart-option.obj: option.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT botchart-option.obj -MD -MP -MF $(DEPDIR)/botchart-option.Tpo -c -o botchart-option.obj `if test -f 'option.cpp'; then $(CYGPATH_W) 'option.cpp'; else $(CYGPATH_W) '$(srcdir)/option.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/botchart-option.Tpo $(DEPDIR)/botchart-option.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='option.cpp' object='botchart-option.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o splchart-option.obj `if test -f 'option.cpp'; then $(CYGPATH_W) 'option.cpp'; else $(CYGPATH_W) '$(srcdir)/option.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o botchart-option.obj `if test -f 'option.cpp'; then $(CYGPATH_W) 'option.cpp'; else $(CYGPATH_W) '$(srcdir)/option.cpp'; fi`
 
-splchart-chart.o: chart.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT splchart-chart.o -MD -MP -MF $(DEPDIR)/splchart-chart.Tpo -c -o splchart-chart.o `test -f 'chart.cpp' || echo '$(srcdir)/'`chart.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/splchart-chart.Tpo $(DEPDIR)/splchart-chart.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='chart.cpp' object='splchart-chart.o' libtool=no @AMDEPBACKSLASH@
+botchart-chart.o: chart.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT botchart-chart.o -MD -MP -MF $(DEPDIR)/botchart-chart.Tpo -c -o botchart-chart.o `test -f 'chart.cpp' || echo '$(srcdir)/'`chart.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/botchart-chart.Tpo $(DEPDIR)/botchart-chart.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='chart.cpp' object='botchart-chart.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o splchart-chart.o `test -f 'chart.cpp' || echo '$(srcdir)/'`chart.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o botchart-chart.o `test -f 'chart.cpp' || echo '$(srcdir)/'`chart.cpp
 
-splchart-chart.obj: chart.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT splchart-chart.obj -MD -MP -MF $(DEPDIR)/splchart-chart.Tpo -c -o splchart-chart.obj `if test -f 'chart.cpp'; then $(CYGPATH_W) 'chart.cpp'; else $(CYGPATH_W) '$(srcdir)/chart.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/splchart-chart.Tpo $(DEPDIR)/splchart-chart.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='chart.cpp' object='splchart-chart.obj' libtool=no @AMDEPBACKSLASH@
+botchart-chart.obj: chart.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT botchart-chart.obj -MD -MP -MF $(DEPDIR)/botchart-chart.Tpo -c -o botchart-chart.obj `if test -f 'chart.cpp'; then $(CYGPATH_W) 'chart.cpp'; else $(CYGPATH_W) '$(srcdir)/chart.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/botchart-chart.Tpo $(DEPDIR)/botchart-chart.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='chart.cpp' object='botchart-chart.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o splchart-chart.obj `if test -f 'chart.cpp'; then $(CYGPATH_W) 'chart.cpp'; else $(CYGPATH_W) '$(srcdir)/chart.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o botchart-chart.obj `if test -f 'chart.cpp'; then $(CYGPATH_W) 'chart.cpp'; else $(CYGPATH_W) '$(srcdir)/chart.cpp'; fi`
 
-../src/splchart-smartstreetlight_soap.o: ../src/smartstreetlight_soap.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/splchart-smartstreetlight_soap.o -MD -MP -MF ../src/$(DEPDIR)/splchart-smartstreetlight_soap.Tpo -c -o ../src/splchart-smartstreetlight_soap.o `test -f '../src/smartstreetlight_soap.cpp' || echo '$(srcdir)/'`../src/smartstreetlight_soap.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/$(DEPDIR)/splchart-smartstreetlight_soap.Tpo ../src/$(DEPDIR)/splchart-smartstreetlight_soap.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/smartstreetlight_soap.cpp' object='../src/splchart-smartstreetlight_soap.o' libtool=no @AMDEPBACKSLASH@
+../src/botchart-bot_soap.o: ../src/bot_soap.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/botchart-bot_soap.o -MD -MP -MF ../src/$(DEPDIR)/botchart-bot_soap.Tpo -c -o ../src/botchart-bot_soap.o `test -f '../src/bot_soap.cpp' || echo '$(srcdir)/'`../src/bot_soap.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/$(DEPDIR)/botchart-bot_soap.Tpo ../src/$(DEPDIR)/botchart-bot_soap.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/bot_soap.cpp' object='../src/botchart-bot_soap.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/splchart-smartstreetlight_soap.o `test -f '../src/smartstreetlight_soap.cpp' || echo '$(srcdir)/'`../src/smartstreetlight_soap.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/botchart-bot_soap.o `test -f '../src/bot_soap.cpp' || echo '$(srcdir)/'`../src/bot_soap.cpp
 
-../src/splchart-smartstreetlight_soap.obj: ../src/smartstreetlight_soap.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/splchart-smartstreetlight_soap.obj -MD -MP -MF ../src/$(DEPDIR)/splchart-smartstreetlight_soap.Tpo -c -o ../src/splchart-smartstreetlight_soap.obj `if test -f '../src/smartstreetlight_soap.cpp'; then $(CYGPATH_W) '../src/smartstreetlight_soap.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/smartstreetlight_soap.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/$(DEPDIR)/splchart-smartstreetlight_soap.Tpo ../src/$(DEPDIR)/splchart-smartstreetlight_soap.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/smartstreetlight_soap.cpp' object='../src/splchart-smartstreetlight_soap.obj' libtool=no @AMDEPBACKSLASH@
+../src/botchart-bot_soap.obj: ../src/bot_soap.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/botchart-bot_soap.obj -MD -MP -MF ../src/$(DEPDIR)/botchart-bot_soap.Tpo -c -o ../src/botchart-bot_soap.obj `if test -f '../src/bot_soap.cpp'; then $(CYGPATH_W) '../src/bot_soap.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/bot_soap.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/$(DEPDIR)/botchart-bot_soap.Tpo ../src/$(DEPDIR)/botchart-bot_soap.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/bot_soap.cpp' object='../src/botchart-bot_soap.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/splchart-smartstreetlight_soap.obj `if test -f '../src/smartstreetlight_soap.cpp'; then $(CYGPATH_W) '../src/smartstreetlight_soap.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/smartstreetlight_soap.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/botchart-bot_soap.obj `if test -f '../src/bot_soap.cpp'; then $(CYGPATH_W) '../src/bot_soap.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/bot_soap.cpp'; fi`
 
-../src/splchart-smartstreetlight_error.o: ../src/smartstreetlight_error.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/splchart-smartstreetlight_error.o -MD -MP -MF ../src/$(DEPDIR)/splchart-smartstreetlight_error.Tpo -c -o ../src/splchart-smartstreetlight_error.o `test -f '../src/smartstreetlight_error.cpp' || echo '$(srcdir)/'`../src/smartstreetlight_error.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/$(DEPDIR)/splchart-smartstreetlight_error.Tpo ../src/$(DEPDIR)/splchart-smartstreetlight_error.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/smartstreetlight_error.cpp' object='../src/splchart-smartstreetlight_error.o' libtool=no @AMDEPBACKSLASH@
+../src/botchart-bot_error.o: ../src/bot_error.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/botchart-bot_error.o -MD -MP -MF ../src/$(DEPDIR)/botchart-bot_error.Tpo -c -o ../src/botchart-bot_error.o `test -f '../src/bot_error.cpp' || echo '$(srcdir)/'`../src/bot_error.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/$(DEPDIR)/botchart-bot_error.Tpo ../src/$(DEPDIR)/botchart-bot_error.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/bot_error.cpp' object='../src/botchart-bot_error.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/splchart-smartstreetlight_error.o `test -f '../src/smartstreetlight_error.cpp' || echo '$(srcdir)/'`../src/smartstreetlight_error.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/botchart-bot_error.o `test -f '../src/bot_error.cpp' || echo '$(srcdir)/'`../src/bot_error.cpp
 
-../src/splchart-smartstreetlight_error.obj: ../src/smartstreetlight_error.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/splchart-smartstreetlight_error.obj -MD -MP -MF ../src/$(DEPDIR)/splchart-smartstreetlight_error.Tpo -c -o ../src/splchart-smartstreetlight_error.obj `if test -f '../src/smartstreetlight_error.cpp'; then $(CYGPATH_W) '../src/smartstreetlight_error.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/smartstreetlight_error.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/$(DEPDIR)/splchart-smartstreetlight_error.Tpo ../src/$(DEPDIR)/splchart-smartstreetlight_error.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/smartstreetlight_error.cpp' object='../src/splchart-smartstreetlight_error.obj' libtool=no @AMDEPBACKSLASH@
+../src/botchart-bot_error.obj: ../src/bot_error.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/botchart-bot_error.obj -MD -MP -MF ../src/$(DEPDIR)/botchart-bot_error.Tpo -c -o ../src/botchart-bot_error.obj `if test -f '../src/bot_error.cpp'; then $(CYGPATH_W) '../src/bot_error.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/bot_error.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/$(DEPDIR)/botchart-bot_error.Tpo ../src/$(DEPDIR)/botchart-bot_error.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/bot_error.cpp' object='../src/botchart-bot_error.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/splchart-smartstreetlight_error.obj `if test -f '../src/smartstreetlight_error.cpp'; then $(CYGPATH_W) '../src/smartstreetlight_error.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/smartstreetlight_error.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/botchart-bot_error.obj `if test -f '../src/bot_error.cpp'; then $(CYGPATH_W) '../src/bot_error.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/bot_error.cpp'; fi`
 
-../src/gsoap/splchart-soapClient.o: ../src/gsoap/soapClient.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/splchart-soapClient.o -MD -MP -MF ../src/gsoap/$(DEPDIR)/splchart-soapClient.Tpo -c -o ../src/gsoap/splchart-soapClient.o `test -f '../src/gsoap/soapClient.cpp' || echo '$(srcdir)/'`../src/gsoap/soapClient.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/splchart-soapClient.Tpo ../src/gsoap/$(DEPDIR)/splchart-soapClient.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/soapClient.cpp' object='../src/gsoap/splchart-soapClient.o' libtool=no @AMDEPBACKSLASH@
+../src/gsoap/botchart-soapClient.o: ../src/gsoap/soapClient.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/botchart-soapClient.o -MD -MP -MF ../src/gsoap/$(DEPDIR)/botchart-soapClient.Tpo -c -o ../src/gsoap/botchart-soapClient.o `test -f '../src/gsoap/soapClient.cpp' || echo '$(srcdir)/'`../src/gsoap/soapClient.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/botchart-soapClient.Tpo ../src/gsoap/$(DEPDIR)/botchart-soapClient.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/soapClient.cpp' object='../src/gsoap/botchart-soapClient.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/splchart-soapClient.o `test -f '../src/gsoap/soapClient.cpp' || echo '$(srcdir)/'`../src/gsoap/soapClient.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/botchart-soapClient.o `test -f '../src/gsoap/soapClient.cpp' || echo '$(srcdir)/'`../src/gsoap/soapClient.cpp
 
-../src/gsoap/splchart-soapClient.obj: ../src/gsoap/soapClient.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/splchart-soapClient.obj -MD -MP -MF ../src/gsoap/$(DEPDIR)/splchart-soapClient.Tpo -c -o ../src/gsoap/splchart-soapClient.obj `if test -f '../src/gsoap/soapClient.cpp'; then $(CYGPATH_W) '../src/gsoap/soapClient.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/soapClient.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/splchart-soapClient.Tpo ../src/gsoap/$(DEPDIR)/splchart-soapClient.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/soapClient.cpp' object='../src/gsoap/splchart-soapClient.obj' libtool=no @AMDEPBACKSLASH@
+../src/gsoap/botchart-soapClient.obj: ../src/gsoap/soapClient.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/botchart-soapClient.obj -MD -MP -MF ../src/gsoap/$(DEPDIR)/botchart-soapClient.Tpo -c -o ../src/gsoap/botchart-soapClient.obj `if test -f '../src/gsoap/soapClient.cpp'; then $(CYGPATH_W) '../src/gsoap/soapClient.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/soapClient.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/botchart-soapClient.Tpo ../src/gsoap/$(DEPDIR)/botchart-soapClient.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/soapClient.cpp' object='../src/gsoap/botchart-soapClient.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/splchart-soapClient.obj `if test -f '../src/gsoap/soapClient.cpp'; then $(CYGPATH_W) '../src/gsoap/soapClient.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/soapClient.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/botchart-soapClient.obj `if test -f '../src/gsoap/soapClient.cpp'; then $(CYGPATH_W) '../src/gsoap/soapClient.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/soapClient.cpp'; fi`
 
-../src/gsoap/splchart-soapC.o: ../src/gsoap/soapC.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/splchart-soapC.o -MD -MP -MF ../src/gsoap/$(DEPDIR)/splchart-soapC.Tpo -c -o ../src/gsoap/splchart-soapC.o `test -f '../src/gsoap/soapC.cpp' || echo '$(srcdir)/'`../src/gsoap/soapC.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/splchart-soapC.Tpo ../src/gsoap/$(DEPDIR)/splchart-soapC.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/soapC.cpp' object='../src/gsoap/splchart-soapC.o' libtool=no @AMDEPBACKSLASH@
+../src/gsoap/botchart-soapC.o: ../src/gsoap/soapC.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/botchart-soapC.o -MD -MP -MF ../src/gsoap/$(DEPDIR)/botchart-soapC.Tpo -c -o ../src/gsoap/botchart-soapC.o `test -f '../src/gsoap/soapC.cpp' || echo '$(srcdir)/'`../src/gsoap/soapC.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/botchart-soapC.Tpo ../src/gsoap/$(DEPDIR)/botchart-soapC.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/soapC.cpp' object='../src/gsoap/botchart-soapC.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/splchart-soapC.o `test -f '../src/gsoap/soapC.cpp' || echo '$(srcdir)/'`../src/gsoap/soapC.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/botchart-soapC.o `test -f '../src/gsoap/soapC.cpp' || echo '$(srcdir)/'`../src/gsoap/soapC.cpp
 
-../src/gsoap/splchart-soapC.obj: ../src/gsoap/soapC.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/splchart-soapC.obj -MD -MP -MF ../src/gsoap/$(DEPDIR)/splchart-soapC.Tpo -c -o ../src/gsoap/splchart-soapC.obj `if test -f '../src/gsoap/soapC.cpp'; then $(CYGPATH_W) '../src/gsoap/soapC.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/soapC.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/splchart-soapC.Tpo ../src/gsoap/$(DEPDIR)/splchart-soapC.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/soapC.cpp' object='../src/gsoap/splchart-soapC.obj' libtool=no @AMDEPBACKSLASH@
+../src/gsoap/botchart-soapC.obj: ../src/gsoap/soapC.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/botchart-soapC.obj -MD -MP -MF ../src/gsoap/$(DEPDIR)/botchart-soapC.Tpo -c -o ../src/gsoap/botchart-soapC.obj `if test -f '../src/gsoap/soapC.cpp'; then $(CYGPATH_W) '../src/gsoap/soapC.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/soapC.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/botchart-soapC.Tpo ../src/gsoap/$(DEPDIR)/botchart-soapC.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/soapC.cpp' object='../src/gsoap/botchart-soapC.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/splchart-soapC.obj `if test -f '../src/gsoap/soapC.cpp'; then $(CYGPATH_W) '../src/gsoap/soapC.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/soapC.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/botchart-soapC.obj `if test -f '../src/gsoap/soapC.cpp'; then $(CYGPATH_W) '../src/gsoap/soapC.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/soapC.cpp'; fi`
 
-../src/gsoap/splchart-stdsoap2.o: ../src/gsoap/stdsoap2.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/splchart-stdsoap2.o -MD -MP -MF ../src/gsoap/$(DEPDIR)/splchart-stdsoap2.Tpo -c -o ../src/gsoap/splchart-stdsoap2.o `test -f '../src/gsoap/stdsoap2.cpp' || echo '$(srcdir)/'`../src/gsoap/stdsoap2.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/splchart-stdsoap2.Tpo ../src/gsoap/$(DEPDIR)/splchart-stdsoap2.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/stdsoap2.cpp' object='../src/gsoap/splchart-stdsoap2.o' libtool=no @AMDEPBACKSLASH@
+../src/gsoap/botchart-stdsoap2.o: ../src/gsoap/stdsoap2.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/botchart-stdsoap2.o -MD -MP -MF ../src/gsoap/$(DEPDIR)/botchart-stdsoap2.Tpo -c -o ../src/gsoap/botchart-stdsoap2.o `test -f '../src/gsoap/stdsoap2.cpp' || echo '$(srcdir)/'`../src/gsoap/stdsoap2.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/botchart-stdsoap2.Tpo ../src/gsoap/$(DEPDIR)/botchart-stdsoap2.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/stdsoap2.cpp' object='../src/gsoap/botchart-stdsoap2.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/splchart-stdsoap2.o `test -f '../src/gsoap/stdsoap2.cpp' || echo '$(srcdir)/'`../src/gsoap/stdsoap2.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/botchart-stdsoap2.o `test -f '../src/gsoap/stdsoap2.cpp' || echo '$(srcdir)/'`../src/gsoap/stdsoap2.cpp
 
-../src/gsoap/splchart-stdsoap2.obj: ../src/gsoap/stdsoap2.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/splchart-stdsoap2.obj -MD -MP -MF ../src/gsoap/$(DEPDIR)/splchart-stdsoap2.Tpo -c -o ../src/gsoap/splchart-stdsoap2.obj `if test -f '../src/gsoap/stdsoap2.cpp'; then $(CYGPATH_W) '../src/gsoap/stdsoap2.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/stdsoap2.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/splchart-stdsoap2.Tpo ../src/gsoap/$(DEPDIR)/splchart-stdsoap2.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/stdsoap2.cpp' object='../src/gsoap/splchart-stdsoap2.obj' libtool=no @AMDEPBACKSLASH@
+../src/gsoap/botchart-stdsoap2.obj: ../src/gsoap/stdsoap2.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -MT ../src/gsoap/botchart-stdsoap2.obj -MD -MP -MF ../src/gsoap/$(DEPDIR)/botchart-stdsoap2.Tpo -c -o ../src/gsoap/botchart-stdsoap2.obj `if test -f '../src/gsoap/stdsoap2.cpp'; then $(CYGPATH_W) '../src/gsoap/stdsoap2.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/stdsoap2.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) ../src/gsoap/$(DEPDIR)/botchart-stdsoap2.Tpo ../src/gsoap/$(DEPDIR)/botchart-stdsoap2.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='../src/gsoap/stdsoap2.cpp' object='../src/gsoap/botchart-stdsoap2.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(splchart_CPPFLAGS) $(CPPFLAGS) $(splchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/splchart-stdsoap2.obj `if test -f '../src/gsoap/stdsoap2.cpp'; then $(CYGPATH_W) '../src/gsoap/stdsoap2.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/stdsoap2.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(botchart_CPPFLAGS) $(CPPFLAGS) $(botchart_CXXFLAGS) $(CXXFLAGS) -c -o ../src/gsoap/botchart-stdsoap2.obj `if test -f '../src/gsoap/stdsoap2.cpp'; then $(CYGPATH_W) '../src/gsoap/stdsoap2.cpp'; else $(CYGPATH_W) '$(srcdir)/../src/gsoap/stdsoap2.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

@@ -10,30 +10,30 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/media/DATA/projects/spl/slope/CMakeFiles/3.0.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/media/DATA/projects/bot/slope/CMakeFiles/3.0.2/CompilerIdC/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp
+Change Dir: /media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTryCompileExec813379587/fast"
 /usr/bin/make -f CMakeFiles/cmTryCompileExec813379587.dir/build.make CMakeFiles/cmTryCompileExec813379587.dir/build
-make[1]: Entering directory '/media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp/CMakeFiles 1
+make[1]: Entering directory '/media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp/CMakeFiles 1
 Building C object CMakeFiles/cmTryCompileExec813379587.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec813379587.dir/testCCompiler.c.o   -c /media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp/testCCompiler.c
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec813379587.dir/testCCompiler.c.o   -c /media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp/testCCompiler.c
 Linking C executable cmTryCompileExec813379587
 /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec813379587.dir/link.txt --verbose=1
 /usr/bin/cc       CMakeFiles/cmTryCompileExec813379587.dir/testCCompiler.c.o  -o cmTryCompileExec813379587 -rdynamic 
-make[1]: Leaving directory '/media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp
+Change Dir: /media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp
 
 Run Build Command:"/usr/bin/make" "cmTryCompileExec1664559190/fast"
 /usr/bin/make -f CMakeFiles/cmTryCompileExec1664559190.dir/build.make CMakeFiles/cmTryCompileExec1664559190.dir/build
-make[1]: Entering directory '/media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp/CMakeFiles 1
+make[1]: Entering directory '/media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp/CMakeFiles 1
 Building C object CMakeFiles/cmTryCompileExec1664559190.dir/CMakeCCompilerABI.c.o
 /usr/bin/cc    -o CMakeFiles/cmTryCompileExec1664559190.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.0/Modules/CMakeCCompilerABI.c
 Linking C executable cmTryCompileExec1664559190
@@ -50,17 +50,17 @@ COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../:/lib/:/usr/lib/
 COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1664559190' '-rdynamic' '-mtune=generic' '-march=x86-64'
  /usr/lib/gcc/x86_64-linux-gnu/4.9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/4.9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/cczHXxxe.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec1664559190 /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.9/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.9 -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.9/../../.. CMakeFiles/cmTryCompileExec1664559190.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.9/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp]
   ignore line: []
   ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec1664559190/fast"]
   ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1664559190.dir/build.make CMakeFiles/cmTryCompileExec1664559190.dir/build]
-  ignore line: [make[1]: Entering directory '/media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /media/DATA/projects/spl/slope/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [make[1]: Entering directory '/media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /media/DATA/projects/bot/slope/CMakeFiles/CMakeTmp/CMakeFiles 1]
   ignore line: [Building C object CMakeFiles/cmTryCompileExec1664559190.dir/CMakeCCompilerABI.c.o]
   ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1664559190.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.0/Modules/CMakeCCompilerABI.c]
   ignore line: [Linking C executable cmTryCompileExec1664559190]

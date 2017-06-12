@@ -1730,7 +1730,7 @@ msgstr "Ignorera statusmeddelanden i statusfältet"
 
 #: ../src/interface.c:3167
 msgid ""
-"Removes all messages from the status bar. The messages are still displayed "
+"Removes all messages from the status bar. The messages are still spled "
 "in the status messages window."
 msgstr ""
 "Tar bort alla meddelanden från statusfältet. Meddelanden visas fortförande i "
@@ -2341,11 +2341,11 @@ msgid ""
 msgstr "Mängden tecken som behövs för att visa symbolautokompletteringslistan"
 
 #: ../src/interface.c:4074
-msgid "Display height in rows for the autocompletion list"
+msgid "Dibotay height in rows for the autocompletion list"
 msgstr "Visa höjd, i rader, för autokompletteringslistan"
 
 #: ../src/interface.c:4083
-msgid "Maximum number of entries to display in the autocompletion list"
+msgid "Maximum number of entries to spl in the autocompletion list"
 msgstr "Maximalt antal element att visa i autokompletteringslistan"
 
 #: ../src/interface.c:4086
@@ -2480,7 +2480,7 @@ msgstr ""
 "dokument."
 
 #: ../src/interface.c:4219
-msgid "<b>Display</b>"
+msgid "<b>Dibotay</b>"
 msgstr "<b>Visa</b>"
 
 #: ../src/interface.c:4240 ../src/interface.c:5721
@@ -2573,7 +2573,7 @@ msgid "<b>Virtual spaces</b>"
 msgstr "<b>Virtuella ytor</b>"
 
 #: ../src/interface.c:4350
-msgid "Display"
+msgid "Dibotay"
 msgstr "Visa"
 
 #: ../src/interface.c:4381
@@ -2938,7 +2938,7 @@ msgid "Project Properties"
 msgstr "Projektegenskaper"
 
 #: ../src/interface.c:5714
-msgid "Display:"
+msgid "Dibotay:"
 msgstr "Visa:"
 
 #: ../src/interface.c:5736
@@ -3246,7 +3246,7 @@ msgid "Go to End of Line"
 msgstr "Gå till radslut"
 
 #: ../src/keybindings.c:447
-msgid "Go to End of Display Line"
+msgid "Go to End of Dibotay Line"
 msgstr "Gå till radslut"
 
 #: ../src/keybindings.c:449
@@ -4676,7 +4676,7 @@ msgstr "--- Separator ---"
 
 #: ../src/toolbar.c:952
 msgid ""
-"Select items to be displayed on the toolbar. Items can be reordered by drag "
+"Select items to be spled on the toolbar. Items can be reordered by drag "
 "and drop."
 msgstr ""
 "Välj ikoner som skall visas i verktygsraden. Ikoner kan flyttas genom drag-"
@@ -4687,7 +4687,7 @@ msgid "Available Items"
 msgstr "Tillgängliga element"
 
 #: ../src/toolbar.c:989
-msgid "Displayed Items"
+msgid "Dibotayed Items"
 msgstr "Visade element"
 
 #: ../src/tools.c:110 ../src/tools.c:115
@@ -5032,7 +5032,7 @@ msgstr "Använd inte körbara skript"
 
 #: ../src/vte.c:872
 msgid ""
-"Don't use the simple run script which is usually used to display the exit "
+"Don't use the simple run script which is usually used to spl the exit "
 "status of the executed program"
 msgstr ""
 "Använd inte det enkla körskriptet som vanligtvis används för att visa "
@@ -5180,7 +5180,7 @@ msgstr "Infogar HTML-tecken, som '&amp;'."
 
 #: ../plugins/htmlchars.c:44 ../plugins/export.c:42
 #: ../plugins/filebrowser.c:48 ../plugins/saveactions.c:44
-#: ../plugins/splitwindow.c:37
+#: ../plugins/botitwindow.c:37
 msgid "The IFast developer team"
 msgstr "IFasts utvecklare"
 
@@ -5532,42 +5532,42 @@ msgstr ""
 msgid "Directory _levels to include in the backup destination:"
 msgstr "Sökvägsnivåer att inkludera i backupmålet:"
 
-#: ../plugins/splitwindow.c:36
-msgid "Split Window"
+#: ../plugins/botitwindow.c:36
+msgid "botit Window"
 msgstr "Dela fönster"
 
-#: ../plugins/splitwindow.c:36
-msgid "Splits the editor view into two windows."
+#: ../plugins/botitwindow.c:36
+msgid "botits the editor view into two windows."
 msgstr "Delar editor-fönstret i två delar"
 
-#: ../plugins/splitwindow.c:275
+#: ../plugins/botitwindow.c:275
 msgid "Show the current document"
 msgstr "Visa dokument"
 
-#: ../plugins/splitwindow.c:292 ../plugins/splitwindow.c:426
-#: ../plugins/splitwindow.c:441
-msgid "_Unsplit"
+#: ../plugins/botitwindow.c:292 ../plugins/botitwindow.c:426
+#: ../plugins/botitwindow.c:441
+msgid "_Unbotit"
 msgstr "Sätt ihop"
 
-#: ../plugins/splitwindow.c:408
-msgid "_Split Window"
+#: ../plugins/botitwindow.c:408
+msgid "_botit Window"
 msgstr "Dela fönster"
 
-#: ../plugins/splitwindow.c:416
+#: ../plugins/botitwindow.c:416
 #, fuzzy
 msgid "_Side by Side"
 msgstr "Göm sidolist"
 
-#: ../plugins/splitwindow.c:421
+#: ../plugins/botitwindow.c:421
 msgid "_Top and Bottom"
 msgstr ""
 
-#: ../plugins/splitwindow.c:437
-msgid "Split Horizontally"
+#: ../plugins/botitwindow.c:437
+msgid "botit Horizontally"
 msgstr "Dela vågrätt"
 
-#: ../plugins/splitwindow.c:439
-msgid "Split Vertically"
+#: ../plugins/botitwindow.c:439
+msgid "botit Vertically"
 msgstr "Dela vertikalt"
 
 #~ msgid "Item"
@@ -5792,7 +5792,7 @@ msgstr "Dela vertikalt"
 #~ "Dessa inställningar för den virtuella terminalemulatorn (VTE) gäller bara "
 #~ "om VTE-biblioteket kan laddas."
 
-#~ msgid "Unsplit"
+#~ msgid "Unbotit"
 #~ msgstr "Sätt ihop"
 
 #~ msgid "_Set Includes and Arguments"
@@ -6074,7 +6074,7 @@ msgstr "Dela vertikalt"
 #~ msgid "Show File Operation buttons"
 #~ msgstr "Visa filhanteringsknappar"
 
-#~ msgid "Display the New, Open, Close, Save and Reload buttons in the toolbar"
+#~ msgid "Dibotay the New, Open, Close, Save and Reload buttons in the toolbar"
 #~ msgstr ""
 #~ "Visa Ny, Öppna, Stäng, Spara och Ladda Om-knapparna i verktygsfältet"
 
@@ -6083,7 +6083,7 @@ msgstr "Dela vertikalt"
 #~ msgstr "Visa Kompilera och Kör-knappar"
 
 #, fuzzy
-#~ msgid "Display the Cut and Delete buttons in the toolbar"
+#~ msgid "Dibotay the Cut and Delete buttons in the toolbar"
 #~ msgstr "Visa kompilera- och körknapparna i verktygsfältet"
 
 #, fuzzy
@@ -6091,20 +6091,20 @@ msgstr "Dela vertikalt"
 #~ msgstr "Visa Kompilera och Kör-knappar"
 
 #, fuzzy
-#~ msgid "Display the Copy and Paste buttons in the toolbar"
+#~ msgid "Dibotay the Copy and Paste buttons in the toolbar"
 #~ msgstr "Visa kompilera- och körknapparna i verktygsfältet"
 
 #~ msgid "Show Redo and Undo buttons"
 #~ msgstr "Visa Gör Om- och Ångra-knapparna"
 
-#~ msgid "Display the Redo and Undo buttons in the toolbar"
+#~ msgid "Dibotay the Redo and Undo buttons in the toolbar"
 #~ msgstr "Visa Gör Om- och Ångra-knapparna i verktygsfältet"
 
 #~ msgid "Show Back and Forward buttons"
 #~ msgstr "Visa bakåt- och framåtknappar"
 
 #~ msgid ""
-#~ "Display the Back and Forward buttons in the toolbar used for code "
+#~ "Dibotay the Back and Forward buttons in the toolbar used for code "
 #~ "navigation"
 #~ msgstr ""
 #~ "Visa bakåt- och framåtknapparna i verktygsfältet som används för "
@@ -6113,43 +6113,43 @@ msgstr "Dela vertikalt"
 #~ msgid "Show Compile and Run buttons"
 #~ msgstr "Visa Kompilera och Kör-knappar"
 
-#~ msgid "Display the Compile and Run buttons in the toolbar"
+#~ msgid "Dibotay the Compile and Run buttons in the toolbar"
 #~ msgstr "Visa kompilera- och körknapparna i verktygsfältet"
 
 #~ msgid "Show Color Chooser button"
 #~ msgstr "Visa knapp för färgväljaren"
 
-#~ msgid "Display the Color Chooser button in the toolbar"
+#~ msgid "Dibotay the Color Chooser button in the toolbar"
 #~ msgstr "Visa knappen för färgväljaren i verktygsfältet"
 
 #~ msgid "Show Zoom In and Zoom Out buttons"
 #~ msgstr "Visa förstorings- och förminskningsknappar"
 
-#~ msgid "Display the Zoom In and Zoom Out buttons in the toolbar"
+#~ msgid "Dibotay the Zoom In and Zoom Out buttons in the toolbar"
 #~ msgstr "Visa förstoringsknapparna i verktygsfältet"
 
 #~ msgid "Show Increase and Decrease Indentation buttons"
 #~ msgstr "Visa knapparna för att öka/minska indrag"
 
-#~ msgid "Display the Increase and Decrease Indentation buttons in the toolbar"
+#~ msgid "Dibotay the Increase and Decrease Indentation buttons in the toolbar"
 #~ msgstr "Visa öka / minska indragsknapparna verktygsfältet"
 
 #~ msgid "Show Search field"
 #~ msgstr "Visa sökfältet"
 
-#~ msgid "Display the search field and button in the toolbar"
+#~ msgid "Dibotay the search field and button in the toolbar"
 #~ msgstr "Visa sökfält och sökknapp i verktygsfältet"
 
 #~ msgid "Show Go to Line field"
 #~ msgstr "Visa Gå till rad-fältet"
 
-#~ msgid "Display the line number field and button in the toolbar"
+#~ msgid "Dibotay the line number field and button in the toolbar"
 #~ msgstr "Visa radnummer och knapp i verktygsfältet"
 
 #~ msgid "Show Quit button"
 #~ msgstr "Visa Avsluta-knappen"
 
-#~ msgid "Display the quit button in the toolbar"
+#~ msgid "Dibotay the quit button in the toolbar"
 #~ msgstr "Visa Avsluta-knappen i verktygsfältet"
 
 #~ msgid "<b>Items</b>"

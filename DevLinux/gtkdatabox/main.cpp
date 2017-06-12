@@ -27,7 +27,7 @@
 #include <stdlib.h>
 #include "main.h"
 #include "chart.h"
- #include "../../src/smartstreetlight_error.h"
+ #include "../../src/bot_error.h"
 
 
 /*----------------------------------------------------------------
@@ -134,7 +134,7 @@ gint main (gint argc, char *argv[])
     option_t.account_id = 0;
 
     if (!getOptCommandLine(argc, argv, &option_t)) {
-        spl_chart_help(programName);
+        bot_chart_help(programName);
         if (option_t.begin_time)
             g_free(option_t.begin_time);
         if (option_t.end_time)
@@ -163,15 +163,15 @@ gint main (gint argc, char *argv[])
 
     gtk_container_set_border_width (GTK_CONTAINER (window), 0);
     //DEBUG("here\n");
-    if (!smartstreetlight_error_init())
+    if (!bot_error_init())
         exit(EXIT_FAILURE);
     //DEBUG("here\n");
-    if (!spl_get_data_chart(&option_t))
+    if (!bot_get_data_chart(&option_t))
          exit(EXIT_FAILURE);
 #if 1
     if(lcu_log_list)
     {
-        SplLcuSlopeData* lcu_slope = spl_lcu_chart_data_init(g_slist_length(lcu_log_list), lcu_log_list);
+        botLcuSlopeData* lcu_slope = bot_lcu_chart_data_init(g_slist_length(lcu_log_list), lcu_log_list);
         if (lcu_slope)
         {
             create_grid(window, lcu_slope->x_time,
@@ -185,7 +185,7 @@ gint main (gint argc, char *argv[])
 
             gtk_main ();
         }
-        spl_lcu_chart_data_free(lcu_slope);
+        bot_lcu_chart_data_free(lcu_slope);
     }
 #else
     gfloat *x, *y1, *y2, *y3;
@@ -254,7 +254,7 @@ gint main (gint argc, char *argv[])
     g_free(programName);
     return 0;
 }
-gint spl_utils_message_box(GtkWindow *parent, GtkMessageType type, GtkButtonsType btn, const gchar* msg)
+gint bot_utils_message_box(GtkWindow *parent, GtkMessageType type, GtkButtonsType btn, const gchar* msg)
 {
     GtkWidget *dlg;
     gint responseId;
