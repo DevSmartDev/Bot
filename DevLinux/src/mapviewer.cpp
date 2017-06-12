@@ -1,0 +1,862 @@
+/* -*- Mode: C; indent-tabs-mode: nil; c-basic-offset: 4; tab-width: 4 -*- */
+/* vim:set et sw=4 ts=4 cino=t0,(0: */
+/*
+ * main.c
+ * Copyright (C) John Stowers 2008 <john.stowers@gmail.com>
+ *
+ * This is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; version 2.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include <stdlib.h>
+#include <math.h>
+#include <glib.h>
+#include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
+
+#include <iostream>
+#include <string>
+#include <map>
+#include <math.h>
+
+#include "smartstreetlight_utils.h"
+#include "smartstreetlight_error.h"
+#include "smartstreetlight_lcu.h"
+#include "smartstreetlight_dcu.h"
+#include "mapviewer.h"
+#include "main.h"
+
+
+#define pi 3.14159265358979323846
+#define RIGHT_DISTANCE_OFFSET 10
+
+GdkPixbuf *light_image[ICON_LIGHT_NUM_COUNT] =
+{
+    NULL, NULL, NULL,
+    NULL, NULL, NULL,
+    NULL, NULL, NULL
+};
+
+typedef struct map_lat_lon{
+    float lat;
+    float lon;
+}map_lat_lon;
+
+std::map<map_lat_lon*, OsmGpsMapImage*> street_light_map;
+
+static gboolean opt_friendly_cache = FALSE;
+static gboolean opt_no_cache = FALSE;
+static gboolean opt_debug = FALSE;
+static char *opt_cache_base_dir = NULL;
+static gboolean opt_editable_tracks = TRUE;
+static GtkWidget *popup_window;
+static GOptionEntry entries[] =
+{
+  { "friendly-cache", 'f', 0, G_OPTION_ARG_NONE, &opt_friendly_cache, "Store maps using friendly cache style (source name)", NULL },
+  { "no-cache", 'n', 0, G_OPTION_ARG_NONE, &opt_no_cache, "Disable cache", NULL },
+  { "cache-basedir", 'b', 0, G_OPTION_ARG_FILENAME, &opt_cache_base_dir, "Cache basedir", NULL },
+  { "debug", 'd', 0, G_OPTION_ARG_NONE, &opt_debug, "Enable debugging", NULL },
+  { "editable-tracks", 'e', 0, G_OPTION_ARG_NONE, &opt_editable_tracks, "Make the tracks editable", NULL },
+  { NULL }
+};
+
+static GdkPixbuf *g_star_image = NULL;
+
+
+static OsmGpsMapImage *g_last_image = NULL;
+OsmGpsMap *map = NULL;
+
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::  This function converts decimal degrees to radians             :*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+float deg2rad(float deg) {
+  return (deg * pi / 180);
+}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::  This function converts radians to decimal degrees             :*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+float rad2deg(float rad) {
+  return (rad * 180 / pi);
+}
+
+static bool street_light_map_add_street_light(map_lat_lon *lat_lon, OsmGpsMapImage *g_gps_image)
+{
+    std::map<map_lat_lon *, OsmGpsMapImage *>::iterator it;
+
+    it = street_light_map.find(lat_lon);
+    if (it != street_light_map.end())
+    {
+        DEBUG("Allreally has street At: lat: %f, lon: %f\n", lat_lon->lat, lat_lon->lon);
+        return false;
+    }
+
+    DEBUG("Add map street At: lat: %f, lon: %f\n", lat_lon->lat, lat_lon->lon);
+
+    street_light_map[lat_lon] = g_gps_image;
+
+    //mymap.erase (it);
+
+    return true;
+}
+
+static bool street_light_map_remove_street_light(map_lat_lon *lat_lon)
+{
+    std::map<map_lat_lon *, OsmGpsMapImage *>::iterator it;
+
+    it = street_light_map.find(lat_lon);
+    if (it != street_light_map.end())
+    {
+        DEBUG("Found street At: lat: %f, lon: %f\n", lat_lon->lat, lat_lon->lon);
+        street_light_map.erase (it);
+        g_free(lat_lon);
+        return true;
+    }
+    return false;
+}
+
+static bool street_light_map_remove_all_street_light()
+{
+    std::map<map_lat_lon *, OsmGpsMapImage *>::iterator it;
+    for (it= street_light_map.begin(); it != street_light_map.end(); it++)
+    {
+        g_free(it->first);
+        street_light_map.erase (it);
+    }
+    return true;
+}
+
+#define Z_Y_ALIGNED         0.5
+#define DISTANCE_OFFSET     10.0
+#define LOCAL_PI            3.1415926535897932385
+#define EARTHRAD            3958.75
+#define METERCONVERT        1609.344
+#if 1
+float ToRadians(float degrees)
+{
+  float radians = degrees * LOCAL_PI / 180;
+  return radians;
+}
+
+float distance_lat_lon(float lat1, float lng1, float lat2, float lng2, char unit)
+{
+  float dLat = ToRadians(lat2-lat1);
+  float dLng = ToRadians(lng2-lng1);
+  float a = sin(dLat/2) * sin(dLat/2) +
+             cos(ToRadians(lat1)) * cos(ToRadians(lat2)) *
+             sin(dLng/2) * sin(dLng/2);
+  float c = 2 * atan2(sqrt(a), sqrt(1-a));
+  float dist = EARTHRAD * c;
+  return dist * METERCONVERT;
+}
+
+
+static float distance(float rlat1, float rlon1, float rlat2, float rlon2) {
+    float rdlat, rdlon, dist;
+    rdlon = (rlon1 - rlon2) / 2;
+    rdlat = (rlat1 - rlat2 ) /2;
+    float sindlat = sin(rdlat);
+    float sindlon = sin(rdlon);
+    float a = sindlat * sindlat + cos(rlat1) * cos(rlat2) * sindlon * sindlon;
+    float c = 2 * atan2(sqrt(a), sqrt(1-a));
+    dist = EARTHRAD * c;
+    if(dist < 0)
+        dist = -dist;
+    return dist * METERCONVERT;
+}
+
+#else
+static float distance_lat_lon(float lat1, float lon1, float lat2, float lon2, char unit)
+{
+  float theta, dist;
+  theta = lon1 - lon2;
+  dist = sin(deg2rad(lat1)) * sin(deg2rad(lat2)) + cos(deg2rad(lat1)) * cos(deg2rad(lat2)) * cos(deg2rad(theta));
+  dist = acos(dist);
+  dist = rad2deg(dist);
+  dist = dist * 60 * 1.1515;
+  switch(unit) {
+    case 'M':
+      break;
+    case 'K':
+      dist = dist * 1.609344;
+      break;
+    case 'm':
+      dist = dist * 1.609344 *1000;
+      break;
+    case 'N':
+      dist = dist * 0.8684;
+      break;
+  }
+  return (dist);
+}
+#endif // 1
+static map_lat_lon *street_light_map_find_street_light(float lat, float lon)
+{
+    std::map<map_lat_lon *, OsmGpsMapImage *>::iterator it;
+    map_lat_lon *tmp;
+    float dist_in_meter = 0;
+    for (it= street_light_map.begin(); it != street_light_map.end(); it++)
+    {
+       tmp = it->first;
+       #if 0
+       if (((tmp->lat <= lat + Z_Y_ALIGNED) || (tmp->lat >= lat - Z_Y_ALIGNED) ) &&
+           ((tmp->lon <= lon + Z_Y_ALIGNED) || (tmp->lon >= lon - Z_Y_ALIGNED) ))
+       {
+           DEBUG("Found at lat: %f, lon: %f\n", tmp->lat, tmp ->lon);
+           return tmp;
+       }
+       #else
+       dist_in_meter = distance_lat_lon(tmp->lat, tmp->lon, lat, lon, 'm');
+       if (dist_in_meter < 0)
+       {
+           /*Retry again*/
+            dist_in_meter = -dist_in_meter;
+       }
+       DEBUG("From at a1 [%f-%f]-> a2[%f-%f] is %f Meter\n", tmp->lat, tmp ->lon, lat, lon, dist_in_meter);
+       if (dist_in_meter >= 0 && dist_in_meter <= DISTANCE_OFFSET)
+       {
+           DEBUG("Found at lat: %f, lon: %f dist_in_meter: %f\n", tmp->lat, tmp ->lon, dist_in_meter);
+           return tmp;
+       }
+       #endif // 0
+
+    }
+    return NULL;
+}
+
+static void street_light_map_new_and_add_street_light(float f_lat, float f_lon)
+{
+    map_lat_lon * lat_lon = g_new0(map_lat_lon, 1);
+    lat_lon->lat = f_lat;
+    lat_lon->lon = f_lon;
+    if (!street_light_map_add_street_light(lat_lon, g_last_image))
+    {
+        g_free(lat_lon);
+    }
+}
+
+OsmGpsMapImage *find_the_closest_image(OsmGpsMap *map, float lat, float lon)
+{
+    float rlat, rlon;
+    OsmGpsMapImage *retImage = NULL;
+    float smallest = DISTANCE_OFFSET + 15;
+    GSList *displayedImages = osm_gps_map_get_displayed_images(map);
+    g_return_val_if_fail(displayedImages, NULL);
+
+    rlat = deg2rad(lat);
+    rlon = deg2rad(lon);
+    for(GSList *item = displayedImages; item != NULL; item = g_slist_next(item))
+    {
+        OsmGpsMapImage *im = OSM_GPS_MAP_IMAGE(item->data);
+        if(im == NULL)
+            continue;
+        const OsmGpsMapPoint *pt = osm_gps_map_image_get_point(im);
+        float dist = distance(rlat, rlon, pt->rlat, pt->rlon);
+        //DEBUG("Distance from given point: %f, smallest: %f\n", dist, smallest);
+        if(dist <= smallest)
+        {
+            smallest = dist;
+            retImage = im;
+        }
+    }
+    return retImage;
+}
+
+static void find_and_show_image_infomation(OsmGpsMapImage *im)
+{
+    g_return_if_fail(im && im->handler);
+    pSplLcu  lcu = (pSplLcu)im->handler;
+    gint index =  gtk_combo_box_get_active(GTK_COMBO_BOX(cbb_light_display));
+    if( index != DISPLAY_FOLLOW_DCU)
+    {
+       osm_gps_map_show_lights_of_zone(lcu->parent);
+    }
+    light_update_information(lcu, FALSE);
+}
+
+static gboolean on_button_press_event (GtkWidget *widget, GdkEventButton *event, gpointer user_data)
+{
+    OsmGpsMapPoint coord;
+    float lat, lon;
+    gboolean show_popup = FALSE;
+    OsmGpsMap *map = OSM_GPS_MAP(widget);
+    OsmGpsMapImage *im;
+    OsmGpsMapTrack *othertrack = OSM_GPS_MAP_TRACK(user_data);
+    int left_button =   (event->button == 1);
+    int middle_button = (event->button == 2) || ((event->button == 1) && (event->state & GDK_SHIFT_MASK));
+    int right_button =  (event->button == 3) || ((event->button == 1) && (event->state & GDK_CONTROL_MASK));
+    gboolean done = FALSE;
+    osm_gps_map_convert_screen_to_geographic(map, event->x, event->y, &coord);
+    osm_gps_map_point_get_degrees(&coord, &lat, &lon);
+    gint zoom =  osm_gps_map_get_zoom(map);
+    switch(event->type)
+    {
+    case GDK_2BUTTON_PRESS:
+   //     DEBUG("Double click on map and left: %d right: %d\n", left_button, right_button);
+        if(left_button) //show information
+        {
+            if( zoom < ZOOM_ACTION)
+            {
+                osm_gps_map_set_center_and_zoom(map, lat, lon, zoom + 1);
+            }
+            else
+            {
+                //find the closet light and distance is smaller than 50m
+                im = find_the_closest_image(map, lat, lon);
+                if(im != NULL)
+                {
+                    if(isControlShow)
+                    {
+                        spl_dcu_select_iter_of_light(im);
+                        break;
+                    }
+                    __show_image_on_map:
+                    GtkWidget *notebook = GTK_WIDGET(gtk_builder_get_object (smartstreetlight_builder, "notebook_manager_dcu"));
+                    if(GTK_NOTEBOOK(notebook))
+                    {
+                        if(gtk_notebook_get_current_page(GTK_NOTEBOOK(notebook)) != NOTE_PAGE_LCU)
+                        {
+                            gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), NOTE_PAGE_LCU);
+                        }
+                        find_and_show_image_infomation(im);
+                        if(show_popup)
+                            popup_light_view_show(event);
+                    }
+                }
+            }
+            break;
+        }else if(right_button)//set center
+        {
+            osm_gps_map_set_center(map, lat, lon);
+            break;
+        }
+    case GDK_3BUTTON_PRESS:
+    default:
+        return TRUE;
+    case GDK_BUTTON_PRESS:
+        DEBUG("btn press\n");
+        if(right_button && !isControlShow) //show popup menu
+        {
+            DEBUG("btn right press\n");
+            im = find_the_closest_image(map, lat, lon);
+            if(im)
+            {
+                show_popup = TRUE;
+                if(lastSelectedLcu && lastSelectedLcu->icon && lastSelectedLcu->icon == im)
+                {
+                    goto __show_image_on_map;
+                }
+                const OsmGpsMapPoint *pt = osm_gps_map_image_get_point(im);
+                float dist = distance(deg2rad(lat), deg2rad(lon), pt->rlat, pt->rlon);
+                DEBUG("==> distance: %f\n", dist);
+                if(dist < (float)RIGHT_DISTANCE_OFFSET)
+                {
+
+                    if( zoom < ZOOM_ACTION)
+                        osm_gps_map_set_zoom(map, ZOOM_ACTION);
+                    goto __show_image_on_map;
+                }
+                show_popup = FALSE;
+            }
+        }
+        break;
+    }
+    return FALSE;
+}
+
+static gboolean on_gps_light_changed_remove_all (GtkWidget *widget, gpointer user_data)
+{
+    //OsmGpsMap *map = OSM_GPS_MAP(user_data);
+    osm_gps_map_image_remove_all (map);
+    spl_zone_clear_is_show();
+    street_light_map_remove_all_street_light();
+    return FALSE;
+}
+
+static gboolean on_gps_light_changed_add (GtkWidget *widget, gpointer user_data)
+{
+    //OsmGpsMap *map = OSM_GPS_MAP(user_data);
+    GdkPixbuf *g_image = NULL;
+    const gchar *lat = gtk_entry_get_text(GTK_ENTRY(SPL_OBJECT("entry_text_lat")));
+    const gchar *lon = gtk_entry_get_text(GTK_ENTRY(SPL_OBJECT("entry_text_long")));
+
+    float f_lat, f_lon;
+    int combo_active = gtk_combo_box_get_active (GTK_COMBO_BOX(SPL_OBJECT("combobox_choose_light")));
+    gchar *last;
+    f_lat = g_ascii_strtod (lat, &last);
+    f_lon = g_ascii_strtod (lon, &last);
+    DEBUG("lat: %f, lon: %f\n", f_lat, f_lon);
+    if (combo_active == -1)
+    {
+        DEBUG("Please choose type of the light\n");
+        return FALSE;
+    }
+    else if (combo_active== 0)
+    {
+        g_image = light_image[ICON_LIGHT_ON];
+    }
+    else if (combo_active== 1)
+    {
+         g_image = light_image[ICON_LIGHT_OFF];
+    }
+    else
+    {
+         g_image = light_image[ICON_LIGHT_BROKEN];
+    }
+    #if 0
+    g_last_image = osm_gps_map_image_add (map, f_lat, f_lon, g_image);
+    #else
+    g_last_image = osm_gps_map_image_add_with_alignment_z (map, f_lat, f_lon, g_image, 0, 0, 0);
+    street_light_map_new_and_add_street_light(f_lat,f_lon);
+    #endif // 0
+    return FALSE;
+}
+
+static gboolean
+on_zoom_in_clicked_event (GtkWidget *widget, gpointer user_data)
+{
+    int zoom;
+    OsmGpsMap *map = OSM_GPS_MAP(user_data);
+    g_object_get(map, "zoom", &zoom, NULL);
+    osm_gps_map_set_zoom(map, zoom+1);
+    return FALSE;
+}
+
+static gboolean
+on_zoom_out_clicked_event (GtkWidget *widget, gpointer user_data)
+{
+    int zoom;
+    OsmGpsMap *map = OSM_GPS_MAP(user_data);
+    g_object_get(map, "zoom", &zoom, NULL);
+    osm_gps_map_set_zoom(map, zoom-1);
+    return FALSE;
+}
+
+static gboolean
+on_home_clicked_event (GtkWidget *widget, gpointer user_data)
+{
+    OsmGpsMap *map = OSM_GPS_MAP(user_data);
+    osm_gps_map_set_center_and_zoom(map, LAT_HOME, LON_HOME, 50);
+    return FALSE;
+}
+
+static gboolean
+on_cache_clicked_event (GtkWidget *widget, gpointer user_data)
+{
+    OsmGpsMap *map = OSM_GPS_MAP(user_data);
+    if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget))) {
+        int zoom,max_zoom;
+        OsmGpsMapPoint pt1, pt2;
+        osm_gps_map_get_bbox(map, &pt1, &pt2);
+        g_object_get(map, "zoom", &zoom, "max-zoom", &max_zoom, NULL);
+        osm_gps_map_download_maps(map, &pt1, &pt2, zoom, max_zoom);
+    } else {
+        osm_gps_map_download_cancel_all(map);
+    }
+    return FALSE;
+}
+
+static void
+on_tiles_queued_changed (OsmGpsMap *image, GParamSpec *pspec, gpointer user_data)
+{
+    gchar *s;
+    int tiles;
+    GtkLabel *label = GTK_LABEL(user_data);
+    g_object_get(image, "tiles-queued", &tiles, NULL);
+    s = g_strdup_printf("%d", tiles);
+    gtk_label_set_text(label, s);
+    g_free(s);
+}
+
+static void
+on_gps_alpha_changed (GtkAdjustment *adjustment, gpointer user_data)
+{
+    OsmGpsMap *map = OSM_GPS_MAP(user_data);
+    OsmGpsMapTrack *track = osm_gps_map_gps_get_track (map);
+    float f = gtk_adjustment_get_value(adjustment);
+    g_object_set (track, "alpha", f, NULL);}
+
+static void
+on_gps_width_changed (GtkAdjustment *adjustment, gpointer user_data)
+{
+    OsmGpsMap *map = OSM_GPS_MAP(user_data);
+    OsmGpsMapTrack *track = osm_gps_map_gps_get_track (map);
+    float f = gtk_adjustment_get_value(adjustment);
+    g_object_set (track, "line-width", f, NULL);
+}
+
+static void
+on_star_align_changed (GtkAdjustment *adjustment, gpointer user_data)
+{
+    const char *propname = (const char *)user_data;
+    float f = gtk_adjustment_get_value(adjustment);
+    if (g_last_image)
+        g_object_set (g_last_image, propname, f, NULL);
+}
+
+#if GTK_CHECK_VERSION(3,4,0)
+static void
+on_gps_color_changed (GtkColorChooser *widget, gpointer user_data)
+{
+    GdkRGBA c;
+    OsmGpsMapTrack *track = OSM_GPS_MAP_TRACK(user_data);
+    gtk_color_chooser_get_rgba (widget, &c);
+    osm_gps_map_track_set_color(track, &c);
+}
+#else
+static void
+on_gps_color_changed (GtkColorButton *widget, gpointer user_data)
+{
+    GdkRGBA c;
+    OsmGpsMapTrack *track = OSM_GPS_MAP_TRACK(user_data);
+    gtk_color_button_get_rgba (widget, &c);
+    osm_gps_map_track_set_color(track, &c);
+}
+
+#endif
+
+
+static void
+usage (GOptionContext *context)
+{
+    int i;
+
+    puts(g_option_context_get_help(context, TRUE, NULL));
+
+    printf("Valid map sources:\n");
+    for(i=OSM_GPS_MAP_SOURCE_NULL; i <= OSM_GPS_MAP_SOURCE_LAST; i++)
+    {
+        const char *name = osm_gps_map_source_get_friendly_name(OsmGpsMapSource_t(i));
+        const char *uri = osm_gps_map_source_get_repo_uri(OsmGpsMapSource_t(i));
+        if (uri != NULL)
+            printf("\t%d:\t%s\n",i,name);
+    }
+}
+
+
+static bool map_init_first_time = true;
+
+int change_map_by_provider(OsmGpsMapSource_t opt_map_provider)
+{
+    OsmGpsMapLayer *osd;
+    OsmGpsMapTrack *rightclicktrack = NULL;
+    const char *repo_uri;
+    char *cachedir, *cachebasedir;
+    float lw,a;
+
+    GdkRGBA c;
+    OsmGpsMapTrack *gpstrack;
+    GtkBuilder *builder = smartstreetlight_builder;
+    DEBUG("opt_map_provider: %d\n", (int)opt_map_provider);
+    if (map)
+    {
+        osm_gps_map_layer_remove_all(map);
+        g_object_unref(G_OBJECT(rightclicktrack));
+        g_object_unref(G_OBJECT(map));
+        map = NULL;
+        rightclicktrack = NULL;
+        //is_first = false;
+        street_light_map_remove_all_street_light();
+    }
+    /* Only use the repo_uri to check if the user has supplied a
+    valid map source ID */
+    repo_uri = osm_gps_map_source_get_repo_uri(opt_map_provider);
+
+    if ( repo_uri == NULL )
+    {
+        DEBUG("error init map\n");
+        GtkDialogFlags flags = GTK_DIALOG_DESTROY_WITH_PARENT;
+        GtkWidget *dialog = gtk_message_dialog_new (NULL,
+                                 flags,
+                                 GTK_MESSAGE_ERROR,
+                                 GTK_BUTTONS_CLOSE,
+                                 "Cannot initialize Map");
+        SPL_DIALOG_SHOW(dialog);
+        gtk_dialog_run (GTK_DIALOG (dialog));
+        SPL_DIALOG_HIDE(dialog);
+        gtk_widget_destroy (dialog);
+        //g_object_unref(G_OBJECT(dialog));
+        return FALSE;
+    }
+    DEBUG("Min zoom: %d, Max zoom: %d\n",
+       osm_gps_map_source_get_min_zoom(opt_map_provider),
+       osm_gps_map_source_get_max_zoom(opt_map_provider));
+
+    cachebasedir = osm_gps_map_get_default_cache_directory();
+
+    if (opt_cache_base_dir && g_file_test(opt_cache_base_dir, G_FILE_TEST_IS_DIR)) {
+        cachedir = g_strdup(OSM_GPS_MAP_CACHE_AUTO);
+        cachebasedir = g_strdup(opt_cache_base_dir);
+    } else if (opt_friendly_cache) {
+        cachedir = g_strdup(OSM_GPS_MAP_CACHE_FRIENDLY);
+    } else if (opt_no_cache) {
+        cachedir = g_strdup(OSM_GPS_MAP_CACHE_DISABLED);
+    } else {
+        cachedir = g_strdup(OSM_GPS_MAP_CACHE_AUTO);
+    }
+
+    if (opt_debug)
+        gdk_window_set_debug_updates(TRUE);
+
+    g_debug("Map Cache Dir: %s", cachedir);
+    g_debug("Map Provider: %s (%d)", osm_gps_map_source_get_friendly_name(opt_map_provider), opt_map_provider);
+
+    map = g_object_new (OSM_TYPE_GPS_MAP,
+                        "map-source",opt_map_provider,
+                        "tile-cache",cachedir,
+                        "tile-cache-base", cachebasedir,
+                        "proxy-uri",g_getenv("http_proxy"),
+                        NULL);
+
+    osd = g_object_new (OSM_TYPE_GPS_MAP_OSD,
+                        "show-scale",TRUE,
+                        "show-coordinates",TRUE,
+                        "show-crosshair",FALSE,
+                        "show-dpad",FALSE,
+                        "show-zoom",FALSE,
+                        "show-gps-in-dpad",FALSE,
+                        "show-gps-in-zoom",FALSE,
+                        "dpad-radius", 30,
+                        NULL);
+
+    osm_gps_map_layer_add(OSM_GPS_MAP(map), osd);
+
+    g_object_unref(G_OBJECT(osd));
+
+    //Add a second track for right clicks
+    rightclicktrack = osm_gps_map_track_new();
+
+    if(opt_editable_tracks)
+        g_object_set(rightclicktrack, "editable", TRUE, NULL);
+    osm_gps_map_track_add(OSM_GPS_MAP(map), rightclicktrack);
+
+    g_free(cachedir);
+    g_free(cachebasedir);
+
+    //Enable keyboard navigation
+    osm_gps_map_set_keyboard_shortcut(map, OSM_GPS_MAP_KEY_FULLSCREEN, GDK_KEY_F11);
+    osm_gps_map_set_keyboard_shortcut(map, OSM_GPS_MAP_KEY_UP, GDK_KEY_Up);
+    osm_gps_map_set_keyboard_shortcut(map, OSM_GPS_MAP_KEY_DOWN, GDK_KEY_Down);
+    osm_gps_map_set_keyboard_shortcut(map, OSM_GPS_MAP_KEY_LEFT, GDK_KEY_Left);
+    osm_gps_map_set_keyboard_shortcut(map, OSM_GPS_MAP_KEY_RIGHT, GDK_KEY_Right);
+
+    gtk_box_pack_start (
+                GTK_BOX(gtk_builder_get_object(builder, "map_box")),
+                GTK_WIDGET(map), TRUE, TRUE, 0);
+
+    //Init values
+    gpstrack = osm_gps_map_gps_get_track (map);
+
+	//osm_gps_map_gps_add (map, 10.868794, 106.798508, g_random_double_range(0,360));
+
+    osm_gps_map_set_center_and_zoom(map, LAT_HOME, LON_HOME, 360);
+
+    g_object_get (gpstrack, "line-width", &lw, "alpha", &a, NULL);
+    osm_gps_map_track_get_color(gpstrack, &c);
+
+#if GTK_CHECK_VERSION(3,4,0)
+    gtk_color_chooser_set_rgba (
+                GTK_COLOR_CHOOSER(gtk_builder_get_object(builder, "gps_colorbutton")),
+                &c);
+#else
+    gtk_color_button_set_rgba (
+                GTK_COLOR_BUTTON(gtk_builder_get_object(builder, "gps_colorbutton")),
+                &c);
+#endif
+
+    gtk_adjustment_set_value (
+                GTK_ADJUSTMENT(gtk_builder_get_object(builder, "gps_width_adjustment")),
+                lw);
+    gtk_adjustment_set_value (
+                GTK_ADJUSTMENT(gtk_builder_get_object(builder, "gps_alpha_adjustment")),
+                a);
+    gtk_adjustment_set_value (
+                GTK_ADJUSTMENT(gtk_builder_get_object(builder, "star_xalign_adjustment")),
+                0.5);
+    gtk_adjustment_set_value (
+                GTK_ADJUSTMENT(gtk_builder_get_object(builder, "star_yalign_adjustment")),
+                0.5);
+
+    g_signal_connect (G_OBJECT (map), "button-press-event",
+                G_CALLBACK (on_button_press_event), (gpointer) rightclicktrack);
+/** These are callback functions Which are not used , Author: M-Hieu*/
+#if 0
+    g_signal_connect (G_OBJECT (map), "button-release-event",
+                G_CALLBACK (on_button_release_event),
+                (gpointer) gtk_builder_get_object(builder, "text_entry"));
+
+    g_signal_connect (
+                gtk_builder_get_object(builder, "button_add_light"), "clicked",
+                G_CALLBACK (on_gps_light_changed_add), (gpointer) map);
+
+    g_signal_connect (
+                gtk_builder_get_object(builder, "button_remove_light"), "clicked",
+                G_CALLBACK (on_gps_light_changed_remove_all), (gpointer) map);
+    g_signal_connect (
+                gtk_builder_get_object(builder, "gps_alpha_adjustment"), "value-changed",
+                G_CALLBACK (on_gps_alpha_changed), (gpointer) map);
+    g_signal_connect (
+                gtk_builder_get_object(builder, "gps_width_adjustment"), "value-changed",
+                G_CALLBACK (on_gps_width_changed), (gpointer) map);
+    g_signal_connect (
+                gtk_builder_get_object(builder, "gps_colorbutton"), "color-set",
+                G_CALLBACK (on_gps_color_changed), (gpointer) gpstrack);
+    g_signal_connect (
+                gtk_builder_get_object(builder, "cache_button"), "clicked",
+                G_CALLBACK (on_cache_clicked_event), (gpointer) map);
+#endif // 0
+    g_signal_connect (G_OBJECT (map), "notify::tiles-queued",
+                G_CALLBACK (on_tiles_queued_changed),
+                (gpointer) gtk_builder_get_object(builder, "cache_label"));
+
+    g_signal_connect(
+                gtk_builder_get_object(builder, "zoom_in_button"), "clicked",
+                G_CALLBACK (on_zoom_in_clicked_event), (gpointer) map);
+
+    g_signal_connect (
+                gtk_builder_get_object(builder, "zoom_out_button"), "clicked",
+                G_CALLBACK (on_zoom_out_clicked_event), (gpointer) map);
+    g_signal_connect (
+                gtk_builder_get_object(builder, "home_button"), "clicked",
+                G_CALLBACK (on_home_clicked_event), (gpointer) map);
+
+
+    if (!map_init_first_time)
+    {
+        GtkWidget *widget;
+        widget = GTK_WIDGET(gtk_builder_get_object(builder, "main_window"));
+        gtk_widget_show_all (widget);
+    }else
+    {
+        map_init_first_time = false;
+    }
+
+    return TRUE;
+}
+
+static gboolean on_gps_map_changed (GtkWidget *widget, gpointer user_data)
+{
+    OsmGpsMapSource_t map_provider = OSM_GPS_MAP_SOURCE_NULL;
+    int combo_active = gtk_combo_box_get_active (GTK_COMBO_BOX(SPL_OBJECT("comboboxtext_choose_map")));
+    DEBUG("combo_active: %d\n", combo_active);
+    if (combo_active == -1)
+    {
+        return FALSE;
+    }
+
+    switch (combo_active)
+    {
+    case 0:
+        map_provider = OSM_GPS_MAP_SOURCE_GOOGLE_STREET;
+        break;
+    case 1:
+        map_provider = OSM_GPS_MAP_SOURCE_GOOGLE_SATELLITE;
+        break;
+    case 2:
+        map_provider = OSM_GPS_MAP_SOURCE_OPENSTREETMAP;
+        break;
+    case 3:
+        map_provider = OSM_GPS_MAP_SOURCE_OPENSTREETMAP_RENDERER;
+        break;
+    case 4:
+        map_provider = OSM_GPS_MAP_SOURCE_OPENAERIALMAP;
+        break;
+    case 5:
+        map_provider = OSM_GPS_MAP_SOURCE_MAPS_FOR_FREE;
+        break;
+    case 6:
+        map_provider = OSM_GPS_MAP_SOURCE_OPENCYCLEMAP;
+        break;
+    case 7:
+        map_provider = OSM_GPS_MAP_SOURCE_OSM_PUBLIC_TRANSPORT;
+        break;
+    case 8:
+        map_provider = OSM_GPS_MAP_SOURCE_VIRTUAL_EARTH_STREET;
+        break;
+    case 9:
+        map_provider = OSM_GPS_MAP_SOURCE_VIRTUAL_EARTH_SATELLITE;
+        break;
+    case 10:
+        map_provider = OSM_GPS_MAP_SOURCE_VIRTUAL_EARTH_HYBRID;
+        break;
+    case 11:
+        map_provider = OSM_GPS_MAP_SOURCE_OSMC_TRAILS;
+        break;
+    }
+
+    if (map_provider != OSM_GPS_MAP_SOURCE_NULL)
+    {
+        change_map_by_provider(map_provider);
+    }
+}
+
+int map_main ()
+{
+    GtkBuilder *builder;
+    GtkWidget *widget;
+    GtkAccelGroup *ag;
+    GError *error = NULL;
+    GOptionContext *context;
+    gint i = 0;
+
+//    gtk_init (NULL, NULL);
+
+    context = g_option_context_new ("- Map browser");
+    g_option_context_set_help_enabled(context, FALSE);
+    g_option_context_add_main_entries (context, entries, NULL);
+
+    for( i = 0; i < ICON_LIGHT_NUM_COUNT; i++)
+    {
+        gchar *icon = g_strdup_printf("%s%s%s",INSTALL_PATH, G_DIR_SEPARATOR_S, icon_name[i]);
+         //DEBUG ("icon: %s",icon);
+        light_image[i] = gdk_pixbuf_new_from_file_at_size(icon, 24, 24, NULL);
+        g_free(icon);
+    }
+    builder = smartstreetlight_builder;
+
+    change_map_by_provider(OSM_GPS_MAP_SOURCE_GOOGLE_STREET);
+
+    //osm_gps_map_set_zoom(map, 100);
+
+    //Connect to signals
+
+    g_signal_connect (
+                gtk_builder_get_object(builder, "star_xalign_adjustment"), "value-changed",
+                G_CALLBACK (on_star_align_changed), (gpointer) "x-align");
+    g_signal_connect (
+                gtk_builder_get_object(builder, "star_yalign_adjustment"), "value-changed",
+                G_CALLBACK (on_star_align_changed), (gpointer) "y-align");
+
+    g_signal_connect (
+                gtk_builder_get_object(builder, "comboboxtext_choose_map"), "changed",
+                G_CALLBACK (on_gps_map_changed), (gpointer) NULL);
+
+    widget = GTK_WIDGET(gtk_builder_get_object(builder, "main_window"));
+
+    //Setup accelerators.
+    ag = gtk_accel_group_new();
+    gtk_accel_group_connect(ag, GDK_KEY_w, GDK_CONTROL_MASK, GTK_ACCEL_MASK,
+                    g_cclosure_new(gtk_main_quit, NULL, NULL));
+    gtk_accel_group_connect(ag, GDK_KEY_q, GDK_CONTROL_MASK, GTK_ACCEL_MASK,
+                    g_cclosure_new(gtk_main_quit, NULL, NULL));
+    gtk_window_add_accel_group(GTK_WINDOW(widget), ag);
+
+    gtk_widget_show_all (widget);
+
+    g_log_set_handler ("OsmGpsMap", G_LOG_LEVEL_MASK, g_log_default_handler, NULL);
+//    gtk_main ();
+
+    return 0;
+}
+

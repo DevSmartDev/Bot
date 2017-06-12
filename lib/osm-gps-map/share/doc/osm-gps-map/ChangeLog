@@ -1,0 +1,1350 @@
+commit d275a5d24b55e3ff9f698ac3e04866269c50bc2a
+Merge: 22af1d1 45e319d
+Author: John Stowers <john.stowers@gmail.com>
+Date:   2016-07-09
+
+    Merge pull request #54 from supercamel/master
+
+    Added 'breakable' property to polygons. Also tweaked vapi file.
+
+commit 45e319d919cfbb97534600b3c29be6102497d080
+Author: Samuel Cowen <samuel.cowen@camelsoftware.com>
+Date:   2016-07-03
+
+    Added 'breakable' property to polygons. Also tweaked vapi file.
+
+M	src/OsmGpsMap.vapi
+M	src/osm-gps-map-polygon.c
+M	src/osm-gps-map-widget.c
+
+commit 22af1d1a8348e36bd4017144220f4ad9b902ca9f
+Merge: 3ce072c 95bff87
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2016-07-03
+
+    Merge pull request #53 from supercamel/master
+
+    Added 'shade_alpha' property to polygons + vapi file for Vala
+    bindings.
+
+commit 95bff8767edfe9e97037713c59bf467083e79b1a
+Author: Samuel Cowen <samuel.cowen@camelsoftware.com>
+Date:	2016-07-02
+
+    Woops! Vapi file was bad.
+
+D	src/OsmGpsMap-1.0.metadata
+M	src/OsmGpsMap.vapi
+
+commit 8e80ffbc6b10145a209be871d3e2670c0f1a1358
+Author: Samuel Cowen <samuel.cowen@camelsoftware.com>
+Date:	2016-07-01
+
+    Added 'shade_alpha' property to polygons. This property affects the
+    tranparency of the shaded area.
+
+A	src/OsmGpsMap-1.0.metadata
+A	src/OsmGpsMap.vapi
+M	src/osm-gps-map-polygon.c
+M	src/osm-gps-map-widget.c
+
+commit 3ce072c05e3db3e7199039ae205f6b2687457379
+Merge: 63a8e3a 05d9ea1
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2016-07-01
+
+    Merge pull request #52 from supercamel/master
+
+    Fixed up vala map type bug.
+
+commit 05d9ea1ad15e5a06ecd1dd357120b8374855665d
+Author: Samuel Cowen <samuel.cowen@camelsoftware.com>
+Date:	2016-07-01
+
+    Fixed up vala map type bug.
+
+M	src/osm-gps-map-widget.c
+
+commit 63a8e3a646e2d67dc14a328c52f3664b514cde91
+Merge: 33c611c c13f79b
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2016-03-26
+
+    Merge pull request #48 from dreadnought/copyright
+
+    Show copyright information for the built-in map-sources in the OSD
+
+commit c13f79bf65807e5b5e7521df1e8c11b9e7dfaec6
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-03-26
+
+    show copyright information for the built-in map-sources in the OSD
+
+M	src/osm-gps-map-osd.c
+M	src/osm-gps-map-source.c
+M	src/osm-gps-map-source.h
+
+commit 33c611c1c2eaddf7897153737aed8154b1224fc6
+Merge: e520fc5 f939d24
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2016-03-07
+
+    Merge pull request #47 from dreadnought/user-agent
+
+    add a property that extends the HTTP user agent
+
+commit f939d24837d1a1e7928e0854723bd6ccf0d0bc42
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-03-05
+
+    add a property  that extends the HTTP user agent
+
+M	examples/mapviewer.py
+M	src/osm-gps-map-widget.c
+
+commit e520fc5488a358151a8923452a9d78cda0aa5437
+Merge: b7cc420 65def38
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2016-03-01
+
+    Merge pull request #46 from dreadnought/master
+
+    small changes
+
+commit 65def383d3f62c87b7ad53c070c7ed137190ba26
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-02-27
+
+    use the VERSION marco for the user-agent
+
+M	src/osm-gps-map-widget.c
+
+commit 5c9b4aae1e9fc9ff5fcf73c50a5f241dd7151e9e
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-02-27
+
+    clean up
+
+M	docs/reference/libosmgpsmap-sections.txt
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-track.h
+
+commit b7cc4200206776ea0acb781d688abc3b7c58dc28
+Merge: c1983d8 0472006
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2016-02-19
+
+    Merge pull request #44 from dreadnought/travis-ci
+
+    fix introspection error and warnings
+
+commit 047200691b03d5676de15d1919ba47c0d71b76de
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-02-19
+
+    add more files to .gitignore
+
+M	.gitignore
+
+commit da394859c06421c550fb827cc833d3aff00f4d23
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-02-19
+
+    fix comment for the point-added signal
+
+M	src/osm-gps-map-track.c
+
+commit a8bd491866b3a0afcc2eb684cf69e0ae51e8acea
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-02-19
+
+    fix incorrect annotations and add some missing comment blocks
+
+M	docs/reference/libosmgpsmap-sections.txt
+M	src/osm-gps-map-polygon.h
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-track.h
+
+commit 0d7349e1428f2b70bc35a168470f8d27eb61acb7
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-02-19
+
+    add --warn-error to INTROSPECTION_SCANNER_ARGS
+
+M	src/Makefile.am
+
+commit 3093f61a949d21ff58ad4eeb0dd90afc50b7249f
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-02-19
+
+    move autogen.sh to before_script
+
+M	.travis.yml
+
+commit de22931167010c9f2b15bc38117c204dede75062
+Author: Patrick Salecker <mail@salecker.org>
+Date:	2016-02-19
+
+    add .travis.yml
+
+A	.travis.yml
+
+commit c1983d823b6b01aefb9d4af728e3cac4d32466ef
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2015-11-19
+
+    1.1.0
+
+M	NEWS
+M	configure.ac
+
+commit da31e0a7ba80792315667fe31f17fdf5cab044a3
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2015-11-19
+
+    gtk-doc.m4 updates
+
+M	m4/gtk-doc.m4
+
+commit f424fa37b05b6d84a6f2464119a2ec02de1484bd
+Merge: 2f46831 1401fd3
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2015-10-11
+
+    Merge pull request #42 from christophgysin/master
+
+    fix type for image rotation
+
+commit 1401fd3e7516e2c812f9c141bfafce9bca777698
+Author: Christoph Gysin <christoph.gysin@gmail.com>
+Date:	2015-10-11
+
+    fix type for image rotation
+
+    This commit fixes warnings:
+    g_value_get_float: assertion `G_VALUE_HOLDS_FLOAT (value)' failed
+
+    as reported by Monte Bateman on:
+    https://groups.google.com/forum/#!topic/osm-gps-map/my8oW-Fw9y0
+
+M	src/osm-gps-map-image.c
+
+commit 2f4683161117eddf76d71503b2d2b840a370ca56
+Merge: ea9a1ef da005b8
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2015-07-30
+
+    Merge pull request #41 from sardemff7/wip/yahoo-removal
+
+    Remove Yahoo service
+
+commit da005b84dc1fdc7cc3b428c18a6e0e75871675ac
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    osm-gps-map-source: Remove Yahoo service
+
+    On release, LT_VERSION_INFO should be changed to 1:0:0 as this removes
+    API.
+
+    Fixes #36
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	src/osm-gps-map-source.c
+M	src/osm-gps-map-source.h
+
+commit ea9a1efafafc3dd108fc4d5447c370686dfde43f
+Merge: 7da2efd 0e91be9
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2015-07-30
+
+    Merge pull request #39 from sardemff7/wip/color-type-fix
+
+    osm-gps-map-track: Use GDK_TYPE_RGBA instead of GDK_TYPE_COLOR
+
+commit 0e91be935ecf6b737354bd58a9a99ba801e8f9a9
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    osm-gps-map-track: Use GDK_TYPE_RGBA instead of GDK_TYPE_COLOR
+
+    GDK_TYPE_COLOR is deprecated.
+
+    Fixes #28
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	src/osm-gps-map-track.c
+
+commit 7da2efd79ba3aa27e9dfb3ed7a8f3b66a1e5351a
+Merge: 0ce31cb 9811557
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2015-07-30
+
+    Merge pull request #38 from sardemff7/wip/autotools-cleanup
+
+    Autotools cleanup
+
+commit 9811557421d8e61a36a565638f30300f67fd5bbc
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    docs/reference/Makefile.am: INCLUDES is deprecated
+
+    Use AM_CFLAGS instead
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	docs/reference/Makefile.am
+
+commit dee17bae00beedd0656b0719109805758853ff09
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    Makefile.am: Use AM_V_GEN for ChangeLog
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	Makefile.am
+
+commit cea6437c660cc7a87351d4033399ccb4bb2a8693
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    configure.ac: Always check for GThread
+
+    It should always be there if GLib and GTK+3 are there too.
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	configure.ac
+M	examples/Makefile.am
+
+commit 177fba70bc27b0fc9c33dab1ded2f67941edb32f
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    Makefile.am: EXTRA_DIST is here totally useless
+
+    osmgpsmap-1.0.pc.in is disted because listed in AC_CONFIG_FILES
+    m4 files are always disted
+    gtk-doc.make is disted as a dependency of docs/refeence/Makefile.in
+    openstreetmap_gps_map_doc_DATA does not exist
+
+    EXTRA_DIST must be used only if nothing else is usable. Most of the
+    time, dist_* variants of variables (like *_DATA) are available.
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	Makefile.am
+
+commit 7b9353895704914be24aee87167fa2bfbaca7e7c
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    Makefile.am: Use the already provided docdir
+
+    Also osm_gps_mapdocdir was badly defined.
+
+    Fixes #12.
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	Makefile.am
+
+commit 82fa65b0c0164f716db7c959e9842d1db525c44e
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    configure.ac: GNOME_MAINTAINER_MODE_DEFINES is deprecated
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	Makefile.am
+M	configure.ac
+
+commit 7bdd5a73da7d7d18fd3047dc9884d7c9826c9a25
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    Makefile.am: Use AM_DISTCHECK_CONFIGURE_FLAGS
+
+    DISTCHECK_CONFIGURE_FLAGS is for users.
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	Makefile.am
+
+commit 1ae226d8a28a3f94bea5b1b206bd99c19c81fd64
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-30
+
+    configure.ac: Add some Automake options
+
+    foreign is to avoid GNU specific files to be mandatory
+    subdir-objects and parallel-tests are defaults in newer Automake so
+    should be there on older ones to help catching errors.
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	configure.ac
+
+commit 0ce31cbf31c17a33090a8f58cbdd3ecdb8c97e7a
+Merge: c24d08d 123c7fb
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2015-07-30
+
+    Merge pull request #37 from sardemff7/master
+
+    Make GObject Introspection optional
+
+commit 123c7fb3a106e351f590aaa87375456955c53677
+Author: Quentin Glidic <sardemff7+git@sardemff7.net>
+Date:	2015-07-29
+
+    configure.ac: Make GObject Introspection optional
+
+    Signed-off-by: Quentin Glidic <sardemff7+git@sardemff7.net>
+
+M	configure.ac
+
+commit c24d08de184ef25fd9f973644e3b3557974bb746
+Merge: 834bed2 499f672
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2015-06-07
+
+    Merge pull request #35 from LebedevRI/fix-some-leaks
+
+    Fix some leaks
+
+commit 499f6720b768dcd47b642186b5fac98b679b0edb
+Author: Roman Lebedev <lebedev.ri@gmail.com>
+Date:	2015-06-07
+
+    osm_gps_map_setup: do not leak previously g_strdup{,_printf}()-ed
+    strings
+
+    Fixes LeakSanitizer-detected leaks like:
+    Direct leak of 66 byte(s) in 1 object(s) allocated from:
+	0 0x7fa2e849ca06 in __interceptor_realloc
+	(/usr/lib/x86_64-linux-gnu/libasan.so.1+0x54a06)
+	1 0x7fa2e0b05f0c in __vasprintf_chk
+	(/lib/x86_64-linux-gnu/libc.so.6+0xf5f0c)
+	2 0x7fa2e5a7589b in g_vasprintf
+	(/lib/x86_64-linux-gnu/libglib-2.0.so.0+0x8d89b)
+	3 0x7fa2e5a502ac in g_strdup_vprintf
+	(/lib/x86_64-linux-gnu/libglib-2.0.so.0+0x682ac)
+	4 0x7fa2e5a50368 in g_strdup_printf
+	(/lib/x86_64-linux-gnu/libglib-2.0.so.0+0x68368)
+	5 0x7fa2e94c7c78 in osm_gps_map_setup
+	(/usr/local/lib/libosmgpsmap-1.0.so.0+0x1fc78)
+	6 0x7fa2e94c8b48 in osm_gps_map_constructor
+	(/usr/local/lib/libosmgpsmap-1.0.so.0+0x20b48)
+	7 0x7fa2e5d0d650
+	(/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0+0x15650)
+	8 0x7fa2e5d0f6a4 in g_object_new_valist
+	(/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0+0x176a4)
+	9 0x7fa2e5d0f9e0 in g_object_new
+	(/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0+0x179e0)
+    ...
+
+M	src/osm-gps-map-widget.c
+
+commit edc9717e89ae9ee5b568e0b9772b6b32084918c9
+Author: Roman Lebedev <lebedev.ri@gmail.com>
+Date:	2015-06-07
+
+    osm_gps_map_finalize: do not leak any of the strings we might have
+    g_strdup()-ed in osm_gps_map_set_property
+
+M	src/osm-gps-map-widget.c
+
+commit d64a6f5bd588915fc8df9502d4633daed534d05a
+Author: Roman Lebedev <lebedev.ri@gmail.com>
+Date:	2015-06-07
+
+    osm_gps_map_set_property: do not leak previously g_strdup()-ed strings
+
+    The reason is: if those properties are set more than once,
+    the memory allocated previously will leak.
+
+    Fixes LeakSanitizer-detected leaks like:
+    Direct leak of 4 byte(s) in 1 object(s) allocated from:
+	0 0x7f624fd7c74f in malloc
+	(/usr/lib/x86_64-linux-gnu/libasan.so.1+0x5474f)
+	1 0x7f624d317799 in g_malloc
+	(/lib/x86_64-linux-gnu/libglib-2.0.so.0+0x4f799)
+	2 0x7f624d33012e in g_strdup
+	(/lib/x86_64-linux-gnu/libglib-2.0.so.0+0x6812e)
+	3 0x7f6250da8746 in osm_gps_map_set_property
+	(/usr/local/lib/libosmgpsmap-1.0.so.0+0x20746)
+	4 0x7f624d5ed44c
+	(/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0+0x1544c)
+	5 0x7f6250da89e6 in osm_gps_map_constructor
+	(/usr/local/lib/libosmgpsmap-1.0.so.0+0x209e6)
+	6 0x7f624d5ed650
+	(/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0+0x15650)
+	7 0x7f624d5ef6a4 in g_object_new_valist
+	(/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0+0x176a4)
+	8 0x7f624d5ef9e0 in g_object_new
+	(/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0+0x179e0)
+	9 0x7f6224b273cf
+	10 0x7f624fae0292 in dt_view_load_module
+	/home/lebedevri/darktable/src/views/view.c:189
+	11 0x7f624fae03d7 in dt_view_manager_load_module
+	/home/lebedevri/darktable/src/views/view.c:116
+	12 0x7f624fae0c75 in dt_view_manager_init
+	/home/lebedevri/darktable/src/views/view.c:81
+	13 0x7f624f8a4ff7 in dt_init
+	/home/lebedevri/darktable/src/common/darktable.c:872
+	14 0x400cb8 in main /home/lebedevri/darktable/src/main.c:24
+	15 0x7f6248311b44 in __libc_start_main
+	(/lib/x86_64-linux-gnu/libc.so.6+0x21b44)
+	16 0x400bd8 (/usr/local/bin/darktable+0x400bd8)
+
+M	src/osm-gps-map-widget.c
+
+commit 834bed2098607947d10233bbca4424668ec069c0
+Merge: 7685aff 24bcd6a
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2014-08-25
+
+    Merge pull request #32 from smartyg/zoom2fit
+
+    zoom and center to fit coordinates
+
+commit 24bcd6a72feaf060e932fc4e6fa91053c5709004
+Author: Martijn Goedhart <goedhart.martijn@gmail.com>
+Date:	2014-08-18
+
+    Add function to zoom and center map to fit at least a box with
+    given coordinates.
+
+M	src/converter.c
+M	src/converter.h
+M	src/osm-gps-map-widget.c
+M	src/osm-gps-map-widget.h
+
+commit 7685aff79f7abde8927ec3272ed48e7265b2f079
+Merge: 5a240f7 29f6a36
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2014-08-22
+
+    Merge pull request #31 from smartyg/editable-modifications
+
+    Editable modifications
+
+commit 29f6a366bed653baf168f51a039ebad994403f45
+Author: Martijn Goedhart <goedhart.martijn@gmail.com>
+Date:	2014-08-17
+
+    one more value changed to macro DOT_RADIUS
+
+M	src/osm-gps-map-widget.c
+
+commit 205891b34a07dd822137074098b30b90b7a75134
+Author: Martijn Goedhart <goedhart.martijn@gmail.com>
+Date:	2014-08-17
+
+    replace the dot size with a macro, so it is easier to keep track of
+    and change it
+
+M	src/osm-gps-map-widget.c
+
+commit a8dff9f02853318324b5dfd21650a5fed7af57fd
+Author: Martijn Goedhart <goedhart.martijn@gmail.com>
+Date:	2014-08-17
+
+    fix whitespaces
+
+M	src/osm-gps-map-track.c
+
+commit f4985f12b4ae98c5ba83bb85965c5a49fa2bac71
+Author: Martijn Goedhart <goedhart.martijn@gmail.com>
+Date:	2014-08-17
+
+    this statement is only there to move the drawing pointer to the
+    right place, dont draw anything before it
+
+M	src/osm-gps-map-widget.c
+
+commit 621393361a2b644f5fae4e11142a243e857090ba
+Author: Martijn Goedhart <goedhart.martijn@gmail.com>
+Date:	2014-08-10
+
+    add little comment about a property
+
+M	src/osm-gps-map-widget.c
+
+commit c613d4940debc3469eb21682d177e9afa2dd70ab
+Author: Martijn Goedhart <goedhart.martijn@gmail.com>
+Date:	2014-08-10
+
+    unify signal name; change changed to point-changed
+
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-widget.c
+
+commit 16c693de71e58fff74231fb6a4e0b79abaa0460d
+Author: Martijn Goedhart <goedhart.martijn@gmail.com>
+Date:	2014-08-10
+
+    disable check for modifier keys when a mouse click is recieved
+
+M	src/osm-gps-map-widget.c
+
+commit 97f0b9c7fd99e4d249b33cfaea3c0f14cff75b78
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-06
+
+    Did some work on getting track color to work. In Gtk+3.8 only the
+    red channel was displayed.
+
+M	examples/mapviewer.c
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-track.h
+M	src/osm-gps-map-widget.c
+
+commit b3e9387a2166b307e06ea664b7d2f009d528bc40
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-06
+
+    Fixed an error in osm_gps_map_polygon_add()
+
+M	src/osm-gps-map-widget.c
+
+commit 8257039c22a5993539d38c727e8ede8ff43bd9d7
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-06
+
+    Added G_BEGIN_DECLS to osm-gps-map-polygon.h
+
+M	src/osm-gps-map-polygon.h
+
+commit 9ac58716142db8144cd6bcb3ec157f825dde7b8d
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-06
+
+    Added editable track example
+
+A	examples/editable_track.c
+
+commit c32eed0698c990eb9b973fdb2796dbf8546b34e2
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-06
+
+    Added an editable track example.
+
+M	examples/Makefile.am
+M	examples/polygon.c
+
+commit 22d1f2266ca7ff05f00f011accfbcc8971c2385f
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-06
+
+    Actually added files for polygons.
+
+A	examples/polygon.c
+A	src/osm-gps-map-polygon.c
+A	src/osm-gps-map-polygon.h
+
+commit 7bce06478168ad9f9fe04081a692f4e4815de60a
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-06
+
+    Added polygons & an editable polygon example.
+
+M	examples/Makefile.am
+M	examples/README
+M	src/Makefile.am
+M	src/osm-gps-map-widget.c
+M	src/osm-gps-map-widget.h
+
+commit 285dc89320b91ba4fe27ffd334c8071b853615a6
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-05
+
+    Removed previous example and added -e option to original mapviewer
+    example.
+
+D	examples/editable_tracks.c
+M	examples/mapviewer.c
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-widget.c
+
+commit e7db3ed6e3902feabccf9914b037a53217874de6
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-04
+
+    Added a length function to the track that returns the great circle
+    length in meters.
+
+M	examples/editable_tracks.c
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-track.h
+
+commit ee722bf425633e3c42573c4d219649eed680eadd
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-04
+
+    Added editable tracks example.
+
+A	examples/editable_tracks.c
+
+commit ce6c297efad9c27d96f04fdfd955bdd5cb61c79e
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-04
+
+    Removed white space issues
+
+M	m4/gtk-doc.m4
+M	src/converter.c
+M	src/osd-utils.c
+M	src/osm-gps-map-compat.c
+M	src/osm-gps-map-image.c
+M	src/osm-gps-map-image.h
+M	src/osm-gps-map-layer.c
+M	src/osm-gps-map-osd.c
+M	src/osm-gps-map-point.c
+M	src/osm-gps-map-source.c
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-track.h
+M	src/osm-gps-map-widget.c
+M	src/osm-gps-map-widget.h
+
+commit 635b56ddbf89d548e16584526c1a67d258e29fa2
+Author: Samuel Cowen <samuel.cowen89@gmail.com>
+Date:	2014-06-03
+
+    Make images rotateable and made tracks editable, similar to google
+    maps polylines.
+
+M	src/converter.c
+M	src/osd-utils.c
+M	src/osm-gps-map-compat.c
+M	src/osm-gps-map-image.c
+M	src/osm-gps-map-image.h
+M	src/osm-gps-map-layer.c
+M	src/osm-gps-map-osd.c
+M	src/osm-gps-map-point.c
+M	src/osm-gps-map-source.c
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-track.h
+M	src/osm-gps-map-widget.c
+M	src/osm-gps-map-widget.h
+
+commit 5a240f70ef744a4499ef3d1f0844023442328b12
+Merge: 7347547 71418bb
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2014-04-23
+
+    Merge pull request #29 from gordonjcp/master
+
+    fix setup bug with initial map y setting, improve zoom centering
+
+commit 71418bbd3683634d461e430056de6f3a28bdfb87
+Author: Gordon JC Pearce <gordonjcp@gjcp.net>
+Date:	2014-04-22
+
+    fix setup bug with initial map y setting, improve zoom centering
+
+M	src/osm-gps-map-widget.c
+
+commit 7347547178fc5c296f66d66717c5b787b04d475c
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2014-04-08
+
+    1.0.2
+
+M	NEWS
+M	configure.ac
+
+commit d9df23229a4847707861d2c0c44ae2e4f42fb7de
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2014-04-08
+
+    fix build with new giscanner
+
+M	src/Makefile.am
+
+commit 3fa49479fee07e6d354dea96f5a7ffad192cb491
+Merge: a544f68 8b111ca
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2014-01-26
+
+    Merge pull request #25 from andrewgee/master
+
+    OpenStreetMap require an accurate User-Agent or no tiles!
+
+commit 8b111ca6ac88ea5b00fd6e838e48eb57f04290e0
+Author: Andrew Gee <andrew@andrewgee.org>
+Date:	2014-01-25
+
+    Remove non-funtioning OSMC map source
+
+M	src/osm-gps-map-source.c
+
+commit 49a5d6a2816b6bda09f89ed1e6be80633068647c
+Author: Andrew Gee <andrew@andrewgee.org>
+Date:	2014-01-25
+
+    Changed user-agent to be unique to library. Openstreetmap require
+    accurate user agents
+
+M	src/osm-gps-map-widget.c
+
+commit a544f68768d3d03a80da63ff343305b04e4417b7
+Author: guillomovitch <guillomovitch@gmail.com>
+Date:	2013-06-30
+
+    when building with -Wl,--no-undefined linker option
+
+M	src/Makefile.am
+
+commit 6e866d61819df62dfc4962806639a0c25c87ae87
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-06-19
+
+    1.0.1
+
+M	configure.ac
+
+commit 2751302310c45aeb1b143c8af8ea1e2634d61029
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-06-19
+
+    NEWS
+
+M	NEWS
+
+commit a271437f04b3ec3b519b8c7908b27ad3ee8ae671
+Author: Chris <chrrrisw@gmail.com>
+Date:	2013-06-19
+
+    fix link/include paths
+
+M	.gitignore
+M	Makefile.am
+M	osmgpsmap-1.0.pc.in
+
+commit a506ce391f8f611c9ae7745a70b37c84d794ca97
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-06-18
+
+    fix docs build
+
+M	docs/reference/Makefile.am
+
+commit 422d39f2ad8727f9d5460bcadbaabb4733bf0725
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-06-18
+
+    bump pkg-config, libname and inc path
+
+M	Makefile.am
+M	configure.ac
+M	examples/Makefile.am
+M	examples/mapviewer.py
+R089	osmgpsmap.pc.in osmgpsmap-1.0.pc.in
+M	src/Makefile.am
+
+commit b19ee7054ae4bb599a242e629b23ad99b8a49e25
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-06-18
+
+    NEWS
+
+M	NEWS
+
+commit fa93262645c1399994ae5bafbc5fbdaa99446650
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-06-18
+
+    tidy up licence headers to match copying (GPLv2+)
+
+M	COPYING
+M	NEWS
+M	src/converter.c
+M	src/converter.h
+M	src/osd-utils.c
+M	src/osd-utils.h
+M	src/osm-gps-map-compat.c
+M	src/osm-gps-map-compat.h
+M	src/osm-gps-map-image.c
+M	src/osm-gps-map-image.h
+M	src/osm-gps-map-layer.c
+M	src/osm-gps-map-layer.h
+M	src/osm-gps-map-osd.c
+M	src/osm-gps-map-osd.h
+M	src/osm-gps-map-point.c
+M	src/osm-gps-map-point.h
+M	src/osm-gps-map-source.c
+M	src/osm-gps-map-source.h
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-track.h
+M	src/osm-gps-map-widget.c
+M	src/osm-gps-map-widget.h
+M	src/osm-gps-map.h
+M	src/private.h
+
+commit d0201f5874c64a0cb27af06559f78fd66e35e668
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-06-12
+
+    fix dragging map
+
+M	src/osm-gps-map-widget.c
+
+commit 68004516f0c991656560b854755898e742ec7842
+Merge: 3834f0e 2b36774
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-06-05
+
+    Merge pull request #21 from mklein-de/master
+
+    Fix Google URIs
+
+commit 2b367747cd009c379c16d8e6763a8e215c59a775
+Author: Michael Klein <michael.klein@puffin.lb.shuttle.de>
+Date:	2013-06-04
+
+    Fix Google hybrid/satellite URIs
+
+M	src/osm-gps-map-source.c
+
+commit 3834f0e1095a856728afbbc0e5f3486fa0b4fe58
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-02-06
+
+    remove deprecated functionality
+
+M	src/osm-gps-map-compat.c
+M	src/osm-gps-map-compat.h
+M	src/osm-gps-map-widget.c
+
+commit 30697da3678a760602affda13343b9314ff08762
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-02-06
+
+    just disable the stupid extra border thing. ill fix this later
+
+M	src/osm-gps-map-widget.c
+
+commit eb7e3d13d6eb39de31bacfba36541d53d059f61e
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-02-06
+
+    examples: unify click behaviour between examples
+
+M	examples/mapviewer.c
+M	examples/mapviewer.py
+
+commit 40fd0ea7888cd451a0ffa076f75d8d95591b9606
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-02-06
+
+    for transfer full, you get a ref
+
+M	src/osm-gps-map-widget.c
+
+commit 392ecdf447733305e04538ea9b56f641db1eaa40
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-02-06
+
+    make env.sh a runnable helper
+
+M	examples/env.sh
+
+commit da2c67880c18deb5daa9ea11bb32cd42cd710f65
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-01-30
+
+    add a small note re the projection
+
+M	src/converter.c
+
+commit 704f18a057e1e9321ade4140cfa7f0f546605eea
+Author: houz <google@houz.is-a-geek.org>
+Date:	2013-01-07
+
+    compile with strict compilation
+
+M	src/osm-gps-map-widget.c
+
+commit 402576149ab02d00cb3cd187ed39e7ada42f88af
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-01-06
+
+    AC_CONFIG_HEADERS is recommended
+
+M	configure.ac
+
+commit 96cb4520638a7503d90ea58c0a431f3c5a401cc9
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-01-06
+
+    fix packing
+
+M	examples/mapviewer.py
+
+commit 28cfe4a30da99c52be57671fa86d4d4922c662b6
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-01-06
+
+    fix unitialized variable warning
+
+M	src/osm-gps-map-widget.c
+
+commit 7be15b6cd1aed5fa5a14c56c73e06c971d3b756c
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-01-06
+
+    compat for all gtk3 versions
+
+M	examples/mapviewer.c
+
+commit 113d6a08d4ce2e44d267a6375b8c29726d46192e
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-01-06
+
+    fix offset on click events
+
+M	src/osm-gps-map-widget.c
+
+commit a12c703180e0ea6c80a4781a084be470d006b498
+Merge: ee1b9e8 1f4150c
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-01-06
+
+    Merge pull request #20 from dumbbell/fix-with-gcc42
+
+    osm_gps_map_image_get_zorder: Change return type to "gint"
+
+commit ee1b9e80fa9944fada31e11bb5d685acfe1932b4
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-01-06
+
+    fix build on gtk 3
+
+M	configure.ac
+M	examples/mapviewer.c
+M	src/osm-gps-map-widget.c
+
+commit 9b284c567f02adfcbf23be46205d4ce3372d33d5
+Merge: ec54339 efe9dd5
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2013-01-06
+
+    Merge remote-tracking branch 'snoiraud/gtk3'
+
+    Conflicts:
+	examples/mapviewer.py
+	python/osmgpsmapmodule.c
+
+commit 1f4150c5c0e811230774a0cc7178f328a5265601
+Author: Jean-Sébastien Pédron <jean-sebastien@yakaz.com>
+Date:	2012-12-18
+
+    osm_gps_map_image_get_zorder: Change return type to "gint"
+
+    ... instead of "const gint".
+
+    The returned value is a scalar, not a pointer, therefore it's copied.
+    The "const" qualifier is unneeded and even breaks the build with older
+    GCC such as 4.2.
+
+M	src/osm-gps-map-image.c
+M	src/osm-gps-map-image.h
+
+commit efe9dd5f5356ec729758700e8eb14acee2e5f63c
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-10-12
+
+    As the lib is now for gtk3, libosmgpsmap must change its version
+    number.
+    So we can now mix applications with gtk2 and gtk3.
+
+M	configure.ac
+
+commit d3faeb8e209e76bc62a25bcd34411be92627343c
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-28
+
+    Solved missing tiles.
+
+M	src/osm-gps-map-widget.c
+
+commit 7241a4221c462269218c3dada0c6c8aa6e7506c4
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-19
+
+    copy-paste of comment : need cleaning.
+
+M	src/osm-gps-map-source.c
+
+commit e90c283ab948dac81fc9c7e4c30f4e6df142cad1
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-17
+
+    Update map providers : openstreetmap renderer is closed and
+    opencyclemap uri changed.
+
+M	src/osm-gps-map-source.c
+
+commit 47ce5ca45cdf748dc24e4114d4a6a1e1dc63fbd2
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-16
+
+    Gtk3 : warning suppression and offset problem (EXTRA_BORDER)
+
+M	src/osm-gps-map-widget.c
+
+commit a25ff92045c9587585dd02c0d606b8f17d79bc1a
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-15
+
+    Gtk3 migration ... conversion from :
+	GdkColor to GdkRGA
+	gdk_color_parse to gdk_rgba_parse
+	gtk_color_button_get_color to gtk_color_chooser_get_rgba
+	gtk_color_button_set_color ot gtk_color_chooser_set_rgba
+	GTK_COLOR_BUTTON to GTK_COLOR_CHOOSER
+	gdk_cairo_set_source_color to gdk_cairo_set_source_rgba
+	gdk_window_get_pointer to gdk_window_get_device_position
+
+	g_thread_init no more needed
+	some cleaning
+
+M	examples/mapviewer.c
+M	src/osd-utils.c
+M	src/osd-utils.h
+M	src/osm-gps-map-osd.c
+M	src/osm-gps-map-track.c
+M	src/osm-gps-map-track.h
+M	src/osm-gps-map-widget.c
+
+commit 4c48d319a9f6dc8bf0f6a7ae52a37495a7787431
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-14
+
+    Gobject introspection : use our version. We can have only major and
+    minor so 0.7.4 doesn't work.
+
+M	configure.ac
+M	examples/mapviewer.py
+M	src/Makefile.am
+
+commit 6019c88b7823ff0f47a039ce4e6f3f2320c67a17
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-09
+
+    too many cairo destroy.
+
+M	examples/mapviewer.c
+M	src/osm-gps-map-osd.c
+M	src/osm-gps-map-widget.c
+
+commit 9a7994835190461f2d478bf804fc6409acbdd11c
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-08
+
+    gobject introspection : somme warnings suppression and cleaning
+
+M	examples/mapviewer.py
+M	src/osm-gps-map-compat.c
+M	src/osm-gps-map-track.h
+M	src/osm-gps-map-widget.c
+
+commit a9369ed9a6e25201f66324fa814328fc78a27e4c
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-02
+
+    Solved the get_bbox and get_degrees for python calls.
+
+M	examples/mapviewer.py
+M	src/osm-gps-map-point.c
+M	src/osm-gps-map-widget.c
+
+commit 0b760b8574e9d169014af3d3d87a45118cc17bf4
+Author: SNoiraud <serge.noiraud@laposte.net>
+Date:	2012-09-01
+
+    Really use gtk3.
+
+M	examples/mapviewer.py
+M	m4/gtk-doc.m4
+M	src/Makefile.am
+M	src/osm-gps-map-widget.c
+
+commit ec54339d4080f5fece402cd7794dcd79c132509b
+Merge: 9542268 8d7ee21
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2012-08-05
+
+    Merge pull request #19 from fsphil/master
+
+    Add a Z-order property to OsmGpsMapImage objects
+
+commit 8d7ee214841dcbb25021c7447a1b26b995e15877
+Author: Phil <phil@apollo.sanslogic.co.uk>
+Date:	2012-08-05
+
+    Add a Z-order property to OsmGpsMapImage objects
+
+M	src/osm-gps-map-image.c
+M	src/osm-gps-map-image.h
+M	src/osm-gps-map-widget.c
+M	src/osm-gps-map-widget.h
+
+commit 9542268edd0e6a7ace5c6c6fce091e95807416c3
+Merge: d1e6825 0ebaa16
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2012-05-13
+
+    Merge pull request #18 from PabloCastellano/example
+
+    Minor fix in Python example (osm -> osmgpsmap)
+
+commit 0ebaa16b7d8549295d4252c4f53891f6c6f9b9d6
+Author: Pablo Castellano <pablo@anche.no>
+Date:	2012-05-13
+
+    Minor fix in Python example (osm -> osmgpsmap)
+
+M	examples/mapviewer.py
+
+commit d1e6825c5be58eb9ae96abe8e6b6d6e4e5ecefbf
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-08-04
+
+    Fix google
+
+M	NEWS
+M	src/osm-gps-map-source.c
+
+commit 2aa702cdb8f7b324091c625fbab54309456d83b2
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-05-02
+
+    Fix build on mac
+
+M	python/osmgpsmapmodule.c
+
+commit 1381c0e9fc6270e2f04241d7a6b9e91d8f24926a
+Merge: 4b95e51 1885505
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-20
+
+    Merge branch 'master' into gtk3
+
+    Conflicts:
+	configure.ac
+	python/configure.ac
+	python/osmgpsmap.defs
+	python/setup.py
+
+commit 1885505a42770cb9823225429c82480dfcaba785
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-20
+
+    Post release version bump
+
+M	Makefile.am
+M	NEWS
+M	configure.ac
+M	python/configure.ac
+M	python/setup.py
+
+commit 4b95e51066f853fba9209b6a99b9f71d60581e22
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-19
+
+    Closer to working
+
+M	src/osm-gps-map-widget.c
+
+commit 6ffa5f8c49cea31d432ef4981463be92594800d2
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-19
+
+    Fix widget packing
+
+M	examples/mapviewer.ui
+
+commit 66b7b715a894b634092ca003ba286c1da428c245
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-19
+
+    Remove compat with old glib
+
+M	src/osm-gps-map-widget.c
+
+commit 41bcea17fff6577b2c2ee7af14ef305dd8264d99
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-18
+
+    Remove support for libsoup-2.2
+
+M	configure.ac
+M	docs/reference/Makefile.am
+M	examples/Makefile.am
+M	src/Makefile.am
+M	src/osm-gps-map-widget.c
+M	src/private.h
+
+commit e9dfc2171c74d83e49a5d370fdbdec7f34096743
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-18
+
+    Compiles with gtk+-3, many drawing errors
+
+M	configure.ac
+M	examples/mapviewer.c
+M	src/osm-gps-map-image.c
+M	src/osm-gps-map-image.h
+M	src/osm-gps-map-layer.c
+M	src/osm-gps-map-layer.h
+M	src/osm-gps-map-osd.c
+M	src/osm-gps-map-widget.c
+M	src/osm-gps-map-widget.h
+M	src/private.h
+
+commit 0676e6cdf62435d93f6ae16d359b26171dd8e1e2
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-18
+
+    Remove old python bindings
+
+D	python/AUTHORS
+D	python/COPYING
+D	python/ChangeLog
+D	python/Makefile.am
+D	python/NEWS
+D	python/README
+D	python/configure.ac
+D	python/m4/.gitignore
+D	python/m4/am_check_python_headers.m4
+D	python/osmgpsmap-compat.defs
+D	python/osmgpsmap.defs
+D	python/osmgpsmap.override
+D	python/osmgpsmapmodule.c
+D	python/setup.py
+
+commit a28d41152d7674e9f2f8740b284f23fad6a3a9d4
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-18
+
+    Remove gdk_draw_pixbuf
+
+M	src/osm-gps-map-image.c
+M	src/osm-gps-map-widget.c
+
+commit f520d64695553889dcaac713816405e2d84588e6
+Author: John Stowers <john.stowers@gmail.com>
+Date:	2011-03-18
+
+    Update gtk2 and gobject-introspection requirements
+
+M	configure.ac
+M	src/Makefile.am

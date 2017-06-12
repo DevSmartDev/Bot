@@ -1,0 +1,73 @@
+#ifndef MAIN_H_INCLUDED
+#define MAIN_H_INCLUDED
+
+#include <gtk/gtk.h>
+#include <glib/gstdio.h>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef enum CSSTYPE
+{
+    CSS_TYPE_NONE   = -1,
+    CSS_FRAME,
+    CSS_TREEVIEW,
+    CSS_WIDGET,
+    CSS_MENU,
+    CSS_MENU_BAR,
+    CSS_MENU_ITEM,
+    CSS_MENU_SEARCH,
+    CSS_MENU_NOTEBOOK
+}CSSTYPE;
+
+
+enum SPL_NOTEBOOK_PAGE_Enum
+{
+    SPL_NOTEBOOK_DCU_PAGE = 0,
+    SPL_NOTEBOOK_PROGRAM_PAGE,
+    SPL_NOTEBOOK_USER_LOG_PAGE,
+    SPL_NOTEBOOK_SERVER_LOG_PAGE,
+    SPL_NOTEBOOK_PAGE_NUMBER
+};
+
+extern char * smartstreetlight_server_url;
+
+extern GtkTextBuffer *notification_text_buffer;
+
+
+#define SPL_MENU_CSS(widget)         smartstreetlight_set_private_css_provide(CSS_MENU, widget)
+
+#define SPL_OBJECT(name_widget)      gtk_builder_get_object (smartstreetlight_builder, name_widget)
+
+
+#define SPL_DCU_UNKNOWN_MODE    "<none>"
+#define SPL_DCU_WIRELESS_MODE   "Wireless Mode"
+#define SPL_DCU_LINE_MODE       "Line Mode"
+
+#define SPL_LCU_UNKNOWN_MODE    "<none>"
+#define SPL_LCU_SCHEDULE_MODE   "Schedule Mode"
+#define SPL_LCU_MANUAL_MODE     "Manual Mode"
+
+#define SPL_STATUS_ACTIVE       "Active"
+#define SPL_STATUS_INACTIVE     "Inactive"
+
+#if 0
+    #define SPL_SERVER_URL_DEFAULT "http://14.161.7.19"
+    #define SPL_SERVER_PORT_DEFAULT "8447"
+#else
+    #define SPL_SERVER_URL_DEFAULT "http://localhost"
+    #define SPL_SERVER_PORT_DEFAULT "8447"
+#endif // 0
+
+#define SPL_SERVER_SIDE_DEFAULT "axis2/services/smartstreetlightService"
+
+void smartstreetlight_main_server_info_update(const gchar *server_url, const gchar *server_port);
+
+gboolean smartstreetlight_application_init(void);
+
+void smartstreetlight_application_run(void);
+
+void smartstreetlight_finalize (GtkWidget *object, gpointer user_data);
+#endif // MAIN_H_INCLUDED
+

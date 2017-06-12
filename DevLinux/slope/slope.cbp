@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="slope" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/slope" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/slope" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="CMakeFiles/3.0.2/CompilerIdC/CMakeCCompilerId.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="config.h" />
+		<Unit filename="demos/molecules.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demos/plot_stack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demos/plot_stack_o.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demos/simple.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="demos/test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/chart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/chart.h" />
+		<Unit filename="src/slope/drawing.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/drawing.h" />
+		<Unit filename="src/slope/figure.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/figure.h" />
+		<Unit filename="src/slope/figure_p.h" />
+		<Unit filename="src/slope/global.h" />
+		<Unit filename="src/slope/item.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/item.h" />
+		<Unit filename="src/slope/item_p.h" />
+		<Unit filename="src/slope/sampler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/sampler.h" />
+		<Unit filename="src/slope/scale.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/scale.h" />
+		<Unit filename="src/slope/scale_p.h" />
+		<Unit filename="src/slope/slope.h" />
+		<Unit filename="src/slope/view.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/view.h" />
+		<Unit filename="src/slope/xyaxis.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/xyaxis.h" />
+		<Unit filename="src/slope/xyscale.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/xyscale.h" />
+		<Unit filename="src/slope/xyscale_p.h" />
+		<Unit filename="src/slope/xyseries.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/slope/xyseries.h" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

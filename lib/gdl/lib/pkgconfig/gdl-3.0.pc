@@ -1,0 +1,13 @@
+prefix=/media/data/JOBS/spl/package/gdl-3.12.0/../../lib/gdl
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/libgdl-3.0
+datarootdir=${prefix}/share
+
+Name: gdl
+Description: Gnome Docking Library
+Version: 3.12.0
+Requires: gtk+-3.0
+Requires.private: libxml-2.0
+Libs: -L${libdir} -lgdl-3
+Cflags: -I${includedir}

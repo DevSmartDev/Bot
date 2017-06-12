@@ -1,0 +1,164 @@
+/*
+ * Copyright (C) 2016  Elvis Teixeira
+ *
+ * This source code is free software: you can redistribute it
+ * and/or modify it under the terms of the GNU Lesser General
+ * Public License as published by the Free Software Foundation,
+ * either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * This source code is distributed in the hope that it will be
+ * useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.  See the GNU Lesser General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU Lesser General
+ * Public License along with this program.
+ * If not, see <http://www.gnu.org/licenses/>.
+ */
+#include "smartstreetlight_slope.h"
+#include "slope/sampler.h"
+#include "slope/slope.h"
+
+#include <math.h>
+
+#define VIEW_BY_OPTION 1
+
+#if VIEW_BY_OPTION
+SlopeSample *spl_lcu_slope_sampler_option = NULL;
+#endif
+
+static void gen_chart(pSplLcuSlopeData lcu_slope);
+
+/** ======================================================================= **/
+/** ======================================================================= **/
+
+void lcu_slope_finalize (GtkWidget *object,
+                         gpointer   user_data)
+{
+    pSplLcuSlopeData lcu_slope = (pSplLcuSlopeData) user_data;
+
+    if(lcu_slope)
+    {
+        for (gint i = 0; i < lcu_slope->n_points ; i++)
+        {
+            g_free(spl_lcu_slope_sampler_option[i].label);
+        }
+        g_free(spl_lcu_slope_sampler_option);
+    }
+
+    /* "object" will destroy on this method */
+    spl_lcu_slope_data_free(lcu_slope);
+}
+
+gboolean lcu_slope_run(pSplLcuSlopeData lcu_slope)
+{
+    g_return_if_fail(lcu_slope && lcu_slope->chart);
+
+    lcu_slope->x_time        = (gdouble *)g_malloc(lcu_slope->n_points * sizeof(gdouble));
+    lcu_slope->y_powerConsum = (gdouble *)g_malloc(lcu_slope->n_points * sizeof(gdouble));
+    lcu_slope->y_powerCtrl   = (gdouble *)g_malloc(lcu_slope->n_points * sizeof(gdouble));
+	lcu_slope->chart_max = 0;
+	for (gint k=0; k<lcu_slope->n_points; k++)
+	{
+        pSplLcuLog lcu_log_iter = (pSplLcuLog) g_slist_nth_data(lcu_slope->lculoglist, k);
+        lcu_slope->y_powerConsum[k] = ((gdouble)lcu_log_iter->power_consum)/1000;
+        lcu_slope->y_powerCtrl[k] = ((gdouble)lcu_log_iter->power_ctrl)/1000;
+        if (lcu_slope->y_powerConsum[k] > lcu_slope->chart_max)
+        {
+            lcu_slope->chart_max = lcu_slope->y_powerConsum[k];
+        }
+        if (lcu_slope->y_powerCtrl[k] > lcu_slope->chart_max)
+        {
+            lcu_slope->chart_max = lcu_slope->y_powerCtrl[k];
+        }
+        lcu_slope->x_time[k] = k;
+    }
+    pSplLcuLog lcu_log = (pSplLcuLog)g_slist_nth_data(lcu_slope->lculoglist, 0);
+    gchar *lcu_slope_title = g_strdup_printf("Biểu đồ hoạt động của đèn '%s'", lcu_log->lcuId);
+    gtk_window_set_title(GTK_WINDOW(lcu_slope->chart), lcu_slope_title);
+    g_free(lcu_slope_title);
+    gen_chart(lcu_slope);
+
+    return TRUE;
+}
+
+
+
+static void gen_chart(pSplLcuSlopeData lcu_slope)
+{
+    SlopeScale *scale;
+    SlopeItem *series_powerCtrl, *series_powerConsum, *series_max;
+    int number;
+    //scale = slope_xyscale_new();
+    scale = slope_xyscale_new_axis ("Thời gian", "Công suất(W)");
+    slope_scale_set_layout_rect(scale, 0, 0, 5, 5);
+    slope_chart_add_scale(SLOPE_CHART(lcu_slope->chart), scale);
+
+    number = lcu_slope->chart_max/10;
+    lcu_slope->chart_max = number*10 + 10;
+#if VIEW_BY_OPTION
+    SlopeSampler *sampler;
+    SlopeItem *axis;
+    spl_lcu_slope_sampler_option = (SlopeSample*)g_malloc(lcu_slope->n_points * sizeof(SlopeSample));
+    gdouble *chart_max_array = (gdouble*)g_malloc(lcu_slope->n_points * sizeof(gdouble));
+
+    for (guint k = 0; k < lcu_slope->n_points; k++)
+    {
+        pSplLcuLog lcu_log_iter = (pSplLcuLog) g_slist_nth_data(lcu_slope->lculoglist, k);
+        spl_lcu_slope_sampler_option[k].coord = k;
+        spl_lcu_slope_sampler_option[k].label = g_strdup_printf("%s",lcu_log_iter->date_time);
+        chart_max_array[k] = lcu_slope->chart_max;
+    }
+    axis = (SlopeItem *)slope_xyscale_get_axis(SLOPE_XYSCALE(scale), SLOPE_XYSCALE_AXIS_BOTTOM);
+
+    sampler = (SlopeSampler*)slope_xyaxis_get_sampler(SLOPE_XYAXIS(axis));
+    slope_sampler_set_samples(sampler, spl_lcu_slope_sampler_option, lcu_slope->n_points);
+#endif
+
+    series_powerCtrl = slope_xyseries_new_filled("SplLcu_PowerCtrl", lcu_slope->x_time, lcu_slope->y_powerCtrl,
+                                             lcu_slope->n_points, "b");
+    slope_scale_add_item(scale, series_powerCtrl);
+
+    series_powerConsum = slope_xyseries_new_filled("SplLcu_PowerConsum", lcu_slope->x_time, lcu_slope->y_powerConsum,
+                                             lcu_slope->n_points, "r");
+    slope_scale_add_item(scale, series_powerConsum);
+
+    series_max = slope_xyseries_new_filled("SplLcu_PowerMax", lcu_slope->x_time, chart_max_array,
+                                             lcu_slope->n_points, "0");
+    slope_scale_add_item(scale, series_max);
+
+    g_free(chart_max_array);
+}
+
+
+pSplLcuSlopeData spl_lcu_slope_data_init(gint n_point, GSList *lculoglist)
+{
+    pSplLcuSlopeData lcu_slope = g_new0(SplLcuSlopeData, 1);
+
+    lcu_slope->chart = slope_chart_new();
+
+    g_signal_connect(G_OBJECT(lcu_slope->chart), "destroy",
+                     G_CALLBACK(lcu_slope_finalize), (gpointer)lcu_slope);
+
+    lcu_slope->x_time = NULL;
+    lcu_slope->y_powerConsum = NULL;
+    lcu_slope->y_powerCtrl = NULL;
+
+    lcu_slope->chart_max = 0;
+
+    lcu_slope->lculoglist = lculoglist;
+    lcu_slope->n_points = n_point;
+    return lcu_slope;
+}
+
+void spl_lcu_slope_data_free(pSplLcuSlopeData lcu_slope)
+{
+    g_return_if_fail(lcu_slope);
+    g_free(lcu_slope->x_time);
+    g_free(lcu_slope->y_powerConsum);
+    g_free(lcu_slope->y_powerCtrl);
+    gtk_widget_destroy(lcu_slope->chart);
+    g_free(lcu_slope);
+}

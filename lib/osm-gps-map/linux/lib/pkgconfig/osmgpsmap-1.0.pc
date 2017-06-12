@@ -1,0 +1,11 @@
+prefix=/media/data/JOBS/spl/package/osm-gps-map/../../lib/osm-gps-map/linux
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: osm-gps-map
+Description: Moving map widget using openstreet map data
+Version: 1.1.0
+Requires: gtk+-3.0 libsoup-2.4
+Libs: -L${libdir} -losmgpsmap-1.0
+Cflags: -I${includedir}/osmgpsmap-1.0
