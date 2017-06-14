@@ -1,0 +1,915 @@
+#include "bot_dcu.h"
+#include "bot_soap.h"
+#include "bot_lcu.h"
+#include "bot_line.h"
+#include "bot_log.h"
+#include "bot_schedule.h"
+#include "bot_login.h"
+#include "mapviewer.h"
+#include <map>
+#include <stdlib.h>
+#include <math.h>
+#include <glib.h>
+#include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
+
+#include <iostream>
+#include <string>
+
+GSList *dculist = NULL;
+GSList *closestUsingDculist = NULL;
+GSList *zonelist = NULL;
+gboolean showAllLightEnable = FALSE;
+gboolean isControlShow = FALSE;
+
+GtkWidget *dcu_dialog_control = NULL;
+
+pbotWidgets  main_view_widgets = NULL;
+
+botDcuMenuPopup *dcu_popup_menu = NULL;
+
+void bot_main_view_widgets_init()
+{
+    if(main_view_widgets == NULL)
+        main_view_widgets = g_new0(botWidgets, 1);
+}
+
+static void bot_dcu_priv_free(botDcuPrivate *priv)
+{
+    if(priv)
+    {
+        g_char_free(priv->address);
+        g_char_free(priv->gps);
+        g_char_free(priv->id);
+        g_char_free(priv->name);
+        g_char_free(priv->note);
+        g_char_free(priv->phonenum);
+        g_char_free(priv->zonename);
+        g_free(priv);
+    }
+}
+
+void bot_dcu_free(pbotDcu pDcu)
+{
+    g_return_if_fail(pDcu);
+    bot_dcu_priv_free(pDcu->priv);
+    g_free(pDcu);
+}
+
+pbotDcu bot_dcu_init()
+{
+    pbotDcu dcu = g_new0(botDcu, 1);
+    botDcuPrivate *priv = g_new0(botDcuPrivate, 1);
+    priv->address = NULL;
+    priv->gps = NULL;
+    priv->id = NULL;
+    priv->name = NULL;
+    priv->note = NULL;
+    priv->phonenum = NULL;
+    priv->zonename = NULL;
+    priv->childlist = NULL;
+    priv->mode = 0;
+    priv->status = 0;
+    dcu->priv = priv;
+    return dcu;
+}
+
+static void bot_dcu_view_init()
+{
+    static gboolean isInitDcuView = FALSE;
+    GtkCellRenderer *render;
+    GtkTreeViewColumn *column;
+    GtkTreeSelection *selection;
+    if(!isInitDcuView)
+    {
+        main_view_widgets = g_new0(botWidgets, 1);
+        main_view_widgets->dcu_view =
+                GTK_TREE_VIEW(gtk_builder_get_object (bot_builder, "dcu_info_tree_view"));
+        main_view_widgets->dcu_store =
+                gtk_tree_store_new(OBJECT_NUM_COLUMNS, G_TYPE_STRING, G_TYPE_POINTER, G_TYPE_INT);
+        render = gtk_cell_renderer_text_new();
+        column = gtk_tree_view_column_new_with_attributes("Khu vực", render, "text", OBJECT_NAME_COLUMN, NULL);
+        gtk_tree_view_column_set_clickable(column, TRUE);
+        gtk_tree_view_append_column(GTK_TREE_VIEW(main_view_widgets->dcu_view), column);
+        gtk_tree_view_set_model(GTK_TREE_VIEW(main_view_widgets->dcu_view), GTK_TREE_MODEL(main_view_widgets->dcu_store));
+        selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(main_view_widgets->dcu_view));
+        gtk_tree_selection_set_mode(selection, GTK_SELECTION_SINGLE);
+        //signal
+        g_signal_connect(selection, "changed",  G_CALLBACK(on_dcu_selection_changed), NULL);
+        g_signal_connect(main_view_widgets->dcu_view, "button-press-event", G_CALLBACK(on_dcu_view_info_clicked), NULL);
+        isInitDcuView = TRUE;
+    }
+}
+
+static void bot_dcu_popup_menu_init()
+{
+    static gboolean isInitDcuMenuPopup = FALSE;
+    if(isInitDcuMenuPopup)
+        return;
+    dcu_popup_menu = g_new0(botDcuMenuPopup, 1);
+    GtkWidget *separator_item;
+    dcu_popup_menu->parent = gtk_menu_new();
+    bot_MENU_CSS(dcu_popup_menu->parent);
+
+    dcu_popup_menu->mAdd = gtk_menu_item_new_with_label("Thêm mới");
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent),dcu_popup_menu->mAdd);
+
+    separator_item = gtk_separator_menu_item_new();
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent), separator_item);
+
+    dcu_popup_menu->mEdit = gtk_menu_item_new_with_label("Chỉnh sửa");
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent),dcu_popup_menu->mEdit);
+
+    separator_item = gtk_separator_menu_item_new();
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent), separator_item);
+
+    dcu_popup_menu->mLog = gtk_menu_item_new_with_label("Nhật ký");
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent),dcu_popup_menu->mLog);
+
+    separator_item = gtk_separator_menu_item_new();
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent), separator_item);
+
+    dcu_popup_menu->mSchedule = gtk_menu_item_new_with_label("Lập lịch");
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent),dcu_popup_menu->mSchedule);
+
+    separator_item = gtk_separator_menu_item_new();
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent), separator_item);
+
+    dcu_popup_menu->mControl = gtk_menu_item_new_with_label("Điều khiển");
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent),dcu_popup_menu->mControl);
+
+    separator_item = gtk_separator_menu_item_new();
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent), separator_item);
+
+    dcu_popup_menu->mRemove= gtk_menu_item_new_with_label("Xóa");
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent),dcu_popup_menu->mRemove);
+
+    dcu_popup_menu->mRemove_all = gtk_menu_item_new_with_label("Xóa tất cả");
+    gtk_menu_shell_append(GTK_MENU_SHELL(dcu_popup_menu->parent),dcu_popup_menu->mRemove_all);
+/**
+    init signal
+*/
+    g_signal_connect(dcu_popup_menu->mAdd, "activate",
+                     (GCallback) bot_dcu_popup_menu_clicked, GINT_TO_POINTER(bot_DCU_M_ADD));
+
+    g_signal_connect(dcu_popup_menu->mEdit, "activate",
+                     (GCallback) bot_dcu_popup_menu_clicked, GINT_TO_POINTER(bot_DCU_M_EDIT));
+
+    g_signal_connect(dcu_popup_menu->mLog, "activate",
+                     (GCallback) bot_dcu_popup_menu_clicked, GINT_TO_POINTER(bot_DCU_M_LOG));
+
+    g_signal_connect(dcu_popup_menu->mSchedule, "activate",
+                     (GCallback) bot_dcu_popup_menu_clicked, GINT_TO_POINTER(bot_DCU_M_SCHEDULE));
+
+    g_signal_connect(dcu_popup_menu->mRemove, "activate",
+                     (GCallback) bot_dcu_popup_menu_clicked, GINT_TO_POINTER(bot_DCU_M_REMOVE));
+
+    g_signal_connect(dcu_popup_menu->mRemove_all, "activate",
+                     (GCallback) bot_dcu_popup_menu_clicked, GINT_TO_POINTER(bot_DCU_M_REMOVE_ALL));
+
+    g_signal_connect(dcu_popup_menu->mControl, "activate",
+                     (GCallback) bot_dcu_popup_menu_clicked, GINT_TO_POINTER(bot_DCU_M_CONTROL));
+
+    isInitDcuMenuPopup = TRUE;
+}
+
+
+static void bot_add_list_light_from_dcu(pbotDcu dcu){
+    GtkTreeViewColumn *column;
+    GSList *item;
+    if(!main_view_widgets->lcu_view)
+        return;
+    bot_tree_store_clean(bot_LCU_STORE);
+    gtk_widget_hide(GTK_WIDGET(main_view_widgets->lcu_all_view));
+    gtk_widget_show_all(GTK_WIDGET(main_view_widgets->lcu_view));
+    column = gtk_tree_view_get_column(main_view_widgets->lcu_view, LIGHT_ID);
+    gtk_tree_view_column_set_title(column, dcu->priv->id);
+    for(item = dcu->priv->childlist; item != NULL; item = item->next)
+    {
+        GtkTreeIter iter;
+        pbotLcu lcu = (pbotLcu)item->data;
+        if(lcu->parent != dcu)
+            break;
+        gtk_tree_store_append(main_view_widgets->lcu_store, &iter, NULL);
+        gtk_tree_store_set(main_view_widgets->lcu_store, &iter, LIGHT_ID, lcu->id, LIGHT_POINTER, lcu, -1);
+    }
+
+}
+
+void bot_dcu_set_information(pbotDcu dcu)
+{
+    if(dcu == NULL)
+        return;
+    gtk_label_set_text(GTK_LABEL(gtk_builder_get_object (bot_builder, "lb_dcu_id")),
+                       dcu->priv->id);
+    gtk_label_set_text(GTK_LABEL(gtk_builder_get_object (bot_builder, "lb_dcu_phone")),
+                       dcu->priv->phonenum);
+    gtk_label_set_text(GTK_LABEL(gtk_builder_get_object (bot_builder, "lb_dcu_location")),
+                       dcu->priv->gps);
+    gtk_label_set_text(GTK_LABEL(gtk_builder_get_object (bot_builder, "lb_dcu_note")),
+                       dcu->priv->note);
+    gtk_label_set_text(GTK_LABEL(gtk_builder_get_object (bot_builder, "lb_dcu_zone")),
+                       dcu->priv->zonename);
+    //gtk_label_set_text(GTK_LABEL(gtk_builder_get_object (bot_builder, "lb_dcu_status")),
+    //                   dcu->priv->s);
+    gtk_label_set_text(GTK_LABEL(gtk_builder_get_object (bot_builder, "lb_dcu_address")),
+                        dcu->priv->address);
+    if(gtk_combo_box_get_active(GTK_COMBO_BOX(cbb_light_spl)) == DIbotAY_FOLLOW_DCU)
+    {
+        lastSelectedLcu = NULL;
+        osm_gps_map_image_remove_all(map);
+        bot_add_list_light_from_dcu(dcu);
+        osm_gps_map_show_lights_of_dcu(dcu);
+    }
+}
+
+
+
+void bot_zone_fill_infomation(const gint zone_id,
+                                           const gchar *zone_name,
+                                           const gchar *zone_note)
+{
+    GtkTreeIter iter;
+    GtkTreeIter child_iter;
+    botZone *zone = g_new0(botZone, 1);
+    zone->zonecode = zone_id;
+    zone->zonename = g_strdup(zone_name);
+    zone->zonenote = g_strdup(zone_note);
+    ns1__DCU_USCOREINFO_USCOREType **dcu_list= NULL;
+    gint dcu_list_size;
+    gtk_tree_store_append (main_view_widgets->dcu_store, &zone->zoneIter, NULL);
+    gtk_tree_store_set (main_view_widgets->dcu_store, &zone->zoneIter,
+                          OBJECT_NAME_COLUMN , zone_name,
+                          OBJECT_POINTER_COLUMN , (gpointer)zone,
+                          OBJECT_TYPE_COLUMN , (gint)OBJECT_IS_ZONE_TYPE,
+                          -1);
+    DEBUG("test here\n");
+    if (bot_get_dcu_list_nofree_execute(zone_id, 0,&dcu_list, &dcu_list_size)==TRUE)
+    {
+         DEBUG_1();
+        if (dcu_list!=NULL)
+        {
+            //DEBUG_1();
+            gint i;
+            for(i = 0; i<dcu_list_size; i++)
+            {
+                ns1__DCU_USCOREINFO_USCOREType *soapDCU = dcu_list[i];
+                pbotDcu _dcu    = bot_dcu_init();
+                botDcuPrivate *priv = _dcu->priv;
+                priv->address   = g_strdup(soapDCU->dcu_USCOREaddress);
+                priv->gps       = g_strdup(soapDCU->dcu_USCOREgps);
+                priv->id        = g_strdup(soapDCU->dcu_USCOREid);
+                priv->note      = g_strdup(soapDCU->dcu_USCOREnote);
+                priv->phonenum  = g_strdup(soapDCU->dcu_USCOREphone);
+                priv->mode      = soapDCU->dcu_USCOREmode;
+                priv->program   = soapDCU->dcu_USCOREprogram_USCOREid;
+                priv->scheduleId= 0;
+                priv->zonecode  = soapDCU->dcu_USCOREzoneid;
+                priv->zonename  = g_strdup(zone->zonename);
+                priv->status    = soapDCU->dcu_USCOREstatus;
+                //add into treeview
+                //DEBUG("add dcu ID: %s dcu: %p length: %d\n", priv->id, _dcu, g_slist_length(dculist));
+                //GTK
+                gtk_tree_store_append(main_view_widgets->dcu_store, &priv->iter, (GtkTreeIter *)&zone->zoneIter);
+                gtk_tree_store_set(main_view_widgets->dcu_store, &priv->iter,
+                                   0 , priv->id,
+                                   1 , (gpointer)_dcu,
+                                   2, OBJECT_IS_DCU_TYPE,
+                                   -1);
+                dculist = g_slist_prepend(dculist, _dcu);
+            }
+            if(i < MAX_DCU_MAYBE)
+                showAllLightEnable = TRUE;
+            else
+                showAllLightEnable = FALSE;
+
+        }
+    }
+        bot_free_soap_operation();
+    zonelist = g_slist_append(zonelist, zone);
+}
+
+void bot_zone_free(void *data)
+{
+    botZone *zone = (botZone *)data;
+    if(zone)
+    {
+        //DEBUG("\n");
+        g_char_free(zone->zonename);
+        g_char_free(zone->zonenote);
+        g_free(zone);
+    }
+}
+
+
+void bot_dcu_finalize(void)
+{
+    if(dculist)
+    {
+        bot_utils_free_slist(&dculist, (GDestroyNotify)bot_dcu_free);
+    }
+        //g_slist_free_full(dculist, (GDestroyNotify)bot_dcu_free);
+    if(zonelist)
+        bot_utils_free_slist(&zonelist, (GDestroyNotify)bot_zone_free);
+}
+
+gboolean bot_dcu_info_init(void)
+{
+    bot_dcu_view_init();
+    bot_dcu_popup_menu_init();
+    bot_log_init();
+    return TRUE;
+}
+
+
+void bot_dcu_show_all()
+{
+    DEBUG_1();
+    ns1__ZONE_USCOREINFO_USCOREType **zone_list = NULL;
+    gint zone_list_size;
+    bot_tree_store_clean(bot_DCU_STORE);
+    if (bot_get_all_zone_nofree_execute(&zone_list, &zone_list_size)==TRUE)
+    {
+        if (zone_list != NULL)
+        {
+            DEBUG("zone_list: %p, zone_list_size:%d\n", zone_list, zone_list_size);
+            gtk_tree_store_clear(main_view_widgets->dcu_store);
+            for(gint i = 0; i<zone_list_size; i++)
+            {
+                DEBUG_1();
+                ns1__ZONE_USCOREINFO_USCOREType *zone=zone_list[i];
+                DEBUG("zone->zone_USCOREid: %d, zone->zone_USCOREname: '%s',zone->zone_USCOREnote: '%s'\n",
+                                        zone->zone_USCOREid, zone->zone_USCOREname,
+                                        zone->zone_USCOREnote);
+                bot_zone_fill_infomation(zone->zone_USCOREid,
+                                              zone->zone_USCOREname,
+                                              zone->zone_USCOREnote);
+                GtkTreeIter iter;
+                gint k = 1;
+                if(gtk_tree_model_get_iter_first(GTK_TREE_MODEL(main_view_widgets->dcu_store), &iter))
+                {
+                    do
+                    {
+                        DEBUG("iter: %d has %d child\n", k++,
+                              gtk_tree_model_iter_n_children(GTK_TREE_MODEL(main_view_widgets->dcu_store), &iter));
+                    }while(gtk_tree_model_iter_next(GTK_TREE_MODEL(main_view_widgets->dcu_store), &iter));
+                }
+            }
+            if(g_slist_length(dculist) < MAX_DCU_MAYBE)
+                showAllLightEnable = TRUE;
+            else
+                showAllLightEnable = FALSE;
+        }
+    }
+    bot_free_soap_operation();
+}
+
+void bot_dcu_schedule_update(void)
+{
+    DEBUG_1();
+}
+
+gchar * bot_get_mode_name(bot_DCU_MODE_Enum index)
+{
+    switch(index)
+    {
+    case bot_DCU_WirelessMode:
+        return g_strdup(bot_DCU_WIRELESS_MODE);
+    case bot_DCU_LineMode:
+        return g_strdup(bot_DCU_LINE_MODE);
+    case bot_DCU_UnknownMode:
+        return g_strdup(bot_DCU_UNKNOWN_MODE);
+    default:
+        return NULL;
+    }
+}
+
+gchar * bot_get_status_name(bot_DCU_STATUS_Enum index)
+{
+    switch(index)
+    {
+    case bot_DCU_Active:
+        return g_strdup(bot_STATUS_ACTIVE);
+    case bot_DCU_Unactive:
+        return g_strdup(bot_STATUS_INACTIVE);
+    default:
+        return NULL;
+    }
+}
+
+
+void bot_tree_store_clean(gint storeIndex)
+{
+    GtkTreeStore *store = NULL;
+    switch(storeIndex)
+    {
+    case bot_DCU_STORE:
+        store = main_view_widgets->dcu_store;
+        break;
+    case bot_LCU_STORE:
+        store = main_view_widgets->lcu_store;
+        break;
+    case bot_LCU_ALL_STORE:
+        store = main_view_widgets->lcu_all_store;
+        break;
+    case bot_SCHEDULE_STORE:
+        //store = main_view_widgets->_store;
+        break;
+    }
+    if(store)
+        gtk_tree_store_clear(store);
+}
+
+gboolean bot_dcu_add_new(void)
+{
+    gboolean ret = TRUE;
+/**Init widget*/
+    GtkWidget *add_dcu_entry_id = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_id"));
+    GtkWidget *add_dcu_entry_phone = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_phone"));
+    GtkWidget *add_dcu_entry_gps = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_gps"));
+    GtkWidget *add_dcu_combobox_mode = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_combobox_mode"));
+    GtkWidget *add_dcu_combobox_zone = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_combobox_zone"));
+    GtkWidget *add_dcu_entry_address = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_address"));
+    GtkWidget *add_dcu_entry_note = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_note"));
+    GtkWidget *add_dcu_label_error = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_label_error"));
+    GtkWidget *btn_add = GTK_WIDGET(gtk_builder_get_object (bot_builder, "dcu_add_ok"));
+    GtkWidget *lb_name = GTK_WIDGET(gtk_builder_get_object (bot_builder, "lb_dialog_name"));
+    gtk_label_set_text(GTK_LABEL(lb_name), "Đăng kí trạm mới");
+    gtk_widget_set_sensitive(GTK_WIDGET(add_dcu_entry_id), TRUE);
+    static GtkTreeStore *zoneStore = NULL;
+    if(zoneStore == NULL)
+    {
+        zoneStore = gtk_tree_store_new(2, G_TYPE_STRING, G_TYPE_POINTER);
+        gtk_combo_box_set_model(GTK_COMBO_BOX(add_dcu_combobox_zone), GTK_TREE_MODEL(zoneStore));
+    }
+    gtk_widget_set_sensitive(btn_add, TRUE);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(add_dcu_combobox_mode), 1);
+    gtk_widget_set_sensitive(add_dcu_combobox_mode, FALSE); //Only have one mode
+/**Get zone*/
+    if(!zonelist)
+    {
+        gtk_label_set_text(GTK_LABEL(add_dcu_label_error), "Bạn không có quyền thêm trạm mới");
+        gtk_widget_set_sensitive(btn_add, FALSE);
+    }else
+    {
+        gtk_tree_store_clear(zoneStore);
+        for(GSList *item  = zonelist; item != NULL; item = item->next)
+        {
+            GtkTreeIter iter;
+            botZone *zone = (botZone*) item->data;
+            if(zone)
+            {
+                gtk_tree_store_append(zoneStore, &iter, NULL);
+                gtk_tree_store_set(zoneStore, &iter, 0, zone->zonename, 1, zone, -1);
+            }
+        }
+        gtk_combo_box_set_active(GTK_COMBO_BOX(add_dcu_combobox_zone), 0);
+    }
+
+    gtk_widget_set_sensitive(GTK_WIDGET(main_widgets->main_window), FALSE);
+    gint response_id;
+    while(response_id = gtk_dialog_run((GtkDialog *)main_widgets->add_dcu_dialog))
+    {
+        switch(response_id)
+        {
+        case GTK_RESPONSE_ACCEPT:
+            {
+                gchar *dcuId = (gchar *)gtk_entry_get_text(GTK_ENTRY(add_dcu_entry_id));
+                gchar tmp[100];
+                if(strlen(dcuId) != 10)
+                    gtk_label_set_text(GTK_LABEL(add_dcu_label_error), "Mã trạm không được để trống hoặc không đủ 10 kí tự");
+                else if(sscanf(dcuId, "%[0-9a-zA-Z_]", &tmp) != 1 ||
+                        strlen(tmp) != 10 || (tmp[0] >= '0' && tmp[0] <= '9'))
+                    gtk_label_set_text(GTK_LABEL(add_dcu_label_error), "Mã trạm theo chỉ sử dụng các kí tự [A-Za-z0-9_] và không được bắt đầu bằng số");
+                else
+                {
+                    gtk_label_set_text(GTK_LABEL(add_dcu_label_error), "");
+                    //All things are ok
+                    botZone *zone1 = (botZone *)(g_slist_nth(zonelist, gtk_combo_box_get_active(GTK_COMBO_BOX(add_dcu_combobox_zone)))->data);
+                    pbotDcu dcu = bot_dcu_init();
+                    botDcuPrivate *pri = dcu->priv;
+                    pri->address    = g_strdup(gtk_entry_get_text(GTK_ENTRY(add_dcu_entry_address)));
+                    pri->gps        = g_strdup(gtk_entry_get_text(GTK_ENTRY(add_dcu_entry_gps)));
+                    pri->id         = g_strdup(dcuId);
+                    pri->phonenum   = g_strdup(gtk_entry_get_text(GTK_ENTRY(add_dcu_entry_phone)));
+                    pri->note       = g_strdup(gtk_entry_get_text(GTK_ENTRY(add_dcu_entry_note)));
+                    pri->mode       = 1;
+                    pri->zonecode   = zone1->zonecode;
+                    pri->zonename   = g_strdup(zone1->zonename);
+                    DEBUG("================================+>\n");
+                    if(bot_add_dcu_execute(dcu)==TRUE)
+                    {
+                        //add into dcu treeview
+                        gtk_tree_store_append(main_view_widgets->dcu_store, &dcu->priv->iter, &zone1->zoneIter);
+                        gtk_tree_store_set(main_view_widgets->dcu_store, &dcu->priv->iter,
+                                           OBJECT_NAME_COLUMN, dcu->priv->id,
+                                           OBJECT_POINTER_COLUMN, dcu,
+                                           OBJECT_TYPE_COLUMN, OBJECT_IS_DCU_TYPE, -1);
+                        dculist = g_slist_append(dculist, dcu);
+                    }
+                    else
+                    {
+
+                        bot_dcu_free(dcu);
+                        ret = FALSE;
+                        break;
+                    }
+                    goto ___exit;
+                }
+            }
+            break;
+        case GTK_RESPONSE_CLOSE:
+            goto ___exit;
+        }
+    }
+___exit:
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_id), "");
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_phone), "");
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_gps), "");
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_address), "");
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_note), "");
+    gtk_label_set_text(GTK_LABEL(add_dcu_label_error), "");
+    gtk_widget_hide(main_widgets->add_dcu_dialog);
+    gtk_widget_set_sensitive(GTK_WIDGET(main_widgets->main_window), TRUE);
+    return ret;
+}
+
+
+
+gboolean bot_dcu_edit(pbotDcu dcu)
+{
+    gboolean ret = TRUE;
+/**Init widget*/
+    GtkWidget *add_dcu_entry_id = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_id"));
+    GtkWidget *add_dcu_entry_phone = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_phone"));
+    GtkWidget *add_dcu_entry_gps = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_gps"));
+    GtkWidget *add_dcu_combobox_mode = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_combobox_mode"));
+    GtkWidget *add_dcu_combobox_zone = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_combobox_zone"));
+    GtkWidget *add_dcu_entry_address = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_address"));
+    GtkWidget *add_dcu_entry_note = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_entry_note"));
+    GtkWidget *add_dcu_label_error = GTK_WIDGET(gtk_builder_get_object (bot_builder, "add_dcu_label_error"));
+    GtkWidget *btn_add = GTK_WIDGET(gtk_builder_get_object (bot_builder, "dcu_add_ok"));
+    GtkWidget *lb_name = GTK_WIDGET(gtk_builder_get_object (bot_builder, "lb_dialog_name"));
+    gtk_label_set_text(GTK_LABEL(lb_name), "Chỉnh sửa thông tin trạm");
+
+    static GtkTreeStore *zoneStore = NULL;
+    if(zoneStore == NULL)
+    {
+        zoneStore = gtk_tree_store_new(2, G_TYPE_STRING, G_TYPE_POINTER);
+        gtk_combo_box_set_model(GTK_COMBO_BOX(add_dcu_combobox_zone), GTK_TREE_MODEL(zoneStore));
+    }
+    gtk_widget_set_sensitive(btn_add, TRUE);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(add_dcu_combobox_mode), dcu->priv->mode);
+    gtk_widget_set_sensitive(add_dcu_combobox_mode, FALSE); //Only have one mode
+/**Get zone*/
+    if(!zonelist)
+    {
+        gtk_label_set_text(GTK_LABEL(add_dcu_label_error), "Bạn không có quyền chỉnh sửa thông tin trạm");
+        gtk_widget_set_sensitive(btn_add, FALSE);
+    }else
+    {
+        gtk_tree_store_clear(zoneStore);
+        gint i = 0, index = 0;
+        for(GSList *item  = zonelist; item != NULL; item = item->next)
+        {
+            GtkTreeIter iter;
+            botZone *zone = (botZone*) item->data;
+            if(zone)
+            {
+                gtk_tree_store_append(zoneStore, &iter, NULL);
+                gtk_tree_store_set(zoneStore, &iter, 0, zone->zonename, 1, zone, -1);
+                if(dcu->priv->zonecode == zone->zonecode)
+                    index = i;
+                i++;
+            }
+        }
+        gtk_combo_box_set_active(GTK_COMBO_BOX(add_dcu_combobox_zone), index);
+    }
+
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_id), dcu->priv->id);
+    gtk_widget_set_sensitive(GTK_WIDGET(add_dcu_entry_id), FALSE);
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_phone), dcu->priv->phonenum);
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_gps), dcu->priv->gps);
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_address), dcu->priv->address);
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_note), dcu->priv->note);
+    gtk_widget_set_sensitive(GTK_WIDGET(main_widgets->main_window), FALSE);
+    gint response_id;
+    while(response_id = gtk_dialog_run((GtkDialog *)main_widgets->add_dcu_dialog))
+    {
+        switch(response_id)
+        {
+        case GTK_RESPONSE_ACCEPT:
+            {
+                //All things are ok
+                botZone *zone1 = (botZone *)(g_slist_nth(zonelist, gtk_combo_box_get_active(GTK_COMBO_BOX(add_dcu_combobox_zone)))->data);
+                pbotDcu dcuEdit= bot_dcu_init();
+                botDcuPrivate *pri = dcuEdit->priv;
+                pri->address    = g_strdup(gtk_entry_get_text(GTK_ENTRY(add_dcu_entry_address)));
+                pri->gps        = g_strdup(gtk_entry_get_text(GTK_ENTRY(add_dcu_entry_gps)));
+                pri->phonenum   = g_strdup(gtk_entry_get_text(GTK_ENTRY(add_dcu_entry_phone)));
+                pri->note       = g_strdup(gtk_entry_get_text(GTK_ENTRY(add_dcu_entry_note)));
+                pri->mode       = dcu->priv->mode;
+                pri->zonecode   = zone1->zonecode;
+                pri->zonename   = g_strdup(zone1->zonename);
+                pri->program    = dcu->priv->program;
+                pri->scheduleId = dcu->priv->scheduleId;
+                pri->id         = g_strdup(dcu->priv->id);
+
+                if(bot_edit_dcu_execute(dcuEdit)==FALSE)
+                {
+                    bot_dcu_free(dcuEdit);
+                    ret = FALSE;
+                    break;
+                }
+                //If success, update dcu
+                dcu->priv->mode = dcuEdit->priv->mode;
+                g_char_free(dcu->priv->address);
+                dcu->priv->address = g_strdup(dcuEdit->priv->address);
+                g_char_free(dcu->priv->note);
+                dcu->priv->note = g_strdup(dcuEdit->priv->note);
+                g_char_free(dcu->priv->zonename);
+                dcu->priv->zonename = g_strdup(dcuEdit->priv->zonename);
+                g_char_free(dcu->priv->gps);
+                dcu->priv->gps = g_strdup(dcuEdit->priv->gps);
+                g_char_free(dcu->priv->phonenum);
+                dcu->priv->phonenum = g_strdup(dcuEdit->priv->phonenum);
+                dcu->priv->zonecode = dcuEdit->priv->zonecode;
+                bot_dcu_free(dcuEdit);
+                goto ___exit;
+            }
+            break;
+        case GTK_RESPONSE_CLOSE:
+            goto ___exit;
+        }
+    }
+___exit:
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_id), "");
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_phone), "");
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_gps), "");
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_address), "");
+    gtk_entry_set_text(GTK_ENTRY(add_dcu_entry_note), "");
+    gtk_label_set_text(GTK_LABEL(add_dcu_label_error), "");
+    gtk_widget_hide(main_widgets->add_dcu_dialog);
+    gtk_widget_set_sensitive(GTK_WIDGET(main_widgets->main_window), TRUE);
+    return ret;
+}
+
+
+void bot_delete_all_lcu_on_dcu(pbotDcu dcu)
+{
+    GtkTreeIter child;
+    g_return_if_fail(dcu && dcu->priv);
+
+    //clear all iter light
+    if(gtk_tree_store_iter_is_valid(main_view_widgets->lcu_all_store, &dcu->controlIter))
+    {
+        if(gtk_tree_model_iter_children(GTK_TREE_MODEL(main_view_widgets->lcu_all_store), &dcu->controlIter, &child))
+        {
+            while(gtk_tree_store_remove(main_view_widgets->lcu_all_store, &child)){};
+        }
+        gtk_tree_store_remove(main_view_widgets->lcu_all_store, &dcu->controlIter);
+    }
+    if(dcu->priv->childlist)
+        g_slist_free_full(dcu->priv->childlist, (GDestroyNotify)bot_lcu_free);
+}
+
+/**
+* This function only use when showAllLightEnable = FALSE
+*
+*/
+
+void bot_add_new_dcu_into_closest_list(pbotDcu dcu)
+{
+    while(g_slist_length(closestUsingDculist) >= (MAX_DCU_MAYBE -1))
+    {
+        pbotDcuClosestUsing lastDcu = (pbotDcuClosestUsing)g_slist_last(closestUsingDculist)->data;
+        //clear all light of this dcu
+        if(lastDcu && lastDcu->dcu && lastDcu->dcu->priv && lastDcu->dcu->priv->childlist)
+            g_slist_free_full(lastDcu->dcu->priv->childlist, (GDestroyNotify)bot_lcu_free);
+        //bot_dcu_free(lastDcu->dcu);
+        closestUsingDculist=g_slist_remove(closestUsingDculist, lastDcu); //??????? g_slist_remove(closestUsingDculist, lastDcu)
+    }
+    pbotDcuClosestUsing newElement = g_new0(botDcuClosestUsing, 1);
+    newElement->dcu = dcu;
+    g_get_current_time(&newElement->last_edit_time);
+    closestUsingDculist = g_slist_append(closestUsingDculist, newElement);
+}
+
+
+
+
+static int closest_time_compare (const pbotDcuClosestUsing a, const pbotDcuClosestUsing b)
+{
+    return b->last_edit_time.tv_sec - a->last_edit_time.tv_sec;
+}
+
+
+void bot_closeset_list_sort()
+{
+    closestUsingDculist = g_slist_sort(closestUsingDculist, (GCompareFunc)closest_time_compare);
+}
+
+static GtkTreeStore *control_dcu_store;
+
+static void on_dcu_control_on_off_callback (GtkCellRendererToggle *cell,
+	       gchar *path_str,
+	       gpointer data)
+{
+	GtkTreeIter iter;
+	GtkTreePath *path = gtk_tree_path_new_from_string (path_str);
+	gboolean toggle;
+	pbotLcu lcu;
+	/* get toggled iter */
+	gtk_tree_model_get_iter (GTK_TREE_MODEL(control_dcu_store), &iter, path);
+	gtk_tree_model_get (GTK_TREE_MODEL(control_dcu_store), &iter, 1, &toggle, 2, &lcu, -1);
+
+	/* set new value */
+	gtk_tree_store_set (control_dcu_store, &iter, 1, !toggle, -1);
+
+	gtk_tree_path_free (path);
+	bot_dcu_control_spl_light_on_map();
+	osm_gps_map_set_lcu_center(lcu);
+}
+
+static on_dcu_control_selection_changed_callback(GtkTreeSelection *treeselection, gpointer user_data)
+{
+    bot_dcu_control_spl_light_on_map();
+}
+
+void static bot_dcu_control_init()
+{
+    GtkWidget *btn_set, *btn_select, *btn_deselect, *switch_on_off, *cbb;
+    GtkWidget *treeview;
+
+    GtkTreeViewColumn *column;
+    GtkCellRenderer *render;
+    GtkTreeSelection *selection;
+    if(!dcu_dialog_control)
+    {
+        dcu_dialog_control  = GTK_WIDGET(bot_OBJECT("dcu_control_window"));
+        switch_on_off       = GTK_WIDGET(bot_OBJECT("dcu_control_on_off_switch"));
+        cbb                 = GTK_WIDGET(bot_OBJECT("combobox_program_dcu_dialog"));
+        treeview            = GTK_WIDGET(bot_OBJECT("dcu_control_treeview"));
+        selection           = gtk_tree_view_get_selection(GTK_TREE_VIEW(treeview));
+        control_dcu_store   = gtk_tree_store_new(3, G_TYPE_STRING, G_TYPE_BOOLEAN, G_TYPE_POINTER);
+        render              = gtk_cell_renderer_text_new();
+        column              = gtk_tree_view_column_new_with_attributes("Mã đèn", render, "text", 0, NULL);
+        gtk_tree_view_append_column(GTK_TREE_VIEW(treeview), column);
+        render              = gtk_cell_renderer_toggle_new();
+        column              = gtk_tree_view_column_new_with_attributes("Mở/tắt", render, "active", 1, NULL);
+        gtk_tree_view_append_column(GTK_TREE_VIEW(treeview), column);
+        gtk_tree_view_set_model(GTK_TREE_VIEW(treeview), GTK_TREE_MODEL(control_dcu_store));
+
+        gtk_window_set_modal(GTK_WINDOW(dcu_dialog_control), TRUE);
+        //gtk_window_fullscreen(GTK_WINDOW(dcu_dialog_control));
+        gtk_window_maximize(GTK_WINDOW(dcu_dialog_control));
+
+
+        //signal
+        g_signal_connect(dcu_dialog_control, "delete-event", G_CALLBACK(gtk_widget_hide_on_delete), NULL);
+
+        g_signal_connect (GTK_WIDGET(bot_OBJECT("dcu_dialog_btn_set")),
+                          "clicked", G_CALLBACK(on_dcu_control_btn_clicked), GINT_TO_POINTER(DIALOG_CONTROL_BTN_SET));
+        g_signal_connect (GTK_WIDGET(bot_OBJECT("btn_dcu_control_select_all")),
+                          "clicked", G_CALLBACK(on_dcu_control_btn_clicked), GINT_TO_POINTER(DIALOG_CONTROL_BTN_SELECT_ALL));
+        g_signal_connect (GTK_WIDGET(bot_OBJECT("btn_dcu_control_deselect_all")),
+                          "clicked", G_CALLBACK(on_dcu_control_btn_clicked), GINT_TO_POINTER(DIALOG_CONTROL_BTN_DESELECT_ALL));
+        g_signal_connect (GTK_WIDGET(bot_OBJECT("dcu_control_btn_quit")),
+                          "clicked", G_CALLBACK(on_dcu_control_btn_clicked), GINT_TO_POINTER(DIALOG_CONTROL_BTN_QUIT));
+        g_signal_connect (render, "toggled", G_CALLBACK (on_dcu_control_on_off_callback), NULL);
+        g_signal_connect (selection, "changed", G_CALLBACK(on_dcu_control_selection_changed_callback), NULL);
+        /*g_signal_connect (treeview, "clicked", G_CALLBACK(on_dcu_control_treeview_clicked_callback), store);
+        g_signal_connect (switch_on_off, "activate", G_CALLBACK(on_dcu_control_switch_activate_callback), NULL);
+        g_signal_connect (btn_set, "clicked", G_CALLBACK(on_dcu_control_btn_clicked), GINT_TO_POINTER(DIALOG_CONTROL_BTN_SET));
+        g_signal_connect (btn_select, "clicked", G_CALLBACK(on_dcu_control_btn_clicked), GINT_TO_POINTER(DIALOG_CONTROL_BTN_SELECT_ALL));
+        g_signal_connect (btn_deselect, "clicked", G_CALLBACK(on_dcu_control_btn_clicked), GINT_TO_POINTER(DIALOG_CONTROL_BTN_DESELECT_ALL));
+        */
+    }
+}
+
+void bot_dcu_control_dialog_show(gint type, pbotDcu dcu)
+{
+    gchar *title = NULL;
+    GSList *item;
+    GtkTreeIter iter;
+    bot_dcu_control_init();
+    g_return_if_fail(dcu && dcu->priv && dcu->priv->childlist);
+    switch(type)
+    {
+    case DIALOG_CONTROL_IS_ON_OFF:
+        title = g_strdup("Điều khiển trạm");
+        gtk_widget_set_visible(GTK_WIDGET(bot_OBJECT("dcu_control_box_set_light")), FALSE);
+        gtk_widget_set_visible(GTK_WIDGET(bot_OBJECT("dcu_control_box_control")), TRUE);
+        break;
+    case DIALOG_CONTROL_IS_SETTING:
+    {
+        title = g_strdup("Thiết lập chế độ sáng xen kẽ");
+        GtkWidget *boxtreeview = GTK_WIDGET(bot_OBJECT("dcu_control_box_treeview"));
+        GtkWidget *boxsetlight = GTK_WIDGET(bot_OBJECT("dcu_control_box_set_light"));
+        GtkWidget *parent = gtk_widget_get_parent(boxtreeview);
+        GtkWidget *boxcontaintreeview = GTK_WIDGET(bot_OBJECT("dcu_control_box_contain_tree_view"));
+        if(parent == boxcontaintreeview)
+        {
+            GtkWidget *p = GTK_WIDGET(g_object_ref((gpointer)boxtreeview));
+            gtk_container_remove(GTK_CONTAINER(boxcontaintreeview), boxtreeview);
+            gtk_box_pack_start(GTK_BOX(boxsetlight), p, TRUE, TRUE, 0);
+        }
+        gtk_widget_set_visible(GTK_WIDGET(bot_OBJECT("dcu_control_box_set_light")), TRUE);
+        gtk_widget_set_visible(GTK_WIDGET(bot_OBJECT("dcu_control_box_control")), FALSE);
+        break;
+    }
+    }
+    gtk_window_set_title(GTK_WINDOW(dcu_dialog_control), title);
+    gtk_label_set_text(GTK_LABEL(bot_OBJECT("dcu_control_lb_title")), title);
+    gtk_label_set_text(GTK_LABEL(bot_OBJECT("dcu_control_lb_id")), dcu->priv->id);
+    gtk_window_set_keep_above(GTK_WINDOW(dcu_dialog_control), TRUE);
+    gtk_window_set_transient_for(GTK_WINDOW(dcu_dialog_control), GTK_WINDOW(main_widgets->main_window));
+    if(!osm_gps_map_change_parent("map_box", "dcu_control_osm_map_box"))
+        return;
+    //clear store
+    isControlShow = TRUE;
+    gtk_tree_store_clear(control_dcu_store);
+    for(item = dcu->priv->childlist; item != NULL; item = item->next)
+    {
+        pbotLcu lcu = (pbotLcu)item->data;
+        gtk_tree_store_append(control_dcu_store, &iter, NULL);
+        gtk_tree_store_set(control_dcu_store, &iter,
+                           0, lcu->id,
+                           1, FALSE,
+                           2, lcu, -1);
+    }
+    //show light on map base on
+    bot_dcu_control_spl_light_on_map();
+    gtk_widget_show(dcu_dialog_control);
+
+
+    g_char_free(title);
+}
+
+
+void bot_dcu_control_spl_light_on_map()
+{
+    GtkTreeIter iter;
+    GtkTreeModel *model = GTK_TREE_MODEL(control_dcu_store);
+    gboolean toggled;
+    gfloat lat = 0, lon;
+    osm_gps_map_image_remove_all(map);
+    GtkTreeSelection *selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(bot_OBJECT("dcu_control_treeview")));
+    if(gtk_tree_model_get_iter_first(model, &iter))
+    {
+        do
+        {
+            pbotLcu lcu;
+            gtk_tree_model_get(model, &iter, 1, &toggled, 2, &lcu, -1);
+            if(gtk_tree_selection_iter_is_selected(selection, &iter))
+            {
+                bot_lcu_add_image(lcu, toggled ? g_selected_on_image : g_selected_off_image, &lat, &lon);
+                osm_gps_map_set_lcu_center(lcu);
+            }
+
+            else
+                bot_lcu_add_image(lcu, toggled ? g_on_image : g_off_image, &lat, &lon);
+        }while(gtk_tree_model_iter_next(model, &iter));
+    }
+    /*if(lat)
+        osm_gps_map_set_center(map, lat, lon);*/
+}
+
+
+void bot_dcu_control_set_all_selected(gboolean select)
+{
+    GtkTreeIter iter;
+    GtkTreeModel *model = GTK_TREE_MODEL(control_dcu_store);
+    if(gtk_tree_model_get_iter_first(model, &iter))
+    {
+        do
+        {
+            gtk_tree_store_set(control_dcu_store, &iter, 1, select, -1);
+        }while(gtk_tree_model_iter_next(model, &iter));
+    }
+}
+
+
+void bot_dcu_select_iter_of_light(OsmGpsMapImage *im)
+{
+    GtkTreeIter iter;
+    GtkTreeModel *model = GTK_TREE_MODEL(control_dcu_store);
+    GtkTreeView *view = GTK_TREE_VIEW(bot_OBJECT("dcu_control_treeview"));
+    GtkTreeSelection *selection = gtk_tree_view_get_selection(view);
+    if(gtk_tree_model_get_iter_first(model, &iter))
+    {
+        do
+        {
+            pbotLcu lcu;
+            gtk_tree_model_get(model, &iter, 2, &lcu, -1);
+            if(lcu  && lcu == (pbotLcu)im->handler)
+            {
+                GtkTreePath *path = gtk_tree_model_get_path(model, &iter);
+                gtk_tree_selection_select_iter(selection, &iter);
+                gtk_tree_view_scroll_to_cell(view, path, NULL, FALSE, 0, 0);
+                gtk_tree_path_free(path);
+                break;
+            }
+        }while(gtk_tree_model_iter_next(model, &iter));
+    }
+}

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+_Name=bot
+_GenericName=bot
+_Comment=The Smart Public Light Managerment System   
+Exec=bot %F
+Icon=bot.png
+Terminal=false
+Categories=Application;Map;Programming;
+MimeType=application/application-x-ifast-ext-ifast;text/plain;text/x-chdr;text/x-csrc;text/x-c++hdr;text/x-c++src;text/x-java;text/x-dsrc;text/x-pascal;text/x-perl;text/x-python;application/x-php;application/x-httpd-php3;application/x-httpd-php4;application/x-httpd-php5;application/xml;text/html;text/css;text/x-sql;text/x-diff;
+StartupNotify=true
+

@@ -1,0 +1,31 @@
+#ifndef BOT_SLOPE_H_INCLUDED
+#define BOT_SLOPE_H_INCLUDED
+
+#include "main.h"
+#include "bot_utils.h"
+#include "bot_callback.h"
+#include "bot_ui_method.h"
+#include "bot_lcu.h"
+
+typedef struct bot_LCU_SLOPE_DATA
+{
+    GtkWidget *chart;
+    gdouble *x_time;
+    gdouble *y_powerCtrl;
+    gdouble *y_powerConsum;
+    gint     n_points;
+    GSList  *lculoglist;
+    gdouble  chart_max;
+
+} botLcuSlopeData, *pbotLcuSlopeData;
+
+
+gboolean lcu_slope_run(pbotLcuSlopeData lcu_slope);
+
+void lcu_slope_finalize (GtkWidget *object,
+                         gpointer   user_data);
+
+pbotLcuSlopeData bot_lcu_slope_data_init(gint n_point, GSList *lculoglist);
+
+void bot_lcu_slope_data_free(pbotLcuSlopeData lcu_slope);
+#endif // BOT_SLOPE_H_INCLUDED

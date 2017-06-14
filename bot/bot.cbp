@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="bot" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/bot" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/bot" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../DevLinux/src/botService.h" />
+		<Unit filename="../DevLinux/src/bot_admin_user.cpp" />
+		<Unit filename="../DevLinux/src/bot_admin_user.h" />
+		<Unit filename="../DevLinux/src/bot_admin_zone.cpp" />
+		<Unit filename="../DevLinux/src/bot_admin_zone.h" />
+		<Unit filename="../DevLinux/src/bot_callback.cpp" />
+		<Unit filename="../DevLinux/src/bot_callback.h" />
+		<Unit filename="../DevLinux/src/bot_common.h" />
+		<Unit filename="../DevLinux/src/bot_database.cpp" />
+		<Unit filename="../DevLinux/src/bot_database.h" />
+		<Unit filename="../DevLinux/src/bot_dcu.cpp" />
+		<Unit filename="../DevLinux/src/bot_dcu.h" />
+		<Unit filename="../DevLinux/src/bot_dcu_log.h" />
+		<Unit filename="../DevLinux/src/bot_dcu_program_process.cpp" />
+		<Unit filename="../DevLinux/src/bot_dcu_program_process.h" />
+		<Unit filename="../DevLinux/src/bot_error.cpp" />
+		<Unit filename="../DevLinux/src/bot_error.h" />
+		<Unit filename="../DevLinux/src/bot_event_thread.cpp" />
+		<Unit filename="../DevLinux/src/bot_event_thread.h" />
+		<Unit filename="../DevLinux/src/bot_gui.cpp" />
+		<Unit filename="../DevLinux/src/bot_gui.h" />
+		<Unit filename="../DevLinux/src/bot_lcu.cpp" />
+		<Unit filename="../DevLinux/src/bot_lcu.h" />
+		<Unit filename="../DevLinux/src/bot_line.cpp" />
+		<Unit filename="../DevLinux/src/bot_line.h" />
+		<Unit filename="../DevLinux/src/bot_log.cpp" />
+		<Unit filename="../DevLinux/src/bot_log.h" />
+		<Unit filename="../DevLinux/src/bot_login.cpp" />
+		<Unit filename="../DevLinux/src/bot_login.h" />
+		<Unit filename="../DevLinux/src/bot_method.h" />
+		<Unit filename="../DevLinux/src/bot_schedule.cpp" />
+		<Unit filename="../DevLinux/src/bot_schedule.h" />
+		<Unit filename="../DevLinux/src/bot_server.cpp" />
+		<Unit filename="../DevLinux/src/bot_server.h" />
+		<Unit filename="../DevLinux/src/bot_soap.cpp" />
+		<Unit filename="../DevLinux/src/bot_soap.h" />
+		<Unit filename="../DevLinux/src/bot_soap_thread.cpp" />
+		<Unit filename="../DevLinux/src/bot_soap_thread.h" />
+		<Unit filename="../DevLinux/src/bot_sql.cpp" />
+		<Unit filename="../DevLinux/src/bot_sql.h" />
+		<Unit filename="../DevLinux/src/bot_ui_method.cpp" />
+		<Unit filename="../DevLinux/src/bot_ui_method.h" />
+		<Unit filename="../DevLinux/src/bot_user.cpp" />
+		<Unit filename="../DevLinux/src/bot_user.h" />
+		<Unit filename="../DevLinux/src/bot_utils.cpp" />
+		<Unit filename="../DevLinux/src/bot_utils.h" />
+		<Unit filename="../DevLinux/src/bot_zone.cpp" />
+		<Unit filename="../DevLinux/src/bot_zone.h" />
+		<Unit filename="../DevLinux/src/gsoap/botService.h" />
+		<Unit filename="../DevLinux/src/gsoap/soapC.cpp" />
+		<Unit filename="../DevLinux/src/gsoap/soapClient.cpp" />
+		<Unit filename="../DevLinux/src/gsoap/soapH.h" />
+		<Unit filename="../DevLinux/src/gsoap/soapStub.h" />
+		<Unit filename="../DevLinux/src/gsoap/soapbotServiceSOAPProxy.h" />
+		<Unit filename="../DevLinux/src/gsoap/stdsoap2.cpp" />
+		<Unit filename="../DevLinux/src/gsoap/stdsoap2.h" />
+		<Unit filename="../DevLinux/src/main.cpp" />
+		<Unit filename="../DevLinux/src/main.h" />
+		<Unit filename="../DevLinux/src/mapviewer.cpp" />
+		<Unit filename="../DevLinux/src/mapviewer.h" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

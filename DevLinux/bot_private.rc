@@ -1,0 +1,36 @@
+#include <windows.h> // include for version info constants
+
+#define VER_FILEVERSION             0,21,0,0
+#define VER_FILEVERSION_STR         "1.2.29"
+
+#ifdef IFAST_ICON
+#define IFAST_ICO IFAST_ICON
+//#define IFAST_ICO        "/media/linuxdata/JOBS/ide/release_pkg/../ifast/src/../icons/ifast.ico"
+#endif
+
+A ICON MOVEABLE PURE LOADONCALL DISCARDABLE IFAST_ICON
+
+VS_VERSION_INFO		VERSIONINFO
+FILEVERSION			VER_FILEVERSION
+PRODUCTVERSION		VER_FILEVERSION
+FILETYPE			VFT_APP
+{
+	BLOCK "StringFileInfo"
+	{
+		// U.S. English, Multilingual
+		// (see http://msdn.microsoft.com/en-us/library/aa381049%28VS.85%29.aspx)
+		BLOCK "040904E4"
+		{
+			VALUE "CompanyName", "ICDREC"
+			VALUE "FileVersion", VER_FILEVERSION_STR
+			VALUE "FileDescription", "IFast"
+			VALUE "InternalName", "IFast"
+			VALUE "LegalCopyright", "Copyright 2012-2014 by the IFast developers of ICDREC"
+			VALUE "LegalTrademarks", ""
+			VALUE "OriginalFilename", "IFast.exe"
+			VALUE "ProductName", "IFast"
+			VALUE "ProductVersion", VER_FILEVERSION_STR
+		}
+	}
+}
+

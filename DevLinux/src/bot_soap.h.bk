@@ -1,0 +1,204 @@
+#ifndef BOT_SOAP_H_INCLUDED
+#define BOT_SOAP_H_INCLUDED
+
+#include "main.h"
+#include "bot_utils.h"
+#include "bot_dcu.h"
+#include "bot_lcu.h"
+
+gboolean bot_login_execute(const gchar *username, const gchar* password);
+
+gboolean bot_login_2_execute(const gchar *username, const gchar* password);
+
+gboolean bot_get_zone_dcu_execute(const gchar *username, const gint session_id);
+
+gboolean bot_get_dcu_list_execute(const gchar *username, const gint session_id, const botZone* zone);
+
+gboolean bot_get_lcu_list_execute(const gchar *username, const gint session_id, const gchar * dcu_id);
+
+gboolean bot_get_line_list_execute(const gchar *username, const gint session_id, const gchar * dcu_id);
+
+//gboolean bot_get_schedule_list_execute(const gchar *username,
+//                                                    const gint session_id,
+//                                                    const gchar * program_name,
+//                                                    bot_LISTSTORE_FILL_Enum type_liststore);
+
+//gboolean bot_get_program_list_execute(const gchar *username, const gint session_id);
+
+//gboolean bot_dcu_update_program_execute(const gchar *username, const gint session_id, gchar* dcu_id, gchar *new_program_name);
+
+gboolean bot_dcu_add_execute(const gchar *username,const gint session_id, pbotDcu dcu, botZone *zone);
+
+gboolean bot_dcu_remove_execute(const gchar *username,
+                                             const gint session_id,
+                                             const gchar *dcu_id);
+
+gboolean bot_dcu_edit_execute(const gchar *username, const gint session_id, pbotDcu dcu);
+
+gboolean bot_dcu_schedule_update_execute(const gchar *username,
+                                                      const gint session_id,
+                                                      const gchar *dcu_id,
+                                                      const gint dcu_mode,
+                                                      const gchar *dcu_program_name);
+
+gboolean bot_lcu_add_execute(const gchar *username,
+                                 const gint session_id, pbotLcu lcu);
+
+gboolean bot_lcu_remove_execute(const gchar *username,
+                                             const gint session_id,
+                                             const gchar *lcu_id,
+                                             const gchar *lcu_dcuid);
+
+gboolean bot_line_add_execute(const gchar *username,
+                                          gint session_id,
+                                          gint line_id,
+                                          const gchar *line_dcuid,
+                                          gint line_mode,
+                                          const gchar *line_note
+                                          );
+
+gboolean bot_line_remove_execute(const gchar *username,
+                                              gint session_id,
+                                              gint line_id,
+                                              const gchar *line_dcuid);
+
+gboolean bot_program_new_execute(const gchar *username,
+                                              gint session_id,
+                                              const gchar *program_name);
+
+gboolean bot_program_remove_execute(const gchar *username,
+                                                      gint session_id,
+                                                      gint program_id);
+
+gboolean bot_lcu_control_execute(const gchar *username,
+                                              gint session_id,
+                                              const gchar *dcu_id,
+                                              GString *lcu_id_list,
+                                              const gint lcu_mode,
+                                              const gint lcu_ison,
+                                              const gint lcu_lightlevel);
+
+/** M-Hieu deleted
+gboolean bot_dcu_log_get_connect_log_execute(const gchar *username,
+                                                          gint session_id,
+                                                          const gchar *dcu_id,
+                                                          EVENT_LOG_Enum type_log);
+*/
+gboolean bot_dcu_log_get_execute(const gchar *username,
+                                                          gint session_id,
+                                                          const gchar *dcu_id,
+                                                          EVENT_LOG_Enum type_log);
+
+/***************************************************** NEW FOR PROGRAM ************************************************************/
+
+gboolean bot_get_zone_for_program_list_execute(const gchar *username,
+                                                            const gint session_id);
+
+gboolean bot_get_program_list_execute(const gchar *username,
+                                                   const gint session_id,
+                                                   gint zone_id,
+                                                   GtkTreeIter *parent_iter);
+
+
+gboolean bot_get_day_schedule_list_execute(const gchar *username,
+                                                          gint session_id,
+                                                          gint program_id);
+
+
+gboolean bot_get_schedule_list_execute(const gchar *username,
+                                                      gint session_id,
+                                                      gint list_schedule_id,
+                                                      GtkTreeIter *parent_iter,
+                                                      gint store_index);
+
+gboolean bot_get_day_schedule_name_execute(const gchar *username,
+                                                            gint session_id,
+                                                            gint list_schedule_id,
+                                                            GtkTreeIter *parent_iter);
+
+gboolean bot_add_day_schedule_execute(const gchar *username,
+                                                    gint session_id,
+                                                    gint day_schedule_program_id,
+                                                    gint day_schedule_month);
+
+gboolean bot_day_schedule_remove_execute(const gchar *username,
+                                                    gint session_id,
+                                                    gint day_schedule_id);
+
+gboolean bot_get_item_schedule_list_execute(const gchar *username,
+                                                          gint session_id,
+                                                          gint program_id);
+
+gboolean bot_program_dcu_list_show_execute(const gchar *username,
+                                                              gint session_id,
+                                                              gint program_id,
+                                                              gint zone_id);
+
+gboolean bot_day_schedule_edit_execute(const gchar *username,
+                                                          gint session_id,
+                                                          gint dayschedule_id,
+                                                          gint dayschedule_listscheduleid,
+                                                          gint dayschedule_programid,
+                                                          gint dayschedule_month);
+
+gboolean bot_list_schedule_add_execute(const gchar *username,
+                                                          gint session_id,
+                                                          gchar *listschedule_name,
+                                                          gint *listschedule_id,
+                                                          gint program_id);
+
+gboolean bot_list_schedule_remove_execute(const gchar *username,
+                                                          gint session_id,
+                                                          gint listschedule_id);
+
+gboolean bot_item_schedule_add_execute(const gchar *username,
+                                                          gint session_id,
+                                                          gint listschedle_id,
+                                                          gint starttime,
+                                                          gint timeon,
+                                                          gint level,
+                                                          gint *schedule_id);
+
+gboolean bot_get_dcu_list_with_program_execute(const gchar *username,
+                                                            gint session_id,
+                                                            gint program_id);
+
+gboolean bot_get_lcu_list_with_program_execute(const gchar *username,
+                                                            gint session_id,
+                                                            gchar *dcu_id,
+                                                            GtkTreeIter *parent_iter);
+
+
+gboolean bot_user_update_information_execute(gint user_id,
+                                           gchar *username,
+                                           gint session_id,
+                                           gchar *password,
+                                           gchar *phone,
+                                           gchar *email,
+                                           gboolean enable_sms_notify,
+                                           gboolean enable_email_notify);
+
+
+/** ***************************************************************************  **/
+/** ***************************** SOAP FOR ADMIN ******************************  **/
+/** ***************************************************************************  **/
+
+
+gboolean bot_admin_user_show_user_list_execute(const gchar *username,
+                                                     gint session_id,
+                                                     GtkListStore *admin_user_liststore);
+
+gboolean bot_admin_user_show_user_specific_execute(const gchar *username,
+                                                   gint session_id,
+                                                   gint user_id,
+                                                   GtkTreeStore *admin_user_liststore_zone_list,
+                                                   struct ADMIN_USER_INFO_Widget *admin_user_info_widget,
+                                                   struct ADMIN_USER_CONFIG_Widget *admin_user_config_widget,
+                                                   struct ADMIN_USER_PRIVILEGE_Widget *admin_user_privilege_widget);
+
+
+
+#endif // BOT_SOAP_H_INCLUDED
+
+
+
