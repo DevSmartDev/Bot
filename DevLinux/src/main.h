@@ -8,6 +8,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define bot_lookup_w_by_name(name) gtk_builder_get_object(bot_builder, (const gchar*)name)
+
+
+
 #define SET_LOCATION_ROOT 1
 #define LAT_HOME    10.868658
 #define LON_HOME    106.795967
